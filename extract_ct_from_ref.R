@@ -2,8 +2,6 @@
 
 args <- commandArgs(trailingOnly = TRUE)
 
-print(args)
-
 body_organ <- args[1]
 cell_hierarchy_cols <- args[2:length(args)]
 
