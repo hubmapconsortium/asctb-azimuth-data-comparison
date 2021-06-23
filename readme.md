@@ -25,7 +25,7 @@ in ASCT+B table format. The structure of this file is as follows:
       "cell_type_columns": [
         "<hierarchy_column-1>",
         "<hierarchy_column-2>",
-        ,,,
+        ...
         "<hierarchy_column-n>"
       ]
     },
@@ -34,7 +34,7 @@ in ASCT+B table format. The structure of this file is as follows:
       "cell_type_columns": [
         "<hierarchy_column-1>",
         "<hierarchy_column-2>",
-        ,,,
+        ...
         "<hierarchy_column-n>"
       ]
     },
