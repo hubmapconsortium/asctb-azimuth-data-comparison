@@ -1,0 +1,34 @@
+{
+  "references": [
+    {
+      "name": "lungs",
+      "cell_type_columns": [
+        "annotation.l1",
+        "annotation.l2"
+      ]
+    },
+    {
+      "name": "pancreas",
+      "cell_type_columns": [
+        "annotation.l1"
+      ]
+    },
+    {
+      "name": "pbmc",
+      "cell_type_columns": [
+        "celltype.l1",
+        "celltype.l2",
+        "celltype.l3"
+      ]
+    },
+    {
+      "name": "motor_cortex",
+      "cell_type_columns": [
+        "class",
+        "subclass",
+        "cluster",
+        "cross_species_cluster"
+      ]
+    }
+  ] 
+}
