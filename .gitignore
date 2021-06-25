@@ -1,6 +1,6 @@
 .RData
 .Rhistory
 packrat/
-deploy/
+dist/
 .Rproj.user/
 .Rproj.user
