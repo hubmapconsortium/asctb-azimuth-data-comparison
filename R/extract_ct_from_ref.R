@@ -16,8 +16,14 @@ extract_reference  <- function(body_organ, cell_hierarchy_cols) {
   names(cell_types) <- final_column_names
   count_col <- stringr::str_interp("AS/${length(cell_hierarchy_cols)}/count")
   cell_types[count_col] <- 1;
-  group_by_formula <- as.formula(paste(paste('cell_types$`',count_col,'` ~ ',sep = ''), paste(sapply(final_column_names, function(col) paste("cell_types$`",col,"`", sep = '')), collapse = " + ")))
-  cell_types <- aggregate( group_by_formula, data = cell_types, FUN = sum)
+  group_by_formula <- as.formula(
+    paste(
+      paste('`',count_col,'` ~ ',sep = ''),
+      paste(sapply(final_column_names,
+                   function(col)
+                     paste("`",col,"`", sep = '')),
+            collapse = " + ")))
+  cell_types <- aggregate( group_by_formula, data = cell_types, FUN = sum )
 
   empty_rows <- matrix(rep(NA, length(cell_hierarchy_cols)*10), 10,length(cell_hierarchy_cols))
   write.table(empty_rows,
