@@ -44,7 +44,7 @@ jobs:
         run: |
           sudo apt-get install -y libcurl4-openssl-dev
 
-      - name: Query dependencies
+      - name: Query R dependencies
         run: |
           install.packages('remotes')
           install.packages('sessioninfo')
@@ -59,7 +59,7 @@ jobs:
           key: ${{ runner.os }}-${{ hashFiles('.github/R-version') }}-1-${{ hashFiles('.github/depends.Rds') }}
           restore-keys: ${{ runner.os }}-${{ hashFiles('.github/R-version') }}-1-
 
-      - name: Install dependencies
+      - name: Install R dependencies
         run: |
           remotes::install_deps(dependencies = TRUE)
         shell: Rscript {0}
