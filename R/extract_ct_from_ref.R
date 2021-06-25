@@ -1,5 +1,4 @@
-# library(Seurat)
-# library(SeuratObject)
+library(Seurat)
 library(rjson)
 
 

@@ -1,16 +1,20 @@
 Package: ASCTBAzimuthDataComparison
-Title: What the Package Does (One Line, Title Case)
-Version: 0.0.0.9000
+Title: Compare Data in Azimuth With Data in ASCT+B Reporter
+Version: 0.0.1
 Authors@R: 
-    person(given = "First",
-           family = "Last",
+    person(given = "Darshal",
+           family = "Shetty",
            role = c("aut", "cre"),
-           email = "first.last@example.com",
+           email = "dcshetty@iu.edu",
            comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
+Description: Currently this package includes a script that reads data from
+    Azimuth reference files and converts it to ASCT+B reporter table csv file.
 License: `use_mit_license()`, `use_gpl3_license()` or friends to
     pick a license
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.0.0
+Imports:
+    rjson,
+    Seurat
