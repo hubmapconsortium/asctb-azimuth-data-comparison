@@ -42,11 +42,11 @@ jobs:
           remotes::install_deps(dependencies = TRUE)
         shell: Rscript {0}
       - name: Genrate csv
-        run: source("extract_ct_from_ref.R")
+        run: source("R/extract_ct_from_ref.R")
         shell: Rscript {0}
       - name: Build and deploy
         run: |
-          cp asctb_tables/*.csv docs
+          cp data/asctb_tables/*.csv docs
           git config --local user.email "actions@github.com"
           git config --local user.name "GitHub Actions"
           git add --all
