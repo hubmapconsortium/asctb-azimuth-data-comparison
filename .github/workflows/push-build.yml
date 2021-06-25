@@ -70,11 +70,11 @@ jobs:
 
       - name: Setup GitHub Pages files
         run: |
-          bash bash/build_deploy.sh
+          bash bash/build.sh
 
       - name: Deploy GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: docs
+          publish_dir: dist
           commit_message: "Production deploy -- ${{ github.event.head_commit.message }}"
