@@ -77,4 +77,5 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: dist
+          enable_jekyll: true
           commit_message: "Production deploy -- ${{ github.event.head_commit.message }}"
