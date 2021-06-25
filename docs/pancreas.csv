@@ -8,17 +8,17 @@
 
 
 
-"AS/1"
-"gamma"
-"acinar"
-"alpha"
-"delta"
-"beta"
-"ductal"
-"endothelial"
-"activated_stellate"
-"schwann"
-"epsilon"
-"quiescent_stellate"
-"immune"
-"cycling"
+"cell_types$`AS/1`","cell_types$`AS/1/count`"
+"cycling",55
+"immune",209
+"quiescent_stellate",419
+"endothelial",740
+"schwann",63
+"activated_stellate",1420
+"epsilon",50
+"gamma",1190
+"delta",2064
+"ductal",3304
+"acinar",2824
+"beta",11816
+"alpha",11135

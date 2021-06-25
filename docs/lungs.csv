@@ -8,61 +8,61 @@
 ,
 ,
 ,
-"AS/1","AS/2"
-"Capillary Aerocyte","Capillary Aerocyte"
-"Capillary","Capillary"
-"Capillary Intermediate","Capillary Intermediate 1"
-"Capillary Intermediate","Capillary Intermediate 2"
-"Dendritic","IGSF21+ Dendritic"
-"Dendritic","Myeloid Dendritic Type 1"
-"Plasmacytoid Dendritic","Plasmacytoid Dendritic"
-"Dendritic","Myeloid Dendritic Type 2"
-"B","B"
-"Dendritic","EREG+ Dendritic"
-"Macrophage","Macrophage"
-"CD8 T","CD8+ Naive T"
-"CD4 T","CD4+ Naive T"
-"CD4 T","CD4+ Memory/Effector T"
-"Vein","Vein"
-"Artery","Artery"
-"Pericyte","Pericyte"
-"Smooth Muscle","Vascular Smooth Muscle"
-"Club","Club"
-"Mucous","Mucous"
-"Alveolar Epithelial Type 2","Alveolar Epithelial Type 2"
-"Basal","Basal"
-"Lymphatic","Lymphatic"
-"Proliferating Macrophage","Proliferating Macrophage"
-"CD8 T","CD8+ Memory/Effector T"
-"Proliferating NK/T","Proliferating NK/T"
-"Natural Killer T","Natural Killer T"
-"Natural Killer","Natural Killer"
-"CD14+ Monocyte","OLR1+ Classical Monocyte"
-"Basophil/Mast","Basophil/Mast 1"
-"CD14+ Monocyte","Classical Monocyte"
-"CD16+ Monocyte","Intermediate Monocyte"
-"CD16+ Monocyte","Nonclassical Monocyte"
-"Smooth Muscle","Airway Smooth Muscle"
-"Ciliated","Ciliated"
-"Fibroblast","Alveolar Fibroblast"
-"Myofibroblast","Myofibroblast"
-"Fibroblast","Adventitial Fibroblast"
-"Alveolar Epithelial Type 1","Alveolar Epithelial Type 1"
-"Platelet/Megakaryocyte","Platelet/Megakaryocyte"
-"Dendritic","TREM2+ Dendritic"
-"Basal","Differentiating Basal"
-"Basal","Proliferating Basal"
-"Plasma","Plasma"
-"Bronchial Vessel","Bronchial Vessel 2"
-"Bronchial Vessel","Bronchial Vessel 1"
-"Lipofibroblast","Lipofibroblast"
-"Mesothelial","Mesothelial"
-"Basophil/Mast","Basophil/Mast 2"
-"Alveolar Epithelial Type 2","Signaling Alveolar Epithelial Type 2"
-"Basal","Proximal Basal"
-"Neuroendocrine","Neuroendocrine"
-"Fibromyocyte","Fibromyocyte"
-"Ionocyte","Ionocyte"
-"Serous","Serous"
-"Ciliated","Proximal Ciliated"
-"Goblet","Goblet"
+"cell_types$`AS/1`","cell_types$`AS/2`","cell_types$`AS/2/count`"
+"Fibroblast","Adventitial Fibroblast",557
+"Smooth Muscle","Airway Smooth Muscle",693
+"Alveolar Epithelial Type 1","Alveolar Epithelial Type 1",972
+"Alveolar Epithelial Type 2","Alveolar Epithelial Type 2",3814
+"Fibroblast","Alveolar Fibroblast",1296
+"Artery","Artery",1484
+"B","B",725
+"Basal","Basal",436
+"Basophil/Mast","Basophil/Mast 1",1350
+"Basophil/Mast","Basophil/Mast 2",552
+"Bronchial Vessel","Bronchial Vessel 1",455
+"Bronchial Vessel","Bronchial Vessel 2",235
+"Capillary","Capillary",7391
+"Capillary Aerocyte","Capillary Aerocyte",4352
+"Capillary Intermediate","Capillary Intermediate 1",628
+"Capillary Intermediate","Capillary Intermediate 2",464
+"CD4 T","CD4+ Memory/Effector T",3013
+"CD4 T","CD4+ Naive T",932
+"CD8 T","CD8+ Memory/Effector T",1190
+"CD8 T","CD8+ Naive T",2042
+"Ciliated","Ciliated",1321
+"CD14+ Monocyte","Classical Monocyte",2077
+"Club","Club",931
+"Basal","Differentiating Basal",265
+"Dendritic","EREG+ Dendritic",142
+"Fibromyocyte","Fibromyocyte",98
+"Goblet","Goblet",159
+"Dendritic","IGSF21+ Dendritic",280
+"CD16+ Monocyte","Intermediate Monocyte",188
+"Ionocyte","Ionocyte",22
+"Lipofibroblast","Lipofibroblast",35
+"Lymphatic","Lymphatic",467
+"Macrophage","Macrophage",14734
+"Mesothelial","Mesothelial",29
+"Mucous","Mucous",491
+"Dendritic","Myeloid Dendritic Type 1",131
+"Dendritic","Myeloid Dendritic Type 2",266
+"Myofibroblast","Myofibroblast",248
+"Natural Killer","Natural Killer",4769
+"Natural Killer T","Natural Killer T",335
+"Neuroendocrine","Neuroendocrine",11
+"CD16+ Monocyte","Nonclassical Monocyte",804
+"CD14+ Monocyte","OLR1+ Classical Monocyte",207
+"Pericyte","Pericyte",1608
+"Plasma","Plasma",187
+"Plasmacytoid Dendritic","Plasmacytoid Dendritic",137
+"Platelet/Megakaryocyte","Platelet/Megakaryocyte",40
+"Basal","Proliferating Basal",47
+"Proliferating Macrophage","Proliferating Macrophage",226
+"Proliferating NK/T","Proliferating NK/T",105
+"Basal","Proximal Basal",157
+"Ciliated","Proximal Ciliated",88
+"Serous","Serous",24
+"Alveolar Epithelial Type 2","Signaling Alveolar Epithelial Type 2",669
+"Dendritic","TREM2+ Dendritic",159
+"Smooth Muscle","Vascular Smooth Muscle",469
+"Vein","Vein",1155
