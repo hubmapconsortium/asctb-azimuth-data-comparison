@@ -1,0 +1,68 @@
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+"cell_types$`AS/1`","cell_types$`AS/2`","cell_types$`AS/3`","cell_types$`AS/3/count`"
+"DC","ASDC","ASDC_mDC",8
+"DC","ASDC","ASDC_pDC",8
+"B","B intermediate","B intermediate kappa",301
+"B","B intermediate","B intermediate lambda",598
+"B","B memory","B memory kappa",304
+"B","B memory","B memory lambda",293
+"B","B naive","B naive kappa",570
+"B","B naive","B naive lambda",333
+"Mono","CD14 Mono","CD14 Mono",3673
+"Mono","CD16 Mono","CD16 Mono",891
+"CD4 T","CD4 CTL","CD4 CTL",296
+"CD4 T","CD4 Naive","CD4 Naive",1403
+"CD4 T","CD4 Proliferating","CD4 Proliferating",57
+"CD4 T","CD4 TCM","CD4 TCM_1",8141
+"CD4 T","CD4 TCM","CD4 TCM_2",593
+"CD4 T","CD4 TCM","CD4 TCM_3",6155
+"CD4 T","CD4 TEM","CD4 TEM_1",227
+"CD4 T","CD4 TEM","CD4 TEM_2",66
+"CD4 T","CD4 TEM","CD4 TEM_3",347
+"CD4 T","CD4 TEM","CD4 TEM_4",63
+"CD8 T","CD8 Naive","CD8 Naive",981
+"CD8 T","CD8 Naive","CD8 Naive_2",167
+"CD8 T","CD8 Proliferating","CD8 Proliferating",31
+"CD8 T","CD8 TCM","CD8 TCM_1",929
+"CD8 T","CD8 TCM","CD8 TCM_2",1322
+"CD8 T","CD8 TCM","CD8 TCM_3",632
+"CD8 T","CD8 TEM","CD8 TEM_1",299
+"CD8 T","CD8 TEM","CD8 TEM_2",335
+"CD8 T","CD8 TEM","CD8 TEM_3",290
+"CD8 T","CD8 TEM","CD8 TEM_4",285
+"CD8 T","CD8 TEM","CD8 TEM_5",283
+"CD8 T","CD8 TEM","CD8 TEM_6",304
+"DC","cDC1","cDC1",150
+"DC","cDC2","cDC2_1",173
+"DC","cDC2","cDC2_2",299
+"other T","dnT","dnT_1",63
+"other T","dnT","dnT_2",118
+"other","Eryth","Eryth",81
+"other T","gdT","gdT_1",301
+"other T","gdT","gdT_2",196
+"other T","gdT","gdT_3",231
+"other T","gdT","gdT_4",107
+"other","HSPC","HSPC",300
+"other","ILC","ILC",131
+"other T","MAIT","MAIT",600
+"NK","NK Proliferating","NK Proliferating",214
+"NK","NK","NK_1",569
+"NK","NK","NK_2",657
+"NK","NK","NK_3",190
+"NK","NK","NK_4",130
+"NK","NK_CD56bright","NK_CD56bright",291
+"DC","pDC","pDC",284
+"B","Plasmablast","Plasma",262
+"B","Plasmablast","Plasmablast",37
+"other","Platelet","Platelet",566
+"CD4 T","Treg","Treg Memory",160
+"CD4 T","Treg","Treg Naive",138
