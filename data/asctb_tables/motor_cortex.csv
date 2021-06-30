@@ -1,139 +1,137 @@
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-"AS/1","AS/2","AS/3","AS/4","AS/4/count"
-"Non-Neuronal","Astro","Astro L1 FGFR3 SERPINI2","Astro_1",72
-"Non-Neuronal","Astro","Astro L1-6 FGFR3 AQP1","Astro_1",119
-"Non-Neuronal","Astro","Astro L1-6 FGFR3 PLCG1","Astro_2",377
-"GABAergic","Pvalb","Inh L1-6 PVALB COL15A1","Chandelier",69
-"Non-Neuronal","Endo","Endo L2-5 NOSTRIN SRGN","Endo",64
-"Non-Neuronal","Oligo","Oligo L2-6 OPALIN MAP6D1","exclude",65
-"Non-Neuronal","Oligo","Oligo L3-6 OPALIN LRP4-AS1","exclude",59
-"Glutamatergic","L2/3 IT","Exc L2 LAMP5 KCNG3","L2/3 IT",16
-"Glutamatergic","L2/3 IT","Exc L2 LINC00507 ATP7B","L2/3 IT",16
-"Glutamatergic","L2/3 IT","Exc L2 LINC00507 GLRA3","L2/3 IT",1057
-"Glutamatergic","L2/3 IT","Exc L2-3 LINC00507 DSG3","L2/3 IT",87
-"Glutamatergic","L2/3 IT","Exc L2-3 RORB RTKN2","L2/3 IT",107
-"Glutamatergic","L2/3 IT","Exc L3 LAMP5 CARM1P1","L2/3 IT",318
-"Glutamatergic","L5 ET","Exc L3-5 FEZF2 ASGR2","L5 ET_1",620
-"Glutamatergic","L5 ET","Exc L5 FEZF2 CSN1S1","L5 ET_1",150
-"Glutamatergic","L5 ET","Exc L3-5 FEZF2 LINC01107","L5 ET_2",88
-"Glutamatergic","L2/3 IT","Exc L2-3 RORB CCDC68","L5 IT_1",281
-"Glutamatergic","L2/3 IT","Exc L2-3 RORB PTPN3","L5 IT_1",118
-"Glutamatergic","L5 IT","Exc L3 RORB OTOGL","L5 IT_1",296
-"Glutamatergic","L5 IT","Exc L3 THEMIS ENPEP","L5 IT_1",100
-"Glutamatergic","L5 IT","Exc L3-5 RORB LAMA4","L5 IT_1",36
-"Glutamatergic","L5 IT","Exc L3-5 RORB LINC01202","L5 IT_1",108
-"Glutamatergic","L5 IT","Exc L3-5 RORB TNNT2","L5 IT_1",92
-"Glutamatergic","L5 IT","Exc L5 THEMIS VILL","L5 IT_1",31
-"Glutamatergic","L5 IT","Exc L3-5 RORB LNX2","L5 IT_2",662
-"Glutamatergic","L5 IT","Exc L3-5 RORB RPRM","L5 IT_2",196
-"Glutamatergic","L5 IT","Exc L5 THEMIS SLC22A18","L5 IT_2",268
-"Glutamatergic","L5 IT","Exc L5 RORB MED8","L5 IT_3",47
-"Glutamatergic","L5 IT","Exc L5 THEMIS FGF10","L5 IT_3",17
-"Glutamatergic","L5/6 NP","Exc L5 FEZF2 NREP-AS1","L5/6 NP",229
-"Glutamatergic","L5/6 NP","Exc L5 FEZF2 PKD2L1","L5/6 NP",280
-"Glutamatergic","L5/6 NP","Exc L5 FEZF2 RNF144A-AS1","L5/6 NP",108
-"Glutamatergic","L5/6 NP","Exc L5-6 FEZF2 IFNG-AS1","L5/6 NP",753
-"Glutamatergic","L5/6 NP","Exc L5-6 FEZF2 LPO","L5/6 NP",117
-"Glutamatergic","L6 CT","Exc L5 THEMIS LINC01116","L6 CT_1",79
-"Glutamatergic","L6 CT","Exc L5 THEMIS RGPD6","L6 CT_1",130
-"Glutamatergic","L6 CT","Exc L5-6 FEZF2 FILIP1L","L6 CT_1",154
-"Glutamatergic","L6 CT","Exc L5-6 FEZF2 OR1L8","L6 CT_1",140
-"Glutamatergic","L6 CT","Exc L5-6 FEZF2 SH2D1B","L6 CT_1",81
-"Glutamatergic","L6 CT","Exc L5-6 FEZF2 C9orf135-AS1","L6 CT_2",1416
-"Glutamatergic","L6 IT","Exc L6 THEMIS LINC00343","L6 IT_1",905
-"Glutamatergic","L6 IT","Exc L6 THEMIS SLN","L6 IT_1",436
-"Glutamatergic","L5 IT","Exc L5-6 THEMIS TNFAIP6","L6 IT_2",147
-"Glutamatergic","L6 IT","Exc L6 THEMIS SNTG2","L6 IT_2",488
-"Glutamatergic","L6 IT Car3","Exc L5-6 THEMIS SMYD1","L6 IT_3",327
-"Glutamatergic","L6b","Exc L5-6 FEZF2 CFTR","L6b",102
-"Glutamatergic","L6b","Exc L6 FEZF2 FFAR4","L6b",95
-"Glutamatergic","L6b","Exc L6 FEZF2 KLK7","L6b",1599
-"Glutamatergic","L6b","Exc L6 FEZF2 PDYN","L6b",19
-"Glutamatergic","L6b","Exc L6 FEZF2 POGK","L6b",118
-"Glutamatergic","L6b","Exc L6 FEZF2 PROKR2","L6b",67
-"GABAergic","Lamp5","Inh L1 LAMP5 PVRL2","Lamp5_1",43
-"GABAergic","Lamp5","Inh L1 LAMP5 RAB11FIP1","Lamp5_2",112
-"GABAergic","Lamp5","Inh L1-6 LAMP5 AARD","Lamp5_2",687
-"GABAergic","Lamp5","Inh L1-6 LAMP5 NES","Lamp5_2",192
-"GABAergic","Lamp5","Inh L1-6 LAMP5 CA1","Lamp5_3",223
-"GABAergic","Lamp5","Inh L5-6 LAMP5 CRABP1","Lamp5_3",411
-"GABAergic","Lamp5","Inh L1 PAX6 MIR101-1","Lamp5_4",65
-"GABAergic","Lamp5","Inh L3-6 PAX6 LINC01497","Lamp5_4",36
-"GABAergic","Lamp5","Inh L1 LAMP5 BMP2","Lamp5_5",145
-"GABAergic","Lamp5","Inh L1 LAMP5 NMBR","Lamp5_5",86
-"Non-Neuronal","Micro-PVM","Micro L1-6 TYROBP CD74","Microglia/PVM",108
-"Non-Neuronal","Oligo","Oligo L3-6 OPALIN ENPP6","Oligo_1",369
-"Non-Neuronal","Oligo","Oligo L2-6 OPALIN FTH1P3","Oligo_2",1504
-"Non-Neuronal","Oligo","Oligo L5-6 OPALIN LDLRAP1","Oligo_2",3
-"Non-Neuronal","OPC","OPC L1-6 PDGFRA COL20A1","OPC",283
-"GABAergic","Pvalb","Inh L1-2 PVALB CDK20","Pvalb_1",35
-"GABAergic","Pvalb","Inh L1-2 SST CLIC6","Pvalb_1",46
-"GABAergic","Pvalb","Inh L2 PVALB FRZB","Pvalb_1",28
-"GABAergic","Pvalb","Inh L2-5 PVALB HHIPL1","Pvalb_1",141
-"GABAergic","Pvalb","Inh L2-5 PVALB RPH3AL","Pvalb_1",820
-"GABAergic","Pvalb","Inh L3 PVALB SAMD13","Pvalb_1",338
-"GABAergic","Pvalb","Inh L3-5 PVALB ISG20","Pvalb_1",58
-"GABAergic","Pvalb","Inh L5 PVALB LRIG3","Pvalb_1",163
-"GABAergic","Pvalb","Inh L5-6 PVALB KCNIP2","Pvalb_1",27
-"GABAergic","Pvalb","Inh L5-6 PVALB ZFPM2-AS1","Pvalb_1",147
-"GABAergic","Pvalb","Inh L5-6 PVALB FAM150B","Pvalb_2",35
-"GABAergic","Pvalb","Inh L5-6 PVALB GAPDHP60","Pvalb_2",35
-"GABAergic","Pvalb","Inh L5-6 PVALB MEPE","Pvalb_2",58
-"GABAergic","Sncg","Inh L1 PAX6 CHRFAM7A","Sncg_1",185
-"GABAergic","Sncg","Inh L1-6 VIP SLC7A6OS","Sncg_1",61
-"GABAergic","Sncg","Inh L2 PAX6 FREM2","Sncg_2",108
-"GABAergic","Sncg","Inh L1-2 VIP HTR3A","Sncg_3",42
-"GABAergic","Sncg","Inh L1-2 VIP WNT4","Sncg_3",52
-"GABAergic","Sncg","Inh L1 PVALB SST ASIC4","Sncg_4",186
-"GABAergic","Sncg","Inh L1 SST DEFB108B","Sncg_4",223
-"GABAergic","Sncg","Inh L1 SST P4HA3","Sncg_4",38
-"GABAergic","Sst Chodl","Inh L1-6 SST NPY","Sst Chodl",67
-"GABAergic","Sst","Inh L3-5 SST CDH3","Sst_1",17
-"GABAergic","Sst","Inh L5 SST RPL35AP11","Sst_1",270
-"GABAergic","Sst","Inh L3-5 SST OR5AH1P","Sst_2",78
-"GABAergic","Sst","Inh L5-6 PVALB SST CRHR2","Sst_2",68
-"GABAergic","Sst","Inh L5-6 SST ISX","Sst_2",113
-"GABAergic","Sst","Inh L1-2 SST CCNJL","Sst_3",97
-"GABAergic","Sst","Inh L1-2 SST PRRT4","Sst_3",123
-"GABAergic","Sst","Inh L1-3 SST FAM20A","Sst_3",367
-"GABAergic","Sst","Inh L2-3 SST NMU","Sst_3",153
-"GABAergic","Sst","Inh L3-5 SST GGTLC3","Sst_3",417
-"GABAergic","Sst","Inh L5-6 SST PAWR","Sst_4",65
-"GABAergic","Sst","Inh L5-6 SST PIK3CD","Sst_4",41
-"GABAergic","Sst","Inh L5-6 SST BEAN1","Sst_5",24
-"GABAergic","Sst","Inh L5-6 SST DNAJC14","Sst_5",9
-"GABAergic","Sst","Inh L5-6 SST C4orf26","Sst_6",35
-"GABAergic","Sst","Inh L5-6 SST FBN2","Sst_6",33
-"GABAergic","Sst","Inh L5-6 SST KLHL1","Sst_6",62
-"GABAergic","Sst","Inh L6 SST TH","Sst_7",28
-"GABAergic","Vip","Inh L1-2 VIP EXPH5","Vip_1",219
-"GABAergic","Vip","Inh L1-3 VIP CBLN1","Vip_1",182
-"GABAergic","Vip","Inh L1-3 VIP HSPB6","Vip_1",157
-"GABAergic","Vip","Inh L1 VIP KLHDC8B","Vip_2",37
-"GABAergic","Vip","Inh L1-2 VIP PTGER3","Vip_2",35
-"GABAergic","Vip","Inh L1-2 VIP SCML4","Vip_2",53
-"GABAergic","Vip","Inh L1-3 VIP CHRNA2","Vip_2",125
-"GABAergic","Vip","Inh L1-3 VIP FNDC1","Vip_2",39
-"GABAergic","Vip","Inh L2 VIP SLC6A16","Vip_2",122
-"GABAergic","Vip","Inh L3-5 VIP IGDCC3","Vip_2",169
-"GABAergic","Vip","Inh L3-5 VIP TAC3","Vip_2",145
-"GABAergic","Vip","Inh L1-5 VIP CD27-AS1","Vip_3",32
-"GABAergic","Vip","Inh L1-5 VIP SMOC1","Vip_3",249
-"GABAergic","Vip","Inh L2-5 VIP BSPRY","Vip_3",38
-"GABAergic","Vip","Inh L3-5 VIP HS3ST3A1","Vip_3",104
-"GABAergic","Vip","Inh L5-6 VIP COL4A3","Vip_3",37
-"GABAergic","Vip","Inh L1-5 VIP LINC01013","Vip_4",56
-"GABAergic","Vip","Inh L1-5 VIP PHLDB3","Vip_4",29
-"GABAergic","Vip","Inh L2-5 VIP SOX11","Vip_4",63
-"GABAergic","Vip","Inh L3-6 VIP UG0898H09","Vip_4",53
-"GABAergic","Vip","Inh L3-6 VIP ZIM2-AS1","Vip_4",56
-"Non-Neuronal","VLMC","VLMC L1-5 PDGFRA COLEC12","VLMC",40
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+"AS/1","AS/1/LABEL","AS/1/ID","AS/2","AS/2/LABEL","AS/2/ID","AS/3","AS/3/LABEL","AS/3/ID","AS/4","AS/4/LABEL","AS/4/ID","AS/4/COUNT"
+"Non-Neuronal","animal cell","CL_0000548","Astro","astrocyte","CL_0000127","Astro L1-6 FGFR3 AQP1","astrocyte","CL_0000127","Astro_1","astrocyte","CL_0000127",119
+"Non-Neuronal","animal cell","CL_0000548","Astro","astrocyte","CL_0000127","Astro L1 FGFR3 SERPINI2","astrocyte","CL_0000127","Astro_1","astrocyte","CL_0000127",72
+"Non-Neuronal","animal cell","CL_0000548","Astro","astrocyte","CL_0000127","Astro L1-6 FGFR3 PLCG1","astrocyte","CL_0000127","Astro_2","astrocyte","CL_0000127",377
+"GABAergic","GABAergic neuron","CL_0000617","Pvalb","GABAergic neuron","CL_0000617","Inh L1-6 PVALB COL15A1","GABAergic neuron","CL_0000617","Chandelier","GABAergic neuron","CL_0000617",69
+"Non-Neuronal","animal cell","CL_0000548","Endo","endothelial cell","CL_0000115","Endo L2-5 NOSTRIN SRGN","endothelial cell","CL_0000115","Endo","endothelial cell","CL_0000115",64
+"Glutamatergic","glutamatergic neuron","CL_0000679","L2/3 IT","glutamatergic neuron","CL_0000679","Exc L2 LINC00507 ATP7B","glutamatergic neuron","CL_0000679","L2/3 IT","glutamatergic neuron","CL_0000679",16
+"Glutamatergic","glutamatergic neuron","CL_0000679","L2/3 IT","glutamatergic neuron","CL_0000679","Exc L2 LINC00507 GLRA3","glutamatergic neuron","CL_0000679","L2/3 IT","glutamatergic neuron","CL_0000679",1057
+"Glutamatergic","glutamatergic neuron","CL_0000679","L2/3 IT","glutamatergic neuron","CL_0000679","Exc L2-3 LINC00507 DSG3","glutamatergic neuron","CL_0000679","L2/3 IT","glutamatergic neuron","CL_0000679",87
+"Glutamatergic","glutamatergic neuron","CL_0000679","L2/3 IT","glutamatergic neuron","CL_0000679","Exc L2-3 RORB RTKN2","glutamatergic neuron","CL_0000679","L2/3 IT","glutamatergic neuron","CL_0000679",107
+"Glutamatergic","glutamatergic neuron","CL_0000679","L2/3 IT","glutamatergic neuron","CL_0000679","Exc L3 LAMP5 CARM1P1","glutamatergic neuron","CL_0000679","L2/3 IT","glutamatergic neuron","CL_0000679",318
+"Glutamatergic","glutamatergic neuron","CL_0000679","L2/3 IT","glutamatergic neuron","CL_0000679","Exc L2 LAMP5 KCNG3","glutamatergic neuron","CL_0000679","L2/3 IT","glutamatergic neuron","CL_0000679",16
+"Glutamatergic","glutamatergic neuron","CL_0000679","L5 ET","glutamatergic neuron","CL_0000679","Exc L3-5 FEZF2 ASGR2","glutamatergic neuron","CL_0000679","L5 ET_1","glutamatergic neuron","CL_0000679",620
+"Glutamatergic","glutamatergic neuron","CL_0000679","L5 ET","glutamatergic neuron","CL_0000679","Exc L5 FEZF2 CSN1S1","glutamatergic neuron","CL_0000679","L5 ET_1","glutamatergic neuron","CL_0000679",150
+"Glutamatergic","glutamatergic neuron","CL_0000679","L5 ET","glutamatergic neuron","CL_0000679","Exc L3-5 FEZF2 LINC01107","glutamatergic neuron","CL_0000679","L5 ET_2","glutamatergic neuron","CL_0000679",88
+"Glutamatergic","glutamatergic neuron","CL_0000679","L2/3 IT","glutamatergic neuron","CL_0000679","Exc L2-3 RORB PTPN3","glutamatergic neuron","CL_0000679","L5 IT_1","glutamatergic neuron","CL_0000679",118
+"Glutamatergic","glutamatergic neuron","CL_0000679","L2/3 IT","glutamatergic neuron","CL_0000679","Exc L2-3 RORB CCDC68","glutamatergic neuron","CL_0000679","L5 IT_1","glutamatergic neuron","CL_0000679",281
+"Glutamatergic","glutamatergic neuron","CL_0000679","L5 IT","glutamatergic neuron","CL_0000679","Exc L3 THEMIS ENPEP","glutamatergic neuron","CL_0000679","L5 IT_1","glutamatergic neuron","CL_0000679",100
+"Glutamatergic","glutamatergic neuron","CL_0000679","L5 IT","glutamatergic neuron","CL_0000679","Exc L3 RORB OTOGL","glutamatergic neuron","CL_0000679","L5 IT_1","glutamatergic neuron","CL_0000679",296
+"Glutamatergic","glutamatergic neuron","CL_0000679","L5 IT","glutamatergic neuron","CL_0000679","Exc L3-5 RORB LINC01202","glutamatergic neuron","CL_0000679","L5 IT_1","glutamatergic neuron","CL_0000679",108
+"Glutamatergic","glutamatergic neuron","CL_0000679","L5 IT","glutamatergic neuron","CL_0000679","Exc L5 THEMIS VILL","glutamatergic neuron","CL_0000679","L5 IT_1","glutamatergic neuron","CL_0000679",31
+"Glutamatergic","glutamatergic neuron","CL_0000679","L5 IT","glutamatergic neuron","CL_0000679","Exc L3-5 RORB TNNT2","glutamatergic neuron","CL_0000679","L5 IT_1","glutamatergic neuron","CL_0000679",92
+"Glutamatergic","glutamatergic neuron","CL_0000679","L5 IT","glutamatergic neuron","CL_0000679","Exc L3-5 RORB LAMA4","glutamatergic neuron","CL_0000679","L5 IT_1","glutamatergic neuron","CL_0000679",36
+"Glutamatergic","glutamatergic neuron","CL_0000679","L5 IT","glutamatergic neuron","CL_0000679","Exc L3-5 RORB RPRM","glutamatergic neuron","CL_0000679","L5 IT_2","glutamatergic neuron","CL_0000679",196
+"Glutamatergic","glutamatergic neuron","CL_0000679","L5 IT","glutamatergic neuron","CL_0000679","Exc L3-5 RORB LNX2","glutamatergic neuron","CL_0000679","L5 IT_2","glutamatergic neuron","CL_0000679",662
+"Glutamatergic","glutamatergic neuron","CL_0000679","L5 IT","glutamatergic neuron","CL_0000679","Exc L5 THEMIS SLC22A18","glutamatergic neuron","CL_0000679","L5 IT_2","glutamatergic neuron","CL_0000679",268
+"Glutamatergic","glutamatergic neuron","CL_0000679","L5 IT","glutamatergic neuron","CL_0000679","Exc L5 RORB MED8","glutamatergic neuron","CL_0000679","L5 IT_3","glutamatergic neuron","CL_0000679",47
+"Glutamatergic","glutamatergic neuron","CL_0000679","L5 IT","glutamatergic neuron","CL_0000679","Exc L5 THEMIS FGF10","glutamatergic neuron","CL_0000679","L5 IT_3","glutamatergic neuron","CL_0000679",17
+"Glutamatergic","glutamatergic neuron","CL_0000679","L5/6 NP","glutamatergic neuron","CL_0000679","Exc L5 FEZF2 RNF144A-AS1","glutamatergic neuron","CL_0000679","L5/6 NP","glutamatergic neuron","CL_0000679",108
+"Glutamatergic","glutamatergic neuron","CL_0000679","L5/6 NP","glutamatergic neuron","CL_0000679","Exc L5 FEZF2 PKD2L1","glutamatergic neuron","CL_0000679","L5/6 NP","glutamatergic neuron","CL_0000679",280
+"Glutamatergic","glutamatergic neuron","CL_0000679","L5/6 NP","glutamatergic neuron","CL_0000679","Exc L5 FEZF2 NREP-AS1","glutamatergic neuron","CL_0000679","L5/6 NP","glutamatergic neuron","CL_0000679",229
+"Glutamatergic","glutamatergic neuron","CL_0000679","L5/6 NP","glutamatergic neuron","CL_0000679","Exc L5-6 FEZF2 LPO","glutamatergic neuron","CL_0000679","L5/6 NP","glutamatergic neuron","CL_0000679",117
+"Glutamatergic","glutamatergic neuron","CL_0000679","L5/6 NP","glutamatergic neuron","CL_0000679","Exc L5-6 FEZF2 IFNG-AS1","glutamatergic neuron","CL_0000679","L5/6 NP","glutamatergic neuron","CL_0000679",753
+"Glutamatergic","glutamatergic neuron","CL_0000679","L6 CT","glutamatergic neuron","CL_0000679","Exc L5 THEMIS RGPD6","glutamatergic neuron","CL_0000679","L6 CT_1","glutamatergic neuron","CL_0000679",130
+"Glutamatergic","glutamatergic neuron","CL_0000679","L6 CT","glutamatergic neuron","CL_0000679","Exc L5-6 FEZF2 OR1L8","glutamatergic neuron","CL_0000679","L6 CT_1","glutamatergic neuron","CL_0000679",140
+"Glutamatergic","glutamatergic neuron","CL_0000679","L6 CT","glutamatergic neuron","CL_0000679","Exc L5-6 FEZF2 FILIP1L","glutamatergic neuron","CL_0000679","L6 CT_1","glutamatergic neuron","CL_0000679",154
+"Glutamatergic","glutamatergic neuron","CL_0000679","L6 CT","glutamatergic neuron","CL_0000679","Exc L5 THEMIS LINC01116","glutamatergic neuron","CL_0000679","L6 CT_1","glutamatergic neuron","CL_0000679",79
+"Glutamatergic","glutamatergic neuron","CL_0000679","L6 CT","glutamatergic neuron","CL_0000679","Exc L5-6 FEZF2 SH2D1B","glutamatergic neuron","CL_0000679","L6 CT_1","glutamatergic neuron","CL_0000679",81
+"Glutamatergic","glutamatergic neuron","CL_0000679","L6 CT","glutamatergic neuron","CL_0000679","Exc L5-6 FEZF2 C9orf135-AS1","glutamatergic neuron","CL_0000679","L6 CT_2","glutamatergic neuron","CL_0000679",1416
+"Glutamatergic","glutamatergic neuron","CL_0000679","L6 IT","glutamatergic neuron","CL_0000679","Exc L6 THEMIS SLN","glutamatergic neuron","CL_0000679","L6 IT_1","glutamatergic neuron","CL_0000679",436
+"Glutamatergic","glutamatergic neuron","CL_0000679","L6 IT","glutamatergic neuron","CL_0000679","Exc L6 THEMIS LINC00343","glutamatergic neuron","CL_0000679","L6 IT_1","glutamatergic neuron","CL_0000679",905
+"Glutamatergic","glutamatergic neuron","CL_0000679","L5 IT","glutamatergic neuron","CL_0000679","Exc L5-6 THEMIS TNFAIP6","glutamatergic neuron","CL_0000679","L6 IT_2","glutamatergic neuron","CL_0000679",147
+"Glutamatergic","glutamatergic neuron","CL_0000679","L6 IT","glutamatergic neuron","CL_0000679","Exc L6 THEMIS SNTG2","glutamatergic neuron","CL_0000679","L6 IT_2","glutamatergic neuron","CL_0000679",488
+"Glutamatergic","glutamatergic neuron","CL_0000679","L6 IT Car3","glutamatergic neuron","CL_0000679","Exc L5-6 THEMIS SMYD1","glutamatergic neuron","CL_0000679","L6 IT_3","glutamatergic neuron","CL_0000679",327
+"Glutamatergic","glutamatergic neuron","CL_0000679","L6b","glutamatergic neuron","CL_0000679","Exc L6 FEZF2 POGK","glutamatergic neuron","CL_0000679","L6b","glutamatergic neuron","CL_0000679",118
+"Glutamatergic","glutamatergic neuron","CL_0000679","L6b","glutamatergic neuron","CL_0000679","Exc L5-6 FEZF2 CFTR","glutamatergic neuron","CL_0000679","L6b","glutamatergic neuron","CL_0000679",102
+"Glutamatergic","glutamatergic neuron","CL_0000679","L6b","glutamatergic neuron","CL_0000679","Exc L6 FEZF2 KLK7","glutamatergic neuron","CL_0000679","L6b","glutamatergic neuron","CL_0000679",1599
+"Glutamatergic","glutamatergic neuron","CL_0000679","L6b","glutamatergic neuron","CL_0000679","Exc L6 FEZF2 FFAR4","glutamatergic neuron","CL_0000679","L6b","glutamatergic neuron","CL_0000679",95
+"Glutamatergic","glutamatergic neuron","CL_0000679","L6b","glutamatergic neuron","CL_0000679","Exc L6 FEZF2 PROKR2","glutamatergic neuron","CL_0000679","L6b","glutamatergic neuron","CL_0000679",67
+"Glutamatergic","glutamatergic neuron","CL_0000679","L6b","glutamatergic neuron","CL_0000679","Exc L6 FEZF2 PDYN","glutamatergic neuron","CL_0000679","L6b","glutamatergic neuron","CL_0000679",19
+"GABAergic","GABAergic neuron","CL_0000617","Lamp5","GABAergic neuron","CL_0000617","Inh L1 LAMP5 PVRL2","GABAergic neuron","CL_0000617","Lamp5_1","GABAergic neuron","CL_0000617",43
+"GABAergic","GABAergic neuron","CL_0000617","Lamp5","GABAergic neuron","CL_0000617","Inh L1 LAMP5 RAB11FIP1","GABAergic neuron","CL_0000617","Lamp5_2","GABAergic neuron","CL_0000617",112
+"GABAergic","GABAergic neuron","CL_0000617","Lamp5","GABAergic neuron","CL_0000617","Inh L1-6 LAMP5 AARD","GABAergic neuron","CL_0000617","Lamp5_2","GABAergic neuron","CL_0000617",687
+"GABAergic","GABAergic neuron","CL_0000617","Lamp5","GABAergic neuron","CL_0000617","Inh L1-6 LAMP5 NES","GABAergic neuron","CL_0000617","Lamp5_2","GABAergic neuron","CL_0000617",192
+"GABAergic","GABAergic neuron","CL_0000617","Lamp5","GABAergic neuron","CL_0000617","Inh L1-6 LAMP5 CA1","GABAergic neuron","CL_0000617","Lamp5_3","GABAergic neuron","CL_0000617",223
+"GABAergic","GABAergic neuron","CL_0000617","Lamp5","GABAergic neuron","CL_0000617","Inh L5-6 LAMP5 CRABP1","GABAergic neuron","CL_0000617","Lamp5_3","GABAergic neuron","CL_0000617",411
+"GABAergic","GABAergic neuron","CL_0000617","Lamp5","GABAergic neuron","CL_0000617","Inh L1 PAX6 MIR101-1","GABAergic neuron","CL_0000617","Lamp5_4","GABAergic neuron","CL_0000617",65
+"GABAergic","GABAergic neuron","CL_0000617","Lamp5","GABAergic neuron","CL_0000617","Inh L3-6 PAX6 LINC01497","GABAergic neuron","CL_0000617","Lamp5_4","GABAergic neuron","CL_0000617",36
+"GABAergic","GABAergic neuron","CL_0000617","Lamp5","GABAergic neuron","CL_0000617","Inh L1 LAMP5 NMBR","GABAergic neuron","CL_0000617","Lamp5_5","GABAergic neuron","CL_0000617",86
+"GABAergic","GABAergic neuron","CL_0000617","Lamp5","GABAergic neuron","CL_0000617","Inh L1 LAMP5 BMP2","GABAergic neuron","CL_0000617","Lamp5_5","GABAergic neuron","CL_0000617",145
+"Non-Neuronal","animal cell","CL_0000548","Micro-PVM","perivascular macrophage","CL_0000881","Micro L1-6 TYROBP CD74","microglial cell","CL_0000129","Microglia/PVM","perivascular macrophage","CL_0000881",108
+"Non-Neuronal","animal cell","CL_0000548","Oligo","oligodendrocyte","CL_0000128","Oligo L3-6 OPALIN ENPP6","oligodendrocyte","CL_0000128","Oligo_1","oligodendrocyte","CL_0000128",369
+"Non-Neuronal","animal cell","CL_0000548","Oligo","oligodendrocyte","CL_0000128","Oligo L2-6 OPALIN FTH1P3","oligodendrocyte","CL_0000128","Oligo_2","oligodendrocyte","CL_0000128",1504
+"Non-Neuronal","animal cell","CL_0000548","Oligo","oligodendrocyte","CL_0000128","Oligo L5-6 OPALIN LDLRAP1","oligodendrocyte","CL_0000128","Oligo_2","oligodendrocyte","CL_0000128",3
+"Non-Neuronal","animal cell","CL_0000548","OPC","oligodendrocyte precursor cell","CL_0002453","OPC L1-6 PDGFRA COL20A1","oligodendrocyte precursor cell","CL_0002453","OPC","oligodendrocyte precursor cell","CL_0002453",283
+"GABAergic","GABAergic neuron","CL_0000617","Pvalb","GABAergic neuron","CL_0000617","Inh L5 PVALB LRIG3","GABAergic neuron","CL_0000617","Pvalb_1","GABAergic neuron","CL_0000617",163
+"GABAergic","GABAergic neuron","CL_0000617","Pvalb","GABAergic neuron","CL_0000617","Inh L1-2 SST CLIC6","GABAergic neuron","CL_0000617","Pvalb_1","GABAergic neuron","CL_0000617",46
+"GABAergic","GABAergic neuron","CL_0000617","Pvalb","GABAergic neuron","CL_0000617","Inh L2-5 PVALB HHIPL1","GABAergic neuron","CL_0000617","Pvalb_1","GABAergic neuron","CL_0000617",141
+"GABAergic","GABAergic neuron","CL_0000617","Pvalb","GABAergic neuron","CL_0000617","Inh L5-6 PVALB KCNIP2","GABAergic neuron","CL_0000617","Pvalb_1","GABAergic neuron","CL_0000617",27
+"GABAergic","GABAergic neuron","CL_0000617","Pvalb","GABAergic neuron","CL_0000617","Inh L3-5 PVALB ISG20","GABAergic neuron","CL_0000617","Pvalb_1","GABAergic neuron","CL_0000617",58
+"GABAergic","GABAergic neuron","CL_0000617","Pvalb","GABAergic neuron","CL_0000617","Inh L1-2 PVALB CDK20","GABAergic neuron","CL_0000617","Pvalb_1","GABAergic neuron","CL_0000617",35
+"GABAergic","GABAergic neuron","CL_0000617","Pvalb","GABAergic neuron","CL_0000617","Inh L3 PVALB SAMD13","GABAergic neuron","CL_0000617","Pvalb_1","GABAergic neuron","CL_0000617",338
+"GABAergic","GABAergic neuron","CL_0000617","Pvalb","GABAergic neuron","CL_0000617","Inh L2-5 PVALB RPH3AL","GABAergic neuron","CL_0000617","Pvalb_1","GABAergic neuron","CL_0000617",820
+"GABAergic","GABAergic neuron","CL_0000617","Pvalb","GABAergic neuron","CL_0000617","Inh L2 PVALB FRZB","GABAergic neuron","CL_0000617","Pvalb_1","GABAergic neuron","CL_0000617",28
+"GABAergic","GABAergic neuron","CL_0000617","Pvalb","GABAergic neuron","CL_0000617","Inh L5-6 PVALB ZFPM2-AS1","GABAergic neuron","CL_0000617","Pvalb_1","GABAergic neuron","CL_0000617",147
+"GABAergic","GABAergic neuron","CL_0000617","Pvalb","GABAergic neuron","CL_0000617","Inh L5-6 PVALB FAM150B","GABAergic neuron","CL_0000617","Pvalb_2","GABAergic neuron","CL_0000617",35
+"GABAergic","GABAergic neuron","CL_0000617","Pvalb","GABAergic neuron","CL_0000617","Inh L5-6 PVALB MEPE","GABAergic neuron","CL_0000617","Pvalb_2","GABAergic neuron","CL_0000617",58
+"GABAergic","GABAergic neuron","CL_0000617","Pvalb","GABAergic neuron","CL_0000617","Inh L5-6 PVALB GAPDHP60","GABAergic neuron","CL_0000617","Pvalb_2","GABAergic neuron","CL_0000617",35
+"GABAergic","GABAergic neuron","CL_0000617","Sncg","GABAergic neuron","CL_0000617","Inh L1 PAX6 CHRFAM7A","GABAergic neuron","CL_0000617","Sncg_1","GABAergic neuron","CL_0000617",185
+"GABAergic","GABAergic neuron","CL_0000617","Sncg","GABAergic neuron","CL_0000617","Inh L1-6 VIP SLC7A6OS","GABAergic neuron","CL_0000617","Sncg_1","GABAergic neuron","CL_0000617",61
+"GABAergic","GABAergic neuron","CL_0000617","Sncg","GABAergic neuron","CL_0000617","Inh L2 PAX6 FREM2","GABAergic neuron","CL_0000617","Sncg_2","GABAergic neuron","CL_0000617",108
+"GABAergic","GABAergic neuron","CL_0000617","Sncg","GABAergic neuron","CL_0000617","Inh L1-2 VIP HTR3A","GABAergic neuron","CL_0000617","Sncg_3","GABAergic neuron","CL_0000617",42
+"GABAergic","GABAergic neuron","CL_0000617","Sncg","GABAergic neuron","CL_0000617","Inh L1-2 VIP WNT4","GABAergic neuron","CL_0000617","Sncg_3","GABAergic neuron","CL_0000617",52
+"GABAergic","GABAergic neuron","CL_0000617","Sncg","GABAergic neuron","CL_0000617","Inh L1 PVALB SST ASIC4","GABAergic neuron","CL_0000617","Sncg_4","GABAergic neuron","CL_0000617",186
+"GABAergic","GABAergic neuron","CL_0000617","Sncg","GABAergic neuron","CL_0000617","Inh L1 SST DEFB108B","GABAergic neuron","CL_0000617","Sncg_4","GABAergic neuron","CL_0000617",223
+"GABAergic","GABAergic neuron","CL_0000617","Sncg","GABAergic neuron","CL_0000617","Inh L1 SST P4HA3","GABAergic neuron","CL_0000617","Sncg_4","GABAergic neuron","CL_0000617",38
+"GABAergic","GABAergic neuron","CL_0000617","Sst Chodl","GABAergic neuron","CL_0000617","Inh L1-6 SST NPY","GABAergic neuron","CL_0000617","Sst Chodl","GABAergic neuron","CL_0000617",67
+"GABAergic","GABAergic neuron","CL_0000617","Sst","GABAergic neuron","CL_0000617","Inh L5 SST RPL35AP11","GABAergic neuron","CL_0000617","Sst_1","GABAergic neuron","CL_0000617",270
+"GABAergic","GABAergic neuron","CL_0000617","Sst","GABAergic neuron","CL_0000617","Inh L3-5 SST CDH3","GABAergic neuron","CL_0000617","Sst_1","GABAergic neuron","CL_0000617",17
+"GABAergic","GABAergic neuron","CL_0000617","Sst","GABAergic neuron","CL_0000617","Inh L5-6 PVALB SST CRHR2","GABAergic neuron","CL_0000617","Sst_2","GABAergic neuron","CL_0000617",68
+"GABAergic","GABAergic neuron","CL_0000617","Sst","GABAergic neuron","CL_0000617","Inh L3-5 SST OR5AH1P","GABAergic neuron","CL_0000617","Sst_2","GABAergic neuron","CL_0000617",78
+"GABAergic","GABAergic neuron","CL_0000617","Sst","GABAergic neuron","CL_0000617","Inh L5-6 SST ISX","GABAergic neuron","CL_0000617","Sst_2","GABAergic neuron","CL_0000617",113
+"GABAergic","GABAergic neuron","CL_0000617","Sst","GABAergic neuron","CL_0000617","Inh L1-3 SST FAM20A","GABAergic neuron","CL_0000617","Sst_3","GABAergic neuron","CL_0000617",367
+"GABAergic","GABAergic neuron","CL_0000617","Sst","GABAergic neuron","CL_0000617","Inh L1-2 SST PRRT4","GABAergic neuron","CL_0000617","Sst_3","GABAergic neuron","CL_0000617",123
+"GABAergic","GABAergic neuron","CL_0000617","Sst","GABAergic neuron","CL_0000617","Inh L3-5 SST GGTLC3","GABAergic neuron","CL_0000617","Sst_3","GABAergic neuron","CL_0000617",417
+"GABAergic","GABAergic neuron","CL_0000617","Sst","GABAergic neuron","CL_0000617","Inh L1-2 SST CCNJL","GABAergic neuron","CL_0000617","Sst_3","GABAergic neuron","CL_0000617",97
+"GABAergic","GABAergic neuron","CL_0000617","Sst","GABAergic neuron","CL_0000617","Inh L2-3 SST NMU","GABAergic neuron","CL_0000617","Sst_3","GABAergic neuron","CL_0000617",153
+"GABAergic","GABAergic neuron","CL_0000617","Sst","GABAergic neuron","CL_0000617","Inh L5-6 SST PIK3CD","GABAergic neuron","CL_0000617","Sst_4","GABAergic neuron","CL_0000617",41
+"GABAergic","GABAergic neuron","CL_0000617","Sst","GABAergic neuron","CL_0000617","Inh L5-6 SST PAWR","GABAergic neuron","CL_0000617","Sst_4","GABAergic neuron","CL_0000617",65
+"GABAergic","GABAergic neuron","CL_0000617","Sst","GABAergic neuron","CL_0000617","Inh L5-6 SST DNAJC14","GABAergic neuron","CL_0000617","Sst_5","GABAergic neuron","CL_0000617",9
+"GABAergic","GABAergic neuron","CL_0000617","Sst","GABAergic neuron","CL_0000617","Inh L5-6 SST BEAN1","GABAergic neuron","CL_0000617","Sst_5","GABAergic neuron","CL_0000617",24
+"GABAergic","GABAergic neuron","CL_0000617","Sst","GABAergic neuron","CL_0000617","Inh L5-6 SST FBN2","GABAergic neuron","CL_0000617","Sst_6","GABAergic neuron","CL_0000617",33
+"GABAergic","GABAergic neuron","CL_0000617","Sst","GABAergic neuron","CL_0000617","Inh L5-6 SST KLHL1","GABAergic neuron","CL_0000617","Sst_6","GABAergic neuron","CL_0000617",62
+"GABAergic","GABAergic neuron","CL_0000617","Sst","GABAergic neuron","CL_0000617","Inh L5-6 SST C4orf26","GABAergic neuron","CL_0000617","Sst_6","GABAergic neuron","CL_0000617",35
+"GABAergic","GABAergic neuron","CL_0000617","Sst","GABAergic neuron","CL_0000617","Inh L6 SST TH","GABAergic neuron","CL_0000617","Sst_7","GABAergic neuron","CL_0000617",28
+"GABAergic","GABAergic neuron","CL_0000617","Vip","GABAergic neuron","CL_0000617","Inh L1-2 VIP EXPH5","GABAergic neuron","CL_0000617","Vip_1","GABAergic neuron","CL_0000617",219
+"GABAergic","GABAergic neuron","CL_0000617","Vip","GABAergic neuron","CL_0000617","Inh L1-3 VIP CBLN1","GABAergic neuron","CL_0000617","Vip_1","GABAergic neuron","CL_0000617",182
+"GABAergic","GABAergic neuron","CL_0000617","Vip","GABAergic neuron","CL_0000617","Inh L1-3 VIP HSPB6","GABAergic neuron","CL_0000617","Vip_1","GABAergic neuron","CL_0000617",157
+"GABAergic","GABAergic neuron","CL_0000617","Vip","GABAergic neuron","CL_0000617","Inh L1-3 VIP FNDC1","GABAergic neuron","CL_0000617","Vip_2","GABAergic neuron","CL_0000617",39
+"GABAergic","GABAergic neuron","CL_0000617","Vip","GABAergic neuron","CL_0000617","Inh L1-2 VIP PTGER3","GABAergic neuron","CL_0000617","Vip_2","GABAergic neuron","CL_0000617",35
+"GABAergic","GABAergic neuron","CL_0000617","Vip","GABAergic neuron","CL_0000617","Inh L1 VIP KLHDC8B","GABAergic neuron","CL_0000617","Vip_2","GABAergic neuron","CL_0000617",37
+"GABAergic","GABAergic neuron","CL_0000617","Vip","GABAergic neuron","CL_0000617","Inh L1-2 VIP SCML4","GABAergic neuron","CL_0000617","Vip_2","GABAergic neuron","CL_0000617",53
+"GABAergic","GABAergic neuron","CL_0000617","Vip","GABAergic neuron","CL_0000617","Inh L2 VIP SLC6A16","GABAergic neuron","CL_0000617","Vip_2","GABAergic neuron","CL_0000617",122
+"GABAergic","GABAergic neuron","CL_0000617","Vip","GABAergic neuron","CL_0000617","Inh L3-5 VIP TAC3","GABAergic neuron","CL_0000617","Vip_2","GABAergic neuron","CL_0000617",145
+"GABAergic","GABAergic neuron","CL_0000617","Vip","GABAergic neuron","CL_0000617","Inh L1-3 VIP CHRNA2","GABAergic neuron","CL_0000617","Vip_2","GABAergic neuron","CL_0000617",125
+"GABAergic","GABAergic neuron","CL_0000617","Vip","GABAergic neuron","CL_0000617","Inh L3-5 VIP IGDCC3","GABAergic neuron","CL_0000617","Vip_2","GABAergic neuron","CL_0000617",169
+"GABAergic","GABAergic neuron","CL_0000617","Vip","GABAergic neuron","CL_0000617","Inh L5-6 VIP COL4A3","GABAergic neuron","CL_0000617","Vip_3","GABAergic neuron","CL_0000617",37
+"GABAergic","GABAergic neuron","CL_0000617","Vip","GABAergic neuron","CL_0000617","Inh L3-5 VIP HS3ST3A1","GABAergic neuron","CL_0000617","Vip_3","GABAergic neuron","CL_0000617",104
+"GABAergic","GABAergic neuron","CL_0000617","Vip","GABAergic neuron","CL_0000617","Inh L1-5 VIP SMOC1","GABAergic neuron","CL_0000617","Vip_3","GABAergic neuron","CL_0000617",249
+"GABAergic","GABAergic neuron","CL_0000617","Vip","GABAergic neuron","CL_0000617","Inh L1-5 VIP CD27-AS1","GABAergic neuron","CL_0000617","Vip_3","GABAergic neuron","CL_0000617",32
+"GABAergic","GABAergic neuron","CL_0000617","Vip","GABAergic neuron","CL_0000617","Inh L2-5 VIP BSPRY","GABAergic neuron","CL_0000617","Vip_3","GABAergic neuron","CL_0000617",38
+"GABAergic","GABAergic neuron","CL_0000617","Vip","GABAergic neuron","CL_0000617","Inh L1-5 VIP LINC01013","GABAergic neuron","CL_0000617","Vip_4","GABAergic neuron","CL_0000617",56
+"GABAergic","GABAergic neuron","CL_0000617","Vip","GABAergic neuron","CL_0000617","Inh L3-6 VIP ZIM2-AS1","GABAergic neuron","CL_0000617","Vip_4","GABAergic neuron","CL_0000617",56
+"GABAergic","GABAergic neuron","CL_0000617","Vip","GABAergic neuron","CL_0000617","Inh L1-5 VIP PHLDB3","GABAergic neuron","CL_0000617","Vip_4","GABAergic neuron","CL_0000617",29
+"GABAergic","GABAergic neuron","CL_0000617","Vip","GABAergic neuron","CL_0000617","Inh L3-6 VIP UG0898H09","GABAergic neuron","CL_0000617","Vip_4","GABAergic neuron","CL_0000617",53
+"GABAergic","GABAergic neuron","CL_0000617","Vip","GABAergic neuron","CL_0000617","Inh L2-5 VIP SOX11","GABAergic neuron","CL_0000617","Vip_4","GABAergic neuron","CL_0000617",63
+"Non-Neuronal","animal cell","CL_0000548","VLMC","brain pericyte","CL_2000043","VLMC L1-5 PDGFRA COLEC12","brain pericyte","CL_2000043","VLMC","brain pericyte","CL_2000043",40

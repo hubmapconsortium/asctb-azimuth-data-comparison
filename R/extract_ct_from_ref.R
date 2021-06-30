@@ -1,20 +1,16 @@
 library(Seurat)
 library(rjson)
 
-
-# args <- commandArgs(trailingOnly = TRUE)
-#
-# body_organ <- args[1]
-# cell_hierarchy_cols <- args[2:length(args)]
-
-extract_reference  <- function(body_organ, cell_hierarchy_cols) {
+process_reference <- function(body_organ, cell_hierarchy_cols) {
 
   ref <- readRDS(stringr::str_interp("data/azimuth_references/${body_organ}.Rds"))
 
   cell_types <- ref@meta.data[cell_hierarchy_cols];
-  final_column_names <- sapply(1:length(cell_hierarchy_cols), function (x) return(stringr::str_interp("AS/${x}")))
+  final_column_names <- sapply(1:length(cell_hierarchy_cols),
+                               function (x)
+                                 return(stringr::str_interp("AS/${x}")))
   names(cell_types) <- final_column_names
-  count_col <- stringr::str_interp("AS/${length(cell_hierarchy_cols)}/count")
+  count_col <- stringr::str_interp("AS/${length(cell_hierarchy_cols)}/COUNT")
   cell_types[count_col] <- 1;
   group_by_formula <- as.formula(
     paste(
@@ -25,24 +21,62 @@ extract_reference  <- function(body_organ, cell_hierarchy_cols) {
             collapse = " + ")))
   cell_types <- aggregate( group_by_formula, data = cell_types, FUN = sum )
 
-  empty_rows <- matrix(rep(NA, length(cell_hierarchy_cols)*10), 10,length(cell_hierarchy_cols))
+  return(cell_types)
+}
+
+process_cell_type_data <- function(body_organ, cell_hierarchy_cols) {
+  return(sapply(1:length(cell_hierarchy_cols),
+                function (i, levels) {
+                  ont_data <- read.csv(
+                    stringr::str_interp(
+                      "data/azimuth_ct_tables/${body_organ}__${levels[i]}.csv"))
+                  df <- data.frame(
+                    name = ont_data$Label,
+                    label = gsub("^\\[(.*?)\\].*", "\\1",ont_data$OBO.Ontology.ID),
+                    id = gsub(".*http:\\/\\/purl\\.obolibrary\\.org\\/obo\\/(.*?)\\)$",
+                         "\\1",
+                         ont_data$OBO.Ontology.ID))
+                  names(df) <- c(paste("AS/",i, sep = ""),
+                                 paste("AS/",i,"/LABEL", sep = ""),
+                                 paste("AS/",i,"/ID", sep = ""))
+                  return(df)
+                  },
+                cell_hierarchy_cols,
+                simplify = FALSE))
+}
+
+write_asctb <- function(body_organ, asctb_table) {
+  column_count <- ncol(asctb_table)
+  empty_row_count <- 10
+  empty_rows <- matrix(rep(NA, column_count*empty_row_count),
+                       empty_row_count,
+                       column_count)
   write.table(empty_rows,
               file =  stringr::str_interp("data/asctb_tables/${body_organ}.csv"),
               sep = ',',
               na = "",
               row.names = FALSE,
               col.names = FALSE)
-  write.table(cell_types,
+  write.table(asctb_table,
               file = stringr::str_interp("data/asctb_tables/${body_organ}.csv"),
               sep = ',',
               append = TRUE,
               row.names = FALSE,
               col.names = TRUE)
-
 }
 
 for (reference in fromJSON(file = 'data/organ_data.json')$references) {
-  extract_reference(reference$name, reference$cell_type_columns);
+  reference_table <- process_reference(reference$name, reference$cell_type_columns)
+  ct_ontology_tables <- process_cell_type_data(reference$name, reference$cell_type_columns)
+  merged_data <- Reduce(merge, ct_ontology_tables, reference_table)
+  column_order <- c(
+    sapply(1:length(reference$cell_type_columns),
+           function (n)
+             c(paste("AS/",n,sep=""),
+               paste("AS/",n,"/LABEL",sep=""),
+               paste("AS/",n,"/ID",sep=""))),
+    paste("AS/",length(reference$cell_type_columns),"/COUNT",sep=""))
+  write_asctb(reference$name, merged_data[,column_order])
 }
 
 

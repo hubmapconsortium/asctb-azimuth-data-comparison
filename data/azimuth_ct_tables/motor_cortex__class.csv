@@ -1,0 +1,4 @@
+"","Label","Expanded Label","OBO Ontology ID","Markers"
+"1","Glutamatergic","Glutamatergic neuron","[glutamatergic neuron](http://www.ontobee.org/ontology/CL?iri=http://purl.obolibrary.org/obo/CL_0000679)","SV2B,  SATB2,  CELF2,  PHACTR1,  CHN1,  KHDRBS3,  RALYL,  LDB2,  NELL2,  KALRN"
+"2","GABAergic","GABAergic neuron","[GABAergic neuron](http://www.ontobee.org/ontology/CL?iri=http://purl.obolibrary.org/obo/CL_0000617)","GAD1,  GRIP1,  KAZN,  KCNC2,  TCF4,  GAD2,  MAF,  SLC6A1,  RBMS3,  NHS"
+"3","Non-Neuronal","Non-neuronal cell","[animal cell](http://www.ontobee.org/ontology/CL?iri=http://purl.obolibrary.org/obo/CL_0000548)","QKI,  ZBTB20,  NCKAP5,  PTGDS,  PHLPP1,  CDH20,  PPP2R2B,  PDE4B,  DOCK1,  MAP4K4"
