@@ -2,5 +2,6 @@
 .Rhistory
 packrat/
 dist/
+data/asctb_tables/*
 .Rproj.user/
 .Rproj.user
