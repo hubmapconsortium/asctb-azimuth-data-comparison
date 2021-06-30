@@ -1,68 +1,64 @@
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-"AS/1","AS/2","AS/3","AS/3/count"
-"DC","ASDC","ASDC_mDC",8
-"DC","ASDC","ASDC_pDC",8
-"B","B intermediate","B intermediate kappa",301
-"B","B intermediate","B intermediate lambda",598
-"B","B memory","B memory kappa",304
-"B","B memory","B memory lambda",293
-"B","B naive","B naive kappa",570
-"B","B naive","B naive lambda",333
-"Mono","CD14 Mono","CD14 Mono",3673
-"Mono","CD16 Mono","CD16 Mono",891
-"CD4 T","CD4 CTL","CD4 CTL",296
-"CD4 T","CD4 Naive","CD4 Naive",1403
-"CD4 T","CD4 Proliferating","CD4 Proliferating",57
-"CD4 T","CD4 TCM","CD4 TCM_1",8141
-"CD4 T","CD4 TCM","CD4 TCM_2",593
-"CD4 T","CD4 TCM","CD4 TCM_3",6155
-"CD4 T","CD4 TEM","CD4 TEM_1",227
-"CD4 T","CD4 TEM","CD4 TEM_2",66
-"CD4 T","CD4 TEM","CD4 TEM_3",347
-"CD4 T","CD4 TEM","CD4 TEM_4",63
-"CD8 T","CD8 Naive","CD8 Naive",981
-"CD8 T","CD8 Naive","CD8 Naive_2",167
-"CD8 T","CD8 Proliferating","CD8 Proliferating",31
-"CD8 T","CD8 TCM","CD8 TCM_1",929
-"CD8 T","CD8 TCM","CD8 TCM_2",1322
-"CD8 T","CD8 TCM","CD8 TCM_3",632
-"CD8 T","CD8 TEM","CD8 TEM_1",299
-"CD8 T","CD8 TEM","CD8 TEM_2",335
-"CD8 T","CD8 TEM","CD8 TEM_3",290
-"CD8 T","CD8 TEM","CD8 TEM_4",285
-"CD8 T","CD8 TEM","CD8 TEM_5",283
-"CD8 T","CD8 TEM","CD8 TEM_6",304
-"DC","cDC1","cDC1",150
-"DC","cDC2","cDC2_1",173
-"DC","cDC2","cDC2_2",299
-"other T","dnT","dnT_1",63
-"other T","dnT","dnT_2",118
-"other","Eryth","Eryth",81
-"other T","gdT","gdT_1",301
-"other T","gdT","gdT_2",196
-"other T","gdT","gdT_3",231
-"other T","gdT","gdT_4",107
-"other","HSPC","HSPC",300
-"other","ILC","ILC",131
-"other T","MAIT","MAIT",600
-"NK","NK Proliferating","NK Proliferating",214
-"NK","NK","NK_1",569
-"NK","NK","NK_2",657
-"NK","NK","NK_3",190
-"NK","NK","NK_4",130
-"NK","NK_CD56bright","NK_CD56bright",291
-"DC","pDC","pDC",284
-"B","Plasmablast","Plasma",262
-"B","Plasmablast","Plasmablast",37
-"other","Platelet","Platelet",566
-"CD4 T","Treg","Treg Memory",160
-"CD4 T","Treg","Treg Naive",138
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+"AS/1","AS/1/LABEL","AS/1/ID","AS/2","AS/2/LABEL","AS/2/ID","AS/3","AS/3/LABEL","AS/3/ID","AS/3/COUNT"
+"DC","dendritic cell","CL_0000451","ASDC","plasmacytoid dendritic cell","CL_0000784","ASDC_mDC","myeloid dendritic cell","CL_0000782",8
+"DC","dendritic cell","CL_0000451","ASDC","plasmacytoid dendritic cell","CL_0000784","ASDC_pDC","plasmacytoid dendritic cell","CL_0000784",8
+"B","mature B cell","CL_0000785","B intermediate","mature B cell","CL_0000785","B intermediate kappa","mature B cell","CL_0000785",301
+"B","mature B cell","CL_0000785","B intermediate","mature B cell","CL_0000785","B intermediate lambda","mature B cell","CL_0000785",598
+"B","mature B cell","CL_0000785","B memory","memory B cell","CL_0000787","B memory kappa","memory B cell","CL_0000787",304
+"B","mature B cell","CL_0000785","B memory","memory B cell","CL_0000787","B memory lambda","memory B cell","CL_0000787",293
+"B","mature B cell","CL_0000785","B naive","naive B cell","CL_0000788","B naive kappa","naive B cell","CL_0000788",570
+"B","mature B cell","CL_0000785","B naive","naive B cell","CL_0000788","B naive lambda","naive B cell","CL_0000788",333
+"Mono","monocyte","CL_0000576","CD14 Mono","CD14-positive, CD16-negative classical monocyte","CL_0002057","CD14 Mono","CD14-positive, CD16-negative classical monocyte","CL_0002057",3673
+"Mono","monocyte","CL_0000576","CD16 Mono","CD14-low, CD16-positive monocyte","CL_0002396","CD16 Mono","CD14-low, CD16-positive monocyte","CL_0002396",891
+"CD4 T","CD4-positive, alpha-beta T cell","CL_0000624","CD4 CTL","CD4-positive, alpha-beta cytotoxic T cell","CL_0000934","CD4 CTL","CD4-positive, alpha-beta cytotoxic T cell","CL_0000934",296
+"CD4 T","CD4-positive, alpha-beta T cell","CL_0000624","CD4 Naive","naive thymus-derived CD4-positive, alpha-beta T cell","CL_0000895","CD4 Naive","naive thymus-derived CD4-positive, alpha-beta T cell","CL_0000895",1403
+"CD4 T","CD4-positive, alpha-beta T cell","CL_0000624","CD4 Proliferating","activated CD4-positive, alpha-beta T cell","CL_0000896","CD4 Proliferating","activated CD4-positive, alpha-beta T cell","CL_0000896",57
+"CD4 T","CD4-positive, alpha-beta T cell","CL_0000624","CD4 TCM","CD4-positive, alpha-beta memory T cell","CL_0000897","CD4 TCM_1","CD4-positive, alpha-beta memory T cell","CL_0000897",8141
+"CD4 T","CD4-positive, alpha-beta T cell","CL_0000624","CD4 TCM","CD4-positive, alpha-beta memory T cell","CL_0000897","CD4 TCM_2","CD4-positive, alpha-beta memory T cell","CL_0000897",593
+"CD4 T","CD4-positive, alpha-beta T cell","CL_0000624","CD4 TCM","CD4-positive, alpha-beta memory T cell","CL_0000897","CD4 TCM_3","CD4-positive, alpha-beta memory T cell","CL_0000897",6155
+"CD4 T","CD4-positive, alpha-beta T cell","CL_0000624","CD4 TEM","effector CD4-positive, alpha-beta T cell","CL_0001044","CD4 TEM_1","effector CD4-positive, alpha-beta T cell","CL_0001044",227
+"CD4 T","CD4-positive, alpha-beta T cell","CL_0000624","CD4 TEM","effector CD4-positive, alpha-beta T cell","CL_0001044","CD4 TEM_2","effector CD4-positive, alpha-beta T cell","CL_0001044",66
+"CD4 T","CD4-positive, alpha-beta T cell","CL_0000624","CD4 TEM","effector CD4-positive, alpha-beta T cell","CL_0001044","CD4 TEM_3","effector CD4-positive, alpha-beta T cell","CL_0001044",347
+"CD4 T","CD4-positive, alpha-beta T cell","CL_0000624","CD4 TEM","effector CD4-positive, alpha-beta T cell","CL_0001044","CD4 TEM_4","effector CD4-positive, alpha-beta T cell","CL_0001044",63
+"CD8 T","CD8-positive, alpha-beta T cell","CL_0000625","CD8 Naive","naive thymus-derived CD8-positive, alpha-beta T cell","CL_0000900","CD8 Naive","naive thymus-derived CD8-positive, alpha-beta T cell","CL_0000900",981
+"CD8 T","CD8-positive, alpha-beta T cell","CL_0000625","CD8 Naive","naive thymus-derived CD8-positive, alpha-beta T cell","CL_0000900","CD8 Naive_2","naive thymus-derived CD8-positive, alpha-beta T cell","CL_0000900",167
+"CD8 T","CD8-positive, alpha-beta T cell","CL_0000625","CD8 Proliferating","activated CD8-positive, alpha-beta T cell","CL_0000906","CD8 Proliferating","activated CD8-positive, alpha-beta T cell","CL_0000906",31
+"CD8 T","CD8-positive, alpha-beta T cell","CL_0000625","CD8 TCM","CD8-positive, alpha-beta memory T cell","CL_0000909","CD8 TCM_1","CD8-positive, alpha-beta memory T cell","CL_0000909",929
+"CD8 T","CD8-positive, alpha-beta T cell","CL_0000625","CD8 TCM","CD8-positive, alpha-beta memory T cell","CL_0000909","CD8 TCM_2","CD8-positive, alpha-beta memory T cell","CL_0000909",1322
+"CD8 T","CD8-positive, alpha-beta T cell","CL_0000625","CD8 TCM","CD8-positive, alpha-beta memory T cell","CL_0000909","CD8 TCM_3","CD8-positive, alpha-beta memory T cell","CL_0000909",632
+"CD8 T","CD8-positive, alpha-beta T cell","CL_0000625","CD8 TEM","effector CD8-positive, alpha-beta T cell","CL_0001050","CD8 TEM_1","effector CD8-positive, alpha-beta T cell","CL_0001050",299
+"CD8 T","CD8-positive, alpha-beta T cell","CL_0000625","CD8 TEM","effector CD8-positive, alpha-beta T cell","CL_0001050","CD8 TEM_2","effector CD8-positive, alpha-beta T cell","CL_0001050",335
+"CD8 T","CD8-positive, alpha-beta T cell","CL_0000625","CD8 TEM","effector CD8-positive, alpha-beta T cell","CL_0001050","CD8 TEM_3","effector CD8-positive, alpha-beta T cell","CL_0001050",290
+"CD8 T","CD8-positive, alpha-beta T cell","CL_0000625","CD8 TEM","effector CD8-positive, alpha-beta T cell","CL_0001050","CD8 TEM_4","effector CD8-positive, alpha-beta T cell","CL_0001050",285
+"CD8 T","CD8-positive, alpha-beta T cell","CL_0000625","CD8 TEM","effector CD8-positive, alpha-beta T cell","CL_0001050","CD8 TEM_5","effector CD8-positive, alpha-beta T cell","CL_0001050",283
+"CD8 T","CD8-positive, alpha-beta T cell","CL_0000625","CD8 TEM","effector CD8-positive, alpha-beta T cell","CL_0001050","CD8 TEM_6","effector CD8-positive, alpha-beta T cell","CL_0001050",304
+"DC","dendritic cell","CL_0000451","cDC1","CD141-positive myeloid dendritic cell","CL_0002394","cDC1","CD141-positive myeloid dendritic cell","CL_0002394",150
+"DC","dendritic cell","CL_0000451","cDC2","CD1c-positive myeloid dendritic cell","CL_0002399","cDC2_1","CD1c-positive myeloid dendritic cell","CL_0002399",173
+"DC","dendritic cell","CL_0000451","cDC2","CD1c-positive myeloid dendritic cell","CL_0002399","cDC2_2","CD1c-positive myeloid dendritic cell","CL_0002399",299
+"other T","mature T cell","CL_0002419","dnT","CD4-negative, CD8-negative, alpha-beta intraepithelial T cell","CL_0000935","dnT_1","CD4-negative, CD8-negative, alpha-beta intraepithelial T cell","CL_0000935",63
+"other T","mature T cell","CL_0002419","dnT","CD4-negative, CD8-negative, alpha-beta intraepithelial T cell","CL_0000935","dnT_2","CD4-negative, CD8-negative, alpha-beta intraepithelial T cell","CL_0000935",118
+"other T","mature T cell","CL_0002419","gdT","gamma-delta T cell","CL_0000798","gdT_1","gamma-delta T cell","CL_0000798",301
+"other T","mature T cell","CL_0002419","gdT","gamma-delta T cell","CL_0000798","gdT_2","gamma-delta T cell","CL_0000798",196
+"other T","mature T cell","CL_0002419","gdT","gamma-delta T cell","CL_0000798","gdT_3","gamma-delta T cell","CL_0000798",231
+"other T","mature T cell","CL_0002419","gdT","gamma-delta T cell","CL_0000798","gdT_4","gamma-delta T cell","CL_0000798",107
+"other T","mature T cell","CL_0002419","MAIT","mucosal invariant T cell","CL_0000940","MAIT","mucosal invariant T cell","CL_0000940",600
+"NK","natural killer cell","CL_0000623","NK Proliferating","natural killer cell","CL_0000623","NK Proliferating","natural killer cell","CL_0000623",214
+"NK","natural killer cell","CL_0000623","NK","CD16-positive, CD56-dim natural killer cell, human","CL_0000939","NK_1","CD16-positive, CD56-dim natural killer cell, human","CL_0000939",569
+"NK","natural killer cell","CL_0000623","NK","CD16-positive, CD56-dim natural killer cell, human","CL_0000939","NK_2","CD16-positive, CD56-dim natural killer cell, human","CL_0000939",657
+"NK","natural killer cell","CL_0000623","NK","CD16-positive, CD56-dim natural killer cell, human","CL_0000939","NK_3","CD16-positive, CD56-dim natural killer cell, human","CL_0000939",190
+"NK","natural killer cell","CL_0000623","NK","CD16-positive, CD56-dim natural killer cell, human","CL_0000939","NK_4","CD16-positive, CD56-dim natural killer cell, human","CL_0000939",130
+"NK","natural killer cell","CL_0000623","NK_CD56bright","CD16-negative, CD56-bright natural killer cell, human","CL_0000938","NK_CD56bright","CD16-negative, CD56-bright natural killer cell, human","CL_0000938",291
+"DC","dendritic cell","CL_0000451","pDC","plasmacytoid dendritic cell","CL_0000784","pDC","plasmacytoid dendritic cell","CL_0000784",284
+"B","mature B cell","CL_0000785","Plasmablast","plasmablast","CL_0000980","Plasma","plasma cell","CL_0000786",262
+"B","mature B cell","CL_0000785","Plasmablast","plasmablast","CL_0000980","Plasmablast","plasmablast","CL_0000980",37
+"CD4 T","CD4-positive, alpha-beta T cell","CL_0000624","Treg","regulatory T cell","CL_0000815","Treg Memory","regulatory T cell","CL_0000815",160
+"CD4 T","CD4-positive, alpha-beta T cell","CL_0000624","Treg","regulatory T cell","CL_0000815","Treg Naive","regulatory T cell","CL_0000815",138

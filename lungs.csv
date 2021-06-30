@@ -1,68 +1,68 @@
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-"AS/1","AS/2","AS/2/count"
-"Fibroblast","Adventitial Fibroblast",557
-"Smooth Muscle","Airway Smooth Muscle",693
-"Alveolar Epithelial Type 1","Alveolar Epithelial Type 1",972
-"Alveolar Epithelial Type 2","Alveolar Epithelial Type 2",3814
-"Fibroblast","Alveolar Fibroblast",1296
-"Artery","Artery",1484
-"B","B",725
-"Basal","Basal",436
-"Basophil/Mast","Basophil/Mast 1",1350
-"Basophil/Mast","Basophil/Mast 2",552
-"Bronchial Vessel","Bronchial Vessel 1",455
-"Bronchial Vessel","Bronchial Vessel 2",235
-"Capillary","Capillary",7391
-"Capillary Aerocyte","Capillary Aerocyte",4352
-"Capillary Intermediate","Capillary Intermediate 1",628
-"Capillary Intermediate","Capillary Intermediate 2",464
-"CD4 T","CD4+ Memory/Effector T",3013
-"CD4 T","CD4+ Naive T",932
-"CD8 T","CD8+ Memory/Effector T",1190
-"CD8 T","CD8+ Naive T",2042
-"Ciliated","Ciliated",1321
-"CD14+ Monocyte","Classical Monocyte",2077
-"Club","Club",931
-"Basal","Differentiating Basal",265
-"Dendritic","EREG+ Dendritic",142
-"Fibromyocyte","Fibromyocyte",98
-"Goblet","Goblet",159
-"Dendritic","IGSF21+ Dendritic",280
-"CD16+ Monocyte","Intermediate Monocyte",188
-"Ionocyte","Ionocyte",22
-"Lipofibroblast","Lipofibroblast",35
-"Lymphatic","Lymphatic",467
-"Macrophage","Macrophage",14734
-"Mesothelial","Mesothelial",29
-"Mucous","Mucous",491
-"Dendritic","Myeloid Dendritic Type 1",131
-"Dendritic","Myeloid Dendritic Type 2",266
-"Myofibroblast","Myofibroblast",248
-"Natural Killer","Natural Killer",4769
-"Natural Killer T","Natural Killer T",335
-"Neuroendocrine","Neuroendocrine",11
-"CD16+ Monocyte","Nonclassical Monocyte",804
-"CD14+ Monocyte","OLR1+ Classical Monocyte",207
-"Pericyte","Pericyte",1608
-"Plasma","Plasma",187
-"Plasmacytoid Dendritic","Plasmacytoid Dendritic",137
-"Platelet/Megakaryocyte","Platelet/Megakaryocyte",40
-"Basal","Proliferating Basal",47
-"Proliferating Macrophage","Proliferating Macrophage",226
-"Proliferating NK/T","Proliferating NK/T",105
-"Basal","Proximal Basal",157
-"Ciliated","Proximal Ciliated",88
-"Serous","Serous",24
-"Alveolar Epithelial Type 2","Signaling Alveolar Epithelial Type 2",669
-"Dendritic","TREM2+ Dendritic",159
-"Smooth Muscle","Vascular Smooth Muscle",469
-"Vein","Vein",1155
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+"AS/1","AS/1/LABEL","AS/1/ID","AS/2","AS/2/LABEL","AS/2/ID","AS/2/COUNT"
+"Fibroblast","fibroblast","CL_0000057","Adventitial Fibroblast","fibroblast","CL_0000057",557
+"Smooth Muscle","smooth muscle cell","CL_0000192","Airway Smooth Muscle","respiratory system smooth muscle","UBERON_0004225",693
+"Alveolar Epithelial Type 1","type I pneumocyte","CL_0002062","Alveolar Epithelial Type 1","type I pneumocyte","CL_0002062",972
+"Alveolar Epithelial Type 2","type II pneumocyte","CL_0002063","Alveolar Epithelial Type 2","type II pneumocyte","CL_0002063",3814
+"Fibroblast","fibroblast","CL_0000057","Alveolar Fibroblast","fibroblast","CL_0000057",1296
+"Artery","artery","UBERON_0001637","Artery","artery","UBERON_0001637",1484
+"B","B cell","CL_0000236","B","B cell","CL_0000236",725
+"Basal","basal cell","CL_0000646","Basal","basal cell","CL_0000646",436
+"Basophil/Mast","myeloid leukocyte","CL_0000766","Basophil/Mast 1","myeloid leukocyte","CL_0000766",1350
+"Basophil/Mast","myeloid leukocyte","CL_0000766","Basophil/Mast 2","myeloid leukocyte","CL_0000766",552
+"Bronchial Vessel","bronchial epithelial cell","CL_0002328","Bronchial Vessel 1","bronchial epithelial cell","CL_0002328",455
+"Bronchial Vessel","bronchial epithelial cell","CL_0002328","Bronchial Vessel 2","bronchial epithelial cell","CL_0002328",235
+"Capillary","capillary","UBERON_0001982","Capillary","capillary","UBERON_0001982",7391
+"Capillary Aerocyte","capillary endothelial cell","CL_0002144","Capillary Aerocyte","capillary endothelial cell","CL_0002144",4352
+"Capillary Intermediate","capillary endothelial cell","CL_0002144","Capillary Intermediate 1","capillary endothelial cell","CL_0002144",628
+"Capillary Intermediate","capillary endothelial cell","CL_0002144","Capillary Intermediate 2","capillary endothelial cell","CL_0002144",464
+"CD4 T","CD4-positive, alpha-beta T cell","CL_0000624","CD4+ Memory/Effector T","CD4-positive, alpha-beta T cell","CL_0000624",3013
+"CD4 T","CD4-positive, alpha-beta T cell","CL_0000624","CD4+ Naive T","naive thymus-derived CD4-positive, alpha-beta T cell","CL_0000895",932
+"CD8 T","CD8-positive, alpha-beta T cell","CL_0000625","CD8+ Memory/Effector T","CD8-positive, alpha-beta T cell","CL_0000625",1190
+"CD8 T","CD8-positive, alpha-beta T cell","CL_0000625","CD8+ Naive T","naive thymus-derived CD8-positive, alpha-beta T cell","CL_0000900",2042
+"Ciliated","ciliated cell","CL_0000064","Ciliated","ciliated cell","CL_0000064",1321
+"CD14+ Monocyte","CD14-positive, CD16-negative classical monocyte","CL_0002057","Classical Monocyte","classical monocyte","CL_0000860",2077
+"Club","club cell","CL_0000158","Club","club cell","CL_0000158",931
+"Basal","basal cell","CL_0000646","Differentiating Basal","basal cell","CL_0000646",265
+"Dendritic","dendritic cell","CL_0000451","EREG+ Dendritic","dendritic cell","CL_0000451",142
+"Fibromyocyte","smooth muscle cell","CL_0000192","Fibromyocyte","smooth muscle cell","CL_0000192",98
+"Goblet","goblet cell","CL_0000160","Goblet","goblet cell","CL_0000160",159
+"Dendritic","dendritic cell","CL_0000451","IGSF21+ Dendritic","dendritic cell","CL_0000451",280
+"CD16+ Monocyte","CD14-low, CD16-positive monocyte","CL_0002396","Intermediate Monocyte","intermediate monocyte","CL_0002393",188
+"Ionocyte","ionocyte","CL_0005006","Ionocyte","ionocyte","CL_0005006",22
+"Lipofibroblast","fibroblast","CL_0000057","Lipofibroblast","fibroblast","CL_0000057",35
+"Lymphatic","lymphatic vessel","UBERON_0001473","Lymphatic","lymphatic vessel","UBERON_0001473",467
+"Macrophage","macrophage","CL_0000235","Macrophage","macrophage","CL_0000235",14734
+"Mesothelial","mesothelial cell","CL_0000077","Mesothelial","mesothelial cell","CL_0000077",29
+"Mucous","mucus secreting cell","CL_0000319","Mucous","mucus secreting cell","CL_0000319",491
+"Dendritic","dendritic cell","CL_0000451","Myeloid Dendritic Type 1","myeloid dendritic cell","CL_0000782",131
+"Dendritic","dendritic cell","CL_0000451","Myeloid Dendritic Type 2","myeloid dendritic cell","CL_0000782",266
+"Myofibroblast","myofibroblast cell","CL_0000186","Myofibroblast","myofibroblast cell","CL_0000186",248
+"Natural Killer","natural killer cell","CL_0000623","Natural Killer","natural killer cell","CL_0000623",4769
+"Natural Killer T","mature NK T cell","CL_0000814","Natural Killer T","mature NK T cell","CL_0000814",335
+"Neuroendocrine","neuroendocrine cell","CL_0000165","Neuroendocrine","neuroendocrine cell","CL_0000165",11
+"CD16+ Monocyte","CD14-low, CD16-positive monocyte","CL_0002396","Nonclassical Monocyte","non-classical monocyte","CL_0000875",804
+"CD14+ Monocyte","CD14-positive, CD16-negative classical monocyte","CL_0002057","OLR1+ Classical Monocyte","classical monocyte","CL_0000860",207
+"Pericyte","pericyte cell","CL_0000669","Pericyte","pericyte cell","CL_0000669",1608
+"Plasma","plasma cell","CL_0000786","Plasma","plasma cell","CL_0000786",187
+"Plasmacytoid Dendritic","plasmacytoid dendritic cell","CL_0000784","Plasmacytoid Dendritic","plasmacytoid dendritic cell","CL_0000784",137
+"Platelet/Megakaryocyte","myeloid cell","CL_0000763","Platelet/Megakaryocyte","myeloid cell","CL_0000763",40
+"Basal","basal cell","CL_0000646","Proliferating Basal","basal cell","CL_0000646",47
+"Proliferating Macrophage","macrophage","CL_0000235","Proliferating Macrophage","macrophage","CL_0000235",226
+"Proliferating NK/T","lymphocyte","CL_0000542","Proliferating NK/T","lymphocyte","CL_0000542",105
+"Basal","basal cell","CL_0000646","Proximal Basal","basal cell","CL_0000646",157
+"Ciliated","ciliated cell","CL_0000064","Proximal Ciliated","ciliated cell","CL_0000064",88
+"Serous","serous secreting cell","CL_0000313","Serous","serous secreting cell","CL_0000313",24
+"Alveolar Epithelial Type 2","type II pneumocyte","CL_0002063","Signaling Alveolar Epithelial Type 2","type II pneumocyte","CL_0002063",669
+"Dendritic","dendritic cell","CL_0000451","TREM2+ Dendritic","dendritic cell","CL_0000451",159
+"Smooth Muscle","smooth muscle cell","CL_0000192","Vascular Smooth Muscle","vascular associated smooth muscle cell","CL_0000359",469
+"Vein","vein","UBERON_0001638","Vein","vein","UBERON_0001638",1155
