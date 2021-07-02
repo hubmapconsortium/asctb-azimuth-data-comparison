@@ -1,10 +1,18 @@
 library(Seurat)
 library(rjson)
 
-process_reference <- function(body_organ, cell_hierarchy_cols) {
+process_reference <- function(organ_config) {
+  body_organ <- organ_config$name
+  cell_hierarchy_cols <- organ_config$cell_type_columns
+  ref_url <- organ_config$url
 
-
-  ref <- readRDS(stringr::str_interp("data/azimuth_references/${body_organ}.Rds"))
+  file_name <- stringr::str_interp("data/azimuth_references/${body_organ}.Rds")
+  if (file.exists(file_name)) {
+    ref <- readRDS(file_name)
+  } else {
+    ref <- readRDS(gzcon(url(ref_url)))
+    saveRDS(ref, file_name)
+  }
 
   cell_types <- ref@meta.data[cell_hierarchy_cols];
   final_column_names <- sapply(1:length(cell_hierarchy_cols),
@@ -86,7 +94,7 @@ write_asctb <- function(body_organ, asctb_table) {
 for (reference in fromJSON(file = 'data/organ_data.json')$references) {
 
   # extract azimuth reference data
-  reference_table <- process_reference(reference$name, reference$cell_type_columns)
+  reference_table <- process_reference(reference)
   # extract cell type ontology data provided by Jaison
   ct_ontology_tables <- process_cell_type_data(reference$name, reference$cell_type_columns)
   # map ontology ID and LABELS to reference cell types
