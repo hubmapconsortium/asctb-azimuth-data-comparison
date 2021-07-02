@@ -7,7 +7,7 @@ process_reference <- function(organ_config) {
   ref_url <- organ_config$url
 
   # load input reference files locally if present, else download them from URL in config
-  file_name <- stringr::str_interp("data/azimuth_references/${body_organ}.Rds")
+  file_name <- paste0("data/azimuth_references/", body_organ, ".Rds")
   if (file.exists(file_name)) {
     ref <- readRDS(file_name)
   } else {
@@ -20,18 +20,18 @@ process_reference <- function(organ_config) {
   # rename columns according to ASCT+B table format
   final_column_names <- sapply(1:length(cell_hierarchy_cols),
                                function (x)
-                                 return(stringr::str_interp("AS/${x}")))
+                                 return(paste0("AS/",x)))
   names(cell_types) <- final_column_names
 
   # get unique rows along with their counts
-  count_col <- stringr::str_interp("AS/${length(cell_hierarchy_cols)}/COUNT")
+  count_col <- paste0("AS/", length(cell_hierarchy_cols), "/COUNT")
   cell_types[count_col] <- 1;
   group_by_formula <- as.formula(
     paste(
-      paste('`',count_col,'` ~ ',sep = ''),
+      paste0('`',count_col,'` ~ '),
       paste(sapply(final_column_names,
                    function(col)
-                     paste("`",col,"`", sep = '')),
+                     paste0("`",col,"`")),
             collapse = " + ")))
   cell_types <- aggregate( group_by_formula, data = cell_types, FUN = sum )
 
@@ -43,14 +43,17 @@ process_cell_type_data <- function(body_organ, cell_hierarchy_cols) {
                 function (i, levels) {
                   # read file containing cell ontology data for each cell type column in a body organ reference file
                   ont_data <- read.csv(
-                    stringr::str_interp(
-                      "data/azimuth_ct_tables/${body_organ}__${levels[i]}.csv"))
+                    paste0(
+                      "data/azimuth_ct_tables/",
+                      body_organ, "__", levels[i], ".csv"))
 
                   # extract ontology label and id from "OBO.Ontology.ID" column
                   df <- data.frame(
                     name = ont_data$Label, # column to join with reference dataframe column values
                     label = if("OBO.Ontology.ID" %in% names(ont_data))
-                              gsub("^\\[(.*?)\\].*", "\\1",ont_data$OBO.Ontology.ID)
+                              gsub("^\\[(.*?)\\].*",
+                                   "\\1",
+                                   ont_data$OBO.Ontology.ID)
                             else rep(NA, nrow(ont_data)),
                     id = if("OBO.Ontology.ID" %in% names(ont_data))
                           gsub(".*http:\\/\\/purl\\.obolibrary\\.org\\/obo\\/(.*?)_(.*?)\\)$",
@@ -59,9 +62,9 @@ process_cell_type_data <- function(body_organ, cell_hierarchy_cols) {
                           else rep(NA, nrow(ont_data)))
 
                   # rename columns according to ASCT+B table format
-                  names(df) <- c(paste("AS/",i, sep = ""),
-                                 paste("AS/",i,"/LABEL", sep = ""),
-                                 paste("AS/",i,"/ID", sep = ""))
+                  names(df) <- c(paste0("AS/",i),
+                                 paste0("AS/",i,"/LABEL"),
+                                 paste0("AS/",i,"/ID"))
                   return(df)
                   },
                 cell_hierarchy_cols,
@@ -86,13 +89,13 @@ write_asctb <- function(body_organ, asctb_table) {
                        column_count,
                        byrow = TRUE)
   write.table(header_rows,
-              file =  stringr::str_interp("data/asctb_tables/${body_organ}.csv"),
+              file =  paste0("data/asctb_tables/", body_organ, ".csv"),
               sep = ',',
               na = "",
               row.names = FALSE,
               col.names = FALSE)
   write.table(asctb_table,
-              file = stringr::str_interp("data/asctb_tables/${body_organ}.csv"),
+              file = paste0("data/asctb_tables/", body_organ, ".csv"),
               sep = ',',
               na = "",
               append = TRUE,
@@ -113,10 +116,10 @@ for (reference in fromJSON(file = 'data/organ_data.json')$references) {
   column_order <- c(
     sapply(1:length(reference$cell_type_columns),
            function (n)
-             c(paste("AS/",n,sep=""),
-               paste("AS/",n,"/LABEL",sep=""),
-               paste("AS/",n,"/ID",sep=""))),
-    paste("AS/",length(reference$cell_type_columns),"/COUNT",sep=""))
+             c(paste0("AS/",n),
+               paste0("AS/",n,"/LABEL"),
+               paste0("AS/",n,"/ID"))),
+    paste0("AS/",length(reference$cell_type_columns),"/COUNT"))
   # generate final CSV file
   write_asctb(reference$name, merged_data[,column_order])
 }
