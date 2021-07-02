@@ -6,6 +6,7 @@ process_reference <- function(organ_config) {
   cell_hierarchy_cols <- organ_config$cell_type_columns
   ref_url <- organ_config$url
 
+  # load input reference files locally if present, else download them from URL in config
   file_name <- stringr::str_interp("data/azimuth_references/${body_organ}.Rds")
   if (file.exists(file_name)) {
     ref <- readRDS(file_name)
@@ -14,11 +15,15 @@ process_reference <- function(organ_config) {
     saveRDS(ref, file_name)
   }
 
+  # get columns containing cell type data
   cell_types <- ref@meta.data[cell_hierarchy_cols];
+  # rename columns according to ASCT+B table format
   final_column_names <- sapply(1:length(cell_hierarchy_cols),
                                function (x)
                                  return(stringr::str_interp("AS/${x}")))
   names(cell_types) <- final_column_names
+
+  # get unique rows along with their counts
   count_col <- stringr::str_interp("AS/${length(cell_hierarchy_cols)}/COUNT")
   cell_types[count_col] <- 1;
   group_by_formula <- as.formula(
@@ -36,11 +41,14 @@ process_reference <- function(organ_config) {
 process_cell_type_data <- function(body_organ, cell_hierarchy_cols) {
   return(sapply(1:length(cell_hierarchy_cols),
                 function (i, levels) {
+                  # read file containing cell ontology data for each cell type column in a body organ reference file
                   ont_data <- read.csv(
                     stringr::str_interp(
                       "data/azimuth_ct_tables/${body_organ}__${levels[i]}.csv"))
+
+                  # extract ontology label and id from "OBO.Ontology.ID" column
                   df <- data.frame(
-                    name = ont_data$Label,
+                    name = ont_data$Label, # column to join with reference dataframe column values
                     label = if("OBO.Ontology.ID" %in% names(ont_data))
                               gsub("^\\[(.*?)\\].*", "\\1",ont_data$OBO.Ontology.ID)
                             else rep(NA, nrow(ont_data)),
@@ -49,6 +57,8 @@ process_cell_type_data <- function(body_organ, cell_hierarchy_cols) {
                                "\\1:\\2",
                                ont_data$OBO.Ontology.ID)
                           else rep(NA, nrow(ont_data)))
+
+                  # rename columns according to ASCT+B table format
                   names(df) <- c(paste("AS/",i, sep = ""),
                                  paste("AS/",i,"/LABEL", sep = ""),
                                  paste("AS/",i,"/ID", sep = ""))
