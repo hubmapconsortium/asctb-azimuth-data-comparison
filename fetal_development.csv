@@ -1,0 +1,183 @@
+"fetal_development cell types as anatomical structures from Azimuth reference data",,,,,,
+,,,,,,
+"Author Name(s):",,,,,,
+"Author ORCID(s):",,,,,,
+"Reviewer(s):",,,,,,
+"General Publication(s):",,,,,,
+"Data DOI:",,,,,,
+"Date:","07/02/21",,,,,
+"Version Number:","v1.0",,,,,
+,,,,,,
+"AS/1","AS/1/LABEL","AS/1/ID","AS/2","AS/2/LABEL","AS/2/ID","AS/2/COUNT"
+"Adrenocortical cells",,,"Adrenal-Adrenocortical cells",,,5000
+"Chromaffin cells",,,"Adrenal-Chromaffin cells",,,5000
+"CSH1_CSH2 positive cells",,,"Adrenal-CSH1_CSH2 positive cells",,,93
+"Erythroblasts",,,"Adrenal-Erythroblasts",,,2750
+"Lymphoid cells",,,"Adrenal-Lymphoid cells",,,633
+"Megakaryocytes",,,"Adrenal-Megakaryocytes",,,931
+"Myeloid cells",,,"Adrenal-Myeloid cells",,,2389
+"Schwann cells",,,"Adrenal-Schwann cells",,,981
+"SLC26A4_PAEP positive cells",,,"Adrenal-SLC26A4_PAEP positive cells",,,68
+"Stromal cells",,,"Adrenal-Stromal cells",,,5000
+"Sympathoblasts",,,"Adrenal-Sympathoblasts",,,3805
+"Vascular endothelial cells",,,"Adrenal-Vascular endothelial cells",,,5000
+"Astrocytes",,,"Cerebellum-Astrocytes",,,5000
+"Granule neurons",,,"Cerebellum-Granule neurons",,,5000
+"Inhibitory interneurons",,,"Cerebellum-Inhibitory interneurons",,,5000
+"Microglia",,,"Cerebellum-Microglia",,,4428
+"Oligodendrocytes",,,"Cerebellum-Oligodendrocytes",,,5000
+"Purkinje neurons",,,"Cerebellum-Purkinje neurons",,,5000
+"SLC24A4_PEX5L positive cells",,,"Cerebellum-SLC24A4_PEX5L positive cells",,,5000
+"Unipolar brush cells",,,"Cerebellum-Unipolar brush cells",,,5000
+"Vascular endothelial cells",,,"Cerebellum-Vascular endothelial cells",,,5000
+"Astrocytes",,,"Cerebrum-Astrocytes",,,5000
+"Excitatory neurons",,,"Cerebrum-Excitatory neurons",,,5000
+"Inhibitory neurons",,,"Cerebrum-Inhibitory neurons",,,5000
+"Limbic system neurons",,,"Cerebrum-Limbic system neurons",,,5000
+"Megakaryocytes",,,"Cerebrum-Megakaryocytes",,,36
+"Microglia",,,"Cerebrum-Microglia",,,4459
+"Oligodendrocytes",,,"Cerebrum-Oligodendrocytes",,,5000
+"SKOR2_NPSR1 positive cells",,,"Cerebrum-SKOR2_NPSR1 positive cells",,,5000
+"Vascular endothelial cells",,,"Cerebrum-Vascular endothelial cells",,,5000
+"Amacrine cells",,,"Eye-Amacrine cells",,,5000
+"Astrocytes",,,"Eye-Astrocytes",,,181
+"Bipolar cells",,,"Eye-Bipolar cells",,,1207
+"Corneal and conjunctival epithelial cells",,,"Eye-Corneal and conjunctival epithelial cells",,,104
+"Ganglion cells",,,"Eye-Ganglion cells",,,5000
+"Horizontal cells",,,"Eye-Horizontal cells",,,2300
+"Lens fibre cells",,,"Eye-Lens fibre cells",,,246
+"Microglia",,,"Eye-Microglia",,,88
+"PDE11A_FAM19A2 positive cells",,,"Eye-PDE11A_FAM19A2 positive cells",,,806
+"Photoreceptor cells",,,"Eye-Photoreceptor cells",,,5000
+"Retinal pigment cells",,,"Eye-Retinal pigment cells",,,704
+"Retinal progenitors and Muller glia",,,"Eye-Retinal progenitors and Muller glia",,,5000
+"Skeletal muscle cells",,,"Eye-Skeletal muscle cells",,,148
+"Smooth muscle cells",,,"Eye-Smooth muscle cells",,,45
+"Stromal cells",,,"Eye-Stromal cells",,,1049
+"Vascular endothelial cells",,,"Eye-Vascular endothelial cells",,,211
+"Cardiomyocytes",,,"Heart-Cardiomyocytes",,,5000
+"CLC_IL5RA positive cells",,,"Heart-CLC_IL5RA positive cells",,,102
+"ELF3_AGBL2 positive cells",,,"Heart-ELF3_AGBL2 positive cells",,,164
+"Endocardial cells",,,"Heart-Endocardial cells",,,5000
+"Epicardial fat cells",,,"Heart-Epicardial fat cells",,,1891
+"Erythroblasts",,,"Heart-Erythroblasts",,,6
+"Lymphatic endothelial cells",,,"Heart-Lymphatic endothelial cells",,,1251
+"Lymphoid cells",,,"Heart-Lymphoid cells",,,1348
+"Megakaryocytes",,,"Heart-Megakaryocytes",,,361
+"Myeloid cells",,,"Heart-Myeloid cells",,,1040
+"SATB2_LRRC7 positive cells",,,"Heart-SATB2_LRRC7 positive cells",,,318
+"Schwann cells",,,"Heart-Schwann cells",,,535
+"Smooth muscle cells",,,"Heart-Smooth muscle cells",,,2036
+"Stromal cells",,,"Heart-Stromal cells",,,5000
+"Vascular endothelial cells",,,"Heart-Vascular endothelial cells",,,4911
+"Visceral neurons",,,"Heart-Visceral neurons",,,348
+"Chromaffin cells",,,"Intestine-Chromaffin cells",,,599
+"ENS glia",,,"Intestine-ENS glia",,,2087
+"ENS neurons",,,"Intestine-ENS neurons",,,2154
+"Erythroblasts",,,"Intestine-Erythroblasts",,,206
+"Intestinal epithelial cells",,,"Intestine-Intestinal epithelial cells",,,5000
+"Lymphatic endothelial cells",,,"Intestine-Lymphatic endothelial cells",,,295
+"Lymphoid cells",,,"Intestine-Lymphoid cells",,,2144
+"Mesothelial cells",,,"Intestine-Mesothelial cells",,,212
+"Myeloid cells",,,"Intestine-Myeloid cells",,,2830
+"Smooth muscle cells",,,"Intestine-Smooth muscle cells",,,1149
+"Stromal cells",,,"Intestine-Stromal cells",,,5000
+"Vascular endothelial cells",,,"Intestine-Vascular endothelial cells",,,1459
+"Erythroblasts",,,"Kidney-Erythroblasts",,,250
+"Lymphoid cells",,,"Kidney-Lymphoid cells",,,577
+"Megakaryocytes",,,"Kidney-Megakaryocytes",,,67
+"Mesangial cells",,,"Kidney-Mesangial cells",,,5000
+"Metanephric cells",,,"Kidney-Metanephric cells",,,5000
+"Myeloid cells",,,"Kidney-Myeloid cells",,,3413
+"Stromal cells",,,"Kidney-Stromal cells",,,1026
+"Ureteric bud cells",,,"Kidney-Ureteric bud cells",,,5000
+"Vascular endothelial cells",,,"Kidney-Vascular endothelial cells",,,5000
+"Erythroblasts",,,"Liver-Erythroblasts",,,5000
+"Hematopoietic stem cells",,,"Liver-Hematopoietic stem cells",,,1096
+"Hepatoblasts",,,"Liver-Hepatoblasts",,,5000
+"Lymphoid cells",,,"Liver-Lymphoid cells",,,954
+"Megakaryocytes",,,"Liver-Megakaryocytes",,,1661
+"Mesothelial cells",,,"Liver-Mesothelial cells",,,246
+"Myeloid cells",,,"Liver-Myeloid cells",,,2766
+"Stellate cells",,,"Liver-Stellate cells",,,1743
+"Vascular endothelial cells",,,"Liver-Vascular endothelial cells",,,4580
+"Bronchiolar and alveolar epithelial cells",,,"Lung-Bronchiolar and alveolar epithelial cells",,,5000
+"Ciliated epithelial cells",,,"Lung-Ciliated epithelial cells",,,2588
+"CSH1_CSH2 positive cells",,,"Lung-CSH1_CSH2 positive cells",,,16
+"Lymphatic endothelial cells",,,"Lung-Lymphatic endothelial cells",,,5000
+"Lymphoid cells",,,"Lung-Lymphoid cells",,,2274
+"Megakaryocytes",,,"Lung-Megakaryocytes",,,305
+"Mesothelial cells",,,"Lung-Mesothelial cells",,,1074
+"Myeloid cells",,,"Lung-Myeloid cells",,,2416
+"Neuroendocrine cells",,,"Lung-Neuroendocrine cells",,,1524
+"Squamous epithelial cells",,,"Lung-Squamous epithelial cells",,,282
+"Stromal cells",,,"Lung-Stromal cells",,,5000
+"Vascular endothelial cells",,,"Lung-Vascular endothelial cells",,,5000
+"Visceral neurons",,,"Lung-Visceral neurons",,,262
+"Erythroblasts",,,"Muscle-Erythroblasts",,,38
+"Lymphatic endothelial cells",,,"Muscle-Lymphatic endothelial cells",,,115
+"Lymphoid cells",,,"Muscle-Lymphoid cells",,,88
+"Megakaryocytes",,,"Muscle-Megakaryocytes",,,12
+"Myeloid cells",,,"Muscle-Myeloid cells",,,284
+"Satellite cells",,,"Muscle-Satellite cells",,,5000
+"Schwann cells",,,"Muscle-Schwann cells",,,253
+"Skeletal muscle cells",,,"Muscle-Skeletal muscle cells",,,5000
+"Smooth muscle cells",,,"Muscle-Smooth muscle cells",,,575
+"Stromal cells",,,"Muscle-Stromal cells",,,5000
+"Vascular endothelial cells",,,"Muscle-Vascular endothelial cells",,,2091
+"Acinar cells",,,"Pancreas-Acinar cells",,,5000
+"CCL19_CCL21 positive cells",,,"Pancreas-CCL19_CCL21 positive cells",,,206
+"Ductal cells",,,"Pancreas-Ductal cells",,,4829
+"ENS glia",,,"Pancreas-ENS glia",,,1036
+"ENS neurons",,,"Pancreas-ENS neurons",,,287
+"Erythroblasts",,,"Pancreas-Erythroblasts",,,1261
+"Islet endocrine cells",,,"Pancreas-Islet endocrine cells",,,4768
+"Lymphatic endothelial cells",,,"Pancreas-Lymphatic endothelial cells",,,139
+"Lymphoid cells",,,"Pancreas-Lymphoid cells",,,5000
+"Mesothelial cells",,,"Pancreas-Mesothelial cells",,,123
+"Myeloid cells",,,"Pancreas-Myeloid cells",,,1519
+"Smooth muscle cells",,,"Pancreas-Smooth muscle cells",,,2657
+"Stromal cells",,,"Pancreas-Stromal cells",,,5000
+"Vascular endothelial cells",,,"Pancreas-Vascular endothelial cells",,,4804
+"AFP_ALB positive cells",,,"Placenta-AFP_ALB positive cells",,,88
+"Extravillous trophoblasts",,,"Placenta-Extravillous trophoblasts",,,1535
+"IGFBP1_DKK1 positive cells",,,"Placenta-IGFBP1_DKK1 positive cells",,,701
+"Lymphoid cells",,,"Placenta-Lymphoid cells",,,465
+"Megakaryocytes",,,"Placenta-Megakaryocytes",,,30
+"Myeloid cells",,,"Placenta-Myeloid cells",,,341
+"PAEP_MECOM positive cells",,,"Placenta-PAEP_MECOM positive cells",,,287
+"Smooth muscle cells",,,"Placenta-Smooth muscle cells",,,882
+"Stromal cells",,,"Placenta-Stromal cells",,,5000
+"Syncytiotrophoblasts and villous cytotrophoblasts",,,"Placenta-Syncytiotrophoblasts and villous cytotrophoblasts",,,5000
+"Trophoblast giant cells",,,"Placenta-Trophoblast giant cells",,,1137
+"Vascular endothelial cells",,,"Placenta-Vascular endothelial cells",,,1464
+"AFP_ALB positive cells",,,"Spleen-AFP_ALB positive cells",,,94
+"Erythroblasts",,,"Spleen-Erythroblasts",,,439
+"Lymphoid cells",,,"Spleen-Lymphoid cells",,,1624
+"Megakaryocytes",,,"Spleen-Megakaryocytes",,,95
+"Mesothelial cells",,,"Spleen-Mesothelial cells",,,258
+"Myeloid cells",,,"Spleen-Myeloid cells",,,1178
+"STC2_TLX1 positive cells",,,"Spleen-STC2_TLX1 positive cells",,,4487
+"Stromal cells",,,"Spleen-Stromal cells",,,1944
+"Vascular endothelial cells",,,"Spleen-Vascular endothelial cells",,,3061
+"Ciliated epithelial cells",,,"Stomach-Ciliated epithelial cells",,,298
+"ENS glia",,,"Stomach-ENS glia",,,96
+"ENS neurons",,,"Stomach-ENS neurons",,,73
+"Erythroblasts",,,"Stomach-Erythroblasts",,,112
+"Goblet cells",,,"Stomach-Goblet cells",,,3624
+"Lymphatic endothelial cells",,,"Stomach-Lymphatic endothelial cells",,,82
+"Lymphoid cells",,,"Stomach-Lymphoid cells",,,436
+"Mesothelial cells",,,"Stomach-Mesothelial cells",,,135
+"MUC13_DMBT1 positive cells",,,"Stomach-MUC13_DMBT1 positive cells",,,792
+"Myeloid cells",,,"Stomach-Myeloid cells",,,124
+"Neuroendocrine cells",,,"Stomach-Neuroendocrine cells",,,300
+"Parietal and chief cells",,,"Stomach-Parietal and chief cells",,,2322
+"PDE1C_ACSM3 positive cells",,,"Stomach-PDE1C_ACSM3 positive cells",,,78
+"Squamous epithelial cells",,,"Stomach-Squamous epithelial cells",,,1956
+"Stromal cells",,,"Stomach-Stromal cells",,,1368
+"Vascular endothelial cells",,,"Stomach-Vascular endothelial cells",,,310
+"Antigen presenting cells",,,"Thymus-Antigen presenting cells",,,465
+"Stromal cells",,,"Thymus-Stromal cells",,,112
+"Thymic epithelial cells",,,"Thymus-Thymic epithelial cells",,,259
+"Thymocytes",,,"Thymus-Thymocytes",,,5000
+"Vascular endothelial cells",,,"Thymus-Vascular endothelial cells",,,91
