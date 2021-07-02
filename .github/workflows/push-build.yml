@@ -11,8 +11,6 @@ name: push-build
 on:
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
 
 jobs:
   build:
@@ -63,6 +61,12 @@ jobs:
         run: |
           remotes::install_deps(dependencies = TRUE)
         shell: Rscript {0}
+        
+      - name: Cache Azimuth reference input files
+        uses: actions/cache@v2
+        with:
+          path: data/azimuth_references
+          key: ${{ runner.os }}-azimuth-ref-${{ hashFiles('data/organ_data.json') }}
 
       - name: Genrate csv
         run: source("R/extract_ct_from_ref.R")
