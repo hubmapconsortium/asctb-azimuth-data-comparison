@@ -1,13 +1,13 @@
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
+"pancreas cell types as anatomical structures from Azimuth reference data",
+,
+"Author Name(s):",
+"Author ORCID(s):",
+"Reviewer(s):",
+"General Publication(s):",
+"Data DOI:",
+"Date:","07/02/21"
+"Version Number:","v1.0"
+,
 "AS/1","AS/1/LABEL","AS/1/ID","AS/1/COUNT"
 "acinar","pancreatic acinar cell","CL:0002064",2824
 "activated_stellate","pancreatic stellate cell","CL:0002410",1420
