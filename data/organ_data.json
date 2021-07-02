@@ -33,6 +33,14 @@
         "cluster",
         "cross_species_cluster"
       ]
+    },
+    {
+      "name": "fetal_development",
+      "url": "https://zenodo.org/record/4738021/files/ref.Rds?download=1",
+      "cell_type_columns": [
+        "annotation.l1",
+        "annotation.l2"
+      ]
     }
-  ] 
+  ]
 }
