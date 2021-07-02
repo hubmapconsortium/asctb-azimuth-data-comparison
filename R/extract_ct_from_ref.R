@@ -3,6 +3,7 @@ library(rjson)
 
 process_reference <- function(body_organ, cell_hierarchy_cols) {
 
+
   ref <- readRDS(stringr::str_interp("data/azimuth_references/${body_organ}.Rds"))
 
   cell_types <- ref@meta.data[cell_hierarchy_cols];
@@ -32,10 +33,14 @@ process_cell_type_data <- function(body_organ, cell_hierarchy_cols) {
                       "data/azimuth_ct_tables/${body_organ}__${levels[i]}.csv"))
                   df <- data.frame(
                     name = ont_data$Label,
-                    label = gsub("^\\[(.*?)\\].*", "\\1",ont_data$OBO.Ontology.ID),
-                    id = gsub(".*http:\\/\\/purl\\.obolibrary\\.org\\/obo\\/(.*?)\\)$",
-                         "\\1",
-                         ont_data$OBO.Ontology.ID))
+                    label = if("OBO.Ontology.ID" %in% names(ont_data))
+                              gsub("^\\[(.*?)\\].*", "\\1",ont_data$OBO.Ontology.ID)
+                            else rep(NA, nrow(ont_data)),
+                    id = if("OBO.Ontology.ID" %in% names(ont_data))
+                          gsub(".*http:\\/\\/purl\\.obolibrary\\.org\\/obo\\/(.*?)_(.*?)\\)$",
+                               "\\1:\\2",
+                               ont_data$OBO.Ontology.ID)
+                          else rep(NA, nrow(ont_data)))
                   names(df) <- c(paste("AS/",i, sep = ""),
                                  paste("AS/",i,"/LABEL", sep = ""),
                                  paste("AS/",i,"/ID", sep = ""))
@@ -60,15 +65,22 @@ write_asctb <- function(body_organ, asctb_table) {
   write.table(asctb_table,
               file = stringr::str_interp("data/asctb_tables/${body_organ}.csv"),
               sep = ',',
+              na = "",
               append = TRUE,
               row.names = FALSE,
               col.names = TRUE)
 }
 
+# main loop runs for rach organ in the JSON config
 for (reference in fromJSON(file = 'data/organ_data.json')$references) {
+
+  # extract azimuth reference data
   reference_table <- process_reference(reference$name, reference$cell_type_columns)
+  # extract cell type ontology data provided by Jaison
   ct_ontology_tables <- process_cell_type_data(reference$name, reference$cell_type_columns)
+  # map ontology ID and LABELS to reference cell types
   merged_data <- Reduce(merge, ct_ontology_tables, reference_table)
+  # reorder columns
   column_order <- c(
     sapply(1:length(reference$cell_type_columns),
            function (n)
@@ -76,6 +88,7 @@ for (reference in fromJSON(file = 'data/organ_data.json')$references) {
                paste("AS/",n,"/LABEL",sep=""),
                paste("AS/",n,"/ID",sep=""))),
     paste("AS/",length(reference$cell_type_columns),"/COUNT",sep=""))
+  # generate final CSV file
   write_asctb(reference$name, merged_data[,column_order])
 }
 
