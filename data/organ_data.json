@@ -1,7 +1,7 @@
 {
   "references": [
     {
-      "name": "lungs",
+      "name": "lung",
       "cell_type_columns": [
         "annotation.l1",
         "annotation.l2"
