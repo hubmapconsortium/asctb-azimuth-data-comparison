@@ -52,11 +52,20 @@ process_cell_type_data <- function(body_organ, cell_hierarchy_cols) {
 
 write_asctb <- function(body_organ, asctb_table) {
   column_count <- ncol(asctb_table)
-  empty_row_count <- 10
-  empty_rows <- matrix(rep(NA, column_count*empty_row_count),
-                       empty_row_count,
-                       column_count)
-  write.table(empty_rows,
+  header_rows <- matrix(c(paste(body_organ,"cell types as anatomical structures from Azimuth reference data"),NA,
+                         NA,NA,
+                         "Author Name(s):", NA,
+                         "Author ORCID(s):", NA,
+                         "Reviewer(s):", NA,
+                         "General Publication(s):", NA,
+                         "Data DOI:", NA,
+                         "Date:", format(Sys.time(), "%x"),
+                         "Version Number:", "v1.0",
+                         NA,NA),
+                       10,
+                       2,
+                       byrow = TRUE)
+  write.table(header_rows,
               file =  stringr::str_interp("data/asctb_tables/${body_organ}.csv"),
               sep = ',',
               na = "",
