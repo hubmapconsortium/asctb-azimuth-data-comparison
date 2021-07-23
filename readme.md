@@ -23,6 +23,7 @@ config file is as follows:
   "references": [
     {
       "name": "<organ_name>",
+      "url": "<reference_data_download_url>",
       "cell_type_columns": [
         "<hierarchy_column-1>",
         "<hierarchy_column-2>",
@@ -32,6 +33,7 @@ config file is as follows:
     },
     {
       "name": "<organ_name>",
+      "url": "<reference_data_download_url>",
       "cell_type_columns": [
         "<hierarchy_column-1>",
         "<hierarchy_column-2>",
@@ -48,10 +50,10 @@ config file is as follows:
 
 ```
 
-
-```<organ_name>``` is a file called ```<organ_name>.Rds``` stored in
-```data/azimuth_references``` directory. More organ reference files can be added
-from [the Azimuth references webpage](https://azimuth.hubmapconsortium.org/references/).
+```<reference_data_download_url>``` is the URL for downloading the Azimuth 
+reference file for ```<organ_name>```. Such download URLs can be found by 
+clicking on the Zenodo URLs on the [the Azimuth references webpage](https://azimuth.hubmapconsortium.org/references/).
+```<organ_name>``` is the name that is associated with its respective download URL.
 
 ```<hierarchy_column-n>``` are names of columns in the reference Rds files that
 define the cell type hierarchy of a cell in the organ. These column names can be
@@ -59,9 +61,17 @@ found in the "Annotation Details" section of an organ on
 [the Azimuth references webpage](https://azimuth.hubmapconsortium.org/references/).
 Columns higher in the cell type hierarchy should have a lower value of "n".
 
-The organ's resulting ASCT+B table format file is stored in ```data/asctb_tables``` 
-directory as ```<organ_name>.csv```. These csv files can be uploaded on google 
-sheets and loaded into ASCT+B reporter's playground interface.
+Furthermore, this script also merges ontology ID and ontology label of every cell type
+with the cell type data extracted from Azimuth's reference files. This data can be 
+found in a table on [the Azimuth references webpage](https://azimuth.hubmapconsortium.org/references/)
+under the section for every available body organ. This ontology data is stored in the
+```data/azimuth_ct_tables``` directory where each file is named in the format
+```<organ_name>__<hierarchy_column-n>.csv```. Unfortunately, at the time of writing 
+this document, these CSV files aren't hosted anywhere to be readily downloaded. These
+files were provided to us by courtesy of Jaison from the Azimuth team.
+
+The organ's final ASCT+B table format file is stored in ```data/asctb_tables``` 
+directory as ```<organ_name>.csv```. 
 
 ## Deployment
 
