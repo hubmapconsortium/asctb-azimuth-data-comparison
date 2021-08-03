@@ -77,7 +77,7 @@ write_asctb <- function(body_organ, asctb_table) {
                                 "cell types as anatomical structures",
                                 "from Azimuth reference data"), rep(NA, column_count-1),
                           rep(NA, column_count),
-                          "Author Name(s):", rep(NA, column_count-1),
+                          "Author Name(s):", "Azimuth & Darshal Shetty at MC-IU", rep(NA, column_count-2),
                           "Author ORCID(s):", rep(NA, column_count-1),
                           "Reviewer(s):", rep(NA, column_count-1),
                           "General Publication(s):", rep(NA, column_count-1),
