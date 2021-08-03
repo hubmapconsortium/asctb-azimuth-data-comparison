@@ -6,14 +6,16 @@
       "cell_type_columns": [
         "annotation.l1",
         "annotation.l2"
-      ]
+      ],
+      "asctb_name": "Lung"
     },
     {
       "name": "pancreas",
       "url": "https://zenodo.org/record/4546926/files/ref.Rds?download=1",
       "cell_type_columns": [
         "annotation.l1"
-      ]
+      ],
+      "asctb_name": "Pancreas"
     },
     {
       "name": "pbmc",
@@ -22,7 +24,8 @@
         "celltype.l1",
         "celltype.l2",
         "celltype.l3"
-      ]
+      ],
+      "asctb_name": "Bone Marrow & Blood/Pelvis"
     },
     {
       "name": "motor_cortex",
@@ -32,7 +35,8 @@
         "subclass",
         "cluster",
         "cross_species_cluster"
-      ]
+      ],
+      "asctb_name": "Brain"
     },
     {
       "name": "fetal_development",
@@ -40,7 +44,8 @@
       "cell_type_columns": [
         "annotation.l1",
         "annotation.l2"
-      ]
+      ],
+      "asctb_name": "Fetal Development"
     }
   ]
 }
