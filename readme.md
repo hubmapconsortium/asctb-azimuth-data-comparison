@@ -29,7 +29,8 @@ config file is as follows:
         "<hierarchy_column-2>",
         ...
         "<hierarchy_column-n>"
-      ]
+      ],
+      "asctb_name": "<deployment_display_name>"
     },
     {
       "name": "<organ_name>",
@@ -39,7 +40,8 @@ config file is as follows:
         "<hierarchy_column-2>",
         ...
         "<hierarchy_column-n>"
-      ]
+      ],
+      "asctb_name": "<deployment_display_name>"
     },
     {
       ...
@@ -60,6 +62,9 @@ define the cell type hierarchy of a cell in the organ. These column names can be
 found in the "Annotation Details" section of an organ on 
 [the Azimuth references webpage](https://azimuth.hubmapconsortium.org/references/).
 Columns higher in the cell type hierarchy should have a lower value of "n".
+
+```<deployment_display_name>``` is the string that is displayed on the final GitHub 
+Pages website for the download link of the corresponding config.
 
 Furthermore, this script also merges ontology ID and ontology label of every cell type
 with the cell type data extracted from Azimuth's reference files. This data can be 
