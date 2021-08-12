@@ -1,5 +1,6 @@
 library(Seurat)
 library(rjson)
+library(httr)
 
 process_reference <- function(organ_config) {
   body_organ <- organ_config$name
@@ -8,12 +9,10 @@ process_reference <- function(organ_config) {
 
   # load input reference files locally if present, else download them from URL in config
   file_name <- paste0("data/azimuth_references/", body_organ, ".Rds")
-  if (file.exists(file_name)) {
-    ref <- readRDS(file_name)
-  } else {
-    ref <- readRDS(gzcon(url(ref_url)))
-    saveRDS(ref, file_name)
+  if (!file.exists(file_name)) {
+    GET(ref_url, write_disk(file_name))
   }
+  ref <- readRDS(file_name)
 
   # get columns containing cell type data
   cell_types <- ref@meta.data[cell_hierarchy_cols];
