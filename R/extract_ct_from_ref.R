@@ -40,11 +40,11 @@ process_reference <- function(organ_config) {
 process_cell_type_data <- function(body_organ, cell_hierarchy_cols) {
   return(sapply(1:length(cell_hierarchy_cols),
                 function (i, levels) {
+                  ct_file <- paste0("data/azimuth_ct_tables/", body_organ, "__",
+                                    levels[i], ".csv")
+
                   # read file containing cell ontology data for each cell type column in a body organ reference file
-                  ont_data <- read.csv(
-                    paste0(
-                      "data/azimuth_ct_tables/",
-                      body_organ, "__", levels[i], ".csv"))
+                  ont_data <- read.csv(ct_file)
 
                   # extract ontology label and id from "OBO.Ontology.ID" column
                   df <- data.frame(
