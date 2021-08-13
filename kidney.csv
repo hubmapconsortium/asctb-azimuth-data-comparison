@@ -1,0 +1,57 @@
+"kidney cell types as anatomical structures from Azimuth reference data",,,,,,,,,
+,,,,,,,,,
+"Author Name(s):","Azimuth & Darshal Shetty at MC-IU",,,,,,,,
+"Author ORCID(s):",,,,,,,,,
+"Reviewer(s):",,,,,,,,,
+"General Publication(s):",,,,,,,,,
+"Data DOI:",,,,,,,,,
+"Date:","08/13/21",,,,,,,,
+"Version Number:","v1.0",,,,,,,,
+,,,,,,,,,
+"AS/1","AS/1/LABEL","AS/1/ID","AS/2","AS/2/LABEL","AS/2/ID","AS/3","AS/3/LABEL","AS/3/ID","AS/3/COUNT"
+"Endothelial","endothelial cell","CL:0000115","Afferent / Efferent Arteriole Endothelial","kidney afferent arteriole endothelial cell","CL:1001096","Afferent / Efferent Arteriole Endothelial","kidney afferent arteriole endothelial cell","CL:1001096",341
+"Ascending Thin Limb","kidney loop of Henle thin ascending limb epithelial cell","CL:1001107","Ascending Thin Limb","kidney loop of Henle thin ascending limb epithelial cell","CL:1001107","Ascending Thin Limb","kidney loop of Henle thin ascending limb epithelial cell
+","CL:1001107",1765
+"Endothelial","endothelial cell","CL:0000115","Ascending Vasa Recta Endothelial","vasa recta ascending limb cell","CL:1001131","Ascending Vasa Recta Endothelial","vasa recta ascending limb cell
+","CL:1001131",2527
+"Immune","leukocyte","CL:0000738","B","mature B cell","CL:0000785","B","mature B cell","CL:0000785",331
+"Immune","leukocyte","CL:0000738","Classical Dendritic","dendritic cell","CL:0000451","Classical Dendritic","dendritic cell","CL:0000451",57
+"Connecting Tubule","kidney connecting tubule epithelial cell","CL:1000768","Connecting Tubule","kidney connecting tubule epithelial cell","CL:1000768","Connecting Tubule","kidney connecting tubule epithelial cell","CL:1000768",2181
+"Intercalated","renal intercalated cell","CL:0005010","Cortical Collecting Duct Intercalated Type A","renal alpha-intercalated cell","CL:0005011","Connecting Tubule Intercalated Type A","renal alpha-intercalated cell","CL:0005011",83
+"Connecting Tubule","kidney connecting tubule epithelial cell","CL:1000768","Connecting Tubule","kidney connecting tubule epithelial cell","CL:1000768","Connecting Tubule Principal","kidney collecting duct principal cell","CL:1001431",957
+"Intercalated","renal intercalated cell","CL:0005010","Cortical Collecting Duct Intercalated Type A","renal alpha-intercalated cell","CL:0005011","Cortical Collecting Duct Intercalated Type A","renal alpha-intercalated cell","CL:0005011",2578
+"Principal","renal principal cell","CL:0005009","Cortical Collecting Duct Principal","kidney collecting duct principal cell","CL:1001431","Cortical Collecting Duct Principal","kidney collecting duct principal cell","CL:1001431",2281
+"Thick Ascending Limb","kidney loop of Henle thick ascending limb epithelial cell","CL:1001106","Cortical Thick Ascending Limb","kidney loop of Henle cortical thick ascending limb epithelial cell","[kidney loop of Henle cortical thick ascending limb epithelial cell](http://www.ontobee.org/ontology/CL?iri=http://purl.obolibrary.org/obo/1001109)","Cortical Thick Ascending Limb","kidney loop of Henle cortical thick ascending limb epithelial cell","[kidney loop of Henle cortical thick ascending limb epithelial cell](http://www.ontobee.org/ontology/CL?iri=http://purl.obolibrary.org/obo/1001109)",4205
+"Vascular Smooth Muscle / Pericyte","vascular associated smooth muscle cell","CL:0000359","Cortical Vascular Smooth Muscle / Pericyte","vascular associated smooth muscle cell","CL:0000359","Cortical Vascular Smooth Muscle / Pericyte","vascular associated smooth muscle cell","CL:0000359",457
+"Immune","leukocyte","CL:0000738","Cycling Mononuclear Phagocyte","mononuclear phagocyte","CL:0000113","Cycling Mononuclear Phagocyte","mononuclear phagocyte","CL:0000113",47
+"Descending Thin Limb","kidney loop of Henle thin descending limb epithelial cell","CL:1001111","Descending Thin Limb Type 1","kidney loop of Henle thin descending limb epithelial cell","CL:1001111","Descending Thin Limb Type 1","kidney loop of Henle thin descending limb epithelial cell","CL:1001111",1524
+"Descending Thin Limb","kidney loop of Henle thin descending limb epithelial cell","CL:1001111","Descending Thin Limb Type 2","kidney loop of Henle thin descending limb epithelial cell","CL:1001111","Descending Thin Limb Type 2","kidney loop of Henle thin descending limb epithelial cell","CL:1001111",901
+"Descending Thin Limb","kidney loop of Henle thin descending limb epithelial cell","CL:1001111","Descending Thin Limb Type 3","kidney loop of Henle thin descending limb epithelial cell","CL:1001111","Descending Thin Limb Type 3","kidney loop of Henle thin descending limb epithelial cell","CL:1001111",1392
+"Distal Convoluted Tubule","kidney distal convoluted tubule epithelial cell","CL:1000849","Distal Convoluted Tubule","kidney distal convoluted tubule epithelial cell","CL:1000849","Distal Convoluted Tubule Type 1","kidney distal convoluted tubule epithelial cell","CL:1000849",3440
+"Distal Convoluted Tubule","kidney distal convoluted tubule epithelial cell","CL:1000849","Distal Convoluted Tubule","kidney distal convoluted tubule epithelial cell","CL:1000849","Distal Convoluted Tubule Type 2","kidney distal convoluted tubule epithelial cell","CL:1000849",278
+"Fibroblast","fibroblast","CL:0000057","Fibroblast","fibroblast","CL:0000057","Fibroblast","fibroblast","CL:0000057",1851
+"Endothelial","endothelial cell","CL:0000115","Glomerular Capillary Endothelial","glomerular capillary endothelial cell","CL:1001005","Glomerular Capillary Endothelial","glomerular capillary endothelial cell","CL:1001005",1041
+"Principal","renal principal cell","CL:0005009","Inner Medullary Collecting Duct","kidney inner medulla collecting duct epithelial cell","CL:1000547","Inner Medullary Collecting Duct","kidney inner medulla collecting duct epithelial cell","CL:1000547",4095
+"Intercalated","renal intercalated cell","CL:0005010","Intercalated Type B","renal beta-intercalated cell","CL:0002201","Intercalated Type B","renal beta-intercalated cell","CL:0002201",768
+"Endothelial","endothelial cell","CL:0000115","Lymphatic Endothelial","endothelial cell of lymphatic vessel","CL:0002138","Lymphatic Endothelial","endothelial cell of lymphatic vessel","CL:0002138",123
+"Thick Ascending Limb","kidney loop of Henle thick ascending limb epithelial cell","CL:1001106","Macula Densa","macula densa epithelial cell","CL:1000850","Macula Densa","macula densa epithelial cell","CL:1000850",1045
+"Immune","leukocyte","CL:0000738","Mast","mast cell","CL:0000097","Mast","mast cell","CL:0000097",109
+"Fibroblast","fibroblast","CL:0000057","Medullary Fibroblast","fibroblast","CL:0000057","Medullary Fibroblast","fibroblast","CL:0000057",4587
+"Thick Ascending Limb","kidney loop of Henle thick ascending limb epithelial cell","CL:1001106","Medullary Thick Ascending Limb","kidney loop of Henle medullary thick ascending limb epithelial cell","CL:1001108","Medullary Thick Ascending Limb","kidney loop of Henle medullary thick ascending limb epithelial cell","CL:1001108",4160
+"Vascular Smooth Muscle / Pericyte","vascular associated smooth muscle cell","CL:0000359","Mesangial","mesangial cell","CL:0000650","Mesangial","mesangial cell","CL:0000650",200
+"Immune","leukocyte","CL:0000738","Monocyte-derived","monocyte","CL:0000576","Monocyte-derived","monocyte","CL:0000576",803
+"Immune","leukocyte","CL:0000738","Neutrophil","neutrophil","CL:0000775","Neutrophil","neutrophil","CL:0000775",58
+"Intercalated","renal intercalated cell","CL:0005010","Outer Medullary Collecting Duct Intercalated Type A","Outer Medullary Collecting Duct Intercalated Type A","[Outer Medullary Collecting Duct Intercalated Type A]()","Outer Medullary Collecting Duct Intercalated Type A","kidney outer medulla collecting duct intercalated cell","CL:1000717",933
+"Principal","renal principal cell","CL:0005009","Outer Medullary Collecting Duct Principal","Outer Medullary Collecting Duct Principal","[Outer Medullary Collecting Duct Principal]()","Outer Medullary Collecting Duct Principal","kidney outer medulla collecting duct principal cell","CL:1000716",894
+"Papillary Tip Epithelial","papillary tips cell","CL:1000597","Papillary Tip Epithelial","Papillary Tip Epithelial","[Papillary Tip Epithelial]()","Papillary Tip Epithelial","papillary tips cell","CL:1000597",322
+"Parietal Epithelial","parietal epithelial cell","CL:1000452","Parietal Epithelial","Parietal Epithelial","[Parietal Epithelial]()","Parietal Epithelial","parietal epithelial cell","CL:1000452",527
+"Immune","leukocyte","CL:0000738","Plasma","plasma cell","CL:0000786","Plasma","plasma cell","CL:0000786",98
+"Immune","leukocyte","CL:0000738","Plasmacytoid Dendritic","plasmacytoid dendritic cell","CL:0000784","Plasmacytoid Dendritic","plasmacytoid dendritic cell","CL:0000784",31
+"Podocyte","glomerular visceral epithelial cell","CL:0000653","Podocyte","glomerular visceral epithelial cell","CL:0000653","Podocyte","glomerular visceral epithelial cell","CL:0000653",1028
+"Proximal Tubule","epithelial cell of proximal tubule","CL:0002306","Proximal Tubule Epithelial Segment 1","epithelial cell of proximal tubule","CL:0002306","Proximal Tubule Epithelial Segment 1","epithelial cell of proximal tubule","CL:0002306",4407
+"Proximal Tubule","epithelial cell of proximal tubule","CL:0002306","Proximal Tubule Epithelial Segment 2","epithelial cell of proximal tubule","CL:0002306","Proximal Tubule Epithelial Segment 2","epithelial cell of proximal tubule","CL:0002306",1355
+"Proximal Tubule","epithelial cell of proximal tubule","CL:0002306","Proximal Tubule Epithelial Segment 3","epithelial cell of proximal tubule","CL:0002306","Proximal Tubule Epithelial Segment 3","epithelial cell of proximal tubule","CL:0002306",2068
+"Vascular Smooth Muscle / Pericyte","vascular associated smooth muscle cell","CL:0000359","Renin-positive Juxtaglomerular Granular","kidney granular cell","CL:0000648","Renin-positive Juxtaglomerular Granular","kidney granular cell","CL:0000648",34
+"Schwann","Schwann cell","CL:0002573","Schwann / Neural","Schwann cell","CL:0002573","Schwann / Neural","Schwann cell","CL:0002573",35
+"Immune","leukocyte","CL:0000738","T","T cell","CL:000084","T","T cell","CL:000084",1341
+"Vascular Smooth Muscle / Pericyte","vascular associated smooth muscle cell","CL:0000359","Vascular Smooth Muscle / Pericyte","vascular associated smooth muscle cell","CL:0000359","Vascular Smooth Muscle / Pericyte","vascular associated smooth muscle cell","CL:0000359",1203
