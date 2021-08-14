@@ -67,13 +67,13 @@ Columns higher in the cell type hierarchy should have a lower value of "n".
 Pages website for the download link of the corresponding config.
 
 Furthermore, this script also merges ontology ID and ontology label of every cell type
-with the cell type data extracted from Azimuth's reference files. This data can be 
+with the cell type data extracted from Azimuth's reference files. This data can be
 found in a table on [the Azimuth references webpage](https://azimuth.hubmapconsortium.org/references/)
-under the section for every available body organ. This ontology data is stored in the
-```data/azimuth_ct_tables``` directory where each file is named in the format
-```<organ_name>__<hierarchy_column-n>.csv```. Unfortunately, at the time of writing 
-this document, these CSV files aren't hosted anywhere to be readily downloaded. These
-files were provided to us by courtesy of Jaison from the Azimuth team.
+under the "Annotation Details" section for every available body organ. This ontology 
+data is stored in the ```data/azimuth_ct_tables``` directory where each file is named 
+in the format ```<organ_name>__<hierarchy_column-n>.csv```. Unfortunately, at the time
+of writing this document, these CSV files aren't hosted anywhere to be readily downloaded.
+These files were provided to us by courtesy of Jaison from the Azimuth team.
 
 The organ's final ASCT+B table format file is stored in ```data/asctb_tables``` 
 directory as ```<organ_name>.csv```. 
