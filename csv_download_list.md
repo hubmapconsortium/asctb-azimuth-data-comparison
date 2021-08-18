@@ -1,5 +1,3 @@
-## ASCT+B cell types data from Azimuth reference data
-
 - [Bone Marrow & Blood/Pelvis](https://darshalshetty.github.io/asctb-azimuth-data-comparison/pbmc.csv)
 - [Brain](https://darshalshetty.github.io/asctb-azimuth-data-comparison/motor_cortex.csv)
 - [Fetal Development](https://darshalshetty.github.io/asctb-azimuth-data-comparison/fetal_development.csv)
