@@ -80,7 +80,7 @@ directory as ```<organ_name>.csv```.
 
 ## Deployment
 
-The available CSV files can be seen [here](https://darshalshetty.github.io/asctb-azimuth-data-comparison/).
+The available CSV files can be seen [here](https://hubmapconsortium.github.io/asctb-azimuth-data-comparison/).
 Through GitHub Workflows every time a commit is pushed to main, the script 
 ```R/extract_ct_from_ref.R``` is run and resultant CSV files are deployed so that
 they can be accessed through GitHub pages. Thus ensuring latest ASCT+B CSV data
