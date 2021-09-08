@@ -1,7 +1,7 @@
 library(Seurat)
 library(rjson)
 library(httr)
-source('extract_ct_from_json.R')
+source('R/extract_ct_from_json.R')
 
 process_reference <- function(organ_config) {
   body_organ <- organ_config$name

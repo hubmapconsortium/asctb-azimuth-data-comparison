@@ -68,7 +68,7 @@ jobs:
           path: data/azimuth_references
           key: ${{ runner.os }}-azimuth-ref-${{ hashFiles('data/organ_data.json') }}
 
-      - name: Genrate csv
+      - name: Generate CSV
         run: source("R/extract_ct_from_ref.R")
         shell: Rscript {0}
 
