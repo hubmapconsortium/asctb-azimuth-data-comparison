@@ -56,6 +56,12 @@
         "annotation.l3"
       ],
       "asctb_name": "Kidney"
+    },
+    {
+      "name": "spleen",
+      "url": "https://s3.amazonaws.com/vitessce-data/0.0.31/master_release/satija/2dca1bf5832a4102ba780e9e54f6c350.cell-sets.json",
+      "mode": "nested-json",
+      "asctb_name": "Spleen"
     }
   ]
 }
