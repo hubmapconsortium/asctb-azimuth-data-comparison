@@ -1,0 +1,31 @@
+"spleen cell types as anatomical structures from Azimuth reference data",,,,,,,,,
+,,,,,,,,,
+"Author Name(s):","Azimuth & MC-IU",,,,,,,,
+"Author ORCID(s):",,,,,,,,,
+"Reviewer(s):",,,,,,,,,
+"General Publication(s):",,,,,,,,,
+"Data DOI:",,,,,,,,,
+"Date:","09/08/21",,,,,,,,
+"Version Number:","v1.0",,,,,,,,
+,,,,,,,,,
+"AS/1","AS/2","AS/3","AS/4","AS/5","AS/6","AS/7","AS/8","AS/9","AS/9/COUNT"
+"connective tissue cell","fibroblast","splenic fibroblast",,,,,,,14
+"epithelial cell","meso-epithelial cell","endothelial cell","splenic endothelial cell",,,,,,297
+"hematopoietic cell","hematopoietic precursor cell","hematopoietic stem cell",,,,,,,49
+"hematopoietic cell","leukocyte","mononuclear cell","lymphocyte","innate lymphoid cell","any",,,,27
+"hematopoietic cell","leukocyte","mononuclear cell","lymphocyte","innate lymphoid cell","group 1 innate lymphoid cell","natural killer cell","mature natural killer cell","CD16-negative, CD56-bright natural killer cell",49
+"hematopoietic cell","leukocyte","mononuclear cell","lymphocyte","innate lymphoid cell","group 1 innate lymphoid cell","natural killer cell","mature natural killer cell","CD16-positive, CD56-dim natural killer cell",214
+"hematopoietic cell","leukocyte","mononuclear cell","lymphocyte","lymphocyte of B lineage","antibody secreting cell","plasma cell",,,184
+"hematopoietic cell","leukocyte","mononuclear cell","lymphocyte","T cell","alpha-beta T cell","mature alpha-beta T cell","CD8-positive, alpha-beta T cell","CD8-positive, alpha-beta cytotoxic T cell",150
+"hematopoietic cell","leukocyte","mononuclear cell","lymphocyte","T cell","gamma-delta T cell",,,,154
+"hematopoietic cell","leukocyte","mononuclear cell","lymphocyte","T cell","mature T cell","memory T cell","CD4-positive, alpha-beta memory T cell",,266
+"hematopoietic cell","leukocyte","mononuclear cell","lymphocyte","T cell","mature T cell","memory T cell","CD8-positive, alpha-beta memory T cell",,97
+"hematopoietic cell","leukocyte","mononuclear cell","lymphocyte","T cell","mature T cell","naive T cell","naive thymus-derived CD4-positive, alpha-beta T cell",,84
+"hematopoietic cell","leukocyte","myeloid leukocyte","monocyte","CD14-positive monocyte",,,,,1394
+"hematopoietic cell","leukocyte","myeloid leukocyte","myeloid dendritic cell","CD141-positive myeloid dendritic cell",,,,,31
+"hematopoietic cell","leukocyte","myeloid leukocyte","myeloid dendritic cell","CD1c-positive myeloid dendritic cell",,,,,461
+"hematopoietic cell","leukocyte","professional antigen presenting cell","mature B cell","germinal center B cell",,,,,509
+"hematopoietic cell","leukocyte","professional antigen presenting cell","mature B cell","plasmablast",,,,,148
+"hematopoietic cell","leukocyte","splenocyte","marginal zone B cell",,,,,,662
+"hematopoietic cell","leukocyte","splenocyte","splenic macrophage",,,,,,153
+"hematopoietic cell","myeloid cell","erythroid lineage cell",,,,,,,161
