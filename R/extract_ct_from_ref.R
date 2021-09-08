@@ -123,7 +123,7 @@ process_config <- function(config) {
 }
 
 # main loop runs for each organ in the JSON config
-for (config in fromJSON(file = 'data/organ_data.json')$references) {
+for (config in rjson::fromJSON(file = 'data/organ_data.json')$references) {
   asct_table <- switch(
     config$mode %||% '',
     'nested-json' = { extract_ct_from_json(config$url) },
@@ -131,5 +131,3 @@ for (config in fromJSON(file = 'data/organ_data.json')$references) {
   )
   write_asctb(config$name, asct_table)
 }
-
-
