@@ -1,6 +1,7 @@
 library(Seurat)
 library(rjson)
 library(httr)
+source('extract_ct_from_json.R')
 
 process_reference <- function(organ_config) {
   body_organ <- organ_config$name
@@ -76,7 +77,7 @@ write_asctb <- function(body_organ, asctb_table) {
                                 "cell types as anatomical structures",
                                 "from Azimuth reference data"), rep(NA, column_count-1),
                           rep(NA, column_count),
-                          "Author Name(s):", "Azimuth & Darshal Shetty at MC-IU", rep(NA, column_count-2),
+                          "Author Name(s):", "Azimuth & MC-IU", rep(NA, column_count-2),
                           "Author ORCID(s):", rep(NA, column_count-1),
                           "Reviewer(s):", rep(NA, column_count-1),
                           "General Publication(s):", rep(NA, column_count-1),
@@ -102,25 +103,33 @@ write_asctb <- function(body_organ, asctb_table) {
               col.names = TRUE)
 }
 
-# main loop runs for rach organ in the JSON config
-for (reference in fromJSON(file = 'data/organ_data.json')$references) {
-
+process_config <- function(config) {
   # extract azimuth reference data
-  reference_table <- process_reference(reference)
+  reference_table <- process_reference(config)
   # extract cell type ontology data provided by Jaison
-  ct_ontology_tables <- process_cell_type_data(reference$name, reference$cell_type_columns)
+  ct_ontology_tables <- process_cell_type_data(config$name, config$cell_type_columns)
   # map ontology ID and LABELS to reference cell types
   merged_data <- Reduce(merge, ct_ontology_tables, reference_table)
   # reorder columns
   column_order <- c(
-    sapply(1:length(reference$cell_type_columns),
+    sapply(1:length(config$cell_type_columns),
            function (n)
              c(paste0("AS/",n),
                paste0("AS/",n,"/LABEL"),
                paste0("AS/",n,"/ID"))),
-    paste0("AS/",length(reference$cell_type_columns),"/COUNT"))
+    paste0("AS/",length(config$cell_type_columns),"/COUNT"))
   # generate final CSV file
-  write_asctb(reference$name, merged_data[,column_order])
+  return(merged_data[,column_order])
+}
+
+# main loop runs for each organ in the JSON config
+for (config in fromJSON(file = 'data/organ_data.json')$references) {
+  asct_table <- switch(
+    config$mode %||% '',
+    'nested-json' = { extract_ct_from_json(config$url) },
+    process_config(config)
+  )
+  write_asctb(config$name, asct_table)
 }
 
 
