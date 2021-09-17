@@ -1,7 +1,3 @@
-# PBMC : Jaison's file doesn't have 'AS/1'='other' which exists in the Azimuth reference dataset
-# Motor Cortex : Jaison's file doesn't have 'AS/4'='exclude' which exists in the Azimuth reference dataset
-# Kidney :  Jaison's file doesn't have 'AS/2'=c("Descending Vasa Recta Endothelial ","Peritubular Capilary Endothelial ") and 'AS/3'="M2 Macrophage", "Natural Killer T", "Non-classical monocyte"
-#           Aggregated-Count mismatch for Kidney resolved after pointing cell-type data files to the Github-repo for Azimuth backend.
 library(Seurat)
 library(rjson)
 library(httr)
@@ -10,7 +6,7 @@ source('R/extract_ct_from_json.R')
 process_reference <- function(organ_config) {
   body_organ <- organ_config$name
   cell_hierarchy_cols <- organ_config$cell_type_columns
-  ref_url <- organ_config$url # Azimuth reference RDS-file download URL
+  ref_url <- organ_config$url
 
   # load input reference files locally if present, else download them from URL in config
   file_name <- paste0("data/azimuth_references/", body_organ, ".Rds")
@@ -42,45 +38,6 @@ process_reference <- function(organ_config) {
   return(cell_types)
 }
 
-
-# Created new function to pull data from backend Azimuth website, instead of the static CSV files received over email.
-new_process_cell_type_data <- function(body_organ, cell_hierarchy_cols) {
-  base_url <- 'https://raw.githubusercontent.com/satijalab/azimuth_website/master/static/csv/'
-  return(sapply(1:length(cell_hierarchy_cols),
-                function (i, levels) {
-
-                  # append the individual csv file-name for the organ into the base-url of raw-github-csv files
-                  ct_file <- paste0(base_url, levels[i])
-
-                  # read file containing cell ontology data for each cell type column in a body organ reference file
-                  ont_data <- read.csv(ct_file)
-
-                  # extract ontology label and id from "OBO.Ontology.ID" column
-                  df <- data.frame(
-                    name = ont_data$Label, # column to join with reference dataframe column values
-                    label = if("OBO.Ontology.ID" %in% names(ont_data))
-                      gsub("^\\[(.*?)\\].*",
-                           "\\1",
-                           ont_data$OBO.Ontology.ID)
-                    else rep(NA, nrow(ont_data)),
-                    id = if("OBO.Ontology.ID" %in% names(ont_data))
-                      gsub(".*http:\\/\\/purl\\.obolibrary\\.org\\/obo\\/(.*?)_(.*?)\\)$",
-                           "\\1:\\2",
-                           ont_data$OBO.Ontology.ID)
-                    else rep(NA, nrow(ont_data)))
-
-                  # rename columns according to ASCT+B table format
-                  names(df) <- c(paste0("AS/",i),
-                                 paste0("AS/",i,"/LABEL"),
-                                 paste0("AS/",i,"/ID"))
-                  return(df)
-                },
-                cell_hierarchy_cols,
-                simplify = FALSE))
-}
-
-
-# This was for the static /data/azimuth_ct_tables/ files provided by Jaison. Now we've received access to the backend-csv files used for the Azimuth website directly.
 process_cell_type_data <- function(body_organ, cell_hierarchy_cols) {
   return(sapply(1:length(cell_hierarchy_cols),
                 function (i, levels) {
@@ -149,13 +106,8 @@ write_asctb <- function(body_organ, asctb_table) {
 process_config <- function(config) {
   # extract azimuth reference data
   reference_table <- process_reference(config)
-
-  # extract cell type ontology data provided by Jaison ---- Files had some issues. Commenting this out 09/17/2021
-  #ct_ontology_tables <- process_cell_type_data(config$name, config$cell_type_columns)
-
-  #pull the files for cell-type ontology data from the backend Azimuth website Repo directly
-  ct_ontology_tables <- new_process_cell_type_data(config$name, config$new_cell_type_files)
-
+  # extract cell type ontology data provided by Jaison
+  ct_ontology_tables <- process_cell_type_data(config$name, config$cell_type_columns)
   # map ontology ID and LABELS to reference cell types
   merged_data <- Reduce(merge, ct_ontology_tables, reference_table)
   # reorder columns
@@ -172,40 +124,10 @@ process_config <- function(config) {
 
 # main loop runs for each organ in the JSON config
 for (config in rjson::fromJSON(file = 'data/organ_data.json')$references) {
-  print(config$name)
   asct_table <- switch(
     config$mode %||% '',
     'nested-json' = { extract_ct_from_json(config$url) },
     process_config(config)
   )
-
   write_asctb(config$name, asct_table)
 }
-
-
-
-# Testing if each organ reference-file data counts match against Jaison's file
-for (config in rjson::fromJSON(file = 'data/organ_data.json')$references) {
-  print(config$name)
-  reference_table <- process_reference(config)
-  #reference_table$`AS/1` <- lapply(reference_table$`AS/1`, trimws)
-  ct_ontology_tables <- new_process_cell_type_data(config$name, config$new_cell_type_files)
-  #ct_ontology_tables <- sapply(ct_ontology_tables, trimws)
-  merged_data <- Reduce(merge, ct_ontology_tables, reference_table)
-
-  ref_cols <- colnames(reference_table)
-  ref_count_col <- ref_cols[grep('COUNT',ref_cols)]
-  merged_cols <- colnames(merged_data)
-  merged_count_col <- merged_cols[grep('COUNT',merged_cols)]
-
-  ref_agg_sum <- sum(reference_table[ref_count_col])
-  merged_agg_sum <- sum(merged_data[merged_count_col])
-  if (ref_agg_sum!=merged_agg_sum){
-    print(paste(config$name,' has some problem with count mismatches'))
-    print(paste("Difference of ",ref_agg_sum-merged_agg_sum," in aggregated sum"))
-  }
-  cat('\n\n')
-}
-
-
-setdiff(reference_table$`AS/3`,merged_data$`AS/3`)

@@ -7,10 +7,6 @@
         "annotation.l1",
         "annotation.l2"
       ],
-	  "new_cell_type_files":[
-		"lung_l1.csv",
-		"lung_l2.csv"
-	  ],
       "asctb_name": "Lung"
     },
     {
@@ -19,9 +15,6 @@
       "cell_type_columns": [
         "annotation.l1"
       ],
-	  "new_cell_type_files":[
-		"pancreas.csv"
-	  ],
       "asctb_name": "Pancreas"
     },
     {
@@ -32,28 +25,17 @@
         "celltype.l2",
         "celltype.l3"
       ],
-	  "new_cell_type_files":[
-		"pbmc1.csv",
-		"pbmc2.csv",
-		"pbmc3.csv"
-	  ],
       "asctb_name": "Bone Marrow & Blood/Pelvis"
     },
     {
       "name": "motor_cortex",
       "url": "https://zenodo.org/record/4546932/files/ref.Rds?download=1",
-	  "cell_type_columns": [
+      "cell_type_columns": [
         "class",
         "subclass",
         "cluster",
         "cross_species_cluster"
       ],
-	  "new_cell_type_files":[
-		"humanbrain_class.csv",
-		"humanbrain_subclass.csv",
-		"humanbrain_cluster.csv",
-		"humanbrain_crossspecies.csv"
-	  ],
       "asctb_name": "Brain"
     },
     {
@@ -63,10 +45,6 @@
         "annotation.l1",
         "annotation.l2"
       ],
-	  "new_cell_type_files":[
-		"humanfetus_l1.csv",
-		"humanfetus_l2.csv"
-	  ],
       "asctb_name": "Fetal Development"
     },
     {
@@ -77,11 +55,6 @@
         "annotation.l2",
         "annotation.l3"
       ],
-	  "new_cell_type_files":[
-		"kidney_l1.csv",
-		"kidney_l2.csv",
-		"kidney_l3.csv"
-	  ],
       "asctb_name": "Kidney"
     },
     {
