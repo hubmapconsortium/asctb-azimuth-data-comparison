@@ -1,9 +1,9 @@
-# UPDATES:        Updated the script on 09/17/2021 with regards to issue #1
+# UPDATES:        Updated the script on 09/17/2021 for the purposes of issue #1: Aggregated counts mismatch
+#                 Updated on 09/21/2021 for enhancement of issue #2: Pipeline needs to generate a summary of stats for Azimuth references
 # AUTHOR:         Darshal Shetty/ Vikrant Deshpande/ Amber Ramesh
-# PBMC :          Azimuth-backend file nor Jaison's file contain 'AS/1'='other', which exists in the Azimuth reference dataset
-# Motor Cortex :  Azimuth-backend file nor Jaison's file contain 'AS/4'='exclude', which exists in the Azimuth reference dataset
-# Kidney :        Jaison's file doesn't have 'AS/2'=c("Descending Vasa Recta Endothelial ","Peritubular Capilary Endothelial ") and 'AS/3'="M2 Macrophage", "Natural Killer T", "Non-classical monocyte"
-#                 Aggregated-Count mismatch for Kidney resolved after pointing cell-type data files to the Github-repo for Azimuth backend.
+
+# PBMC :          Azimuth-backend file doesn't contain 'AS/1'='other', which exists in the Azimuth reference dataset
+# Motor Cortex :  Azimuth-backend file doesn't contain 'AS/4'='exclude', which exists in the Azimuth reference dataset
 library(Seurat)
 library(rjson)
 library(httr)
@@ -13,7 +13,7 @@ source('R/extract_ct_from_json.R')
 
 process_reference <- function(organ_config) {
   body_organ <- organ_config$name
-  cell_hierarchy_cols <- organ_config$cell_type_columns
+  cell_hierarchy_cols <- organ_config$cell_type_columns # Still require this field for parsing the RDS data
   ref_url <- organ_config$url # Azimuth reference RDS-file download URL
 
   # load input reference files locally if present, else download them from URL in config
@@ -48,14 +48,11 @@ process_reference <- function(organ_config) {
 
 
 
-# This was for the static /data/azimuth_ct_tables/ files provided by Jaison. Now we've received access to the backend-csv files used for the Azimuth website directly.
-# Created new function to pull data from backend Azimuth website, instead of the static CSV files received over email.
+# Pull data from backend Azimuth website, instead of the static CSV files received over email.
 process_cell_type_data <- function(body_organ, cell_hierarchy_cols) {
   base_url <- 'https://raw.githubusercontent.com/satijalab/azimuth_website/master/static/csv/'
   return(sapply(1:length(cell_hierarchy_cols),
                 function (i, levels) {
-                  #ct_file <- paste0("data/azimuth_ct_tables/", body_organ, "__",levels[i], ".csv")
-                  
                   # append the individual csv file-name for the organ into the base-url of raw-github-csv files
                   ct_file <- paste0(base_url, levels[i])
                   
@@ -75,6 +72,9 @@ process_cell_type_data <- function(body_organ, cell_hierarchy_cols) {
                                "\\1:\\2",
                                ont_data$OBO.Ontology.ID)
                           else rep(NA, nrow(ont_data)))
+                  
+                  # set global variable of all biomarkers, so that we can create the summary of this organ later
+                  entire_set_of_biomarkers <<-  c(entire_set_of_biomarkers,unlist(strsplit(ont_data$Markers,",")))
 
                   # rename columns according to ASCT+B table format
                   names(df) <- c(paste0("AS/",i),
@@ -128,22 +128,20 @@ process_config <- function(config) {
   # extract azimuth reference data
   reference_table <- process_reference(config)
 
-  # extract cell type ontology data provided by Jaison ---- Files had some issues. Commenting this out 09/17/2021
-  #ct_ontology_tables <- process_cell_type_data(config$name, config$cell_type_columns)
-
   #pull the files for cell-type ontology data from the backend Azimuth website Repo directly
   ct_ontology_tables <- process_cell_type_data(config$name, config$new_cell_type_files)
 
   # map ontology ID and LABELS to reference cell types
   merged_data <- Reduce(merge, ct_ontology_tables, reference_table)
+  
   # reorder columns
   column_order <- c(
-    sapply(1:length(config$cell_type_columns),
+    sapply(1:length(config$new_cell_type_files),
            function (n)
              c(paste0("AS/",n),
                paste0("AS/",n,"/LABEL"),
                paste0("AS/",n,"/ID"))),
-    paste0("AS/",length(config$cell_type_columns),"/COUNT"))
+    paste0("AS/",length(config$new_cell_type_files),"/COUNT"))
   # generate final CSV file
   return(merged_data[,column_order])
 }
@@ -151,39 +149,62 @@ process_config <- function(config) {
 
 
 
+process_azimuth_ref_dataset_summary <- function(config, asct_table, organ_stats){
+  # C1: Organ Name
+  organ.1 <- config$asctb_name
+  
+  # C2: Get the union of all "CT" columns in the ASCTB organ.csv file
+  entire_set_of_cell_types <- asct_table[!(grepl("ID",colnames(asct_table)) | grepl("COUNT",colnames(asct_table)) | grepl("LABEL",colnames(asct_table)))]
+  n_unique_cell_types.2 <- length(unique(as.vector(as.matrix(entire_set_of_cell_types))))
+  
+  # C3: Get the union of all "ID" columns in the ASCTB organ.csv file
+  entire_set_of_ct_ontology_ids <- asct_table[grepl("ID",colnames(asct_table))]
+  n_unique_ct_ontology_ids.3 <- length(unique(as.vector(as.matrix(entire_set_of_ct_ontology_ids))))
+  
+  # C4: Get the sum of all counts that were already generated using the groupby formula used in process_config()
+  n_total_cell_types.4 <- sum(asct_table[grep('COUNT',colnames(asct_table))])
+  
+  # C5: Get the number of annotations for an organ directly from the json config file
+  n_annotation_levels.5 <- length(config$new_cell_type_files)
+  
+  # C6: Get the global variable containing all biomarkers for an organ, that we set during file-processing
+  n_unique_biomarkers.6 <- length(unique(entire_set_of_biomarkers))
+  
+  # Append (C1, C2, ... C6) to the existing organ_stats global var
+  organ_stats <<- rbind(organ_stats, c( organ.1, n_unique_cell_types.2, n_unique_ct_ontology_ids.3, 
+                    n_total_cell_types.4, n_annotation_levels.5, n_unique_biomarkers.6))
+  colnames(organ_stats) <<- organ_stats_cols
+}
+
+
+
+
+
+
+# Main initialization of global data-structures to capture summaries of each organ
+organ_stats_cols <- c("Organ", "Num.Unique.Cell.Types", "Num.Unique.CT.Ontology.IDs", "Num.Total.Cells", "Num.Annotation.Levels", "Num.Unique.Biomarkers")
+organ_stats <- data.frame(matrix(ncol=length(organ_stats_cols), nrow=0, dimnames=list(NULL,organ_stats_cols)))
+entire_set_of_biomarkers <- c()
+
 
 # main loop runs for each organ in the JSON config
 for (config in rjson::fromJSON(file = 'data/organ_data.json')$references) {
   print(config$name)
+  entire_set_of_biomarkers <- c()
   asct_table <- switch(
     config$mode %||% '',
     'nested-json' = { extract_ct_from_json(config$url) },
     process_config(config)
   )
+  process_azimuth_ref_dataset_summary(config, asct_table, organ_stats)
   write_asctb(config$name, asct_table)
 }
 
-
-
-# Testing if each organ reference-file data counts match against Jaison's file
-# for (config in rjson::fromJSON(file = 'data/organ_data.json')$references) {
-#   print(config$name)
-#   reference_table <- process_reference(config)
-#   #reference_table$`AS/1` <- lapply(reference_table$`AS/1`, trimws)
-#   ct_ontology_tables <- process_cell_type_data(config$name, config$new_cell_type_files)
-#   #ct_ontology_tables <- sapply(ct_ontology_tables, trimws)
-#   merged_data <- Reduce(merge, ct_ontology_tables, reference_table)
-# 
-#   ref_cols <- colnames(reference_table)
-#   ref_count_col <- ref_cols[grep('COUNT',ref_cols)]
-#   merged_cols <- colnames(merged_data)
-#   merged_count_col <- merged_cols[grep('COUNT',merged_cols)]
-# 
-#   ref_agg_sum <- sum(reference_table[ref_count_col])
-#   merged_agg_sum <- sum(merged_data[merged_count_col])
-#   if (ref_agg_sum!=merged_agg_sum){
-#     print(paste(config$name,' has some problem with count mismatches'))
-#     print(paste("Difference of ",ref_agg_sum-merged_agg_sum," in aggregated sum"))
-#   }
-#   cat('\n\n')
-# }
+# finally write the Organ-level summaries into a CSV file.
+write.table(organ_stats,
+            file = paste0("data/asctb_tables/organ_stats.csv"),
+            sep = ',',
+            na = "",
+            append = FALSE,
+            row.names = FALSE,
+            col.names = TRUE)
