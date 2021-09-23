@@ -1,5 +1,6 @@
 # UPDATES:        Updated the script on 09/17/2021 for the purposes of issue #1: Aggregated counts mismatch
 #                 Updated on 09/21/2021 for enhancement of issue #2: Pipeline needs to generate a summary of stats for Azimuth references
+#                 Updated on 09/23/2021 for enhancement of issue #2: Generate stats for counts of each celltype, within an organ
 # AUTHOR:         Darshal Shetty/ Vikrant Deshpande/ Amber Ramesh
 
 # PBMC :          Azimuth-backend file doesn't contain 'AS/1'='other', which exists in the Azimuth reference dataset
@@ -10,6 +11,24 @@ library(httr)
 source('R/extract_ct_from_json.R')
 
 
+generate_celltype_vs_count_table <- function(cell_types, body_organ){
+  # Convert the available CellType columns in the RDS reference into a flattened vector
+  all_celltype_values <- as.vector(as.matrix(cell_types))
+  
+  # Generate the pivot-table which shows celltype, count(*) for the organ
+  celltype_vs_counts <- as.data.frame(table(all_celltype_values))
+  
+  # Basic reformatting for standardization
+  renamed_cols <- c('Cell.Types', 'Num.Cells')
+  colnames(celltype_vs_counts) <- renamed_cols
+  celltype_vs_counts['Organ'] <- body_organ
+  celltype_vs_counts <- celltype_vs_counts[c('Organ',renamed_cols)]
+  
+  write.csv(celltype_vs_counts, paste0(SUMMARIES_DIR, body_organ,".celltype_stats.csv"), row.names = FALSE)
+}
+
+
+
 
 process_reference <- function(organ_config) {
   body_organ <- organ_config$name
@@ -17,7 +36,7 @@ process_reference <- function(organ_config) {
   ref_url <- organ_config$url # Azimuth reference RDS-file download URL
 
   # load input reference files locally if present, else download them from URL in config
-  file_name <- paste0("data/azimuth_references/", body_organ, ".Rds")
+  file_name <- paste0(REFERENCE_RDS_DIR, body_organ, ".Rds")
   if (!file.exists(file_name)) {
     GET(ref_url, write_disk(file_name))
   }
@@ -31,6 +50,10 @@ process_reference <- function(organ_config) {
                                  return(paste0("AS/",x)))
   names(cell_types) <- final_column_names
 
+  # generate a separate summary table: celltype, count(*) for this organ
+  generate_celltype_vs_count_table(cell_types, body_organ)
+  
+  
   # get unique rows along with their counts
   count_col <- paste0("AS/", length(cell_hierarchy_cols), "/COUNT")
   cell_types[count_col] <- 1;
@@ -48,13 +71,13 @@ process_reference <- function(organ_config) {
 
 
 
-# Pull data from backend Azimuth website, instead of the static CSV files received over email.
+
 process_cell_type_data <- function(body_organ, cell_hierarchy_cols) {
-  base_url <- 'https://raw.githubusercontent.com/satijalab/azimuth_website/master/static/csv/'
+  # Pull the cell-annotation data from the official Azimuth Website backend-repository
   return(sapply(1:length(cell_hierarchy_cols),
                 function (i, levels) {
                   # append the individual csv file-name for the organ into the base-url of raw-github-csv files
-                  ct_file <- paste0(base_url, levels[i])
+                  ct_file <- paste0(ANNOTATION_FILES_BASE_URL, levels[i])
                   
                   # read file containing cell ontology data for each cell type column in a body organ reference file
                   ont_data <- read.csv(ct_file)
@@ -90,6 +113,7 @@ process_cell_type_data <- function(body_organ, cell_hierarchy_cols) {
 
 
 write_asctb <- function(body_organ, asctb_table) {
+  # Simply adds a metadata section into the final file, and then appends the actual contents
   column_count <- ncol(asctb_table)
   header_rows <- matrix(c(paste(body_organ,
                                 "cell types as anatomical structures",
@@ -107,13 +131,13 @@ write_asctb <- function(body_organ, asctb_table) {
                        column_count,
                        byrow = TRUE)
   write.table(header_rows,
-              file =  paste0("data/asctb_tables/", body_organ, ".csv"),
+              file =  paste0(ASCTB_TARGET_DIR, body_organ, ".csv"),
               sep = ',',
               na = "",
               row.names = FALSE,
               col.names = FALSE)
   write.table(asctb_table,
-              file = paste0("data/asctb_tables/", body_organ, ".csv"),
+              file = paste0(ASCTB_TARGET_DIR, body_organ, ".csv"),
               sep = ',',
               na = "",
               append = TRUE,
@@ -181,10 +205,18 @@ process_azimuth_ref_dataset_summary <- function(config, asct_table, organ_stats)
 
 
 
+
+
+
 # Main initialization of global data-structures to capture summaries of each organ
 organ_stats_cols <- c("Organ", "Num.Unique.Cell.Types", "Num.Unique.CT.Ontology.IDs", "Num.Total.Cells", "Num.Annotation.Levels", "Num.Unique.Biomarkers")
 organ_stats <- data.frame(matrix(ncol=length(organ_stats_cols), nrow=0, dimnames=list(NULL,organ_stats_cols)))
 entire_set_of_biomarkers <- c()
+REFERENCE_RDS_DIR <- "data/azimuth_references/"
+SUMMARIES_DIR <- "data/azimuth_summary_tables/"
+ASCTB_TARGET_DIR <- "data/azimuth_ct_tables/"
+ANNOTATION_FILES_BASE_URL <- 'https://raw.githubusercontent.com/satijalab/azimuth_website/master/static/csv/'
+
 
 
 # main loop runs for each organ in the JSON config
@@ -202,9 +234,56 @@ for (config in rjson::fromJSON(file = 'data/organ_data.json')$references) {
 
 # finally write the Organ-level summaries into a CSV file.
 write.table(organ_stats,
-            file = paste0("data/asctb_tables/organ_stats.csv"),
+            file = paste0(SUMMARIES_DIR,"overall_organ_stats.csv"),
             sep = ',',
             na = "",
             append = FALSE,
             row.names = FALSE,
             col.names = TRUE)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Filtering out the dataset which isn't present in the annotation files
+configs <- rjson::fromJSON(file = 'data/organ_data.json')$references
+config <- configs[[4]]
+organ_config <- config
+body_organ <- organ_config$name
+cell_hierarchy_cols <- organ_config$cell_type_columns # Still require this field for parsing the RDS data
+ref_url <- organ_config$url # Azimuth reference RDS-file download URL
+
+# load input reference files locally if present, else download them from URL in config
+file_name <- paste0("data/azimuth_references/", body_organ, ".Rds")
+if (!file.exists(file_name)) {
+  GET(ref_url, write_disk(file_name))
+}
+ref <- readRDS(file_name)
+
+# get columns containing cell type data
+cell_types <- ref@meta.data[cell_hierarchy_cols];
+write.csv(cell_types, paste0(organ_config$name,"_cell_types.csv"))
+
+
+
+# pbmc_other.celltype_l1 <- cell_types[cell_types$celltype.l1=='other',]
+# write.csv(pbmc_other.celltype_l1, file = "pbmc_other.celltype_l1.csv", row.names = TRUE)
+
+# motor_cortex_exclude.crossspeciescluster <- cell_types[cell_types$cross_species_cluster=='exclude',]
+# write.csv(motor_cortex_exclude.crossspeciescluster, file = "motor_cortex_exclude.crossspeciescluster.csv", row.names = TRUE)
