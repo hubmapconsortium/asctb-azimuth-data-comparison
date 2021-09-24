@@ -7,6 +7,9 @@
 #### Description
 This script takes [reference files from Azimuth](https://azimuth.hubmapconsortium.org/references/)
 and converts them into csv files that can be viewed in [the ASCT+B reporter](https://hubmapconsortium.github.io/ccf-asct-reporter/).
+We also generate simple summaries for each organ to denote Cell-Type vs Number-of-cells.
+A final summary of all organ-datasets processed, will also be available [here](https://hubmapconsortium.github.io/asctb-azimuth-data-comparison/).
+
 
 #### Usage
 ```
@@ -91,10 +94,13 @@ This ontology-data is retrieved by pulling and parsing files from [the Azimuth W
 The organ's final ASCT+B table format file is stored in ```data/asctb_tables``` 
 directory as ```<organ_name>.csv```. 
 
+The corresponding summary file is stored in ```data/azimuth_summary_tables``` 
+directory as ```<organ_name>.celltype_stats.csv```. 
+
 ## Deployment
 
-The available CSV files can be seen [here](https://hubmapconsortium.github.io/asctb-azimuth-data-comparison/).
+All available CSV files can be seen [here](https://hubmapconsortium.github.io/asctb-azimuth-data-comparison/).
 Through GitHub Workflows every time a commit is pushed to main, the script 
 ```R/extract_ct_from_ref.R``` is run and resultant CSV files are deployed so that
-they can be accessed through GitHub pages. Thus ensuring latest ASCT+B CSV data
-is always available on GitHub pages.
+they can be accessed through GitHub pages. This ensures latest ASCT+B CSV data and summaries
+are always available on GitHub pages.

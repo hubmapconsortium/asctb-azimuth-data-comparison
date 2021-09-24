@@ -1,8 +1,0 @@
-"","Label","Expanded Label","OBO Ontology ID","Markers"
-"1","Mono","Monocyte","[monocyte](http://www.ontobee.org/ontology/CL?iri=http://purl.obolibrary.org/obo/CL_0000576)","CTSS, FCN1, NEAT1, LYZ, PSAP, S100A9, AIF1, MNDA, SERPINA1, TYROBP"
-"2","CD4 T","CD4+ T cell","[CD4-positive, alpha-beta T cell](http://www.ontobee.org/ontology/CL?iri=http://purl.obolibrary.org/obo/CL_0000624)","IL7R, MAL, LTB, CD4, LDHB, TPT1, TRAC, TMSB10, CD3D, CD3G"
-"3","CD8 T","CD8+ T cell","[CD8-positive, alpha-beta T cell](http://www.ontobee.org/ontology/CL?iri=http://purl.obolibrary.org/obo/CL_0000625)","CD8B, CD8A, CD3D, TMSB10, HCST, CD3G, LINC02446, CTSW, CD3E, TRAC"
-"4","NK","natural killer cell","[natural killer cell](http://www.ontobee.org/ontology/CL?iri=http://purl.obolibrary.org/obo/CL_0000623)","NKG7, KLRD1, TYROBP, GNLY, FCER1G, PRF1, CD247, KLRF1, CST7, GZMB"
-"5","B","B cell","[mature B cell](http://www.ontobee.org/ontology/CL?iri=http://purl.obolibrary.org/obo/CL_0000785)","CD79A, RALGPS2, CD79B, MS4A1, BANK1, CD74, TNFRSF13C, HLA-DQA1, IGHM, MEF2C"
-"6","other T","other T cell","[mature T cell](http://www.ontobee.org/ontology/CL?iri=http://purl.obolibrary.org/obo/CL_0002419)","CD3D, TRDC, GZMK, KLRB1, NKG7, TRGC2, CST7, LYAR, KLRG1, GZMA"
-"7","DC","dendritic cell","[dendritic cell](http://www.ontobee.org/ontology/CL?iri=http://purl.obolibrary.org/obo/CL_0000451)","CD74, HLA-DPA1, HLA-DPB1, HLA-DQA1, CCDC88A, HLA-DRA, HLA-DMA, CST3, HLA-DQB1, HLA-DRB1"
