@@ -41,6 +41,11 @@ config file is as follows:
         ...
         "<hierarchy_column-n>"
       ],
+	  "new_cell_type_files":[
+		"<csv_file-1>",
+		"<csv_file-2>",
+		...
+		"<csv_file-n>"
       "asctb_name": "<deployment_display_name>"
     },
     {
@@ -63,17 +68,25 @@ found in the "Annotation Details" section of an organ on
 [the Azimuth references webpage](https://azimuth.hubmapconsortium.org/references/).
 Columns higher in the cell type hierarchy should have a lower value of "n".
 
+```<csv_files-n>``` are names of csv-files to be retrieved from the Azimuth Website backend,
+that contain the cell-type hierarchy data of a cell in the organ.
+These file names match with the annotations mentioned as per the above "hierarchy_col".
+File-Names that are higher in the cell type hierarchy should have a lower value of "n".
+
 ```<deployment_display_name>``` is the string that is displayed on the final GitHub 
 Pages website for the download link of the corresponding config.
 
 Furthermore, this script also merges ontology ID and ontology label of every cell type
 with the cell type data extracted from Azimuth's reference files. This data can be
 found in a table on [the Azimuth references webpage](https://azimuth.hubmapconsortium.org/references/)
-under the "Annotation Details" section for every available body organ. This ontology 
-data is stored in the ```data/azimuth_ct_tables``` directory where each file is named 
-in the format ```<organ_name>__<hierarchy_column-n>.csv```. Unfortunately, at the time
-of writing this document, these CSV files aren't hosted anywhere to be readily downloaded.
-These files were provided to us by courtesy of Jaison from the Azimuth team.
+under the "Annotation Details" section for every available body organ. 
+
+~~*This ontology data is stored in the ```data/azimuth_ct_tables``` directory where each file is named*~~
+~~*in the format <organ_name>__<hierarchy_column-n>.csv. Unfortunately, at the time*~~
+~~*of writing this document, these CSV files aren't hosted anywhere to be readily downloaded.*~~
+~~*These files were provided to us by courtesy of Jaison from the Azimuth team.*~~
+
+This ontology-data is retrieved by pulling and parsing files from [the Azimuth Website Repository](https://github.com/satijalab/azimuth_website).
 
 The organ's final ASCT+B table format file is stored in ```data/asctb_tables``` 
 directory as ```<organ_name>.csv```. 
