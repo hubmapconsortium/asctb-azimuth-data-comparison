@@ -5,14 +5,17 @@
 "Reviewer(s):",,,,,,,,,
 "General Publication(s):",,,,,,,,,
 "Data DOI:",,,,,,,,,
-"Date:","09/08/21",,,,,,,,
+"Date:","09/24/21",,,,,,,,
 "Version Number:","v1.0",,,,,,,,
 ,,,,,,,,,
 "AS/1","AS/1/LABEL","AS/1/ID","AS/2","AS/2/LABEL","AS/2/ID","AS/3","AS/3/LABEL","AS/3/ID","AS/3/COUNT"
 "Endothelial","endothelial cell","CL:0000115","Afferent / Efferent Arteriole Endothelial","kidney afferent arteriole endothelial cell","CL:1001096","Afferent / Efferent Arteriole Endothelial","kidney afferent arteriole endothelial cell","CL:1001096",341
-"Ascending Thin Limb","kidney loop of Henle thin ascending limb epithelial cell","CL:1001107","Ascending Thin Limb","kidney loop of Henle thin ascending limb epithelial cell","CL:1001107","Ascending Thin Limb","kidney loop of Henle thin ascending limb epithelial cell
+"Ascending Thin Limb","kidney loop of Henle thin ascending limb epithelial cell
+","CL:1001107","Ascending Thin Limb","kidney loop of Henle thin ascending limb epithelial cell
+","CL:1001107","Ascending Thin Limb","kidney loop of Henle thin ascending limb epithelial cell
 ","CL:1001107",1765
-"Endothelial","endothelial cell","CL:0000115","Ascending Vasa Recta Endothelial","vasa recta ascending limb cell","CL:1001131","Ascending Vasa Recta Endothelial","vasa recta ascending limb cell
+"Endothelial","endothelial cell","CL:0000115","Ascending Vasa Recta Endothelial","vasa recta ascending limb cell
+","CL:1001131","Ascending Vasa Recta Endothelial","vasa recta ascending limb cell
 ","CL:1001131",2527
 "Immune","leukocyte","CL:0000738","B","mature B cell","CL:0000785","B","mature B cell","CL:0000785",331
 "Immune","leukocyte","CL:0000738","Classical Dendritic","dendritic cell","CL:0000451","Classical Dendritic","dendritic cell","CL:0000451",57
@@ -27,6 +30,7 @@
 "Descending Thin Limb","kidney loop of Henle thin descending limb epithelial cell","CL:1001111","Descending Thin Limb Type 1","kidney loop of Henle thin descending limb epithelial cell","CL:1001111","Descending Thin Limb Type 1","kidney loop of Henle thin descending limb epithelial cell","CL:1001111",1524
 "Descending Thin Limb","kidney loop of Henle thin descending limb epithelial cell","CL:1001111","Descending Thin Limb Type 2","kidney loop of Henle thin descending limb epithelial cell","CL:1001111","Descending Thin Limb Type 2","kidney loop of Henle thin descending limb epithelial cell","CL:1001111",901
 "Descending Thin Limb","kidney loop of Henle thin descending limb epithelial cell","CL:1001111","Descending Thin Limb Type 3","kidney loop of Henle thin descending limb epithelial cell","CL:1001111","Descending Thin Limb Type 3","kidney loop of Henle thin descending limb epithelial cell","CL:1001111",1392
+"Endothelial","endothelial cell","CL:0000115","Descending Vasa Recta Endothelial ","vasa recta descending limb cell","CL:1001285","Descending Vasa Recta Endothelial ","vasa recta descending limb cell","CL:1001285",1838
 "Distal Convoluted Tubule","kidney distal convoluted tubule epithelial cell","CL:1000849","Distal Convoluted Tubule","kidney distal convoluted tubule epithelial cell","CL:1000849","Distal Convoluted Tubule Type 1","kidney distal convoluted tubule epithelial cell","CL:1000849",3440
 "Distal Convoluted Tubule","kidney distal convoluted tubule epithelial cell","CL:1000849","Distal Convoluted Tubule","kidney distal convoluted tubule epithelial cell","CL:1000849","Distal Convoluted Tubule Type 2","kidney distal convoluted tubule epithelial cell","CL:1000849",278
 "Fibroblast","fibroblast","CL:0000057","Fibroblast","fibroblast","CL:0000057","Fibroblast","fibroblast","CL:0000057",1851
@@ -34,17 +38,21 @@
 "Principal","renal principal cell","CL:0005009","Inner Medullary Collecting Duct","kidney inner medulla collecting duct epithelial cell","CL:1000547","Inner Medullary Collecting Duct","kidney inner medulla collecting duct epithelial cell","CL:1000547",4095
 "Intercalated","renal intercalated cell","CL:0005010","Intercalated Type B","renal beta-intercalated cell","CL:0002201","Intercalated Type B","renal beta-intercalated cell","CL:0002201",768
 "Endothelial","endothelial cell","CL:0000115","Lymphatic Endothelial","endothelial cell of lymphatic vessel","CL:0002138","Lymphatic Endothelial","endothelial cell of lymphatic vessel","CL:0002138",123
+"Immune","leukocyte","CL:0000738","M2 Macrophage","macrophage","CL:0000235","M2 Macrophage","macrophage","CL:0000235",1263
 "Thick Ascending Limb","kidney loop of Henle thick ascending limb epithelial cell","CL:1001106","Macula Densa","macula densa epithelial cell","CL:1000850","Macula Densa","macula densa epithelial cell","CL:1000850",1045
 "Immune","leukocyte","CL:0000738","Mast","mast cell","CL:0000097","Mast","mast cell","CL:0000097",109
 "Fibroblast","fibroblast","CL:0000057","Medullary Fibroblast","fibroblast","CL:0000057","Medullary Fibroblast","fibroblast","CL:0000057",4587
 "Thick Ascending Limb","kidney loop of Henle thick ascending limb epithelial cell","CL:1001106","Medullary Thick Ascending Limb","kidney loop of Henle medullary thick ascending limb epithelial cell","CL:1001108","Medullary Thick Ascending Limb","kidney loop of Henle medullary thick ascending limb epithelial cell","CL:1001108",4160
 "Vascular Smooth Muscle / Pericyte","vascular associated smooth muscle cell","CL:0000359","Mesangial","mesangial cell","CL:0000650","Mesangial","mesangial cell","CL:0000650",200
 "Immune","leukocyte","CL:0000738","Monocyte-derived","monocyte","CL:0000576","Monocyte-derived","monocyte","CL:0000576",803
+"Immune","leukocyte","CL:0000738","Natural Killer T","lymphocyte","CL:0000542","Natural Killer T","lymphocyte","CL:0000542",211
 "Immune","leukocyte","CL:0000738","Neutrophil","neutrophil","CL:0000775","Neutrophil","neutrophil","CL:0000775",58
-"Intercalated","renal intercalated cell","CL:0005010","Outer Medullary Collecting Duct Intercalated Type A","Outer Medullary Collecting Duct Intercalated Type A","[Outer Medullary Collecting Duct Intercalated Type A]()","Outer Medullary Collecting Duct Intercalated Type A","kidney outer medulla collecting duct intercalated cell","CL:1000717",933
-"Principal","renal principal cell","CL:0005009","Outer Medullary Collecting Duct Principal","Outer Medullary Collecting Duct Principal","[Outer Medullary Collecting Duct Principal]()","Outer Medullary Collecting Duct Principal","kidney outer medulla collecting duct principal cell","CL:1000716",894
-"Papillary Tip Epithelial","papillary tips cell","CL:1000597","Papillary Tip Epithelial","Papillary Tip Epithelial","[Papillary Tip Epithelial]()","Papillary Tip Epithelial","papillary tips cell","CL:1000597",322
-"Parietal Epithelial","parietal epithelial cell","CL:1000452","Parietal Epithelial","Parietal Epithelial","[Parietal Epithelial]()","Parietal Epithelial","parietal epithelial cell","CL:1000452",527
+"Immune","leukocyte","CL:0000738","Non-classical monocyte","monocyte","CL:0000576","Non-classical monocyte","monocyte","CL:0000576",163
+"Intercalated","renal intercalated cell","CL:0005010","Outer Medullary Collecting Duct Intercalated Type A","Outer Medullary Collecting Duct Intercalated Type A","Outer Medullary Collecting Duct Intercalated Type A","Outer Medullary Collecting Duct Intercalated Type A","kidney outer medulla collecting duct intercalated cell","CL:1000717",933
+"Principal","renal principal cell","CL:0005009","Outer Medullary Collecting Duct Principal","Outer Medullary Collecting Duct Principal","Outer Medullary Collecting Duct Principal","Outer Medullary Collecting Duct Principal","kidney outer medulla collecting duct principal cell","CL:1000716",894
+"Papillary Tip Epithelial","papillary tips cell","CL:1000597","Papillary Tip Epithelial","Papillary Tip Epithelial","Papillary Tip Epithelial","Papillary Tip Epithelial","papillary tips cell","CL:1000597",322
+"Parietal Epithelial","parietal epithelial cell","CL:1000452","Parietal Epithelial","Parietal Epithelial","Parietal Epithelial","Parietal Epithelial","parietal epithelial cell","CL:1000452",527
+"Endothelial","endothelial cell","CL:0000115","Peritubular Capilary Endothelial ","Peritubular Capilary Endothelial ","Peritubular Capilary Endothelial ","Peritubular Capilary Endothelial ","peritubular capillary endothelial cell","CL:1001033",2757
 "Immune","leukocyte","CL:0000738","Plasma","plasma cell","CL:0000786","Plasma","plasma cell","CL:0000786",98
 "Immune","leukocyte","CL:0000738","Plasmacytoid Dendritic","plasmacytoid dendritic cell","CL:0000784","Plasmacytoid Dendritic","plasmacytoid dendritic cell","CL:0000784",31
 "Podocyte","glomerular visceral epithelial cell","CL:0000653","Podocyte","glomerular visceral epithelial cell","CL:0000653","Podocyte","glomerular visceral epithelial cell","CL:0000653",1028
