@@ -271,7 +271,7 @@ for (config in rjson::fromJSON(file = 'data/organ_data.json')$references) {
 
 # finally write the Organ-level summaries into a CSV file.
 write.table(organ_stats,
-            file = paste0(SUMMARIES_DIR,"overall_organs.stats.csv"),
+            file = paste0(SUMMARIES_DIR,"all_organs.stats.csv"),
             sep = ',',
             na = "",
             append = FALSE,
