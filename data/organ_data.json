@@ -11,7 +11,8 @@
 		"lung_l1.csv",
 		"lung_l2.csv"
 	  ],
-      "asctb_name": "Lung"
+      "asctb_name": "Lung",
+	  "asctb_master_url": "https://docs.google.com/spreadsheets/d/1tK916JyG5ZSXW_cXfsyZnzXfjyoN-8B2GXLbYD6_vF0/edit#gid=925712902"
     },
     {
       "name": "pancreas",
@@ -22,7 +23,8 @@
 	  "new_cell_type_files":[
 		"pancreas.csv"
 	  ],
-      "asctb_name": "Pancreas"
+      "asctb_name": "Pancreas",
+	  "asctb_master_url": "NA"
     },
     {
       "name": "pbmc",
@@ -37,7 +39,8 @@
 		"pbmc2.csv",
 		"pbmc3.csv"
 	  ],
-      "asctb_name": "Bone Marrow & Blood/Pelvis"
+      "asctb_name": "Bone Marrow & Blood/Pelvis",
+	  "asctb_master_url": "https://docs.google.com/spreadsheets/d/1tK916JyG5ZSXW_cXfsyZnzXfjyoN-8B2GXLbYD6_vF0/edit#gid=1852470103"
     },
     {
       "name": "motor_cortex",
@@ -54,7 +57,8 @@
 		"humanbrain_cluster.csv",
 		"humanbrain_crossspecies.csv"
 	  ],
-      "asctb_name": "Brain"
+      "asctb_name": "Brain",
+	  "asctb_master_url": "https://docs.google.com/spreadsheets/d/1tK916JyG5ZSXW_cXfsyZnzXfjyoN-8B2GXLbYD6_vF0/edit#gid=345174398"
     },
     {
       "name": "fetal_development",
@@ -67,7 +71,8 @@
 		"humanfetus_l1.csv",
 		"humanfetus_l2.csv"
 	  ],
-      "asctb_name": "Fetal Development"
+      "asctb_name": "Fetal Development",
+	  "asctb_master_url": "NA"
     },
     {
       "name": "kidney",
@@ -82,13 +87,15 @@
 		"kidney_l2.csv",
 		"kidney_l3.csv"
 	  ],
-      "asctb_name": "Kidney"
+      "asctb_name": "Kidney",
+	  "asctb_master_url": "https://docs.google.com/spreadsheets/d/1tK916JyG5ZSXW_cXfsyZnzXfjyoN-8B2GXLbYD6_vF0/edit#gid=1760639962"
     },
     {
       "name": "spleen",
       "url": "https://s3.amazonaws.com/vitessce-data/0.0.31/master_release/satija/2dca1bf5832a4102ba780e9e54f6c350.cell-sets.json",
       "mode": "nested-json",
-      "asctb_name": "Spleen"
+      "asctb_name": "Spleen",
+	  "asctb_master_url": "https://docs.google.com/spreadsheets/d/1tK916JyG5ZSXW_cXfsyZnzXfjyoN-8B2GXLbYD6_vF0/edit#gid=22580074"
     }
   ]
 }

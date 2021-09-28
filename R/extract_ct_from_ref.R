@@ -28,7 +28,7 @@ generate_celltype_vs_count_table <- function(cell_types, body_organ){
     write.csv(celltype_vs_counts, paste0(SUMMARIES_DIR, body_organ,".celltype_stats.csv"), row.names = FALSE)
   },
   error = function(e){
-    print(paste('Something went wrong while processing the config for:',config$name))
+    print(paste('Something went wrong while generating the Celltype-vs-Counts summary for:',config$name))
     print(e)
   })
 }
@@ -76,7 +76,7 @@ process_reference <- function(organ_config) {
     return(cell_types)
   },
   error = function(e){
-    print(paste('Something went wrong while processing the config for:',config$name))
+    print(paste('Something went wrong while processing the Azimuth reference for:',config$name))
     print(e)
   })
 }
@@ -110,7 +110,7 @@ process_cell_type_data <- function(body_organ, cell_hierarchy_cols) {
                           else rep(NA, nrow(ont_data)))
                   
                   # set global variable of all biomarkers, so that we can create the summary of this organ later
-                  entire_set_of_biomarkers <<-  c(entire_set_of_biomarkers,unlist(strsplit(ont_data$Markers,",")))
+                  entire_set_of_biomarkers_azimuth <<-  c(entire_set_of_biomarkers_azimuth, unlist(strsplit(ont_data$Markers,",")))
 
                   # rename columns according to ASCT+B table format
                   names(df) <- c(paste0("AS/",i),
@@ -164,7 +164,7 @@ write_asctb <- function(body_organ, asctb_table) {
                 col.names = TRUE)
     },
     error = function(e){
-      print(paste('Something went wrong while processing the config for:',config$name))
+      print(paste('Something went wrong while writing the ASCTB table for:',config$name))
       print(e)
     })
 }
@@ -204,18 +204,18 @@ process_config <- function(config) {
 
 
 
-process_azimuth_ref_dataset_summary <- function(config, asct_table, organ_stats){
+process_azimuth_ref_dataset_summary <- function(config, asct_table, azimuth_organ_stats){
   tryCatch({
     # C1: Organ Name
     organ.1 <- config$asctb_name
     
     # C2: Get the union of all "CT" columns in the ASCTB organ.csv file
-    entire_set_of_cell_types <- asct_table[!(grepl("ID",colnames(asct_table)) | grepl("COUNT",colnames(asct_table)) | grepl("LABEL",colnames(asct_table)))]
-    n_unique_cell_types.2 <- length(unique(as.vector(as.matrix(entire_set_of_cell_types))))
+    entire_set_of_cell_types <- asct_table[grepl("AS/[0-9]$",colnames(asct_table))]
+    n_unique_cell_types.2 <- length(na.omit(unique(as.vector(as.matrix(entire_set_of_cell_types)))))
     
     # C3: Get the union of all "ID" columns in the ASCTB organ.csv file
-    entire_set_of_ct_ontology_ids <- asct_table[grepl("ID",colnames(asct_table))]
-    n_unique_ct_ontology_ids.3 <- length(unique(as.vector(as.matrix(entire_set_of_ct_ontology_ids))))
+    entire_set_of_ct_ontology_ids <- asct_table[grepl("AS",colnames(asct_table)) & grepl("ID",colnames(asct_table))]
+    n_unique_ct_ontology_ids.3 <- length(na.omit(unique(as.vector(as.matrix(entire_set_of_ct_ontology_ids)))))
     
     # C4: Get the sum of all counts that were already generated using the groupby formula used in process_config()
     n_total_cell_types.4 <- sum(asct_table[grep('COUNT',colnames(asct_table))])
@@ -224,15 +224,15 @@ process_azimuth_ref_dataset_summary <- function(config, asct_table, organ_stats)
     n_annotation_levels.5 <- length(config$new_cell_type_files)
     
     # C6: Get the global variable containing all biomarkers for an organ, that we set during file-processing
-    n_unique_biomarkers.6 <- length(unique(entire_set_of_biomarkers))
+    n_unique_biomarkers.6 <- length(na.omit(unique(entire_set_of_biomarkers_azimuth)))
     
-    # Append (C1, C2, ... C6) to the existing organ_stats global var
-    organ_stats <<- rbind(organ_stats, c( organ.1, n_unique_cell_types.2, n_unique_ct_ontology_ids.3, 
+    # Append (C1, C2, ... C6) to the existing azimuth_organ_stats global var
+    azimuth_organ_stats <<- rbind(azimuth_organ_stats, c( organ.1, n_unique_cell_types.2, n_unique_ct_ontology_ids.3, 
                       n_total_cell_types.4, n_annotation_levels.5, n_unique_biomarkers.6))
-    colnames(organ_stats) <<- organ_stats_cols
+    colnames(azimuth_organ_stats) <<- azimuth_organ_stats_cols
   },
   error = function(e){
-      print(paste('Something went wrong while generating the organ-level summary stats for:',config$name))
+      print(paste('Something went wrong while generating the Azimuth organ-level summary stats for:',config$name))
       print(e)
   })
 }
@@ -246,9 +246,14 @@ process_azimuth_ref_dataset_summary <- function(config, asct_table, organ_stats)
 
 
 # Main initialization of global data-structures to capture summaries of each organ
-organ_stats_cols <- c("Organ", "Num.Unique.Cell.Types", "Num.Unique.CT.Ontology.IDs", "Num.Total.Cells", "Num.Annotation.Levels", "Num.Unique.Biomarkers")
-organ_stats <- data.frame(matrix(ncol=length(organ_stats_cols), nrow=0, dimnames=list(NULL,organ_stats_cols)))
-entire_set_of_biomarkers <- c()
+azimuth_organ_stats_cols <- c("Organ", "Num.Unique.Cell.Types", "Num.Unique.CT.Ontology.IDs", "Num.Total.Cells", "Num.Annotation.Levels", "Num.Unique.Biomarkers")
+azimuth_organ_stats <- data.frame(matrix(ncol=length(azimuth_organ_stats_cols), nrow=0, dimnames=list(NULL,azimuth_organ_stats_cols)))
+entire_set_of_biomarkers_azimuth <- NA
+
+asctb_organ_stats_cols <- c("Organ", "Num.Unique.Cell.Types", "Num.Unique.CT.Ontology.IDs", "Num.Matching.CT.Ontology.IDs", "Num.Unique.Biomarkers", "Num.Matching.Biomarkers")
+asctb_organ_stats <- data.frame(matrix(ncol=length(azimuth_organ_stats_cols), nrow=0, dimnames=list(NULL,azimuth_organ_stats_cols)))
+entire_set_of_biomarkers_asctb_master <- NA
+
 REFERENCE_RDS_DIR <- "data/azimuth_references/"
 SUMMARIES_DIR <- "data/azimuth_summary_tables/"
 ASCTB_TARGET_DIR <- "data/asctb_tables/"
@@ -259,21 +264,150 @@ ANNOTATION_FILES_BASE_URL <- 'https://raw.githubusercontent.com/satijalab/azimut
 # main loop runs for each organ in the JSON config
 for (config in rjson::fromJSON(file = 'data/organ_data.json')$references) {
   print(config$name)
-  entire_set_of_biomarkers <- c()
+  entire_set_of_biomarkers_azimuth <- c()
   asct_table <- switch(
     config$mode %||% '',
     'nested-json' = { extract_ct_from_json(config$url) },
     process_config(config)
   )
-  process_azimuth_ref_dataset_summary(config, asct_table, organ_stats)
+  process_azimuth_ref_dataset_summary(config, asct_table, azimuth_organ_stats)
   write_asctb(config$name, asct_table)
 }
 
 # finally write the Organ-level summaries into a CSV file.
-write.table(organ_stats,
+write.table(azimuth_organ_stats,
             file = paste0(SUMMARIES_DIR,"all_organs.stats.csv"),
             sep = ',',
             na = "",
             append = FALSE,
             row.names = FALSE,
             col.names = TRUE)
+
+
+
+
+
+##################### Attempting to read Google Sheet data for ASCTB Master Tables #####################
+
+#install.packages("gsheet")
+library(gsheet)
+
+
+get_master_table_content <- function(config){
+  tryCatch({
+    
+    url <- config$asctb_master_url
+    if (url=="NA"){
+      return (NA)
+    }
+    asctb.master.data <- gsheet2tbl(url)
+    
+    # Remove out the top 10 meta info rows
+    asctb.master.data <- asctb.master.data[10:nrow(asctb.master.data),]
+    
+    # Set colnames to the first available row
+    colnames(asctb.master.data) <- asctb.master.data[1,]
+    
+    # Remove out the top row which was just the colnames
+    asctb.master.data <- asctb.master.data[2:nrow(asctb.master.data),]
+    return (asctb.master.data)
+    
+    },
+    error=function(e){
+      print(paste('Something went wrong while generating the ASCTB master table for:',config$name))
+      print(e)
+    })
+}
+
+
+
+
+
+
+process_asctb_master_dataset_summary <- function(config, asctb_master_table, asctb_organ_stats){
+  tryCatch({
+    master_columns <- colnames(asctb_master_table)
+    
+    # C1: Organ Name
+    organ.1 <- config$asctb_name
+    
+    # C2: Get the union of all "CT" columns in the ASCTB organ.csv file
+    entire_set_of_cell_types <- asctb_master_table[(grepl("AS/[0-9]$",master_columns) | grepl("CT/[0-9]$",master_columns)) & 
+                                                     !(grepl("ID",master_columns) | grepl("COUNT",master_columns) | grepl("LABEL",master_columns))]
+    n_unique_cell_types.2 <- length(na.omit(unique(as.vector(as.matrix(entire_set_of_cell_types)))))
+    
+    # C3: Get the union of all "ID" columns in the ASCTB organ.csv file
+    entire_set_of_ct_ontology_ids <- asctb_master_table[(grepl("AS",master_columns) | grepl("CT",master_columns)) & grepl("ID",master_columns)]
+    n_unique_ct_ontology_ids.3 <- length(na.omit(unique(as.vector(as.matrix(entire_set_of_ct_ontology_ids)))))
+    
+    
+    
+    # todo: Add logic for finding intersection of CT_Ontology_IDs between Azimuth and ASCTB for this organ
+    # C4: Get the intersection of CT_Ontology_IDs in the ASCTB organ.csv file vs Azimuth organ.csv file
+    n_matching_ct_ontology_ids.4 <- NA
+    
+    
+    
+    # C5: Get the union of all "BG" columns in the ASCTB organ.csv file
+    entire_set_of_biomarkers_asctb_master <<- asctb_master_table[(grepl("BG",master_columns)) & !(grepl("ID",master_columns) | grepl("COUNT",master_columns) | grepl("LABEL",master_columns))]
+    n_unique_biomarkers.5 <- length(na.omit(unique(as.vector(as.matrix(entire_set_of_biomarkers_asctb_master)))))
+    
+    
+    
+    # todo: Add logic for finding intersection of Biomarkers between Azimuth and ASCTB for this organ
+    # C6: Get the intersection of Biomarkers in the ASCTB organ.csv file vs Azimuth organ.csv file
+    n_matching_biomarkers.6 <- NA
+    
+    
+    
+    # Append (C1, C2, ... C6) to the existing asctb_organ_stats global var
+    asctb_organ_stats <<- rbind(asctb_organ_stats, c( organ.1, n_unique_cell_types.2, n_unique_ct_ontology_ids.3, 
+                                                      n_matching_ct_ontology_ids.4, n_unique_biomarkers.5, n_matching_biomarkers.6))
+    colnames(asctb_organ_stats) <<- asctb_organ_stats_cols
+  },
+  error = function(e){
+    print(paste('Something went wrong while generating the ASCTB organ-level summary stats for:',config$name))
+    print(e)
+  })
+}
+
+
+
+
+
+
+
+
+for (config in rjson::fromJSON(file = 'data/organ_data.json')$references) {
+  print(config$name)
+  entire_set_of_biomarkers_azimuth <- c()
+  entire_set_of_biomarkers_asctb_master <- c()
+  
+  # Create an ASCT-B format table from this organ's Azimuth reference
+  asct_table <- switch(
+    config$mode %||% '',
+    'nested-json' = { extract_ct_from_json(config$url) },
+    process_config(config))
+  
+  # Wrangle the Azimuth dataset to derive summary stats
+  process_azimuth_ref_dataset_summary(config, asct_table, azimuth_organ_stats)
+  
+  
+  # Pull the Master table from this organ's Google-Sheet
+  asctb_master_table <- get_master_table_content(config)
+  
+  # Wrangle the ASCT+B dataset to derive summary stats, or just add a dummy entry when no ASCTB-Master table
+  suppressWarnings(
+      if (!is.na.data.frame(asctb_master_table)){
+        process_asctb_master_dataset_summary(config, asctb_master_table, asctb_organ_stats)
+      }else{
+        asctb_organ_stats <- rbind(asctb_organ_stats, c( config$asctb_name, NA, NA, NA, NA, NA))
+        colnames(asctb_organ_stats) <- asctb_organ_stats_cols
+      }
+    ,   classes="warning")
+  
+  # Finally, write the Azimuth dataset formatted as per the ASCTB structure so that they are usable on CCF-reporter
+  suppressWarnings(
+      write_asctb(config$name, asct_table) 
+  , classes="warning")
+}
