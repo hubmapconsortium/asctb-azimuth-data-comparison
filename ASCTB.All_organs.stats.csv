@@ -1,0 +1,8 @@
+"Organ","Num.Unique.Cell.Types","Num.Unique.CT.Ontology.IDs","Num.Matching.CT.Ontology.IDs","Num.Unique.Biomarkers","Num.Matching.Biomarkers"
+"Bone Marrow & Blood/Pelvis","46","17","5","199","88"
+"Brain","128","1","123","255","152"
+"Fetal Development","0","0","0","0","0"
+"Kidney","64","47","25","152","70"
+"Lung","84","98","14","173","73"
+"Pancreas","0","0","0","0","0"
+"Spleen","66","1","0","86","0"
