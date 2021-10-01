@@ -11,7 +11,7 @@ library(httr)
 #install.packages("gsheet")
 library(gsheet)
 
-source('R/extract_ct_from_json.R')
+source('R/utility_extract_ct_from_json')
 source('R/utility_functions.R')
 source('R/summary_computation_functions.R')
 
@@ -29,7 +29,7 @@ asctb.entire_set_of_biomarkers <- NA
 
 AZIMUTH.REFERENCE_RDS_DIR <- "data/azimuth_references/"
 ASCTB_TARGET_DIR <- "data/asctb_tables/"
-SUMMARIES_DIR <- "data/azimuth_summary_tables/"
+SUMMARIES_DIR <- "data/summary_tables/"
 AZIMUTH.ANNOTATION_FILES_BASE_URL <- 'https://raw.githubusercontent.com/satijalab/azimuth_website/master/static/csv/'
 CONFIGS <- rjson::fromJSON(file = 'data/organ_data.json')$references
 

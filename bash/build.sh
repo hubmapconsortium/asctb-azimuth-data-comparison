@@ -2,7 +2,7 @@
 
 mkdir dist
 cp data/asctb_tables/*.csv dist
-cp data/azimuth_summary_tables/*.csv dist
+cp data/summary_tables/*.csv dist
 cp public/* dist
 mv dist/index-template.md dist/index.md
 
