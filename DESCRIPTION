@@ -1,6 +1,6 @@
 Package: ASCTBAzimuthDataComparison
-Title: Compare Data in Azimuth With Data in ASCT+B Reporter
-Version: 0.0.1
+Title: Compare Data in Azimuth With Data in ASCT+B Reporter, and Generate summaries
+Version: 1.0.0
 Authors@R: 
     person(given = "Darshal",
            family = "Shetty",
@@ -17,4 +17,5 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.0.0
 Imports:
     rjson,
-    Seurat
+    Seurat,
+	gsheet
