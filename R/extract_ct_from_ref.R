@@ -11,7 +11,7 @@ library(httr)
 #install.packages("gsheet")
 library(gsheet)
 
-source('R/utility_extract_ct_from_json')
+source('R/utility_extract_ct_from_json.R')
 source('R/utility_functions.R')
 source('R/summary_computation_functions.R')
 
@@ -24,14 +24,14 @@ azimuth_organ_stats <- data.frame(matrix(ncol=length(azimuth_organ_stats_cols), 
 azimuth.entire_set_of_biomarkers <- NA
 
 asctb_organ_stats_cols <- c("Organ", "Num.Unique.Cell.Types", "Num.Unique.CT.Ontology.IDs", "Num.Matching.CT.Ontology.IDs", "Num.Unique.Biomarkers", "Num.Matching.Biomarkers")
-asctb_organ_stats <- data.frame(matrix(ncol=length(azimuth_organ_stats_cols), nrow=0, dimnames=list(NULL,azimuth_organ_stats_cols)))
+asctb_organ_stats <- data.frame(matrix(ncol=length(asctb_organ_stats_cols), nrow=0, dimnames=list(NULL,asctb_organ_stats_cols)))
 asctb.entire_set_of_biomarkers <- NA
 
 AZIMUTH.REFERENCE_RDS_DIR <- "data/azimuth_references/"
 ASCTB_TARGET_DIR <- "data/asctb_tables/"
 SUMMARIES_DIR <- "data/summary_tables/"
 AZIMUTH.ANNOTATION_FILES_BASE_URL <- 'https://raw.githubusercontent.com/satijalab/azimuth_website/master/static/csv/'
-CONFIGS <- rjson::fromJSON(file = 'data/organ_data.json')$references
+CONFIGS <- rjson::fromJSON(file = 'data/azimuth_asctb_comparison_config.json')$references
 
 
 for (config in CONFIGS) {
@@ -85,3 +85,45 @@ write.table(asctb_organ_stats,
             append = FALSE,
             row.names = FALSE,
             col.names = TRUE)
+
+
+
+
+
+
+
+
+asctb_all_organ_summaries_cols <- c("Organ", "Num.Unique.Cell.Types", "Num.Unique.CT.Ontology.IDs", "Num.Unique.Biomarkers")
+asctb_all_organ_summaries <- data.frame(matrix(ncol=length(asctb_all_organ_summaries_cols), nrow=0, dimnames=list(NULL,asctb_all_organ_summaries_cols)))
+asctb.entire_set_of_biomarkers <- NA
+CONFIGS <- rjson::fromJSON(file = 'data/asctb_all_summaries_config.json')$asctb_master_sources
+
+
+for (config in CONFIGS) {
+  
+  if (config$asctb_name %in% asctb_organ_stats$Organ){
+    
+    cat(paste0("\nSummary for ",config$asctb_name," ASCT+B master-table is already computed..."))
+    existing_summary <- asctb_organ_stats[asctb_organ_stats$Organ==config$asctb_name, asctb_all_organ_summaries_cols]
+    asctb_all_organ_summaries <- rbind(asctb_all_organ_summaries,existing_summary)
+  
+  }else{
+    
+    cat(paste0("\nInitiating the ingestion for ",config$asctb_name," ASCT+B master-tables..."))
+    # Pull the Master table from this organ's Google-Sheet
+    asctb_master_table <- get_asctb_master_table_content(config)
+    
+    # Wrangle the ASCT+B dataset to derive summary stats, or just add a dummy entry when no ASCTB-Master table
+    suppressWarnings(
+      msg <- process_asctb_master_dataset_summary(  config=config, asctb_master_table=asctb_master_table, 
+                                                    asct_table_derived_from_azimuth=asct_table,
+                                                    compute_intersection_stats=FALSE )
+      ,   classes="warning")
+    cat(msg)
+    
+    # Finally, write the Azimuth dataset formatted as per the ASCTB structure so that they are usable on CCF-reporter
+    suppressWarnings(
+      write_asctb_structure(config$name, asct_table)
+      , classes="warning")
+  }
+}

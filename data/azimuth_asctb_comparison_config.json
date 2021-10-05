@@ -12,7 +12,7 @@
 		"lung_l2.csv"
 	  ],
       "asctb_name": "Lung",
-	  "asctb_master_url": "https://docs.google.com/spreadsheets/d/1tK916JyG5ZSXW_cXfsyZnzXfjyoN-8B2GXLbYD6_vF0/edit#gid=925712902"
+	  "asctb_master_url": "https://docs.google.com/spreadsheets/d/1tK916JyG5ZSXW_cXfsyZnzXfjyoN-8B2GXLbYD6_vF0/edit#gid=1824552484"
     },
     {
       "name": "pancreas",
@@ -24,7 +24,7 @@
 		"pancreas.csv"
 	  ],
       "asctb_name": "Pancreas",
-	  "asctb_master_url": "NA"
+	  "asctb_master_url": "https://docs.google.com/spreadsheets/d/1tK916JyG5ZSXW_cXfsyZnzXfjyoN-8B2GXLbYD6_vF0/edit#gid=1044871154"
     },
     {
       "name": "pbmc",
@@ -40,7 +40,7 @@
 		"pbmc3.csv"
 	  ],
       "asctb_name": "Bone Marrow & Blood/Pelvis",
-	  "asctb_master_url": "https://docs.google.com/spreadsheets/d/1tK916JyG5ZSXW_cXfsyZnzXfjyoN-8B2GXLbYD6_vF0/edit#gid=1852470103"
+	  "asctb_master_url": "https://docs.google.com/spreadsheets/d/1tK916JyG5ZSXW_cXfsyZnzXfjyoN-8B2GXLbYD6_vF0/edit#gid=1845311048"
     },
     {
       "name": "motor_cortex",
@@ -58,7 +58,7 @@
 		"humanbrain_crossspecies.csv"
 	  ],
       "asctb_name": "Brain",
-	  "asctb_master_url": "https://docs.google.com/spreadsheets/d/1tK916JyG5ZSXW_cXfsyZnzXfjyoN-8B2GXLbYD6_vF0/edit#gid=345174398"
+	  "asctb_master_url": "https://docs.google.com/spreadsheets/d/1tK916JyG5ZSXW_cXfsyZnzXfjyoN-8B2GXLbYD6_vF0/edit#gid=1379088218"
     },
     {
       "name": "fetal_development",
@@ -88,7 +88,7 @@
 		"kidney_l3.csv"
 	  ],
       "asctb_name": "Kidney",
-	  "asctb_master_url": "https://docs.google.com/spreadsheets/d/1tK916JyG5ZSXW_cXfsyZnzXfjyoN-8B2GXLbYD6_vF0/edit#gid=1760639962"
+	  "asctb_master_url": "https://docs.google.com/spreadsheets/d/1tK916JyG5ZSXW_cXfsyZnzXfjyoN-8B2GXLbYD6_vF0/edit#gid=2137043090"
     },
     {
       "name": "spleen",

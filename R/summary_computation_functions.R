@@ -41,8 +41,9 @@ process_azimuth_ref_dataset_summary <- function(config, asct_table, azimuth_orga
     organ.1 <- config$asctb_name
     
     
+    # todo: Retrieve counts for grouped by CTs already. So final level tak we have uniqueness. 
     # C2: Get the union of all "CT" columns in the ASCTB organ.csv file
-    entire_set_of_cell_types <- asct_table[grepl("AS/[0-9]$",asctb.formatted_azimuth_columns)]
+    entire_set_of_cell_types <- asct_table[grepl("AS/[0-9]$",asctb.formatted_azimuth_columns) | grepl("COUNT$",asctb.formatted_azimuth_columns)]
     cleaned_set_of_cell_types <- get_cleaned_values_from_df(entire_set_of_cell_types)
     n_unique_cell_types.2 <- length(cleaned_set_of_cell_types)
     
@@ -80,7 +81,7 @@ process_azimuth_ref_dataset_summary <- function(config, asct_table, azimuth_orga
 
 
 
-process_asctb_master_dataset_summary <- function(config, asctb_master_table, asctb_organ_stats, asct_table_derived_from_azimuth){
+process_asctb_master_dataset_summary <- function(config, asctb_master_table, asct_table_derived_from_azimuth, compute_intersection_stats=TRUE){
   tryCatch({
     # Wrangle the ASCT+B dataset to derive summary stats, or just add a dummy entry when no ASCTB-Master table
     if(is.na.data.frame(asctb_master_table)){
@@ -107,17 +108,19 @@ process_asctb_master_dataset_summary <- function(config, asctb_master_table, asc
     n_unique_ct_ontology_ids.3 <- length(asctb.cleaned_set_of_ct_ontology_ids)
     
     
-    # C4: Get the intersection of CT_Ontology_IDs in the ASCTB organ.csv file vs Azimuth organ.csv file.
+    if (compute_intersection_stats){
+      # C4: Get the intersection of CT_Ontology_IDs in the ASCTB organ.csv file vs Azimuth organ.csv file.
       # Edge Case: Brain doesn't have any CT_Ontology_IDs. Use Cell-Types itself for finding # matching between ASCTB and Azimuth.
-    azimuth_colnames <-  colnames(asct_table_derived_from_azimuth)
-    if (organ.1=='Brain'){
-      azimuth.entire_set_of_cell_types <- asct_table_derived_from_azimuth[grepl("AS/[0-9]$",azimuth_colnames)]
-      azimuth.cleaned_set_of_cell_types <- get_cleaned_values_from_df(azimuth.entire_set_of_cell_types)
-      n_matching_ct_ontology_ids.4 <- length(intersect(asctb.cleaned_set_of_cell_types, azimuth.cleaned_set_of_cell_types))
-    }else{
-      azimuth.entire_set_of_ct_ontology_ids <- asct_table_derived_from_azimuth[grepl("AS",azimuth_colnames) & grepl("ID",azimuth_colnames)]
-      azimuth.cleaned_set_of_ct_ontology_ids <- get_cleaned_values_from_df(azimuth.entire_set_of_ct_ontology_ids)
-      n_matching_ct_ontology_ids.4 <- length(intersect(asctb.cleaned_set_of_ct_ontology_ids, azimuth.cleaned_set_of_ct_ontology_ids))
+      azimuth_colnames <-  colnames(asct_table_derived_from_azimuth)
+      if (organ.1=='Brain'){
+        azimuth.entire_set_of_cell_types <- asct_table_derived_from_azimuth[grepl("AS/[0-9]$",azimuth_colnames)]
+        azimuth.cleaned_set_of_cell_types <- get_cleaned_values_from_df(azimuth.entire_set_of_cell_types)
+        n_matching_ct_ontology_ids.4 <- length(intersect(asctb.cleaned_set_of_cell_types, azimuth.cleaned_set_of_cell_types))
+      }else{
+        azimuth.entire_set_of_ct_ontology_ids <- asct_table_derived_from_azimuth[grepl("AS",azimuth_colnames) & grepl("ID",azimuth_colnames)]
+        azimuth.cleaned_set_of_ct_ontology_ids <- get_cleaned_values_from_df(azimuth.entire_set_of_ct_ontology_ids)
+        n_matching_ct_ontology_ids.4 <- length(intersect(asctb.cleaned_set_of_ct_ontology_ids, azimuth.cleaned_set_of_ct_ontology_ids))
+      }
     }
     
     
@@ -127,15 +130,22 @@ process_asctb_master_dataset_summary <- function(config, asctb_master_table, asc
     n_unique_biomarkers.5 <- length(asctb.cleaned_set_of_biomarkers)
     
     
-    # C6: Get the intersection of Biomarkers in the ASCTB organ.csv file vs Azimuth organ.csv file
-    azimuth.cleaned_set_of_biomarkers <- get_cleaned_values_from_df(azimuth.entire_set_of_biomarkers)
-    n_matching_biomarkers.6 <- length(intersect(azimuth.cleaned_set_of_biomarkers, asctb.cleaned_set_of_biomarkers))
+    if (compute_intersection_stats){
+      # C6: Get the intersection of Biomarkers in the ASCTB organ.csv file vs Azimuth organ.csv file
+      azimuth.cleaned_set_of_biomarkers <- get_cleaned_values_from_df(azimuth.entire_set_of_biomarkers)
+      n_matching_biomarkers.6 <- length(intersect(azimuth.cleaned_set_of_biomarkers, asctb.cleaned_set_of_biomarkers))
+    }
     
     
-    # Append (C1, C2, ... C6) to the existing asctb_organ_stats global var
-    asctb_organ_stats <<- rbind(asctb_organ_stats, c( organ.1, n_unique_cell_types.2, n_unique_ct_ontology_ids.3, 
+    # Append (C1, C2, ... C6) to the existing asctb_organ_stats global var if intersection-stats to be included. Otherwise append only unique counts for summary.
+    if (compute_intersection_stats){
+      asctb_organ_stats <<- rbind(asctb_organ_stats, c( organ.1, n_unique_cell_types.2, n_unique_ct_ontology_ids.3, 
                                                       n_matching_ct_ontology_ids.4, n_unique_biomarkers.5, n_matching_biomarkers.6 ))
-    colnames(asctb_organ_stats) <<- asctb_organ_stats_cols
+      colnames(asctb_organ_stats) <<- asctb_organ_stats_cols
+    }else{
+      asctb_all_organ_summaries <<- rbind(asctb_all_organ_summaries, c( organ.1, n_unique_cell_types.2, n_unique_ct_ontology_ids.3, n_unique_biomarkers.5 ))
+      colnames(asctb_organ_stats) <<- asctb_all_organ_summaries_cols
+    }
     return(paste0("Computed statistics for ",config$asctb_name,"."))
   },
   error = function(e){
