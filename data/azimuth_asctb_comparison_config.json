@@ -39,9 +39,9 @@
 		"pbmc2.csv",
 		"pbmc3.csv"
 	  ],
-      "asctb_name": "Bone Marrow & Blood/Pelvis",
+      "asctb_name": "Bone Marrow & Blood/Pelvis (PBMC)",
 	  "asctb_master_url": "https://docs.google.com/spreadsheets/d/1tK916JyG5ZSXW_cXfsyZnzXfjyoN-8B2GXLbYD6_vF0/edit#gid=1845311048"
-    },
+    },	
     {
       "name": "motor_cortex",
       "url": "https://zenodo.org/record/4546932/files/ref.Rds?download=1",

@@ -17,8 +17,8 @@ will also be available [here](https://hubmapconsortium.github.io/asctb-azimuth-d
 Rscript R/extract_ct_from_ref.R
 ```
 
-This script reads a JSON config file called ```organ_data.json``` in the
-```data``` directory. Then, based on this config it extracts the data from the
+This script reads a JSON config file called ```azimuth_asctb_comparison_config.json``` in the
+```data/``` directory. Then, based on this config it extracts the data from the
 required Rds files and stores them in ASCT+B table format. The structure of this
 config file is as follows:
 
@@ -92,14 +92,15 @@ under the "Annotation Details" section for every available body organ.
 
 This ontology-data is retrieved by pulling and parsing files from [the Azimuth Website Repository](https://github.com/satijalab/azimuth_website).
 
-The organ's final ASCT+B table format file is stored in ```data/asctb_tables``` 
+The organ's final ASCT+B table format file is stored in ```data/asctb_formatted_azimuth_data``` 
 directory as ```<organ_name>.csv```. 
 
 The corresponding summary file is stored in ```data/summary_tables``` 
 directory as ```<organ_name>.celltype_stats.csv```.
 
 The overall summary file for ASCTB master data, and Azimuth reference data ingested 
-is stored in ```data/summary_tables``` directory as ```<organ_name>.celltype_stats.csv```.
+is stored in ```data/summary_tables``` directory as ```<organ_name>.celltype_stats.csv```. The ASCTB summary file for all organs
+will contain the number-of-matches-found for CellTypes as well as Biomarkers, between ASCTB and Azimuth.
 
 
 
