@@ -1,8 +1,0 @@
-"Organ","Num.Unique.Anatomical.Structs","Num.Unique.Cell.Types","Num.Unique.CT.Ontology.IDs","Num.Matching.CT.Ontology.IDs","Num.Unique.Biomarkers","Num.Matching.Biomarkers"
-"Bone Marrow & Blood/Pelvis (PBMC)","2","2","38","7","199","88"
-"Brain","186","2","1","0","255","152"
-"Fetal Development","0","0","0","0","0","0"
-"Kidney","64","2","47","25","152","70"
-"Lung","148","2","98","14","173","73"
-"Pancreas","32","2","27","9","43","8"
-"Spleen","40","2","1","0","86","0"

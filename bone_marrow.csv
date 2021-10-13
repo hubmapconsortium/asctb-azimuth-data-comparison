@@ -1,0 +1,42 @@
+"bone_marrow cell types as anatomical structures from Azimuth reference data",,,,,,
+,,,,,,
+"Author Name(s):","Azimuth & MC-IU",,,,,
+"Author ORCID(s):",,,,,,
+"Reviewer(s):",,,,,,
+"General Publication(s):",,,,,,
+"Data DOI:",,,,,,
+"Date:","10/13/21",,,,,
+"Version Number:","v1.0",,,,,
+,,,,,,
+"AS/1","AS/1/LABEL","AS/1/ID","AS/2","AS/2/LABEL","AS/2/ID","AS/2/COUNT"
+"DC","dendritic cell","CL:0001056","ASDC","dendritic cell","CL:0001056",282
+"HSPC","hematopoietic precursor cell","CL:0008001","BaEoMa","basophil mast progenitor cell","CL:0002028",344
+"Mono","monocyte","CL:0000576","CD14 Mono","CD14-positive monocyte","CL:0001054",24688
+"Mono","monocyte","CL:0000576","CD16 Mono","CD14-low, CD16-positive monocyte","CL:0002396",3866
+"CD4 T","CD4-positive, alpha-beta T cell","CL:0000624","CD4 Effector","effector CD4-positive, alpha-beta T cell","CL:0001044",7486
+"CD4 T","CD4-positive, alpha-beta T cell","CL:0000624","CD4 Memory","CD4-positive, alpha-beta memory T cell","CL:0000897",31817
+"CD4 T","CD4-positive, alpha-beta T cell","CL:0000624","CD4 Naive","naive thymus-derived CD4-positive, alpha-beta T cell","CL:0000895",55096
+"CD8 T","CD8-positive, alpha-beta T cell","CL:0000625","CD8 Memory","CD8-positive, alpha-beta memory T cell","CL:0000909",8270
+"CD8 T","CD8-positive, alpha-beta T cell","CL:0000625","CD8 Naive","naive thymus-derive CD8-positive, alpha-beta T cell","CL:0000900",20692
+"DC","dendritic cell","CL:0001056","cDC1","CD141-positive myeloid dendritic cell","CL:0002394",340
+"DC","dendritic cell","CL:0001056","cDC2","CD1c-positive myeloid dendritic cell","CL_CL:0002399",2988
+"HSPC","hematopoietic precursor cell","CL:0008001","CLP","common lymphoid progenitor","CL:0000051",1163
+"HSPC","hematopoietic precursor cell","CL:0008001","Early Eryth","erythroid lineage cell","CL:0000764",3246
+"HSPC","hematopoietic precursor cell","CL:0008001","EMP","megakaryocyte-erythroid progenitor cell","CL:0000050",1154
+"HSPC","hematopoietic precursor cell","CL:0008001","GMP","granulocyte monocyte progenitor cell","CL:0000557",6072
+"HSPC","hematopoietic precursor cell","CL:0008001","HSC","hematopoeitic stem cell","CL:0000037",2389
+"NK","mature NK cell","CL:0000814","ILC","mature natural killer cell","CL:0000824",585
+"HSPC","hematopoietic precursor cell","CL:0008001","Late Eryth","erythroid lineage cell","CL:0000764",24050
+"HSPC","hematopoietic precursor cell","CL:0008001","LMPP","hematopoeitic multipotent progenitor cell","CL:0000837",4991
+"B","lymphocyte of B lineage","CL:0000945","Memory B","memory B cell","CL:0000787",12748
+"B","lymphocyte of B lineage","CL:0000945","Naive B","naive B cell","CL:0000788",9011
+"NK","mature NK cell","CL:0000814","NK","CD16-positive, CD56-dim natural killer cell, human ","CL:0000939",14060
+"NK","mature NK cell","CL:0000814","NK CD56+","CD16-negative, CD56-bright natural killer cell, human","CL:0000938",1676
+"NK","mature NK cell","CL:0000814","NK Proliferating","mature natural killer cell","CL:0000824",232
+"DC","dendritic cell","CL:0001056","pDC","plasmacytoid dendritic cell","CL:0001058",3019
+"HSPC","hematopoietic precursor cell","CL:0008001","pre B","precursor B cell","[precursor B cell](http://www.ontobee.org/search?ontology=CL&keywords=CL%3A0000817&submit=Search+terms)",3903
+"HSPC","hematopoietic precursor cell","CL:0008001","pre-mDC","common dendritic progenitor","CL:0001029",1475
+"HSPC","hematopoietic precursor cell","CL:0008001","pre-pDC","immature CD11c-negative plasmacytoid dendritic cell","CL:0000992",1108
+"HSPC","hematopoietic precursor cell","CL:0008001","pro B","pro-B cell","CL:0000826",755
+"HSPC","hematopoietic precursor cell","CL:0008001","Prog Mk","megakaryocyte progenitor cell","CL:0000553",800
+"HSPC","hematopoietic precursor cell","CL:0008001","transitional B","transitional stage B cell","CL:0000818",9445
