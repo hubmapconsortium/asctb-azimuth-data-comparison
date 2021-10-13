@@ -32,7 +32,7 @@ SUMMARIES_DIR <- "data/summary_tables/"
 AZIMUTH.ANNOTATION_FILES_BASE_URL <- 'https://raw.githubusercontent.com/satijalab/azimuth_website/master/static/csv/'
 CONFIGS <- rjson::fromJSON(file = 'data/azimuth_asctb_comparison_config.json')$references
 
-
+config <- CONFIGS[[2]]
 for (config in CONFIGS) {
   
   cat(paste0("\n\nInitiating the ingestion for ",config$name," Azimuth reference..."))
