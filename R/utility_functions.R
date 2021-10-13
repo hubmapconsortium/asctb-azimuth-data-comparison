@@ -92,9 +92,13 @@ get_num_asctb_celltypes <- function(asctb_master_table){
         celltypes_at_last_level.names <- as.data.frame(celltypes_at_last_level[grepl('CT/[0-9]$',colnames(celltypes_at_last_level))])
         last_name_col <- colnames(celltypes_at_last_level.names)
         unique_names_at_last_level <- get_cleaned_values_from_df(celltypes_at_last_level.names)
+        unique_names_at_last_level <- as.data.frame(unique_names_at_last_level)
+        colnames(unique_names_at_last_level) <- colnames(celltype_overall)
         
+        
+        print(paste(i,') Appending the last level of cell-types...'))
         # Append the names of last-level columns
-        celltype_overall <- rbind(celltype_overall, setNames(as.data.frame(unique_names_at_last_level), names(celltype_overall)))
+        celltype_overall <- rbind(celltype_overall, unique_names_at_last_level)
         
         # Remove the entries which have names associated
         celltype_combinations <- celltype_combinations[is.na(celltype_combinations[last_name_col]),]
@@ -105,7 +109,8 @@ get_num_asctb_celltypes <- function(asctb_master_table){
     
   },
   error = function(e){
-    cat(paste('\nSomething went wrong while generating the Celltype-vs-Counts stats for:',config$name,'\n'))
+    traceback()
+    cat(paste('\nSomething went wrong while getting the Celltypes for:',config$name,'\n'))
     print(e)
   })
 }
