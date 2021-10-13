@@ -1,0 +1,14 @@
+"Organ","Cell.Types","Num.Cells"
+"pancreas","cycling",55
+"pancreas","immune",209
+"pancreas","quiescent_stellate",419
+"pancreas","endothelial",740
+"pancreas","schwann",63
+"pancreas","activated_stellate",1420
+"pancreas","epsilon",50
+"pancreas","gamma",1190
+"pancreas","delta",2064
+"pancreas","ductal",3304
+"pancreas","acinar",2824
+"pancreas","beta",11816
+"pancreas","alpha",11135

@@ -1,0 +1,68 @@
+"Organ","Cell.Types","Num.Cells"
+"lung","Adventitial Fibroblast",557
+"lung","Airway Smooth Muscle",693
+"lung","Alveolar Epithelial Type 1",972
+"lung","Alveolar Epithelial Type 2",3814
+"lung","Alveolar Fibroblast",1296
+"lung","Artery",1484
+"lung","B",725
+"lung","Basal",436
+"lung","Basophil/Mast 1",1350
+"lung","Basophil/Mast 2",552
+"lung","Bronchial Vessel 1",455
+"lung","Bronchial Vessel 2",235
+"lung","Capillary",7391
+"lung","Capillary Aerocyte",4352
+"lung","Capillary Intermediate 1",628
+"lung","Capillary Intermediate 2",464
+"lung","CD4+ Memory/Effector T",3013
+"lung","CD4+ Naive T",932
+"lung","CD8+ Memory/Effector T",1190
+"lung","CD8+ Naive T",2042
+"lung","Ciliated",1321
+"lung","Classical Monocyte",2077
+"lung","Club",931
+"lung","Differentiating Basal",265
+"lung","EREG+ Dendritic",142
+"lung","Fibromyocyte",98
+"lung","Goblet",159
+"lung","IGSF21+ Dendritic",280
+"lung","Intermediate Monocyte",188
+"lung","Ionocyte",22
+"lung","Lipofibroblast",35
+"lung","Lymphatic",467
+"lung","Macrophage",14734
+"lung","Mesothelial",29
+"lung","Mucous",491
+"lung","Myeloid Dendritic Type 1",131
+"lung","Myeloid Dendritic Type 2",266
+"lung","Myofibroblast",248
+"lung","Natural Killer",4769
+"lung","Natural Killer T",335
+"lung","Neuroendocrine",11
+"lung","Nonclassical Monocyte",804
+"lung","OLR1+ Classical Monocyte",207
+"lung","Pericyte",1608
+"lung","Plasma",187
+"lung","Plasmacytoid Dendritic",137
+"lung","Platelet/Megakaryocyte",40
+"lung","Proliferating Basal",47
+"lung","Proliferating Macrophage",226
+"lung","Proliferating NK/T",105
+"lung","Proximal Basal",157
+"lung","Proximal Ciliated",88
+"lung","Serous",24
+"lung","Signaling Alveolar Epithelial Type 2",669
+"lung","TREM2+ Dendritic",159
+"lung","Vascular Smooth Muscle",469
+"lung","Vein",1155
+"lung","Basophil/Mast",1902
+"lung","Bronchial Vessel",690
+"lung","Capillary Intermediate",1092
+"lung","Dendritic",978
+"lung","CD16+ Monocyte",992
+"lung","CD14+ Monocyte",2284
+"lung","Smooth Muscle",1162
+"lung","Fibroblast",1853
+"lung","CD8 T",3232
+"lung","CD4 T",3945
