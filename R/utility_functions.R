@@ -61,8 +61,8 @@ get_cleaned_values_from_df <- function(df){
 get_num_asctb_celltypes <- function(asctb_master_table){
   tryCatch({
     
-    # Initializing the dataframe of celltypes to return
-    celltype_overall <- create_new_df('Cell.Types')
+    # Initializing the vector of celltypes to return
+    celltype_overall <- c()
     
     # Get the subset dataframe of `CT/[0-9]` and `CT/[0-9]/ID` columns
     celltype_combinations <- as.data.frame(asctb_master_table[grepl("CT/[0-9]$",colnames(asctb_master_table)) | grepl("CT/[0-9]/ID$",colnames(asctb_master_table))])
@@ -82,7 +82,7 @@ get_num_asctb_celltypes <- function(asctb_master_table){
         unique_ids_at_last_level <- get_cleaned_values_from_df(celltypes_at_last_level.ids)
         
         # Append the IDs of last-level columns
-        celltype_overall <- rbind(celltype_overall, setNames(as.data.frame(unique_ids_at_last_level), names(celltype_overall)))
+        celltype_overall <- c(celltype_overall, unique_ids_at_last_level)
         
         # Remove the entries which have IDs associated
         celltypes_at_last_level <- celltypes_at_last_level[is.na(celltypes_at_last_level[last_id_col]),]
@@ -92,13 +92,10 @@ get_num_asctb_celltypes <- function(asctb_master_table){
         celltypes_at_last_level.names <- as.data.frame(celltypes_at_last_level[grepl('CT/[0-9]$',colnames(celltypes_at_last_level))])
         last_name_col <- colnames(celltypes_at_last_level.names)
         unique_names_at_last_level <- get_cleaned_values_from_df(celltypes_at_last_level.names)
-        unique_names_at_last_level <- as.data.frame(unique_names_at_last_level)
-        colnames(unique_names_at_last_level) <- colnames(celltype_overall)
-        
         
         print(paste(i,') Appending the last level of cell-types...'))
         # Append the names of last-level columns
-        celltype_overall <- rbind(celltype_overall, unique_names_at_last_level)
+        celltype_overall <- c(celltype_overall, unique_names_at_last_level)
         
         # Remove the entries which have names associated
         celltype_combinations <- celltype_combinations[is.na(celltype_combinations[last_name_col]),]
