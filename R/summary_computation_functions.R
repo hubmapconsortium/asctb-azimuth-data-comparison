@@ -123,6 +123,7 @@ process_asctb_master_dataset_summary <- function(config, asctb_master_table, asc
     # Previous logic was incorrect.
     # asctb.entire_set_of_cell_types <- asctb_master_table[grepl("CT/[0-9]$",asctb.master_columns)]
     # asctb.cleaned_set_of_cell_types <- get_cleaned_values_from_df(asctb.entire_set_of_cell_types)
+    print('Generating the set of cell-types now')
     asctb.cleaned_set_of_cell_types <- get_num_asctb_celltypes(asctb_master_table)
     n_unique_cell_types.3 <- length(asctb.cleaned_set_of_cell_types)
     

@@ -39,7 +39,21 @@
 		"pbmc2.csv",
 		"pbmc3.csv"
 	  ],
-      "asctb_name": "Bone Marrow & Blood/Pelvis (PBMC)",
+      "asctb_name": "Blood PBMC",
+	  "asctb_master_url": "https://docs.google.com/spreadsheets/d/1tK916JyG5ZSXW_cXfsyZnzXfjyoN-8B2GXLbYD6_vF0/edit#gid=1315753355"
+    },
+	{
+      "name": "bone_marrow",
+      "url": "https://zenodo.org/record/5521512/files/ref.Rds?download=1",
+      "cell_type_columns": [
+        "celltype.l1",
+        "celltype.l2"
+      ],
+	  "new_cell_type_files":[
+		"bonemarrow_l1.csv",
+		"bonemarrow_l2.csv"
+	  ],
+      "asctb_name": "Bone Marrow",
 	  "asctb_master_url": "https://docs.google.com/spreadsheets/d/1tK916JyG5ZSXW_cXfsyZnzXfjyoN-8B2GXLbYD6_vF0/edit#gid=1845311048"
     },	
     {
