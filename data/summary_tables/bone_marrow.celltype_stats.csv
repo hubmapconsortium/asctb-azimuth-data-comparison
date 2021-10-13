@@ -1,0 +1,38 @@
+"Organ","Cell.Types","Num.Cells"
+"bone_marrow","ASDC",282
+"bone_marrow","BaEoMa",344
+"bone_marrow","CD14 Mono",24688
+"bone_marrow","CD16 Mono",3866
+"bone_marrow","CD4 Effector",7486
+"bone_marrow","CD4 Memory",31817
+"bone_marrow","CD4 Naive",55096
+"bone_marrow","CD8 Memory",8270
+"bone_marrow","CD8 Naive",20692
+"bone_marrow","cDC1",340
+"bone_marrow","cDC2",2988
+"bone_marrow","CLP",1163
+"bone_marrow","Early Eryth",3246
+"bone_marrow","EMP",1154
+"bone_marrow","GMP",6072
+"bone_marrow","HSC",2389
+"bone_marrow","ILC",585
+"bone_marrow","Late Eryth",24050
+"bone_marrow","LMPP",4991
+"bone_marrow","Memory B",12748
+"bone_marrow","Naive B",9011
+"bone_marrow","NK",14060
+"bone_marrow","NK CD56+",1676
+"bone_marrow","NK Proliferating",232
+"bone_marrow","pDC",3019
+"bone_marrow","pre B",3903
+"bone_marrow","pre-mDC",1475
+"bone_marrow","pre-pDC",1108
+"bone_marrow","pro B",755
+"bone_marrow","Prog Mk",800
+"bone_marrow","transitional B",9445
+"bone_marrow","B",21759
+"bone_marrow","CD4 T",94399
+"bone_marrow","CD8 T",28962
+"bone_marrow","DC",6629
+"bone_marrow","HSPC",60895
+"bone_marrow","Mono",28554
