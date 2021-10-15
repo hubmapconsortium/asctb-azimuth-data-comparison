@@ -66,12 +66,14 @@ get_num_asctb_celltypes <- function(asctb_master_table){
     
     # Get the subset dataframe of `CT/[0-9]` and `CT/[0-9]/ID` columns
     celltype_combinations <- as.data.frame(asctb_master_table[grepl("CT/[0-9]$",colnames(asctb_master_table)) | grepl("CT/[0-9]/ID$",colnames(asctb_master_table))])
+    print(celltype_combinations)
     ALL_COLS <- colnames(celltype_combinations)
-    n_levels <- length(ALL_COLS)/2
-    i <- n_levels
+    print(ALL_COLS)
     
-    while (i>=1) {
+    # Reverse for-loop not working on GITHUB-Actions for some reason. :(
+    for (n in 1:(length(ALL_COLS)/2)) {
       
+      i <- (length(ALL_COLS)/2)-n+1
       # Choose the last-level columns and check if they are completely empty
       celltypes_at_last_level <- as.data.frame(celltype_combinations[grepl(i, ALL_COLS)])
       
@@ -102,10 +104,9 @@ get_num_asctb_celltypes <- function(asctb_master_table){
         celltype_combinations <- celltype_combinations[is.na(celltype_combinations[last_name_col]),]
         
       }
-      i <- i-1
     }
     
-    return (as.vector(unlist(celltype_overall)))
+    return (celltype_overall)
     
   },
   error = function(e){
@@ -114,7 +115,6 @@ get_num_asctb_celltypes <- function(asctb_master_table){
     print(e)
   })
 }
-
 
 
 
