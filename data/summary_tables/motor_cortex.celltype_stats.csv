@@ -1,188 +1,190 @@
-"Organ","Cell.Types","Num.Cells"
-"motor_cortex","Astro_1",191
-"motor_cortex","Astro_2",377
-"motor_cortex","Chandelier",69
-"motor_cortex","Endo",64
-"motor_cortex","L2/3 IT",1601
-"motor_cortex","L5 ET_1",770
-"motor_cortex","L5 ET_2",88
-"motor_cortex","L5 IT_1",1062
-"motor_cortex","L5 IT_2",1126
-"motor_cortex","L5 IT_3",64
-"motor_cortex","L5/6 NP",1487
-"motor_cortex","L6 CT_1",584
-"motor_cortex","L6 CT_2",1416
-"motor_cortex","L6 IT_1",1341
-"motor_cortex","L6 IT_2",635
-"motor_cortex","L6 IT_3",327
-"motor_cortex","L6b",2000
-"motor_cortex","Lamp5_1",43
-"motor_cortex","Lamp5_2",991
-"motor_cortex","Lamp5_3",634
-"motor_cortex","Lamp5_4",101
-"motor_cortex","Lamp5_5",231
-"motor_cortex","Microglia/PVM",108
-"motor_cortex","Oligo_1",369
-"motor_cortex","Oligo_2",1507
-"motor_cortex","OPC",283
-"motor_cortex","Pvalb_1",1803
-"motor_cortex","Pvalb_2",128
-"motor_cortex","Sncg_1",246
-"motor_cortex","Sncg_2",108
-"motor_cortex","Sncg_3",94
-"motor_cortex","Sncg_4",447
-"motor_cortex","Sst Chodl",67
-"motor_cortex","Sst_1",287
-"motor_cortex","Sst_2",259
-"motor_cortex","Sst_3",1157
-"motor_cortex","Sst_4",106
-"motor_cortex","Sst_5",33
-"motor_cortex","Sst_6",130
-"motor_cortex","Sst_7",28
-"motor_cortex","Vip_1",558
-"motor_cortex","Vip_2",725
-"motor_cortex","Vip_3",460
-"motor_cortex","Vip_4",257
-"motor_cortex","VLMC",40
-"motor_cortex","Astro L1 FGFR3 SERPINI2",72
-"motor_cortex","Astro L1-6 FGFR3 AQP1",119
-"motor_cortex","Astro L1-6 FGFR3 PLCG1",377
-"motor_cortex","Endo L2-5 NOSTRIN SRGN",64
-"motor_cortex","Exc L2 LAMP5 KCNG3",16
-"motor_cortex","Exc L2 LINC00507 ATP7B",16
-"motor_cortex","Exc L2 LINC00507 GLRA3",1057
-"motor_cortex","Exc L2-3 LINC00507 DSG3",87
-"motor_cortex","Exc L2-3 RORB CCDC68",281
-"motor_cortex","Exc L2-3 RORB PTPN3",118
-"motor_cortex","Exc L2-3 RORB RTKN2",107
-"motor_cortex","Exc L3 LAMP5 CARM1P1",318
-"motor_cortex","Exc L3 RORB OTOGL",296
-"motor_cortex","Exc L3 THEMIS ENPEP",100
-"motor_cortex","Exc L3-5 FEZF2 ASGR2",620
-"motor_cortex","Exc L3-5 FEZF2 LINC01107",88
-"motor_cortex","Exc L3-5 RORB LAMA4",36
-"motor_cortex","Exc L3-5 RORB LINC01202",108
-"motor_cortex","Exc L3-5 RORB LNX2",662
-"motor_cortex","Exc L3-5 RORB RPRM",196
-"motor_cortex","Exc L3-5 RORB TNNT2",92
-"motor_cortex","Exc L5 FEZF2 CSN1S1",150
-"motor_cortex","Exc L5 FEZF2 NREP-AS1",229
-"motor_cortex","Exc L5 FEZF2 PKD2L1",280
-"motor_cortex","Exc L5 FEZF2 RNF144A-AS1",108
-"motor_cortex","Exc L5 RORB MED8",47
-"motor_cortex","Exc L5 THEMIS FGF10",17
-"motor_cortex","Exc L5 THEMIS LINC01116",79
-"motor_cortex","Exc L5 THEMIS RGPD6",130
-"motor_cortex","Exc L5 THEMIS SLC22A18",268
-"motor_cortex","Exc L5 THEMIS VILL",31
-"motor_cortex","Exc L5-6 FEZF2 C9orf135-AS1",1416
-"motor_cortex","Exc L5-6 FEZF2 CFTR",102
-"motor_cortex","Exc L5-6 FEZF2 FILIP1L",154
-"motor_cortex","Exc L5-6 FEZF2 IFNG-AS1",753
-"motor_cortex","Exc L5-6 FEZF2 LPO",117
-"motor_cortex","Exc L5-6 FEZF2 OR1L8",140
-"motor_cortex","Exc L5-6 FEZF2 SH2D1B",81
-"motor_cortex","Exc L5-6 THEMIS SMYD1",327
-"motor_cortex","Exc L5-6 THEMIS TNFAIP6",147
-"motor_cortex","Exc L6 FEZF2 FFAR4",95
-"motor_cortex","Exc L6 FEZF2 KLK7",1599
-"motor_cortex","Exc L6 FEZF2 PDYN",19
-"motor_cortex","Exc L6 FEZF2 POGK",118
-"motor_cortex","Exc L6 FEZF2 PROKR2",67
-"motor_cortex","Exc L6 THEMIS LINC00343",905
-"motor_cortex","Exc L6 THEMIS SLN",436
-"motor_cortex","Exc L6 THEMIS SNTG2",488
-"motor_cortex","Inh L1 LAMP5 BMP2",145
-"motor_cortex","Inh L1 LAMP5 NMBR",86
-"motor_cortex","Inh L1 LAMP5 PVRL2",43
-"motor_cortex","Inh L1 LAMP5 RAB11FIP1",112
-"motor_cortex","Inh L1 PAX6 CHRFAM7A",185
-"motor_cortex","Inh L1 PAX6 MIR101-1",65
-"motor_cortex","Inh L1 PVALB SST ASIC4",186
-"motor_cortex","Inh L1 SST DEFB108B",223
-"motor_cortex","Inh L1 SST P4HA3",38
-"motor_cortex","Inh L1 VIP KLHDC8B",37
-"motor_cortex","Inh L1-2 PVALB CDK20",35
-"motor_cortex","Inh L1-2 SST CCNJL",97
-"motor_cortex","Inh L1-2 SST CLIC6",46
-"motor_cortex","Inh L1-2 SST PRRT4",123
-"motor_cortex","Inh L1-2 VIP EXPH5",219
-"motor_cortex","Inh L1-2 VIP HTR3A",42
-"motor_cortex","Inh L1-2 VIP PTGER3",35
-"motor_cortex","Inh L1-2 VIP SCML4",53
-"motor_cortex","Inh L1-2 VIP WNT4",52
-"motor_cortex","Inh L1-3 SST FAM20A",367
-"motor_cortex","Inh L1-3 VIP CBLN1",182
-"motor_cortex","Inh L1-3 VIP CHRNA2",125
-"motor_cortex","Inh L1-3 VIP FNDC1",39
-"motor_cortex","Inh L1-3 VIP HSPB6",157
-"motor_cortex","Inh L1-5 VIP CD27-AS1",32
-"motor_cortex","Inh L1-5 VIP LINC01013",56
-"motor_cortex","Inh L1-5 VIP PHLDB3",29
-"motor_cortex","Inh L1-5 VIP SMOC1",249
-"motor_cortex","Inh L1-6 LAMP5 AARD",687
-"motor_cortex","Inh L1-6 LAMP5 CA1",223
-"motor_cortex","Inh L1-6 LAMP5 NES",192
-"motor_cortex","Inh L1-6 PVALB COL15A1",69
-"motor_cortex","Inh L1-6 SST NPY",67
-"motor_cortex","Inh L1-6 VIP SLC7A6OS",61
-"motor_cortex","Inh L2 PAX6 FREM2",108
-"motor_cortex","Inh L2 PVALB FRZB",28
-"motor_cortex","Inh L2 VIP SLC6A16",122
-"motor_cortex","Inh L2-3 SST NMU",153
-"motor_cortex","Inh L2-5 PVALB HHIPL1",141
-"motor_cortex","Inh L2-5 PVALB RPH3AL",820
-"motor_cortex","Inh L2-5 VIP BSPRY",38
-"motor_cortex","Inh L2-5 VIP SOX11",63
-"motor_cortex","Inh L3 PVALB SAMD13",338
-"motor_cortex","Inh L3-5 PVALB ISG20",58
-"motor_cortex","Inh L3-5 SST CDH3",17
-"motor_cortex","Inh L3-5 SST GGTLC3",417
-"motor_cortex","Inh L3-5 SST OR5AH1P",78
-"motor_cortex","Inh L3-5 VIP HS3ST3A1",104
-"motor_cortex","Inh L3-5 VIP IGDCC3",169
-"motor_cortex","Inh L3-5 VIP TAC3",145
-"motor_cortex","Inh L3-6 PAX6 LINC01497",36
-"motor_cortex","Inh L3-6 VIP UG0898H09",53
-"motor_cortex","Inh L3-6 VIP ZIM2-AS1",56
-"motor_cortex","Inh L5 PVALB LRIG3",163
-"motor_cortex","Inh L5 SST RPL35AP11",270
-"motor_cortex","Inh L5-6 LAMP5 CRABP1",411
-"motor_cortex","Inh L5-6 PVALB FAM150B",35
-"motor_cortex","Inh L5-6 PVALB GAPDHP60",35
-"motor_cortex","Inh L5-6 PVALB KCNIP2",27
-"motor_cortex","Inh L5-6 PVALB MEPE",58
-"motor_cortex","Inh L5-6 PVALB SST CRHR2",68
-"motor_cortex","Inh L5-6 PVALB ZFPM2-AS1",147
-"motor_cortex","Inh L5-6 SST BEAN1",24
-"motor_cortex","Inh L5-6 SST C4orf26",35
-"motor_cortex","Inh L5-6 SST DNAJC14",9
-"motor_cortex","Inh L5-6 SST FBN2",33
-"motor_cortex","Inh L5-6 SST ISX",113
-"motor_cortex","Inh L5-6 SST KLHL1",62
-"motor_cortex","Inh L5-6 SST PAWR",65
-"motor_cortex","Inh L5-6 SST PIK3CD",41
-"motor_cortex","Inh L5-6 VIP COL4A3",37
-"motor_cortex","Inh L6 SST TH",28
-"motor_cortex","Micro L1-6 TYROBP CD74",108
-"motor_cortex","Oligo L2-6 OPALIN FTH1P3",1504
-"motor_cortex","Oligo L3-6 OPALIN ENPP6",369
-"motor_cortex","Oligo L5-6 OPALIN LDLRAP1",3
-"motor_cortex","OPC L1-6 PDGFRA COL20A1",283
-"motor_cortex","VLMC L1-5 PDGFRA COLEC12",40
-"motor_cortex","Astro",568
-"motor_cortex","L5 ET",858
-"motor_cortex","L5 IT",2000
-"motor_cortex","L6 CT",2000
-"motor_cortex","L6 IT",1829
-"motor_cortex","L6 IT Car3",327
-"motor_cortex","Lamp5",2000
-"motor_cortex","Micro-PVM",108
-"motor_cortex","Oligo",1876
-"motor_cortex","Pvalb",2000
-"motor_cortex","Sncg",895
-"motor_cortex","Sst",2000
-"motor_cortex","Vip",2000
-"motor_cortex","GABAergic",8962
-"motor_cortex","Glutamatergic",12501
-"motor_cortex","Non-Neuronal",2939
+"Organ","Cell.Type","Cell.Type.ID","Found.At.Annotation.Level","Num.Cells"
+"motor_cortex","Astro","CL:0000127",2,568
+"motor_cortex","Astro L1-6 FGFR3 AQP1","CL:0000127",3,119
+"motor_cortex","Astro L1-6 FGFR3 PLCG1","CL:0000127",3,377
+"motor_cortex","Astro L1 FGFR3 SERPINI2","CL:0000127",3,72
+"motor_cortex","Astro_1","CL:0000127",4,191
+"motor_cortex","Astro_2","CL:0000127",4,377
+"motor_cortex","Chandelier","CL:0000617",4,69
+"motor_cortex","Endo","CL:0000115",4,64
+"motor_cortex","Endo L2-5 NOSTRIN SRGN","CL:0000115",3,64
+"motor_cortex","Exc L2-3 LINC00507 DSG3","CL:0000679",3,87
+"motor_cortex","Exc L2-3 RORB CCDC68","CL:0000679",3,281
+"motor_cortex","Exc L2-3 RORB PTPN3","CL:0000679",3,118
+"motor_cortex","Exc L2-3 RORB RTKN2","CL:0000679",3,107
+"motor_cortex","Exc L2 LAMP5 KCNG3","CL:0000679",3,16
+"motor_cortex","Exc L2 LINC00507 ATP7B","CL:0000679",3,16
+"motor_cortex","Exc L2 LINC00507 GLRA3","CL:0000679",3,1057
+"motor_cortex","Exc L3-5 FEZF2 ASGR2","CL:0000679",3,620
+"motor_cortex","Exc L3-5 FEZF2 LINC01107","CL:0000679",3,88
+"motor_cortex","Exc L3-5 RORB LAMA4","CL:0000679",3,36
+"motor_cortex","Exc L3-5 RORB LINC01202","CL:0000679",3,108
+"motor_cortex","Exc L3-5 RORB LNX2","CL:0000679",3,662
+"motor_cortex","Exc L3-5 RORB RPRM","CL:0000679",3,196
+"motor_cortex","Exc L3-5 RORB TNNT2","CL:0000679",3,92
+"motor_cortex","Exc L3 LAMP5 CARM1P1","CL:0000679",3,318
+"motor_cortex","Exc L3 RORB OTOGL","CL:0000679",3,296
+"motor_cortex","Exc L3 THEMIS ENPEP","CL:0000679",3,100
+"motor_cortex","Exc L5-6 FEZF2 C9orf135-AS1","CL:0000679",3,1416
+"motor_cortex","Exc L5-6 FEZF2 CFTR","CL:0000679",3,102
+"motor_cortex","Exc L5-6 FEZF2 FILIP1L","CL:0000679",3,154
+"motor_cortex","Exc L5-6 FEZF2 IFNG-AS1","CL:0000679",3,753
+"motor_cortex","Exc L5-6 FEZF2 LPO","CL:0000679",3,117
+"motor_cortex","Exc L5-6 FEZF2 OR1L8","CL:0000679",3,140
+"motor_cortex","Exc L5-6 FEZF2 SH2D1B","CL:0000679",3,81
+"motor_cortex","Exc L5-6 THEMIS SMYD1","CL:0000679",3,327
+"motor_cortex","Exc L5-6 THEMIS TNFAIP6","CL:0000679",3,147
+"motor_cortex","Exc L5 FEZF2 CSN1S1","CL:0000679",3,150
+"motor_cortex","Exc L5 FEZF2 NREP-AS1","CL:0000679",3,229
+"motor_cortex","Exc L5 FEZF2 PKD2L1","CL:0000679",3,280
+"motor_cortex","Exc L5 FEZF2 RNF144A-AS1","CL:0000679",3,108
+"motor_cortex","Exc L5 RORB MED8","CL:0000679",3,47
+"motor_cortex","Exc L5 THEMIS FGF10","CL:0000679",3,17
+"motor_cortex","Exc L5 THEMIS LINC01116","CL:0000679",3,79
+"motor_cortex","Exc L5 THEMIS RGPD6","CL:0000679",3,130
+"motor_cortex","Exc L5 THEMIS SLC22A18","CL:0000679",3,268
+"motor_cortex","Exc L5 THEMIS VILL","CL:0000679",3,31
+"motor_cortex","Exc L6 FEZF2 FFAR4","CL:0000679",3,95
+"motor_cortex","Exc L6 FEZF2 KLK7","CL:0000679",3,1599
+"motor_cortex","Exc L6 FEZF2 PDYN","CL:0000679",3,19
+"motor_cortex","Exc L6 FEZF2 POGK","CL:0000679",3,118
+"motor_cortex","Exc L6 FEZF2 PROKR2","CL:0000679",3,67
+"motor_cortex","Exc L6 THEMIS LINC00343","CL:0000679",3,905
+"motor_cortex","Exc L6 THEMIS SLN","CL:0000679",3,436
+"motor_cortex","Exc L6 THEMIS SNTG2","CL:0000679",3,488
+"motor_cortex","GABAergic","CL:0000617",1,8962
+"motor_cortex","Glutamatergic","CL:0000679",1,12501
+"motor_cortex","Inh L1-2 PVALB CDK20","CL:0000617",3,35
+"motor_cortex","Inh L1-2 SST CCNJL","CL:0000617",3,97
+"motor_cortex","Inh L1-2 SST CLIC6","CL:0000617",3,46
+"motor_cortex","Inh L1-2 SST PRRT4","CL:0000617",3,123
+"motor_cortex","Inh L1-2 VIP EXPH5","CL:0000617",3,219
+"motor_cortex","Inh L1-2 VIP HTR3A","CL:0000617",3,42
+"motor_cortex","Inh L1-2 VIP PTGER3","CL:0000617",3,35
+"motor_cortex","Inh L1-2 VIP SCML4","CL:0000617",3,53
+"motor_cortex","Inh L1-2 VIP WNT4","CL:0000617",3,52
+"motor_cortex","Inh L1-3 SST FAM20A","CL:0000617",3,367
+"motor_cortex","Inh L1-3 VIP CBLN1","CL:0000617",3,182
+"motor_cortex","Inh L1-3 VIP CHRNA2","CL:0000617",3,125
+"motor_cortex","Inh L1-3 VIP FNDC1","CL:0000617",3,39
+"motor_cortex","Inh L1-3 VIP HSPB6","CL:0000617",3,157
+"motor_cortex","Inh L1-5 VIP CD27-AS1","CL:0000617",3,32
+"motor_cortex","Inh L1-5 VIP LINC01013","CL:0000617",3,56
+"motor_cortex","Inh L1-5 VIP PHLDB3","CL:0000617",3,29
+"motor_cortex","Inh L1-5 VIP SMOC1","CL:0000617",3,249
+"motor_cortex","Inh L1-6 LAMP5 AARD","CL:0000617",3,687
+"motor_cortex","Inh L1-6 LAMP5 CA1","CL:0000617",3,223
+"motor_cortex","Inh L1-6 LAMP5 NES","CL:0000617",3,192
+"motor_cortex","Inh L1-6 PVALB COL15A1","CL:0000617",3,69
+"motor_cortex","Inh L1-6 SST NPY","CL:0000617",3,67
+"motor_cortex","Inh L1-6 VIP SLC7A6OS","CL:0000617",3,61
+"motor_cortex","Inh L1 LAMP5 BMP2","CL:0000617",3,145
+"motor_cortex","Inh L1 LAMP5 NMBR","CL:0000617",3,86
+"motor_cortex","Inh L1 LAMP5 PVRL2","CL:0000617",3,43
+"motor_cortex","Inh L1 LAMP5 RAB11FIP1","CL:0000617",3,112
+"motor_cortex","Inh L1 PAX6 CHRFAM7A","CL:0000617",3,185
+"motor_cortex","Inh L1 PAX6 MIR101-1","CL:0000617",3,65
+"motor_cortex","Inh L1 PVALB SST ASIC4","CL:0000617",3,186
+"motor_cortex","Inh L1 SST DEFB108B","CL:0000617",3,223
+"motor_cortex","Inh L1 SST P4HA3","CL:0000617",3,38
+"motor_cortex","Inh L1 VIP KLHDC8B","CL:0000617",3,37
+"motor_cortex","Inh L2-3 SST NMU","CL:0000617",3,153
+"motor_cortex","Inh L2-5 PVALB HHIPL1","CL:0000617",3,141
+"motor_cortex","Inh L2-5 PVALB RPH3AL","CL:0000617",3,820
+"motor_cortex","Inh L2-5 VIP BSPRY","CL:0000617",3,38
+"motor_cortex","Inh L2-5 VIP SOX11","CL:0000617",3,63
+"motor_cortex","Inh L2 PAX6 FREM2","CL:0000617",3,108
+"motor_cortex","Inh L2 PVALB FRZB","CL:0000617",3,28
+"motor_cortex","Inh L2 VIP SLC6A16","CL:0000617",3,122
+"motor_cortex","Inh L3-5 PVALB ISG20","CL:0000617",3,58
+"motor_cortex","Inh L3-5 SST CDH3","CL:0000617",3,17
+"motor_cortex","Inh L3-5 SST GGTLC3","CL:0000617",3,417
+"motor_cortex","Inh L3-5 SST OR5AH1P","CL:0000617",3,78
+"motor_cortex","Inh L3-5 VIP HS3ST3A1","CL:0000617",3,104
+"motor_cortex","Inh L3-5 VIP IGDCC3","CL:0000617",3,169
+"motor_cortex","Inh L3-5 VIP TAC3","CL:0000617",3,145
+"motor_cortex","Inh L3-6 PAX6 LINC01497","CL:0000617",3,36
+"motor_cortex","Inh L3-6 VIP UG0898H09","CL:0000617",3,53
+"motor_cortex","Inh L3-6 VIP ZIM2-AS1","CL:0000617",3,56
+"motor_cortex","Inh L3 PVALB SAMD13","CL:0000617",3,338
+"motor_cortex","Inh L5-6 LAMP5 CRABP1","CL:0000617",3,411
+"motor_cortex","Inh L5-6 PVALB FAM150B","CL:0000617",3,35
+"motor_cortex","Inh L5-6 PVALB GAPDHP60","CL:0000617",3,35
+"motor_cortex","Inh L5-6 PVALB KCNIP2","CL:0000617",3,27
+"motor_cortex","Inh L5-6 PVALB MEPE","CL:0000617",3,58
+"motor_cortex","Inh L5-6 PVALB SST CRHR2","CL:0000617",3,68
+"motor_cortex","Inh L5-6 PVALB ZFPM2-AS1","CL:0000617",3,147
+"motor_cortex","Inh L5-6 SST BEAN1","CL:0000617",3,24
+"motor_cortex","Inh L5-6 SST C4orf26","CL:0000617",3,35
+"motor_cortex","Inh L5-6 SST DNAJC14","CL:0000617",3,9
+"motor_cortex","Inh L5-6 SST FBN2","CL:0000617",3,33
+"motor_cortex","Inh L5-6 SST ISX","CL:0000617",3,113
+"motor_cortex","Inh L5-6 SST KLHL1","CL:0000617",3,62
+"motor_cortex","Inh L5-6 SST PAWR","CL:0000617",3,65
+"motor_cortex","Inh L5-6 SST PIK3CD","CL:0000617",3,41
+"motor_cortex","Inh L5-6 VIP COL4A3","CL:0000617",3,37
+"motor_cortex","Inh L5 PVALB LRIG3","CL:0000617",3,163
+"motor_cortex","Inh L5 SST RPL35AP11","CL:0000617",3,270
+"motor_cortex","Inh L6 SST TH","CL:0000617",3,28
+"motor_cortex","L2/3 IT","CL:0000679",4,1601
+"motor_cortex","L5 ET","CL:0000679",2,858
+"motor_cortex","L5 ET_1","CL:0000679",4,770
+"motor_cortex","L5 ET_2","CL:0000679",4,88
+"motor_cortex","L5 IT","CL:0000679",2,2000
+"motor_cortex","L5 IT_1","CL:0000679",4,1062
+"motor_cortex","L5 IT_2","CL:0000679",4,1126
+"motor_cortex","L5 IT_3","CL:0000679",4,64
+"motor_cortex","L5/6 NP","CL:0000679",4,1487
+"motor_cortex","L6 CT","CL:0000679",2,2000
+"motor_cortex","L6 CT_1","CL:0000679",4,584
+"motor_cortex","L6 CT_2","CL:0000679",4,1416
+"motor_cortex","L6 IT","CL:0000679",2,1829
+"motor_cortex","L6 IT Car3","CL:0000679",2,327
+"motor_cortex","L6 IT_1","CL:0000679",4,1341
+"motor_cortex","L6 IT_2","CL:0000679",4,635
+"motor_cortex","L6 IT_3","CL:0000679",4,327
+"motor_cortex","L6b","CL:0000679",4,2000
+"motor_cortex","Lamp5","CL:0000617",2,2000
+"motor_cortex","Lamp5_1","CL:0000617",4,43
+"motor_cortex","Lamp5_2","CL:0000617",4,991
+"motor_cortex","Lamp5_3","CL:0000617",4,634
+"motor_cortex","Lamp5_4","CL:0000617",4,101
+"motor_cortex","Lamp5_5","CL:0000617",4,231
+"motor_cortex","Micro-PVM","CL:0000881",2,108
+"motor_cortex","Micro L1-6 TYROBP CD74","CL:0000129",3,108
+"motor_cortex","Microglia/PVM","CL:0000881",4,108
+"motor_cortex","Non-Neuronal","CL:0000548",1,3063
+"motor_cortex","Oligo","CL:0000128",2,2000
+"motor_cortex","Oligo L2-6 OPALIN FTH1P3","CL:0000128",3,1504
+"motor_cortex","Oligo L2-6 OPALIN MAP6D1","CL:0000128",3,65
+"motor_cortex","Oligo L3-6 OPALIN ENPP6","CL:0000128",3,369
+"motor_cortex","Oligo L3-6 OPALIN LRP4-AS1","CL:0000128",3,59
+"motor_cortex","Oligo L5-6 OPALIN LDLRAP1","CL:0000128",3,3
+"motor_cortex","Oligo_1","CL:0000128",4,369
+"motor_cortex","Oligo_2","CL:0000128",4,1507
+"motor_cortex","OPC","CL:0002453",4,283
+"motor_cortex","OPC L1-6 PDGFRA COL20A1","CL:0002453",3,283
+"motor_cortex","Pvalb","CL:0000617",2,2000
+"motor_cortex","Pvalb_1","CL:0000617",4,1803
+"motor_cortex","Pvalb_2","CL:0000617",4,128
+"motor_cortex","Sncg","CL:0000617",2,895
+"motor_cortex","Sncg_1","CL:0000617",4,246
+"motor_cortex","Sncg_2","CL:0000617",4,108
+"motor_cortex","Sncg_3","CL:0000617",4,94
+"motor_cortex","Sncg_4","CL:0000617",4,447
+"motor_cortex","Sst","CL:0000617",2,2000
+"motor_cortex","Sst Chodl","CL:0000617",4,67
+"motor_cortex","Sst_1","CL:0000617",4,287
+"motor_cortex","Sst_2","CL:0000617",4,259
+"motor_cortex","Sst_3","CL:0000617",4,1157
+"motor_cortex","Sst_4","CL:0000617",4,106
+"motor_cortex","Sst_5","CL:0000617",4,33
+"motor_cortex","Sst_6","CL:0000617",4,130
+"motor_cortex","Sst_7","CL:0000617",4,28
+"motor_cortex","Vip","CL:0000617",2,2000
+"motor_cortex","Vip_1","CL:0000617",4,558
+"motor_cortex","Vip_2","CL:0000617",4,725
+"motor_cortex","Vip_3","CL:0000617",4,460
+"motor_cortex","Vip_4","CL:0000617",4,257
+"motor_cortex","VLMC","CL:2000043",4,40
+"motor_cortex","VLMC L1-5 PDGFRA COLEC12","CL:2000043",3,40

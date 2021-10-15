@@ -1,73 +1,73 @@
-"Organ","Cell.Types","Num.Cells"
-"pbmc","ASDC_mDC",8
-"pbmc","ASDC_pDC",8
-"pbmc","B intermediate kappa",301
-"pbmc","B intermediate lambda",598
-"pbmc","B memory kappa",304
-"pbmc","B memory lambda",293
-"pbmc","B naive kappa",570
-"pbmc","B naive lambda",333
-"pbmc","CD14 Mono",3673
-"pbmc","CD16 Mono",891
-"pbmc","CD4 CTL",296
-"pbmc","CD4 Naive",1403
-"pbmc","CD4 Proliferating",57
-"pbmc","CD4 TCM_1",8141
-"pbmc","CD4 TCM_2",593
-"pbmc","CD4 TCM_3",6155
-"pbmc","CD4 TEM_1",227
-"pbmc","CD4 TEM_2",66
-"pbmc","CD4 TEM_3",347
-"pbmc","CD4 TEM_4",63
-"pbmc","CD8 Naive",981
-"pbmc","CD8 Naive_2",167
-"pbmc","CD8 Proliferating",31
-"pbmc","CD8 TCM_1",929
-"pbmc","CD8 TCM_2",1322
-"pbmc","CD8 TCM_3",632
-"pbmc","CD8 TEM_1",299
-"pbmc","CD8 TEM_2",335
-"pbmc","CD8 TEM_3",290
-"pbmc","CD8 TEM_4",285
-"pbmc","CD8 TEM_5",283
-"pbmc","CD8 TEM_6",304
-"pbmc","cDC1",150
-"pbmc","cDC2_1",173
-"pbmc","cDC2_2",299
-"pbmc","dnT_1",63
-"pbmc","dnT_2",118
-"pbmc","gdT_1",301
-"pbmc","gdT_2",196
-"pbmc","gdT_3",231
-"pbmc","gdT_4",107
-"pbmc","MAIT",600
-"pbmc","NK Proliferating",214
-"pbmc","NK_1",569
-"pbmc","NK_2",657
-"pbmc","NK_3",190
-"pbmc","NK_4",130
-"pbmc","NK_CD56bright",291
-"pbmc","pDC",284
-"pbmc","Plasma",262
-"pbmc","Plasmablast",37
-"pbmc","Treg Memory",160
-"pbmc","Treg Naive",138
-"pbmc","ASDC",16
-"pbmc","B intermediate",899
-"pbmc","B memory",597
-"pbmc","B naive",903
-"pbmc","CD4 TCM",14889
-"pbmc","CD4 TEM",703
-"pbmc","CD8 TCM",2883
-"pbmc","CD8 TEM",1796
-"pbmc","cDC2",472
-"pbmc","dnT",181
-"pbmc","gdT",835
-"pbmc","NK",1546
-"pbmc","Treg",298
-"pbmc","B",2698
-"pbmc","CD4 T",17646
-"pbmc","CD8 T",5858
-"pbmc","DC",922
-"pbmc","Mono",4564
-"pbmc","other T",1616
+"Organ","Cell.Type","Cell.Type.ID","Found.At.Annotation.Level","Num.Cells"
+"pbmc","ASDC","CL:0000451",2,16
+"pbmc","ASDC_mDC","CL:0000782",3,8
+"pbmc","ASDC_pDC","CL:0000784",3,8
+"pbmc","B","CL:0000785",1,2698
+"pbmc","B intermediate","CL:0000785",2,899
+"pbmc","B intermediate kappa","CL:0000785",3,301
+"pbmc","B intermediate lambda","CL:0000785",3,598
+"pbmc","B memory","CL:0000787",2,597
+"pbmc","B memory kappa","CL:0000787",3,304
+"pbmc","B memory lambda","CL:0000787",3,293
+"pbmc","B naive","CL:0000788",2,903
+"pbmc","B naive kappa","CL:0000788",3,570
+"pbmc","B naive lambda","CL:0000788",3,333
+"pbmc","CD14 Mono","CL:0002057",3,3673
+"pbmc","CD16 Mono","CL:0002396",3,891
+"pbmc","CD4 CTL","CL:0000934",3,296
+"pbmc","CD4 Naive","CL:0000895",3,1403
+"pbmc","CD4 Proliferating","CL:0000896",3,57
+"pbmc","CD4 T","CL:0000624",1,17646
+"pbmc","CD4 TCM","CL:0000897",2,14889
+"pbmc","CD4 TCM_1","CL:0000897",3,8141
+"pbmc","CD4 TCM_2","CL:0000897",3,593
+"pbmc","CD4 TCM_3","CL:0000897",3,6155
+"pbmc","CD4 TEM","CL:0001044",2,703
+"pbmc","CD4 TEM_1","CL:0001044",3,227
+"pbmc","CD4 TEM_2","CL:0001044",3,66
+"pbmc","CD4 TEM_3","CL:0001044",3,347
+"pbmc","CD4 TEM_4","CL:0001044",3,63
+"pbmc","CD8 Naive","CL:0000900",3,981
+"pbmc","CD8 Naive_2","CL:0000900",3,167
+"pbmc","CD8 Proliferating","CL:0000906",3,31
+"pbmc","CD8 T","CL:0000625",1,5858
+"pbmc","CD8 TCM","CL:0000909",2,2883
+"pbmc","CD8 TCM_1","CL:0000909",3,929
+"pbmc","CD8 TCM_2","CL:0000909",3,1322
+"pbmc","CD8 TCM_3","CL:0000909",3,632
+"pbmc","CD8 TEM","CL:0001050",2,1796
+"pbmc","CD8 TEM_1","CL:0001050",3,299
+"pbmc","CD8 TEM_2","CL:0001050",3,335
+"pbmc","CD8 TEM_3","CL:0001050",3,290
+"pbmc","CD8 TEM_4","CL:0001050",3,285
+"pbmc","CD8 TEM_5","CL:0001050",3,283
+"pbmc","CD8 TEM_6","CL:0001050",3,304
+"pbmc","cDC1","CL:0002394",3,150
+"pbmc","cDC2","CL:0002399",2,472
+"pbmc","cDC2_1","CL:0002399",3,173
+"pbmc","cDC2_2","CL:0002399",3,299
+"pbmc","DC","CL:0000451",1,922
+"pbmc","dnT","CL:0000935",2,181
+"pbmc","dnT_1","CL:0000935",3,63
+"pbmc","dnT_2","CL:0000935",3,118
+"pbmc","gdT","CL:0000798",2,835
+"pbmc","gdT_1","CL:0000798",3,301
+"pbmc","gdT_2","CL:0000798",3,196
+"pbmc","gdT_3","CL:0000798",3,231
+"pbmc","gdT_4","CL:0000798",3,107
+"pbmc","MAIT","CL:0000940",3,600
+"pbmc","Mono","CL:0000576",1,4564
+"pbmc","NK","CL:0000939",2,1546
+"pbmc","NK Proliferating","CL:0000623",3,214
+"pbmc","NK_1","CL:0000939",3,569
+"pbmc","NK_2","CL:0000939",3,657
+"pbmc","NK_3","CL:0000939",3,190
+"pbmc","NK_4","CL:0000939",3,130
+"pbmc","NK_CD56bright","CL:0000938",3,291
+"pbmc","other T","CL:0002419",1,1616
+"pbmc","pDC","CL:0000784",3,284
+"pbmc","Plasma","CL:0000786",3,262
+"pbmc","Plasmablast","CL:0000980",3,37
+"pbmc","Treg","CL:0000815",2,298
+"pbmc","Treg Memory","CL:0000815",3,160
+"pbmc","Treg Naive","CL:0000815",3,138

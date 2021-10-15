@@ -68,8 +68,9 @@ get_num_asctb_celltypes <- function(asctb_master_table){
     celltype_combinations <- as.data.frame(asctb_master_table[grepl("CT/[0-9]$",colnames(asctb_master_table)) | grepl("CT/[0-9]/ID$",colnames(asctb_master_table))])
     ALL_COLS <- colnames(celltype_combinations)
     n_levels <- length(ALL_COLS)/2
+    i <- n_levels
     
-    for (i in seq(n_levels,1,-1)) {
+    while (i>=1) {
       
       # Choose the last-level columns and check if they are completely empty
       celltypes_at_last_level <- as.data.frame(celltype_combinations[grepl(i, ALL_COLS)])
@@ -99,7 +100,9 @@ get_num_asctb_celltypes <- function(asctb_master_table){
         
         # Remove the entries which have names associated
         celltype_combinations <- celltype_combinations[is.na(celltype_combinations[last_name_col]),]
+        
       }
+      i <- i-1
     }
     
     return (as.vector(unlist(celltype_overall)))
@@ -215,7 +218,7 @@ process_config_for_azimuth <- function(config) {
     
     # map ontology ID and LABELS to reference cell types
     # For brain the CT at L3: 'Oligo L2-6 OPALIN MAP6D1' goes missing because corresponding L4: 'exclude' is not present in annotation file.
-    merged_data <- Reduce(merge, ct_ontology_tables, reference_table)
+    merged_data <- Reduce(left_join, ct_ontology_tables, reference_table)
     
     # reorder columns
     column_order <- c(

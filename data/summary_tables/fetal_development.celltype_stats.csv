@@ -1,250 +1,250 @@
-"Organ","Cell.Types","Num.Cells"
-"fetal_development","Adrenal-Adrenocortical cells",5000
-"fetal_development","Adrenal-Chromaffin cells",5000
-"fetal_development","Adrenal-CSH1_CSH2 positive cells",93
-"fetal_development","Adrenal-Erythroblasts",2750
-"fetal_development","Adrenal-Lymphoid cells",633
-"fetal_development","Adrenal-Megakaryocytes",931
-"fetal_development","Adrenal-Myeloid cells",2389
-"fetal_development","Adrenal-Schwann cells",981
-"fetal_development","Adrenal-SLC26A4_PAEP positive cells",68
-"fetal_development","Adrenal-Stromal cells",5000
-"fetal_development","Adrenal-Sympathoblasts",3805
-"fetal_development","Adrenal-Vascular endothelial cells",5000
-"fetal_development","Cerebellum-Astrocytes",5000
-"fetal_development","Cerebellum-Granule neurons",5000
-"fetal_development","Cerebellum-Inhibitory interneurons",5000
-"fetal_development","Cerebellum-Microglia",4428
-"fetal_development","Cerebellum-Oligodendrocytes",5000
-"fetal_development","Cerebellum-Purkinje neurons",5000
-"fetal_development","Cerebellum-SLC24A4_PEX5L positive cells",5000
-"fetal_development","Cerebellum-Unipolar brush cells",5000
-"fetal_development","Cerebellum-Vascular endothelial cells",5000
-"fetal_development","Cerebrum-Astrocytes",5000
-"fetal_development","Cerebrum-Excitatory neurons",5000
-"fetal_development","Cerebrum-Inhibitory neurons",5000
-"fetal_development","Cerebrum-Limbic system neurons",5000
-"fetal_development","Cerebrum-Megakaryocytes",36
-"fetal_development","Cerebrum-Microglia",4459
-"fetal_development","Cerebrum-Oligodendrocytes",5000
-"fetal_development","Cerebrum-SKOR2_NPSR1 positive cells",5000
-"fetal_development","Cerebrum-Vascular endothelial cells",5000
-"fetal_development","Eye-Amacrine cells",5000
-"fetal_development","Eye-Astrocytes",181
-"fetal_development","Eye-Bipolar cells",1207
-"fetal_development","Eye-Corneal and conjunctival epithelial cells",104
-"fetal_development","Eye-Ganglion cells",5000
-"fetal_development","Eye-Horizontal cells",2300
-"fetal_development","Eye-Lens fibre cells",246
-"fetal_development","Eye-Microglia",88
-"fetal_development","Eye-PDE11A_FAM19A2 positive cells",806
-"fetal_development","Eye-Photoreceptor cells",5000
-"fetal_development","Eye-Retinal pigment cells",704
-"fetal_development","Eye-Retinal progenitors and Muller glia",5000
-"fetal_development","Eye-Skeletal muscle cells",148
-"fetal_development","Eye-Smooth muscle cells",45
-"fetal_development","Eye-Stromal cells",1049
-"fetal_development","Eye-Vascular endothelial cells",211
-"fetal_development","Heart-Cardiomyocytes",5000
-"fetal_development","Heart-CLC_IL5RA positive cells",102
-"fetal_development","Heart-ELF3_AGBL2 positive cells",164
-"fetal_development","Heart-Endocardial cells",5000
-"fetal_development","Heart-Epicardial fat cells",1891
-"fetal_development","Heart-Erythroblasts",6
-"fetal_development","Heart-Lymphatic endothelial cells",1251
-"fetal_development","Heart-Lymphoid cells",1348
-"fetal_development","Heart-Megakaryocytes",361
-"fetal_development","Heart-Myeloid cells",1040
-"fetal_development","Heart-SATB2_LRRC7 positive cells",318
-"fetal_development","Heart-Schwann cells",535
-"fetal_development","Heart-Smooth muscle cells",2036
-"fetal_development","Heart-Stromal cells",5000
-"fetal_development","Heart-Vascular endothelial cells",4911
-"fetal_development","Heart-Visceral neurons",348
-"fetal_development","Intestine-Chromaffin cells",599
-"fetal_development","Intestine-ENS glia",2087
-"fetal_development","Intestine-ENS neurons",2154
-"fetal_development","Intestine-Erythroblasts",206
-"fetal_development","Intestine-Intestinal epithelial cells",5000
-"fetal_development","Intestine-Lymphatic endothelial cells",295
-"fetal_development","Intestine-Lymphoid cells",2144
-"fetal_development","Intestine-Mesothelial cells",212
-"fetal_development","Intestine-Myeloid cells",2830
-"fetal_development","Intestine-Smooth muscle cells",1149
-"fetal_development","Intestine-Stromal cells",5000
-"fetal_development","Intestine-Vascular endothelial cells",1459
-"fetal_development","Kidney-Erythroblasts",250
-"fetal_development","Kidney-Lymphoid cells",577
-"fetal_development","Kidney-Megakaryocytes",67
-"fetal_development","Kidney-Mesangial cells",5000
-"fetal_development","Kidney-Metanephric cells",5000
-"fetal_development","Kidney-Myeloid cells",3413
-"fetal_development","Kidney-Stromal cells",1026
-"fetal_development","Kidney-Ureteric bud cells",5000
-"fetal_development","Kidney-Vascular endothelial cells",5000
-"fetal_development","Liver-Erythroblasts",5000
-"fetal_development","Liver-Hematopoietic stem cells",1096
-"fetal_development","Liver-Hepatoblasts",5000
-"fetal_development","Liver-Lymphoid cells",954
-"fetal_development","Liver-Megakaryocytes",1661
-"fetal_development","Liver-Mesothelial cells",246
-"fetal_development","Liver-Myeloid cells",2766
-"fetal_development","Liver-Stellate cells",1743
-"fetal_development","Liver-Vascular endothelial cells",4580
-"fetal_development","Lung-Bronchiolar and alveolar epithelial cells",5000
-"fetal_development","Lung-Ciliated epithelial cells",2588
-"fetal_development","Lung-CSH1_CSH2 positive cells",16
-"fetal_development","Lung-Lymphatic endothelial cells",5000
-"fetal_development","Lung-Lymphoid cells",2274
-"fetal_development","Lung-Megakaryocytes",305
-"fetal_development","Lung-Mesothelial cells",1074
-"fetal_development","Lung-Myeloid cells",2416
-"fetal_development","Lung-Neuroendocrine cells",1524
-"fetal_development","Lung-Squamous epithelial cells",282
-"fetal_development","Lung-Stromal cells",5000
-"fetal_development","Lung-Vascular endothelial cells",5000
-"fetal_development","Lung-Visceral neurons",262
-"fetal_development","Muscle-Erythroblasts",38
-"fetal_development","Muscle-Lymphatic endothelial cells",115
-"fetal_development","Muscle-Lymphoid cells",88
-"fetal_development","Muscle-Megakaryocytes",12
-"fetal_development","Muscle-Myeloid cells",284
-"fetal_development","Muscle-Satellite cells",5000
-"fetal_development","Muscle-Schwann cells",253
-"fetal_development","Muscle-Skeletal muscle cells",5000
-"fetal_development","Muscle-Smooth muscle cells",575
-"fetal_development","Muscle-Stromal cells",5000
-"fetal_development","Muscle-Vascular endothelial cells",2091
-"fetal_development","Pancreas-Acinar cells",5000
-"fetal_development","Pancreas-CCL19_CCL21 positive cells",206
-"fetal_development","Pancreas-Ductal cells",4829
-"fetal_development","Pancreas-ENS glia",1036
-"fetal_development","Pancreas-ENS neurons",287
-"fetal_development","Pancreas-Erythroblasts",1261
-"fetal_development","Pancreas-Islet endocrine cells",4768
-"fetal_development","Pancreas-Lymphatic endothelial cells",139
-"fetal_development","Pancreas-Lymphoid cells",5000
-"fetal_development","Pancreas-Mesothelial cells",123
-"fetal_development","Pancreas-Myeloid cells",1519
-"fetal_development","Pancreas-Smooth muscle cells",2657
-"fetal_development","Pancreas-Stromal cells",5000
-"fetal_development","Pancreas-Vascular endothelial cells",4804
-"fetal_development","Placenta-AFP_ALB positive cells",88
-"fetal_development","Placenta-Extravillous trophoblasts",1535
-"fetal_development","Placenta-IGFBP1_DKK1 positive cells",701
-"fetal_development","Placenta-Lymphoid cells",465
-"fetal_development","Placenta-Megakaryocytes",30
-"fetal_development","Placenta-Myeloid cells",341
-"fetal_development","Placenta-PAEP_MECOM positive cells",287
-"fetal_development","Placenta-Smooth muscle cells",882
-"fetal_development","Placenta-Stromal cells",5000
-"fetal_development","Placenta-Syncytiotrophoblasts and villous cytotrophoblasts",5000
-"fetal_development","Placenta-Trophoblast giant cells",1137
-"fetal_development","Placenta-Vascular endothelial cells",1464
-"fetal_development","Spleen-AFP_ALB positive cells",94
-"fetal_development","Spleen-Erythroblasts",439
-"fetal_development","Spleen-Lymphoid cells",1624
-"fetal_development","Spleen-Megakaryocytes",95
-"fetal_development","Spleen-Mesothelial cells",258
-"fetal_development","Spleen-Myeloid cells",1178
-"fetal_development","Spleen-STC2_TLX1 positive cells",4487
-"fetal_development","Spleen-Stromal cells",1944
-"fetal_development","Spleen-Vascular endothelial cells",3061
-"fetal_development","Stomach-Ciliated epithelial cells",298
-"fetal_development","Stomach-ENS glia",96
-"fetal_development","Stomach-ENS neurons",73
-"fetal_development","Stomach-Erythroblasts",112
-"fetal_development","Stomach-Goblet cells",3624
-"fetal_development","Stomach-Lymphatic endothelial cells",82
-"fetal_development","Stomach-Lymphoid cells",436
-"fetal_development","Stomach-Mesothelial cells",135
-"fetal_development","Stomach-MUC13_DMBT1 positive cells",792
-"fetal_development","Stomach-Myeloid cells",124
-"fetal_development","Stomach-Neuroendocrine cells",300
-"fetal_development","Stomach-Parietal and chief cells",2322
-"fetal_development","Stomach-PDE1C_ACSM3 positive cells",78
-"fetal_development","Stomach-Squamous epithelial cells",1956
-"fetal_development","Stomach-Stromal cells",1368
-"fetal_development","Stomach-Vascular endothelial cells",310
-"fetal_development","Thymus-Antigen presenting cells",465
-"fetal_development","Thymus-Stromal cells",112
-"fetal_development","Thymus-Thymic epithelial cells",259
-"fetal_development","Thymus-Thymocytes",5000
-"fetal_development","Thymus-Vascular endothelial cells",91
-"fetal_development","Acinar cells",5000
-"fetal_development","Adrenocortical cells",5000
-"fetal_development","AFP_ALB positive cells",182
-"fetal_development","Amacrine cells",5000
-"fetal_development","Antigen presenting cells",465
-"fetal_development","Astrocytes",10181
-"fetal_development","Bipolar cells",1207
-"fetal_development","Bronchiolar and alveolar epithelial cells",5000
-"fetal_development","Cardiomyocytes",5000
-"fetal_development","CCL19_CCL21 positive cells",206
-"fetal_development","Chromaffin cells",5599
-"fetal_development","Ciliated epithelial cells",2886
-"fetal_development","CLC_IL5RA positive cells",102
-"fetal_development","Corneal and conjunctival epithelial cells",104
-"fetal_development","CSH1_CSH2 positive cells",109
-"fetal_development","Ductal cells",4829
-"fetal_development","ELF3_AGBL2 positive cells",164
-"fetal_development","Endocardial cells",5000
-"fetal_development","ENS glia",3219
-"fetal_development","ENS neurons",2514
-"fetal_development","Epicardial fat cells",1891
-"fetal_development","Erythroblasts",10062
-"fetal_development","Excitatory neurons",5000
-"fetal_development","Extravillous trophoblasts",1535
-"fetal_development","Ganglion cells",5000
-"fetal_development","Goblet cells",3624
-"fetal_development","Granule neurons",5000
-"fetal_development","Hematopoietic stem cells",1096
-"fetal_development","Hepatoblasts",5000
-"fetal_development","Horizontal cells",2300
-"fetal_development","IGFBP1_DKK1 positive cells",701
-"fetal_development","Inhibitory interneurons",5000
-"fetal_development","Inhibitory neurons",5000
-"fetal_development","Intestinal epithelial cells",5000
-"fetal_development","Islet endocrine cells",4768
-"fetal_development","Lens fibre cells",246
-"fetal_development","Limbic system neurons",5000
-"fetal_development","Lymphatic endothelial cells",6882
-"fetal_development","Lymphoid cells",15543
-"fetal_development","Megakaryocytes",3498
-"fetal_development","Mesangial cells",5000
-"fetal_development","Mesothelial cells",2048
-"fetal_development","Metanephric cells",5000
-"fetal_development","Microglia",8975
-"fetal_development","MUC13_DMBT1 positive cells",792
-"fetal_development","Myeloid cells",18300
-"fetal_development","Neuroendocrine cells",1824
-"fetal_development","Oligodendrocytes",10000
-"fetal_development","PAEP_MECOM positive cells",287
-"fetal_development","Parietal and chief cells",2322
-"fetal_development","PDE11A_FAM19A2 positive cells",806
-"fetal_development","PDE1C_ACSM3 positive cells",78
-"fetal_development","Photoreceptor cells",5000
-"fetal_development","Purkinje neurons",5000
-"fetal_development","Retinal pigment cells",704
-"fetal_development","Retinal progenitors and Muller glia",5000
-"fetal_development","SATB2_LRRC7 positive cells",318
-"fetal_development","Satellite cells",5000
-"fetal_development","Schwann cells",1769
-"fetal_development","Skeletal muscle cells",5148
-"fetal_development","SKOR2_NPSR1 positive cells",5000
-"fetal_development","SLC24A4_PEX5L positive cells",5000
-"fetal_development","SLC26A4_PAEP positive cells",68
-"fetal_development","Smooth muscle cells",7344
-"fetal_development","Squamous epithelial cells",2238
-"fetal_development","STC2_TLX1 positive cells",4487
-"fetal_development","Stellate cells",1743
-"fetal_development","Stromal cells",40499
-"fetal_development","Sympathoblasts",3805
-"fetal_development","Syncytiotrophoblasts and villous cytotrophoblasts",5000
-"fetal_development","Thymic epithelial cells",259
-"fetal_development","Thymocytes",5000
-"fetal_development","Trophoblast giant cells",1137
-"fetal_development","Unipolar brush cells",5000
-"fetal_development","Ureteric bud cells",5000
-"fetal_development","Vascular endothelial cells",47982
-"fetal_development","Visceral neurons",610
+"Organ","Cell.Type","Cell.Type.ID","Found.At.Annotation.Level","Num.Cells"
+"fetal_development","Acinar cells","NA",1,5000
+"fetal_development","Adrenal-Adrenocortical cells","NA",2,5000
+"fetal_development","Adrenal-Chromaffin cells","NA",2,5000
+"fetal_development","Adrenal-CSH1_CSH2 positive cells","NA",2,93
+"fetal_development","Adrenal-Erythroblasts","NA",2,2750
+"fetal_development","Adrenal-Lymphoid cells","NA",2,633
+"fetal_development","Adrenal-Megakaryocytes","NA",2,931
+"fetal_development","Adrenal-Myeloid cells","NA",2,2389
+"fetal_development","Adrenal-Schwann cells","NA",2,981
+"fetal_development","Adrenal-SLC26A4_PAEP positive cells","NA",2,68
+"fetal_development","Adrenal-Stromal cells","NA",2,5000
+"fetal_development","Adrenal-Sympathoblasts","NA",2,3805
+"fetal_development","Adrenal-Vascular endothelial cells","NA",2,5000
+"fetal_development","Adrenocortical cells","NA",1,5000
+"fetal_development","AFP_ALB positive cells","NA",1,182
+"fetal_development","Amacrine cells","NA",1,5000
+"fetal_development","Antigen presenting cells","NA",1,465
+"fetal_development","Astrocytes","NA",1,10181
+"fetal_development","Bipolar cells","NA",1,1207
+"fetal_development","Bronchiolar and alveolar epithelial cells","NA",1,5000
+"fetal_development","Cardiomyocytes","NA",1,5000
+"fetal_development","CCL19_CCL21 positive cells","NA",1,206
+"fetal_development","Cerebellum-Astrocytes","NA",2,5000
+"fetal_development","Cerebellum-Granule neurons","NA",2,5000
+"fetal_development","Cerebellum-Inhibitory interneurons","NA",2,5000
+"fetal_development","Cerebellum-Microglia","NA",2,4428
+"fetal_development","Cerebellum-Oligodendrocytes","NA",2,5000
+"fetal_development","Cerebellum-Purkinje neurons","NA",2,5000
+"fetal_development","Cerebellum-SLC24A4_PEX5L positive cells","NA",2,5000
+"fetal_development","Cerebellum-Unipolar brush cells","NA",2,5000
+"fetal_development","Cerebellum-Vascular endothelial cells","NA",2,5000
+"fetal_development","Cerebrum-Astrocytes","NA",2,5000
+"fetal_development","Cerebrum-Excitatory neurons","NA",2,5000
+"fetal_development","Cerebrum-Inhibitory neurons","NA",2,5000
+"fetal_development","Cerebrum-Limbic system neurons","NA",2,5000
+"fetal_development","Cerebrum-Megakaryocytes","NA",2,36
+"fetal_development","Cerebrum-Microglia","NA",2,4459
+"fetal_development","Cerebrum-Oligodendrocytes","NA",2,5000
+"fetal_development","Cerebrum-SKOR2_NPSR1 positive cells","NA",2,5000
+"fetal_development","Cerebrum-Vascular endothelial cells","NA",2,5000
+"fetal_development","Chromaffin cells","NA",1,5599
+"fetal_development","Ciliated epithelial cells","NA",1,2886
+"fetal_development","CLC_IL5RA positive cells","NA",1,102
+"fetal_development","Corneal and conjunctival epithelial cells","NA",1,104
+"fetal_development","CSH1_CSH2 positive cells","NA",1,109
+"fetal_development","Ductal cells","NA",1,4829
+"fetal_development","ELF3_AGBL2 positive cells","NA",1,164
+"fetal_development","Endocardial cells","NA",1,5000
+"fetal_development","ENS glia","NA",1,3219
+"fetal_development","ENS neurons","NA",1,2514
+"fetal_development","Epicardial fat cells","NA",1,1891
+"fetal_development","Erythroblasts","NA",1,10062
+"fetal_development","Excitatory neurons","NA",1,5000
+"fetal_development","Extravillous trophoblasts","NA",1,1535
+"fetal_development","Eye-Amacrine cells","NA",2,5000
+"fetal_development","Eye-Astrocytes","NA",2,181
+"fetal_development","Eye-Bipolar cells","NA",2,1207
+"fetal_development","Eye-Corneal and conjunctival epithelial cells","NA",2,104
+"fetal_development","Eye-Ganglion cells","NA",2,5000
+"fetal_development","Eye-Horizontal cells","NA",2,2300
+"fetal_development","Eye-Lens fibre cells","NA",2,246
+"fetal_development","Eye-Microglia","NA",2,88
+"fetal_development","Eye-PDE11A_FAM19A2 positive cells","NA",2,806
+"fetal_development","Eye-Photoreceptor cells","NA",2,5000
+"fetal_development","Eye-Retinal pigment cells","NA",2,704
+"fetal_development","Eye-Retinal progenitors and Muller glia","NA",2,5000
+"fetal_development","Eye-Skeletal muscle cells","NA",2,148
+"fetal_development","Eye-Smooth muscle cells","NA",2,45
+"fetal_development","Eye-Stromal cells","NA",2,1049
+"fetal_development","Eye-Vascular endothelial cells","NA",2,211
+"fetal_development","Ganglion cells","NA",1,5000
+"fetal_development","Goblet cells","NA",1,3624
+"fetal_development","Granule neurons","NA",1,5000
+"fetal_development","Heart-Cardiomyocytes","NA",2,5000
+"fetal_development","Heart-CLC_IL5RA positive cells","NA",2,102
+"fetal_development","Heart-ELF3_AGBL2 positive cells","NA",2,164
+"fetal_development","Heart-Endocardial cells","NA",2,5000
+"fetal_development","Heart-Epicardial fat cells","NA",2,1891
+"fetal_development","Heart-Erythroblasts","NA",2,6
+"fetal_development","Heart-Lymphatic endothelial cells","NA",2,1251
+"fetal_development","Heart-Lymphoid cells","NA",2,1348
+"fetal_development","Heart-Megakaryocytes","NA",2,361
+"fetal_development","Heart-Myeloid cells","NA",2,1040
+"fetal_development","Heart-SATB2_LRRC7 positive cells","NA",2,318
+"fetal_development","Heart-Schwann cells","NA",2,535
+"fetal_development","Heart-Smooth muscle cells","NA",2,2036
+"fetal_development","Heart-Stromal cells","NA",2,5000
+"fetal_development","Heart-Vascular endothelial cells","NA",2,4911
+"fetal_development","Heart-Visceral neurons","NA",2,348
+"fetal_development","Hematopoietic stem cells","NA",1,1096
+"fetal_development","Hepatoblasts","NA",1,5000
+"fetal_development","Horizontal cells","NA",1,2300
+"fetal_development","IGFBP1_DKK1 positive cells","NA",1,701
+"fetal_development","Inhibitory interneurons","NA",1,5000
+"fetal_development","Inhibitory neurons","NA",1,5000
+"fetal_development","Intestinal epithelial cells","NA",1,5000
+"fetal_development","Intestine-Chromaffin cells","NA",2,599
+"fetal_development","Intestine-ENS glia","NA",2,2087
+"fetal_development","Intestine-ENS neurons","NA",2,2154
+"fetal_development","Intestine-Erythroblasts","NA",2,206
+"fetal_development","Intestine-Intestinal epithelial cells","NA",2,5000
+"fetal_development","Intestine-Lymphatic endothelial cells","NA",2,295
+"fetal_development","Intestine-Lymphoid cells","NA",2,2144
+"fetal_development","Intestine-Mesothelial cells","NA",2,212
+"fetal_development","Intestine-Myeloid cells","NA",2,2830
+"fetal_development","Intestine-Smooth muscle cells","NA",2,1149
+"fetal_development","Intestine-Stromal cells","NA",2,5000
+"fetal_development","Intestine-Vascular endothelial cells","NA",2,1459
+"fetal_development","Islet endocrine cells","NA",1,4768
+"fetal_development","Kidney-Erythroblasts","NA",2,250
+"fetal_development","Kidney-Lymphoid cells","NA",2,577
+"fetal_development","Kidney-Megakaryocytes","NA",2,67
+"fetal_development","Kidney-Mesangial cells","NA",2,5000
+"fetal_development","Kidney-Metanephric cells","NA",2,5000
+"fetal_development","Kidney-Myeloid cells","NA",2,3413
+"fetal_development","Kidney-Stromal cells","NA",2,1026
+"fetal_development","Kidney-Ureteric bud cells","NA",2,5000
+"fetal_development","Kidney-Vascular endothelial cells","NA",2,5000
+"fetal_development","Lens fibre cells","NA",1,246
+"fetal_development","Limbic system neurons","NA",1,5000
+"fetal_development","Liver-Erythroblasts","NA",2,5000
+"fetal_development","Liver-Hematopoietic stem cells","NA",2,1096
+"fetal_development","Liver-Hepatoblasts","NA",2,5000
+"fetal_development","Liver-Lymphoid cells","NA",2,954
+"fetal_development","Liver-Megakaryocytes","NA",2,1661
+"fetal_development","Liver-Mesothelial cells","NA",2,246
+"fetal_development","Liver-Myeloid cells","NA",2,2766
+"fetal_development","Liver-Stellate cells","NA",2,1743
+"fetal_development","Liver-Vascular endothelial cells","NA",2,4580
+"fetal_development","Lung-Bronchiolar and alveolar epithelial cells","NA",2,5000
+"fetal_development","Lung-Ciliated epithelial cells","NA",2,2588
+"fetal_development","Lung-CSH1_CSH2 positive cells","NA",2,16
+"fetal_development","Lung-Lymphatic endothelial cells","NA",2,5000
+"fetal_development","Lung-Lymphoid cells","NA",2,2274
+"fetal_development","Lung-Megakaryocytes","NA",2,305
+"fetal_development","Lung-Mesothelial cells","NA",2,1074
+"fetal_development","Lung-Myeloid cells","NA",2,2416
+"fetal_development","Lung-Neuroendocrine cells","NA",2,1524
+"fetal_development","Lung-Squamous epithelial cells","NA",2,282
+"fetal_development","Lung-Stromal cells","NA",2,5000
+"fetal_development","Lung-Vascular endothelial cells","NA",2,5000
+"fetal_development","Lung-Visceral neurons","NA",2,262
+"fetal_development","Lymphatic endothelial cells","NA",1,6882
+"fetal_development","Lymphoid cells","NA",1,15543
+"fetal_development","Megakaryocytes","NA",1,3498
+"fetal_development","Mesangial cells","NA",1,5000
+"fetal_development","Mesothelial cells","NA",1,2048
+"fetal_development","Metanephric cells","NA",1,5000
+"fetal_development","Microglia","NA",1,8975
+"fetal_development","MUC13_DMBT1 positive cells","NA",1,792
+"fetal_development","Muscle-Erythroblasts","NA",2,38
+"fetal_development","Muscle-Lymphatic endothelial cells","NA",2,115
+"fetal_development","Muscle-Lymphoid cells","NA",2,88
+"fetal_development","Muscle-Megakaryocytes","NA",2,12
+"fetal_development","Muscle-Myeloid cells","NA",2,284
+"fetal_development","Muscle-Satellite cells","NA",2,5000
+"fetal_development","Muscle-Schwann cells","NA",2,253
+"fetal_development","Muscle-Skeletal muscle cells","NA",2,5000
+"fetal_development","Muscle-Smooth muscle cells","NA",2,575
+"fetal_development","Muscle-Stromal cells","NA",2,5000
+"fetal_development","Muscle-Vascular endothelial cells","NA",2,2091
+"fetal_development","Myeloid cells","NA",1,18300
+"fetal_development","Neuroendocrine cells","NA",1,1824
+"fetal_development","Oligodendrocytes","NA",1,10000
+"fetal_development","PAEP_MECOM positive cells","NA",1,287
+"fetal_development","Pancreas-Acinar cells","NA",2,5000
+"fetal_development","Pancreas-CCL19_CCL21 positive cells","NA",2,206
+"fetal_development","Pancreas-Ductal cells","NA",2,4829
+"fetal_development","Pancreas-ENS glia","NA",2,1036
+"fetal_development","Pancreas-ENS neurons","NA",2,287
+"fetal_development","Pancreas-Erythroblasts","NA",2,1261
+"fetal_development","Pancreas-Islet endocrine cells","NA",2,4768
+"fetal_development","Pancreas-Lymphatic endothelial cells","NA",2,139
+"fetal_development","Pancreas-Lymphoid cells","NA",2,5000
+"fetal_development","Pancreas-Mesothelial cells","NA",2,123
+"fetal_development","Pancreas-Myeloid cells","NA",2,1519
+"fetal_development","Pancreas-Smooth muscle cells","NA",2,2657
+"fetal_development","Pancreas-Stromal cells","NA",2,5000
+"fetal_development","Pancreas-Vascular endothelial cells","NA",2,4804
+"fetal_development","Parietal and chief cells","NA",1,2322
+"fetal_development","PDE11A_FAM19A2 positive cells","NA",1,806
+"fetal_development","PDE1C_ACSM3 positive cells","NA",1,78
+"fetal_development","Photoreceptor cells","NA",1,5000
+"fetal_development","Placenta-AFP_ALB positive cells","NA",2,88
+"fetal_development","Placenta-Extravillous trophoblasts","NA",2,1535
+"fetal_development","Placenta-IGFBP1_DKK1 positive cells","NA",2,701
+"fetal_development","Placenta-Lymphoid cells","NA",2,465
+"fetal_development","Placenta-Megakaryocytes","NA",2,30
+"fetal_development","Placenta-Myeloid cells","NA",2,341
+"fetal_development","Placenta-PAEP_MECOM positive cells","NA",2,287
+"fetal_development","Placenta-Smooth muscle cells","NA",2,882
+"fetal_development","Placenta-Stromal cells","NA",2,5000
+"fetal_development","Placenta-Syncytiotrophoblasts and villous cytotrophoblasts","NA",2,5000
+"fetal_development","Placenta-Trophoblast giant cells","NA",2,1137
+"fetal_development","Placenta-Vascular endothelial cells","NA",2,1464
+"fetal_development","Purkinje neurons","NA",1,5000
+"fetal_development","Retinal pigment cells","NA",1,704
+"fetal_development","Retinal progenitors and Muller glia","NA",1,5000
+"fetal_development","SATB2_LRRC7 positive cells","NA",1,318
+"fetal_development","Satellite cells","NA",1,5000
+"fetal_development","Schwann cells","NA",1,1769
+"fetal_development","Skeletal muscle cells","NA",1,5148
+"fetal_development","SKOR2_NPSR1 positive cells","NA",1,5000
+"fetal_development","SLC24A4_PEX5L positive cells","NA",1,5000
+"fetal_development","SLC26A4_PAEP positive cells","NA",1,68
+"fetal_development","Smooth muscle cells","NA",1,7344
+"fetal_development","Spleen-AFP_ALB positive cells","NA",2,94
+"fetal_development","Spleen-Erythroblasts","NA",2,439
+"fetal_development","Spleen-Lymphoid cells","NA",2,1624
+"fetal_development","Spleen-Megakaryocytes","NA",2,95
+"fetal_development","Spleen-Mesothelial cells","NA",2,258
+"fetal_development","Spleen-Myeloid cells","NA",2,1178
+"fetal_development","Spleen-STC2_TLX1 positive cells","NA",2,4487
+"fetal_development","Spleen-Stromal cells","NA",2,1944
+"fetal_development","Spleen-Vascular endothelial cells","NA",2,3061
+"fetal_development","Squamous epithelial cells","NA",1,2238
+"fetal_development","STC2_TLX1 positive cells","NA",1,4487
+"fetal_development","Stellate cells","NA",1,1743
+"fetal_development","Stomach-Ciliated epithelial cells","NA",2,298
+"fetal_development","Stomach-ENS glia","NA",2,96
+"fetal_development","Stomach-ENS neurons","NA",2,73
+"fetal_development","Stomach-Erythroblasts","NA",2,112
+"fetal_development","Stomach-Goblet cells","NA",2,3624
+"fetal_development","Stomach-Lymphatic endothelial cells","NA",2,82
+"fetal_development","Stomach-Lymphoid cells","NA",2,436
+"fetal_development","Stomach-Mesothelial cells","NA",2,135
+"fetal_development","Stomach-MUC13_DMBT1 positive cells","NA",2,792
+"fetal_development","Stomach-Myeloid cells","NA",2,124
+"fetal_development","Stomach-Neuroendocrine cells","NA",2,300
+"fetal_development","Stomach-Parietal and chief cells","NA",2,2322
+"fetal_development","Stomach-PDE1C_ACSM3 positive cells","NA",2,78
+"fetal_development","Stomach-Squamous epithelial cells","NA",2,1956
+"fetal_development","Stomach-Stromal cells","NA",2,1368
+"fetal_development","Stomach-Vascular endothelial cells","NA",2,310
+"fetal_development","Stromal cells","NA",1,40499
+"fetal_development","Sympathoblasts","NA",1,3805
+"fetal_development","Syncytiotrophoblasts and villous cytotrophoblasts","NA",1,5000
+"fetal_development","Thymic epithelial cells","NA",1,259
+"fetal_development","Thymocytes","NA",1,5000
+"fetal_development","Thymus-Antigen presenting cells","NA",2,465
+"fetal_development","Thymus-Stromal cells","NA",2,112
+"fetal_development","Thymus-Thymic epithelial cells","NA",2,259
+"fetal_development","Thymus-Thymocytes","NA",2,5000
+"fetal_development","Thymus-Vascular endothelial cells","NA",2,91
+"fetal_development","Trophoblast giant cells","NA",1,1137
+"fetal_development","Unipolar brush cells","NA",1,5000
+"fetal_development","Ureteric bud cells","NA",1,5000
+"fetal_development","Vascular endothelial cells","NA",1,47982
+"fetal_development","Visceral neurons","NA",1,610

@@ -5,46 +5,67 @@
 
 
 
-generate_azimuth_celltype_cnt_summary <- function(asct_table, body_organ){
+generate_azimuth_celltype_cnt_summary <- function(asct_table, organ){
   tryCatch({
     
     # Structure for stats table of organ level CellType vs count
-    celltype_vs_counts_cols <- c('Cell.Types', 'Num.Cells')
+    celltype_vs_counts_cols <- c('Cell.Type', 'Cell.Type.ID', 'Num.Cells', 'Found.At.Annotation.Level')
     celltype_vs_counts <- create_new_df(celltype_vs_counts_cols)
     
     # Convert the available CellType columns
-    celltype_combinations <- asct_table[grepl("AS/[0-9]$",colnames(asct_table)) | grepl("COUNT$",colnames(asct_table))]
+    celltype_combinations <- asct_table[grepl("AS/[0-9]$",colnames(asct_table)) | grepl("AS/[0-9]/ID$",colnames(asct_table)) | grepl("COUNT$",colnames(asct_table))]
     ALL_COLS <- colnames(celltype_combinations)
     COUNT_COL <- ALL_COLS[grepl("COUNT",ALL_COLS)]
+    ID_COLS <- ALL_COLS[grepl("ID", ALL_COLS)]
     ALL_COLS <- ALL_COLS[ALL_COLS!=COUNT_COL]
     
-    for (column in rev(ALL_COLS)) {
+    
+    # Edge case: Spleen doesn't have any ID columns, Fetal_Development doesn't have any Cell-Type IDs
+    if (length(ID_COLS)==0){
+      ID_COLS <- sapply(1:length(ALL_COLS), function (x) return(paste0("AS/",x,"/ID")))
+      celltype_combinations[ID_COLS] <- "NA"
+      ALL_COLS <- c(ALL_COLS, ID_COLS)
+    }else if(all(is.na(celltype_combinations[, ID_COLS]))){
+      celltype_combinations <- celltype_combinations[, !grepl("ID", ALL_COLS)]
+      celltype_combinations[ID_COLS] <- "NA"
+    }
+    ALL_COLS <- sort(ALL_COLS)
+    celltype_combinations <- celltype_combinations[c(ALL_COLS, COUNT_COL)]
+    
+    i <- length(ALL_COLS)/2
+    
+    
+    while (i>=1) {
+      
       # Choose the (keyCols, COUNT) combo -> aggregate it -> merge it with the CellType stats table created above
-      celltypes_at_last_level <- celltype_combinations[ , c(ALL_COLS, COUNT_COL)]
+      celltypes_at_last_level <- as.data.frame(celltype_combinations[ , c(ALL_COLS, COUNT_COL)])
       
       # Group by all the key-columns and return the value in the COUNT_COL
       group_by_formula <- as.formula(paste0( paste0('`',COUNT_COL,'`~'), paste0(sapply(ALL_COLS, function(col) paste0('`',col,'`')), collapse="+")))
       agg_celltypes_at_last_level <- aggregate( group_by_formula, data=celltypes_at_last_level, FUN = sum )
       
-      n <- ncol(agg_celltypes_at_last_level)
-      celltype_counts_last_level <- agg_celltypes_at_last_level[ , c(n-1, n)]
+      ncols <- ncol(agg_celltypes_at_last_level)
+      celltype_counts_last_level <- agg_celltypes_at_last_level[ , c(ncols-2, ncols-1, ncols)]
+      
       agg_celltypes <- celltype_counts_last_level[!is.na(celltype_counts_last_level[,1]) & !is.null(celltype_counts_last_level[,1]), ]
+      agg_celltypes['Found.At.Annotation.Level'] <- i
       agg_celltypes <- agg_celltypes[!trimws(agg_celltypes[,1]) %in% trimws(celltype_vs_counts[,1]),]
+      
       # Append the output of current key-columns aggregation into the stats table
       celltype_vs_counts <- rbind(celltype_vs_counts, setNames(agg_celltypes, names(celltype_vs_counts)))
       
       # Remove the last column and move on to aggregating the next subset of columns
-      ALL_COLS <- ALL_COLS[ALL_COLS!=column]
+      ALL_COLS <- ALL_COLS[!grepl(i,ALL_COLS)]
+      i <- length(ALL_COLS)/2
     }
     
     # Perform a final aggregation since Brain's annotation-files have L4 level issues.
-    celltype_vs_counts <- aggregate( as.formula(paste0('`Num.Cells`~`Cell.Types`')), data=celltype_vs_counts, FUN = sum )
+    celltype_vs_counts <- aggregate( as.formula(paste0('`Num.Cells`~`Cell.Type`+`Cell.Type.ID`+`Found.At.Annotation.Level`')), data=celltype_vs_counts, FUN = sum )
     
     # Reformat the stats dataframe and write it to a csv
-    celltype_vs_counts <- setNames(celltype_vs_counts, celltype_vs_counts_cols)
-    celltype_vs_counts['Organ'] <- body_organ
-    celltype_vs_counts <- celltype_vs_counts[, c("Organ",celltype_vs_counts_cols)]
-    write_df_to_csv(celltype_vs_counts, paste0(SUMMARIES_DIR, body_organ, ".celltype_stats.csv"))
+    celltype_vs_counts['Organ'] <- organ
+    celltype_vs_counts <- celltype_vs_counts[order(celltype_vs_counts$Cell.Type), c('Organ', 'Cell.Type', 'Cell.Type.ID', 'Found.At.Annotation.Level', 'Num.Cells')]
+    write_df_to_csv(celltype_vs_counts, paste0(SUMMARIES_DIR, organ, '.celltype_stats.csv'))
   },
   error = function(e){
     cat(paste('\nSomething went wrong while generating the Celltype-vs-Counts stats for:',config$name,'\n'))
@@ -121,11 +142,11 @@ process_asctb_master_dataset_summary <- function(config, asctb_master_table, asc
     
     # C3: Get the union of all "CT" columns in the ASCTB organ.csv file
     # Previous logic was incorrect.
-    # asctb.entire_set_of_cell_types <- asctb_master_table[grepl("CT/[0-9]$",asctb.master_columns)]
-    # asctb.cleaned_set_of_cell_types <- get_cleaned_values_from_df(asctb.entire_set_of_cell_types)
     print('Generating the set of cell-types now')
-    asctb.cleaned_set_of_cell_types <- get_num_asctb_celltypes(asctb_master_table)
-    n_unique_cell_types.3 <- length(asctb.cleaned_set_of_cell_types)
+    asctb.cell_types <- get_num_asctb_celltypes(asctb_master_table)
+    print(paste0('Cell-types for ', organ.1,' are: '))
+    print(asctb.cell_types)
+    n_unique_cell_types.3 <- length(asctb.cell_types)
     
     
     # C4: Get the union of all "ID" columns in the ASCTB organ.csv file. Kidney has extra 'CT' column that messes up the counts
@@ -136,8 +157,12 @@ process_asctb_master_dataset_summary <- function(config, asctb_master_table, asc
     
     if (compute_intersection_stats){
       # C5: Get the intersection of CT_Ontology_IDs in the ASCTB organ.csv file vs Azimuth organ.csv file.
-      # Edge Case: Brain/Spleen doesn't have CT_Ontology_IDs. Use Cell-Types itself for finding # matching between ASCTB and Azimuth.
       azimuth_colnames <-  colnames(asct_table_derived_from_azimuth)
+      
+      # Get All Cell-types for the ASCT+B master dataset
+      asctb.cleaned_set_of_cell_types <- get_cleaned_values_from_df(asctb_master_table[grepl("CT/[0-9]$",asctb.master_columns)])
+      
+      # Edge Case: Brain/Spleen doesn't have CT_Ontology_IDs. Use Cell-Types itself for finding # matching between ASCTB and Azimuth.
       if (organ.1 %in% c('Spleen','Brain')){
         azimuth.entire_set_of_cell_types <- asct_table_derived_from_azimuth[grepl("AS/[0-9]$",azimuth_colnames)]
         azimuth.cleaned_set_of_cell_types <- get_cleaned_values_from_df(azimuth.entire_set_of_cell_types)

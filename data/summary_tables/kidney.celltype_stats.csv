@@ -1,59 +1,59 @@
-"Organ","Cell.Types","Num.Cells"
-"kidney","Afferent / Efferent Arteriole Endothelial",341
-"kidney","Ascending Thin Limb",1765
-"kidney","Ascending Vasa Recta Endothelial",2527
-"kidney","B",331
-"kidney","Classical Dendritic",57
-"kidney","Connecting Tubule",2181
-"kidney","Connecting Tubule Intercalated Type A",83
-"kidney","Connecting Tubule Principal",957
-"kidney","Cortical Collecting Duct Intercalated Type A",2578
-"kidney","Cortical Collecting Duct Principal",2281
-"kidney","Cortical Thick Ascending Limb",4205
-"kidney","Cortical Vascular Smooth Muscle / Pericyte",457
-"kidney","Cycling Mononuclear Phagocyte",47
-"kidney","Descending Thin Limb Type 1",1524
-"kidney","Descending Thin Limb Type 2",901
-"kidney","Descending Thin Limb Type 3",1392
-"kidney","Descending Vasa Recta Endothelial ",1838
-"kidney","Distal Convoluted Tubule Type 1",3440
-"kidney","Distal Convoluted Tubule Type 2",278
-"kidney","Fibroblast",1851
-"kidney","Glomerular Capillary Endothelial",1041
-"kidney","Inner Medullary Collecting Duct",4095
-"kidney","Intercalated Type B",768
-"kidney","Lymphatic Endothelial",123
-"kidney","M2 Macrophage",1263
-"kidney","Macula Densa",1045
-"kidney","Mast",109
-"kidney","Medullary Fibroblast",4587
-"kidney","Medullary Thick Ascending Limb",4160
-"kidney","Mesangial",200
-"kidney","Monocyte-derived",803
-"kidney","Natural Killer T",211
-"kidney","Neutrophil",58
-"kidney","Non-classical monocyte",163
-"kidney","Outer Medullary Collecting Duct Intercalated Type A",933
-"kidney","Outer Medullary Collecting Duct Principal",894
-"kidney","Papillary Tip Epithelial",322
-"kidney","Parietal Epithelial",527
-"kidney","Peritubular Capilary Endothelial ",2757
-"kidney","Plasma",98
-"kidney","Plasmacytoid Dendritic",31
-"kidney","Podocyte",1028
-"kidney","Proximal Tubule Epithelial Segment 1",4407
-"kidney","Proximal Tubule Epithelial Segment 2",1355
-"kidney","Proximal Tubule Epithelial Segment 3",2068
-"kidney","Renin-positive Juxtaglomerular Granular",34
-"kidney","Schwann / Neural",35
-"kidney","T",1341
-"kidney","Vascular Smooth Muscle / Pericyte",1203
-"kidney","Distal Convoluted Tubule",3718
-"kidney","Descending Thin Limb",3817
-"kidney","Endothelial",8627
-"kidney","Immune",4512
-"kidney","Intercalated",4362
-"kidney","Principal",7270
-"kidney","Proximal Tubule",7830
-"kidney","Schwann",35
-"kidney","Thick Ascending Limb",9410
+"Organ","Cell.Type","Cell.Type.ID","Found.At.Annotation.Level","Num.Cells"
+"kidney","Afferent / Efferent Arteriole Endothelial","CL:1001096",3,341
+"kidney","Ascending Thin Limb","CL:1001107",3,1765
+"kidney","Ascending Vasa Recta Endothelial","CL:1001131",3,2527
+"kidney","B","CL:0000785",3,331
+"kidney","Classical Dendritic","CL:0000451",3,57
+"kidney","Connecting Tubule","CL:1000768",3,2181
+"kidney","Connecting Tubule Intercalated Type A","CL:0005011",3,83
+"kidney","Connecting Tubule Principal","CL:1001431",3,957
+"kidney","Cortical Collecting Duct Intercalated Type A","CL:0005011",3,2578
+"kidney","Cortical Collecting Duct Principal","CL:1001431",3,2281
+"kidney","Cortical Thick Ascending Limb","[kidney loop of Henle cortical thick ascending limb epithelial cell](http://www.ontobee.org/ontology/CL?iri=http://purl.obolibrary.org/obo/1001109)",3,4205
+"kidney","Cortical Vascular Smooth Muscle / Pericyte","CL:0000359",3,457
+"kidney","Cycling Mononuclear Phagocyte","CL:0000113",3,47
+"kidney","Descending Thin Limb","CL:1001111",1,3817
+"kidney","Descending Thin Limb Type 1","CL:1001111",3,1524
+"kidney","Descending Thin Limb Type 2","CL:1001111",3,901
+"kidney","Descending Thin Limb Type 3","CL:1001111",3,1392
+"kidney","Descending Vasa Recta Endothelial ","CL:1001285",3,1838
+"kidney","Distal Convoluted Tubule","CL:1000849",2,3718
+"kidney","Distal Convoluted Tubule Type 1","CL:1000849",3,3440
+"kidney","Distal Convoluted Tubule Type 2","CL:1000849",3,278
+"kidney","Endothelial","CL:0000115",1,8627
+"kidney","Fibroblast","CL:0000057",3,1851
+"kidney","Glomerular Capillary Endothelial","CL:1001005",3,1041
+"kidney","Immune","CL:0000738",1,4512
+"kidney","Inner Medullary Collecting Duct","CL:1000547",3,4095
+"kidney","Intercalated","CL:0005010",1,4362
+"kidney","Intercalated Type B","CL:0002201",3,768
+"kidney","Lymphatic Endothelial","CL:0002138",3,123
+"kidney","M2 Macrophage","CL:0000235",3,1263
+"kidney","Macula Densa","CL:1000850",3,1045
+"kidney","Mast","CL:0000097",3,109
+"kidney","Medullary Fibroblast","CL:0000057",3,4587
+"kidney","Medullary Thick Ascending Limb","CL:1001108",3,4160
+"kidney","Mesangial","CL:0000650",3,200
+"kidney","Monocyte-derived","CL:0000576",3,803
+"kidney","Natural Killer T","CL:0000542",3,211
+"kidney","Neutrophil","CL:0000775",3,58
+"kidney","Non-classical monocyte","CL:0000576",3,163
+"kidney","Outer Medullary Collecting Duct Intercalated Type A","CL:1000717",3,933
+"kidney","Outer Medullary Collecting Duct Principal","CL:1000716",3,894
+"kidney","Papillary Tip Epithelial","CL:1000597",3,322
+"kidney","Parietal Epithelial","CL:1000452",3,527
+"kidney","Peritubular Capilary Endothelial ","CL:1001033",3,2757
+"kidney","Plasma","CL:0000786",3,98
+"kidney","Plasmacytoid Dendritic","CL:0000784",3,31
+"kidney","Podocyte","CL:0000653",3,1028
+"kidney","Principal","CL:0005009",1,7270
+"kidney","Proximal Tubule","CL:0002306",1,7830
+"kidney","Proximal Tubule Epithelial Segment 1","CL:0002306",3,4407
+"kidney","Proximal Tubule Epithelial Segment 2","CL:0002306",3,1355
+"kidney","Proximal Tubule Epithelial Segment 3","CL:0002306",3,2068
+"kidney","Renin-positive Juxtaglomerular Granular","CL:0000648",3,34
+"kidney","Schwann","CL:0002573",1,35
+"kidney","Schwann / Neural","CL:0002573",3,35
+"kidney","T","CL:000084",3,1341
+"kidney","Thick Ascending Limb","CL:1001106",1,9410
+"kidney","Vascular Smooth Muscle / Pericyte","CL:0000359",3,1203

@@ -1,51 +1,51 @@
-"Organ","Cell.Types","Num.Cells"
-"spleen","alpha-beta T cell",150
-"spleen","antibody secreting cell",184
-"spleen","any",27
-"spleen","CD14-positive monocyte",1394
-"spleen","CD141-positive myeloid dendritic cell",31
-"spleen","CD16-negative, CD56-bright natural killer cell",49
-"spleen","CD16-positive, CD56-dim natural killer cell",214
-"spleen","CD1c-positive myeloid dendritic cell",461
-"spleen","CD4-positive, alpha-beta memory T cell",266
-"spleen","CD8-positive, alpha-beta cytotoxic T cell",150
-"spleen","CD8-positive, alpha-beta memory T cell",97
-"spleen","CD8-positive, alpha-beta T cell",150
-"spleen","connective tissue cell",14
-"spleen","endothelial cell",297
-"spleen","epithelial cell",297
-"spleen","erythroid lineage cell",161
-"spleen","fibroblast",14
-"spleen","gamma-delta T cell",154
-"spleen","germinal center B cell",509
-"spleen","group 1 innate lymphoid cell",263
-"spleen","hematopoietic cell",4793
-"spleen","hematopoietic precursor cell",49
-"spleen","hematopoietic stem cell",49
-"spleen","innate lymphoid cell",290
-"spleen","leukocyte",4583
-"spleen","lymphocyte",1225
-"spleen","lymphocyte of B lineage",184
-"spleen","marginal zone B cell",662
-"spleen","mature alpha-beta T cell",150
-"spleen","mature B cell",657
-"spleen","mature natural killer cell",263
-"spleen","mature T cell",447
-"spleen","memory T cell",363
-"spleen","meso-epithelial cell",297
-"spleen","monocyte",1394
-"spleen","mononuclear cell",1225
-"spleen","myeloid cell",161
-"spleen","myeloid dendritic cell",492
-"spleen","myeloid leukocyte",1886
-"spleen","naive T cell",84
-"spleen","naive thymus-derived CD4-positive, alpha-beta T cell",84
-"spleen","natural killer cell",263
-"spleen","plasma cell",184
-"spleen","plasmablast",148
-"spleen","professional antigen presenting cell",657
-"spleen","splenic endothelial cell",297
-"spleen","splenic fibroblast",14
-"spleen","splenic macrophage",153
-"spleen","splenocyte",815
-"spleen","T cell",751
+"Organ","Cell.Type","Cell.Type.ID","Found.At.Annotation.Level","Num.Cells"
+"spleen","alpha-beta T cell","NA",6,150
+"spleen","antibody secreting cell","NA",6,184
+"spleen","any","NA",6,27
+"spleen","CD14-positive monocyte","NA",5,1394
+"spleen","CD141-positive myeloid dendritic cell","NA",5,31
+"spleen","CD16-negative, CD56-bright natural killer cell","NA",9,49
+"spleen","CD16-positive, CD56-dim natural killer cell","NA",9,214
+"spleen","CD1c-positive myeloid dendritic cell","NA",5,461
+"spleen","CD4-positive, alpha-beta memory T cell","NA",8,266
+"spleen","CD8-positive, alpha-beta cytotoxic T cell","NA",9,150
+"spleen","CD8-positive, alpha-beta memory T cell","NA",8,97
+"spleen","CD8-positive, alpha-beta T cell","NA",8,150
+"spleen","connective tissue cell","NA",1,14
+"spleen","endothelial cell","NA",3,297
+"spleen","epithelial cell","NA",1,297
+"spleen","erythroid lineage cell","NA",3,161
+"spleen","fibroblast","NA",2,14
+"spleen","gamma-delta T cell","NA",6,154
+"spleen","germinal center B cell","NA",5,509
+"spleen","group 1 innate lymphoid cell","NA",6,263
+"spleen","hematopoietic cell","NA",1,4793
+"spleen","hematopoietic precursor cell","NA",2,49
+"spleen","hematopoietic stem cell","NA",3,49
+"spleen","innate lymphoid cell","NA",5,290
+"spleen","leukocyte","NA",2,4583
+"spleen","lymphocyte","NA",4,1225
+"spleen","lymphocyte of B lineage","NA",5,184
+"spleen","marginal zone B cell","NA",4,662
+"spleen","mature alpha-beta T cell","NA",7,150
+"spleen","mature B cell","NA",4,657
+"spleen","mature natural killer cell","NA",8,263
+"spleen","mature T cell","NA",6,447
+"spleen","memory T cell","NA",7,363
+"spleen","meso-epithelial cell","NA",2,297
+"spleen","monocyte","NA",4,1394
+"spleen","mononuclear cell","NA",3,1225
+"spleen","myeloid cell","NA",2,161
+"spleen","myeloid dendritic cell","NA",4,492
+"spleen","myeloid leukocyte","NA",3,1886
+"spleen","naive T cell","NA",7,84
+"spleen","naive thymus-derived CD4-positive, alpha-beta T cell","NA",8,84
+"spleen","natural killer cell","NA",7,263
+"spleen","plasma cell","NA",7,184
+"spleen","plasmablast","NA",5,148
+"spleen","professional antigen presenting cell","NA",3,657
+"spleen","splenic endothelial cell","NA",4,297
+"spleen","splenic fibroblast","NA",3,14
+"spleen","splenic macrophage","NA",4,153
+"spleen","splenocyte","NA",3,815
+"spleen","T cell","NA",5,751

@@ -1,68 +1,68 @@
-"Organ","Cell.Types","Num.Cells"
-"lung","Adventitial Fibroblast",557
-"lung","Airway Smooth Muscle",693
-"lung","Alveolar Epithelial Type 1",972
-"lung","Alveolar Epithelial Type 2",3814
-"lung","Alveolar Fibroblast",1296
-"lung","Artery",1484
-"lung","B",725
-"lung","Basal",436
-"lung","Basophil/Mast 1",1350
-"lung","Basophil/Mast 2",552
-"lung","Bronchial Vessel 1",455
-"lung","Bronchial Vessel 2",235
-"lung","Capillary",7391
-"lung","Capillary Aerocyte",4352
-"lung","Capillary Intermediate 1",628
-"lung","Capillary Intermediate 2",464
-"lung","CD4+ Memory/Effector T",3013
-"lung","CD4+ Naive T",932
-"lung","CD8+ Memory/Effector T",1190
-"lung","CD8+ Naive T",2042
-"lung","Ciliated",1321
-"lung","Classical Monocyte",2077
-"lung","Club",931
-"lung","Differentiating Basal",265
-"lung","EREG+ Dendritic",142
-"lung","Fibromyocyte",98
-"lung","Goblet",159
-"lung","IGSF21+ Dendritic",280
-"lung","Intermediate Monocyte",188
-"lung","Ionocyte",22
-"lung","Lipofibroblast",35
-"lung","Lymphatic",467
-"lung","Macrophage",14734
-"lung","Mesothelial",29
-"lung","Mucous",491
-"lung","Myeloid Dendritic Type 1",131
-"lung","Myeloid Dendritic Type 2",266
-"lung","Myofibroblast",248
-"lung","Natural Killer",4769
-"lung","Natural Killer T",335
-"lung","Neuroendocrine",11
-"lung","Nonclassical Monocyte",804
-"lung","OLR1+ Classical Monocyte",207
-"lung","Pericyte",1608
-"lung","Plasma",187
-"lung","Plasmacytoid Dendritic",137
-"lung","Platelet/Megakaryocyte",40
-"lung","Proliferating Basal",47
-"lung","Proliferating Macrophage",226
-"lung","Proliferating NK/T",105
-"lung","Proximal Basal",157
-"lung","Proximal Ciliated",88
-"lung","Serous",24
-"lung","Signaling Alveolar Epithelial Type 2",669
-"lung","TREM2+ Dendritic",159
-"lung","Vascular Smooth Muscle",469
-"lung","Vein",1155
-"lung","Basophil/Mast",1902
-"lung","Bronchial Vessel",690
-"lung","Capillary Intermediate",1092
-"lung","Dendritic",978
-"lung","CD16+ Monocyte",992
-"lung","CD14+ Monocyte",2284
-"lung","Smooth Muscle",1162
-"lung","Fibroblast",1853
-"lung","CD8 T",3232
-"lung","CD4 T",3945
+"Organ","Cell.Type","Cell.Type.ID","Found.At.Annotation.Level","Num.Cells"
+"lung","Adventitial Fibroblast","CL:0000057",2,557
+"lung","Airway Smooth Muscle","UBERON:0004225",2,693
+"lung","Alveolar Epithelial Type 1","CL:0002062",2,972
+"lung","Alveolar Epithelial Type 2","CL:0002063",2,3814
+"lung","Alveolar Fibroblast","CL:0000057",2,1296
+"lung","Artery","UBERON:0001637",2,1484
+"lung","B","CL:0000236",2,725
+"lung","Basal","CL:0000646",2,436
+"lung","Basophil/Mast","CL:0000766",1,1902
+"lung","Basophil/Mast 1","CL:0000766",2,1350
+"lung","Basophil/Mast 2","CL:0000766",2,552
+"lung","Bronchial Vessel","CL:0002328",1,690
+"lung","Bronchial Vessel 1","CL:0002328",2,455
+"lung","Bronchial Vessel 2","CL:0002328",2,235
+"lung","Capillary","UBERON:0001982",2,7391
+"lung","Capillary Aerocyte","CL:0002144",2,4352
+"lung","Capillary Intermediate","CL:0002144",1,1092
+"lung","Capillary Intermediate 1","CL:0002144",2,628
+"lung","Capillary Intermediate 2","CL:0002144",2,464
+"lung","CD14+ Monocyte","CL:0002057",1,2284
+"lung","CD16+ Monocyte","CL:0002396",1,992
+"lung","CD4 T","CL:0000624",1,3945
+"lung","CD4+ Memory/Effector T","CL:0000624",2,3013
+"lung","CD4+ Naive T","CL:0000895",2,932
+"lung","CD8 T","CL:0000625",1,3232
+"lung","CD8+ Memory/Effector T","CL:0000625",2,1190
+"lung","CD8+ Naive T","CL:0000900",2,2042
+"lung","Ciliated","CL:0000064",2,1321
+"lung","Classical Monocyte","CL:0000860",2,2077
+"lung","Club","CL:0000158",2,931
+"lung","Dendritic","CL:0000451",1,978
+"lung","Differentiating Basal","CL:0000646",2,265
+"lung","EREG+ Dendritic","CL:0000451",2,142
+"lung","Fibroblast","CL:0000057",1,1853
+"lung","Fibromyocyte","CL:0000192",2,98
+"lung","Goblet","CL:0000160",2,159
+"lung","IGSF21+ Dendritic","CL:0000451",2,280
+"lung","Intermediate Monocyte","CL:0002393",2,188
+"lung","Ionocyte","CL:0005006",2,22
+"lung","Lipofibroblast","CL:0000057",2,35
+"lung","Lymphatic","UBERON:0001473",2,467
+"lung","Macrophage","CL:0000235",2,14734
+"lung","Mesothelial","CL:0000077",2,29
+"lung","Mucous","CL:0000319",2,491
+"lung","Myeloid Dendritic Type 1","CL:0000782",2,131
+"lung","Myeloid Dendritic Type 2","CL:0000782",2,266
+"lung","Myofibroblast","CL:0000186",2,248
+"lung","Natural Killer","CL:0000623",2,4769
+"lung","Natural Killer T","CL:0000814",2,335
+"lung","Neuroendocrine","CL:0000165",2,11
+"lung","Nonclassical Monocyte","CL:0000875",2,804
+"lung","OLR1+ Classical Monocyte","CL:0000860",2,207
+"lung","Pericyte","CL:0000669",2,1608
+"lung","Plasma","CL:0000786",2,187
+"lung","Plasmacytoid Dendritic","CL:0000784",2,137
+"lung","Platelet/Megakaryocyte","CL:0000763",2,40
+"lung","Proliferating Basal","CL:0000646",2,47
+"lung","Proliferating Macrophage","CL:0000235",2,226
+"lung","Proliferating NK/T","CL:0000542",2,105
+"lung","Proximal Basal","CL:0000646",2,157
+"lung","Proximal Ciliated","CL:0000064",2,88
+"lung","Serous","CL:0000313",2,24
+"lung","Signaling Alveolar Epithelial Type 2","CL:0002063",2,669
+"lung","Smooth Muscle","CL:0000192",1,1162
+"lung","TREM2+ Dendritic","CL:0000451",2,159
+"lung","Vascular Smooth Muscle","CL:0000359",2,469
+"lung","Vein","UBERON:0001638",2,1155
