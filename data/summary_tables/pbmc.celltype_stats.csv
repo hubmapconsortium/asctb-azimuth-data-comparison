@@ -1,4 +1,4 @@
-"Organ","Cell.Type","Cell.Type.ID","Found.At.Annotation.Level","Num.Cells"
+"Organ","Cell.Type","Cell.Type.ID","Annotation.Level","Num.Cells"
 "pbmc","ASDC","CL:0000451",2,16
 "pbmc","ASDC_mDC","CL:0000782",3,8
 "pbmc","ASDC_pDC","CL:0000784",3,8

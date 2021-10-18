@@ -1,4 +1,4 @@
-"Organ","Cell.Type","Cell.Type.ID","Found.At.Annotation.Level","Num.Cells"
+"Organ","Cell.Type","Cell.Type.ID","Annotation.Level","Num.Cells"
 "kidney","Afferent / Efferent Arteriole Endothelial","CL:1001096",3,341
 "kidney","Ascending Thin Limb","CL:1001107",3,1765
 "kidney","Ascending Vasa Recta Endothelial","CL:1001131",3,2527

@@ -1,4 +1,4 @@
-"Organ","Cell.Type","Cell.Type.ID","Found.At.Annotation.Level","Num.Cells"
+"Organ","Cell.Type","Cell.Type.ID","Annotation.Level","Num.Cells"
 "bone_marrow","ASDC","CL:0001056",2,282
 "bone_marrow","B","CL:0000945",1,21759
 "bone_marrow","BaEoMa","CL:0002028",2,344

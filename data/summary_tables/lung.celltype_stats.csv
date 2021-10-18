@@ -1,4 +1,4 @@
-"Organ","Cell.Type","Cell.Type.ID","Found.At.Annotation.Level","Num.Cells"
+"Organ","Cell.Type","Cell.Type.ID","Annotation.Level","Num.Cells"
 "lung","Adventitial Fibroblast","CL:0000057",2,557
 "lung","Airway Smooth Muscle","UBERON:0004225",2,693
 "lung","Alveolar Epithelial Type 1","CL:0002062",2,972

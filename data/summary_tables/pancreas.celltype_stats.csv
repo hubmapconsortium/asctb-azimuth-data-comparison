@@ -1,4 +1,4 @@
-"Organ","Cell.Type","Cell.Type.ID","Found.At.Annotation.Level","Num.Cells"
+"Organ","Cell.Type","Cell.Type.ID","Annotation.Level","Num.Cells"
 "pancreas","acinar","CL:0002064",1,2824
 "pancreas","activated_stellate","CL:0002410",1,1420
 "pancreas","alpha","CL:0000171",1,11135

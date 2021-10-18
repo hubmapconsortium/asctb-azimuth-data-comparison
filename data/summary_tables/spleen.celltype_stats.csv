@@ -1,4 +1,4 @@
-"Organ","Cell.Type","Cell.Type.ID","Found.At.Annotation.Level","Num.Cells"
+"Organ","Cell.Type","Cell.Type.ID","Annotation.Level","Num.Cells"
 "spleen","alpha-beta T cell","NA",6,150
 "spleen","antibody secreting cell","NA",6,184
 "spleen","any","NA",6,27

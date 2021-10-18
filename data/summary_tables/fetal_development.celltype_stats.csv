@@ -1,4 +1,4 @@
-"Organ","Cell.Type","Cell.Type.ID","Found.At.Annotation.Level","Num.Cells"
+"Organ","Cell.Type","Cell.Type.ID","Annotation.Level","Num.Cells"
 "fetal_development","Acinar cells","NA",1,5000
 "fetal_development","Adrenal-Adrenocortical cells","NA",2,5000
 "fetal_development","Adrenal-Chromaffin cells","NA",2,5000

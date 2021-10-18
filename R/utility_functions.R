@@ -13,12 +13,14 @@
 # AUTHOR:         Darshal Shetty/ Vikrant Deshpande/ Amber Ramesh
 
 
+
+
 create_new_df <- function(colnames){
   tryCatch({
     data.frame(matrix(ncol=length(colnames), nrow=0, dimnames=list(NULL,colnames)))
   },
   error=function(e){
-    cat(paste('\nSomething went wrong while creating a new Dataframe for:',colnames))
+    cat('\nSomething went wrong while creating a new Dataframe for:',colnames)
     print(e)
   })
 }
@@ -54,68 +56,6 @@ get_cleaned_values_from_df <- function(df){
     print(e)
   })
 }
-
-
-
-
-get_num_asctb_celltypes <- function(asctb_master_table){
-  tryCatch({
-    
-    # Initializing the vector of celltypes to return
-    celltype_overall <- c()
-    
-    # Get the subset dataframe of `CT/[0-9]` and `CT/[0-9]/ID` columns
-    celltype_combinations <- as.data.frame(asctb_master_table[grepl("CT/[0-9]$",colnames(asctb_master_table)) | grepl("CT/[0-9]/ID$",colnames(asctb_master_table))])
-    print(celltype_combinations)
-    ALL_COLS <- colnames(celltype_combinations)
-    print(ALL_COLS)
-    
-    # Reverse for-loop not working on GITHUB-Actions for some reason. :(
-    for (n in 1:(length(ALL_COLS)/2)) {
-      
-      i <- (length(ALL_COLS)/2)-n+1
-      # Choose the last-level columns and check if they are completely empty
-      celltypes_at_last_level <- as.data.frame(celltype_combinations[grepl(i, ALL_COLS)])
-      
-      if (!all(is.na(celltypes_at_last_level))){
-        
-        # Extract the IDs of last-level columns
-        celltypes_at_last_level.ids <- as.data.frame(celltypes_at_last_level[grepl('ID',colnames(celltypes_at_last_level))])
-        last_id_col <- colnames(celltypes_at_last_level.ids)
-        unique_ids_at_last_level <- get_cleaned_values_from_df(celltypes_at_last_level.ids)
-        
-        # Append the IDs of last-level columns
-        celltype_overall <- c(celltype_overall, unique_ids_at_last_level)
-        
-        # Remove the entries which have IDs associated
-        celltypes_at_last_level <- celltypes_at_last_level[is.na(celltypes_at_last_level[last_id_col]),]
-        celltype_combinations <- celltype_combinations[is.na(celltype_combinations[last_id_col]),]
-        
-        # Extract the names of last-level columns, for the rows which didn't have any ID
-        celltypes_at_last_level.names <- as.data.frame(celltypes_at_last_level[grepl('CT/[0-9]$',colnames(celltypes_at_last_level))])
-        last_name_col <- colnames(celltypes_at_last_level.names)
-        unique_names_at_last_level <- get_cleaned_values_from_df(celltypes_at_last_level.names)
-        
-        print(paste(i,') Appending the last level of cell-types...'))
-        # Append the names of last-level columns
-        celltype_overall <- c(celltype_overall, unique_names_at_last_level)
-        
-        # Remove the entries which have names associated
-        celltype_combinations <- celltype_combinations[is.na(celltype_combinations[last_name_col]),]
-        
-      }
-    }
-    
-    return (celltype_overall)
-    
-  },
-  error = function(e){
-    traceback()
-    cat(paste('\nSomething went wrong while getting the Celltypes for:',config$name,'\n'))
-    print(e)
-  })
-}
-
 
 
 
@@ -158,7 +98,7 @@ process_azimuth_annotation_celltype_data <- function(body_organ, cell_hierarchy_
                   simplify = FALSE))
   },
   error = function(e){
-    cat(paste('\nSomething went wrong while processing the cell-type annotation file for:',config$name))
+    cat('\nSomething went wrong while processing the cell-type annotation file for:',config$name)
     print(e)
   })
 }
@@ -200,7 +140,7 @@ process_azimuth_reference <- function(config) {
     return(cell_types)
   },
   error = function(e){
-    cat(paste('\nSomething went wrong while processing the Azimuth reference for:',config$name))
+    cat('\nSomething went wrong while processing the Azimuth reference for:',config$name)
     print(e)
   })
 }
@@ -233,7 +173,7 @@ process_config_for_azimuth <- function(config) {
     return(merged_data[,column_order])
   },
   error = function(e){
-    cat(paste('\nSomething went wrong while processing the config for:',config$name))
+    cat('\nSomething went wrong while processing the config for:',config$name)
     print(e)
   })
 }
@@ -263,7 +203,7 @@ get_asctb_master_table_content <- function(config){
     
   },
   error=function(e){
-    cat(paste('\nSomething went wrong while generating the ASCTB master table for:',config$name))
+    cat('\nSomething went wrong while generating the ASCTB master table for:',config$name)
     print(e)
   })
 }
@@ -296,7 +236,7 @@ write_asctb_structure <- function(body_organ, asctb_table) {
                 sep = ',', na = "", append = TRUE, row.names = FALSE, col.names = TRUE)
   },
   error = function(e){
-    cat(paste('\nSomething went wrong while writing the ASCTB table for:',config$name))
+    cat('\nSomething went wrong while writing the ASCTB table for:',config$name)
     print(e)
   })
 }

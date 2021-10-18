@@ -1,4 +1,4 @@
-"Organ","Cell.Type","Cell.Type.ID","Found.At.Annotation.Level","Num.Cells"
+"Organ","Cell.Type","Cell.Type.ID","Annotation.Level","Num.Cells"
 "motor_cortex","Astro","CL:0000127",2,568
 "motor_cortex","Astro L1-6 FGFR3 AQP1","CL:0000127",3,119
 "motor_cortex","Astro L1-6 FGFR3 PLCG1","CL:0000127",3,377

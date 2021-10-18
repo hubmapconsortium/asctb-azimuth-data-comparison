@@ -18,13 +18,17 @@ source('R/summary_computation_functions.R')
 
 
 # Initialization for [Azimuth reference vs ASCTB master] stats generation
-azimuth_organ_stats_cols <- c("Organ", "Num.Unique.Cell.Types", "Num.Unique.CT.Ontology.IDs", "Num.Total.Cells", "Num.Annotation.Levels", "Num.Unique.Biomarkers")
+azimuth_organ_stats_cols <- c("Organ", "AZ.Unique.Cell.Types", "AZ.Unique.CT.IDs", "AZ.Total.Cells", "AZ.Annotation.Levels", "AZ.Unique.Biomarkers")
 azimuth_organ_stats <- create_new_df(azimuth_organ_stats_cols)
 azimuth.entire_set_of_biomarkers <- NA
 
-asctb_organ_stats_cols <- c("Organ", "Num.Unique.Anatomical.Structs", "Num.Unique.Cell.Types", "Num.Unique.CT.Ontology.IDs", "Num.Matching.CT.Ontology.IDs", "Num.Unique.Biomarkers", "Num.Matching.Biomarkers")
+asctb_organ_stats_cols <- c("Organ", "ASCTB.Unique.Cell.Types", "ASCTB.Unique.CT.IDs", "ASCTB.AZ.Matching.CT.IDs", "ASCTB.Unique.Biomarker.Genes", "ASCTB.Unique.Biomarker.Prots", "ASCTB.AZ.Matching.Biomarkers")
 asctb_organ_stats <- create_new_df(asctb_organ_stats_cols)
 asctb.entire_set_of_biomarkers <- NA
+
+combined_report.cols_ordered <- c("Organ", "AZ.Annotation.Levels", "AZ.Unique.Cell.Types", "AZ.Unique.CT.IDs", "ASCTB.Unique.Cell.Types", "ASCTB.Unique.CT.IDs", "ASCTB.AZ.Matching.CT.IDs",
+                                  "AZ.Total.Cells", "AZ.Unique.Biomarkers", "ASCTB.Unique.Biomarker.Genes", "ASCTB.AZ.Matching.Biomarkers")
+
 
 AZIMUTH.REFERENCE_RDS_DIR <- "data/azimuth_references/"
 ASCTB_TARGET_DIR <- "data/asctb_formatted_azimuth_data/"
@@ -35,7 +39,7 @@ CONFIGS <- rjson::fromJSON(file = 'data/azimuth_asctb_comparison_config.json')$r
 config <- CONFIGS[[1]]
 for (config in CONFIGS) {
   
-  cat(paste0("\n\nInitiating the ingestion for ",config$name," Azimuth reference..."))
+  cat("\n\n\n\nInitiating the ingestion for ",config$name," Azimuth reference...")
   azimuth.entire_set_of_biomarkers <- c()
   asctb.entire_set_of_biomarkers <- c()
   
@@ -49,7 +53,7 @@ for (config in CONFIGS) {
   process_azimuth_ref_dataset_summary(config, asct_table, azimuth_organ_stats)
   
   
-  cat(paste0("\nInitiating the ingestion for ",config$name," ASCT+B master-tables..."))
+  cat("\nInitiating the ingestion for ",config$name," ASCT+B master-tables...")
   # Pull the Master table from this organ's Google-Sheet
   asctb_master_table <- get_asctb_master_table_content(config)
   
@@ -68,8 +72,11 @@ for (config in CONFIGS) {
 azimuth_organ_stats <- azimuth_organ_stats[order(azimuth_organ_stats$Organ),]
 asctb_organ_stats <- asctb_organ_stats[order(asctb_organ_stats$Organ),]
 
+combined.azimuth_vs_asctb <- left_join(asctb_organ_stats, azimuth_organ_stats, by="Organ")
+combined.azimuth_vs_asctb <- combined.azimuth_vs_asctb[,combined_report.cols_ordered]
 
 
 # finally write the All-Organs ASCTB vs Azimuth stats into CSV files.
 write_df_to_csv(azimuth_organ_stats, paste0(SUMMARIES_DIR,"Azimuth.All_organs.stats.csv"))
 write_df_to_csv(asctb_organ_stats, paste0(SUMMARIES_DIR,"ASCTB.All_organs.stats.csv"))
+write_df_to_csv(combined.azimuth_vs_asctb, paste0(SUMMARIES_DIR,"Azimuth_vs_ASCTB.All_organs.stats.csv"))
