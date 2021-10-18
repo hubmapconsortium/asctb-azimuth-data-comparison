@@ -129,6 +129,7 @@ get_num_asctb_celltypes <- function(asctb_master_table, verbose=FALSE){
     celltype_combinations <- as.data.frame(asctb_master_table[grepl("CT/[0-9]$",colnames(asctb_master_table)) | grepl("CT/[0-9]/ID$",colnames(asctb_master_table))])
     # Github actions prints these columns alright.
     ALL_COLS <- colnames(celltype_combinations)
+    print(ALL_COLS)
     
     for (i in (length(ALL_COLS)/2):1) {
       
@@ -262,15 +263,18 @@ get_num_asctb_biomarkers <- function(asctb_master_table, verbose=FALSE){
 
 
 
-process_asctb_master_dataset_summary <- function(config, asctb_master_table, asct_table_derived_from_azimuth, compute_intersection_stats=TRUE){
+process_asctb_master_dataset_summary <- function(config, file_path, asct_table_derived_from_azimuth, compute_intersection_stats=TRUE){
   tryCatch({
+    
     # Wrangle the ASCT+B dataset to derive summary stats, or just add a dummy entry when no ASCTB-Master table
-    if(is.na.data.frame(asctb_master_table)){
+    if (is.na(file_path) || !file.exists(file_path)){
       asctb_organ_stats <<- rbind(asctb_organ_stats, c(config$asctb_name, rep(0,length(asctb_organ_stats_cols)-1)))
       colnames(asctb_organ_stats) <<- asctb_organ_stats_cols
       return(paste0("\nAppended default values for ",config$asctb_name,"."))
     }
     
+    asctb_master_table <- as.data.frame(read.csv(file_path))
+    colnames(asctb_master_table) <- gsub('\\.', '/', colnames(asctb_master_table))
     asctb.master_columns <- colnames(asctb_master_table)
     
     # C1: Organ Name
@@ -278,7 +282,7 @@ process_asctb_master_dataset_summary <- function(config, asctb_master_table, asc
     
     # C2: Get the union of all "CT" columns in the ASCTB organ.csv file
     cat('\nGenerating the set of cell-types now')
-    asctb.cell_types <- get_num_asctb_celltypes(asctb_master_table)
+    asctb.cell_types <- get_num_asctb_celltypes(asctb_master_table, verbose=TRUE)
     cat('\nNow, cell-types for ', organ.1,' are: ')
     print(asctb.cell_types)
     n_unique_cell_types.2 <- length(asctb.cell_types)
