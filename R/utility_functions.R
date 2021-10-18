@@ -198,8 +198,12 @@ get_asctb_master_table_content <- function(config){
     colnames(asctb.master.data) <- asctb.master.data[1,]
     
     # Remove out the top row which was just the colnames
-    asctb.master.data <- asctb.master.data[2:nrow(asctb.master.data),]
-    return (asctb.master.data)
+    asctb.master.data <- as.data.frame(asctb.master.data[2:nrow(asctb.master.data),])
+    
+    file_path <- paste0(STAGING_DIR,config$name,'_asctb_master.csv')
+    write_df_to_csv(asctb.master.data, file_path)
+    
+    return (file_path)
     
   },
   error=function(e){
