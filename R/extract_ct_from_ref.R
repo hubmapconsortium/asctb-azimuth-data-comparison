@@ -69,7 +69,7 @@ for (config in CONFIGS) {
   suppressWarnings(
     write_asctb_structure(config$name, asct_table)
     , classes="warning")
-  
+  break
 }
 
 azimuth_organ_stats <- azimuth_organ_stats[order(azimuth_organ_stats$Organ),]
