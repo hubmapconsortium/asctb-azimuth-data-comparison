@@ -166,6 +166,12 @@ get_num_asctb_celltypes <- function(asctb_master_table, verbose=FALSE){
         }
         
         
+        if (verbose)  {
+          cat('\nAfter removing entries which had IDs associated:')
+          print(celltypes_at_last_level)
+        }
+        
+        
         # Extract the names of last-level columns, for the rows which didn't have any ID
         celltypes_at_last_level_names <- na.omit(celltypes_at_last_level[grepl('CT/[0-9]$',colnames(celltypes_at_last_level))])
         last_name_col <- colnames(celltypes_at_last_level_names)
@@ -282,7 +288,9 @@ process_asctb_master_dataset_summary <- function(config, file_path, asct_table_d
       return(paste0("\nAppended default values for ",config$asctb_name,"."))
     }
     
-    asctb_master_table <- as.data.frame(read.csv(file_path), na.strings=c("NA","NULL"))
+
+
+    asctb_master_table <- as.data.frame(read.csv(file_path))
     colnames(asctb_master_table) <- gsub('\\.', '/', colnames(asctb_master_table))
     asctb.master_columns <- colnames(asctb_master_table)
     
