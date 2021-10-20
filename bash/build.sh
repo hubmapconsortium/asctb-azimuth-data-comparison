@@ -3,7 +3,9 @@
 mkdir dist
 cp data/asctb_formatted_azimuth_data/*.csv dist
 cp data/summary_tables/*.csv dist
+cp data/staging_area/*.csv dist
 cp public/* dist
+
 mv dist/index-template.md dist/index.md
 
 # Parse the references[] json from 'azimuth_asctb_comparison_config.json' and print each "- organ_name: URL for file_name.csv". Currently hardcoded the string for spleen since we don't have Cell-type info in the custom JSON file on S3.
