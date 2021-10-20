@@ -157,8 +157,14 @@ get_num_asctb_celltypes <- function(asctb_master_table, verbose=FALSE){
         celltypes_at_last_level <- celltypes_at_last_level[is.na(celltypes_at_last_level[last_id_col]),]
         celltype_combinations <- celltype_combinations[is.na(celltype_combinations[last_id_col]),]
         
+        if (verbose)  {
+          cat('\nAfter removing entries which had IDs associated:')
+          print(celltypes_at_last_level)
+        }
+        
+        
         # Extract the names of last-level columns, for the rows which didn't have any ID
-        celltypes_at_last_level_names <- as.data.frame(celltypes_at_last_level[grepl('CT/[0-9]$',colnames(celltypes_at_last_level))])
+        celltypes_at_last_level_names <- na.omit(celltypes_at_last_level[grepl('CT/[0-9]$',colnames(celltypes_at_last_level))])
         last_name_col <- colnames(celltypes_at_last_level_names)
         unique_names_at_last_level <- get_cleaned_values_from_df(celltypes_at_last_level_names)
         if (verbose)  {
