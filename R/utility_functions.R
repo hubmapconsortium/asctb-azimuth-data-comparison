@@ -30,7 +30,7 @@ create_new_df <- function(colnames){
 
 write_df_to_csv <- function(df, file_path, rownames=FALSE){
   tryCatch({
-      write.csv(df, file_path, row.names=rownames)
+      write.csv(df, file_path, row.names=rownames, fileEncoding="UTF-8")
   },
   error=function(e){
     cat(paste('\nSomething went wrong while writing the file:',file_path))

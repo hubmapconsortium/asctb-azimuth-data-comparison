@@ -2,9 +2,12 @@
 
 mkdir dist
 cp data/asctb_formatted_azimuth_data/*.csv dist
+
 cp data/summary_tables/*.csv dist
-cp data/staging_area/*.csv dist
 cp public/* dist
+
+mkdir dist/staging_asctb_master_data/
+cp data/staging_area/*.csv dist/staging_asctb_master_data
 
 mv dist/index-template.md dist/index.md
 

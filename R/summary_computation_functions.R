@@ -155,10 +155,10 @@ get_num_asctb_celltypes <- function(asctb_master_table, verbose=FALSE){
         
         # Keep only the entries now which don't have IDs associated
         #celltypes_at_last_level <- celltypes_at_last_level[is.na(celltypes_at_last_level[last_id_col]),]
-        celltypes_at_last_level <- subset(celltypes_at_last_level, is.na(celltypes_at_last_level[last_id_col]))
+        celltypes_at_last_level <- subset(celltypes_at_last_level, (celltypes_at_last_level[last_id_col]=="" | is.na(celltypes_at_last_level[last_id_col])))
         
         #celltype_combinations <- celltype_combinations[is.na(celltype_combinations[last_id_col]),]
-        celltype_combinations <- subset(celltype_combinations, is.na(celltype_combinations[last_id_col]))
+        celltype_combinations <- subset(celltype_combinations, (celltype_combinations[last_id_col]=="" | is.na(celltype_combinations[last_id_col])))
         
         if (verbose)  {
           cat('\nAfter removing entries which had IDs associated:')
@@ -284,7 +284,7 @@ process_asctb_master_dataset_summary <- function(config, file_path, asct_table_d
     
 
 
-    asctb_master_table <- as.data.frame(read.csv(file_path), na.string=c("NA", "NULL"))
+    asctb_master_table <- as.data.frame(read.csv(file_path, na.string=c("NA", "NULL"), encoding="UTF-8"))
     colnames(asctb_master_table) <- gsub('\\.', '/', colnames(asctb_master_table))
     asctb.master_columns <- colnames(asctb_master_table)
     

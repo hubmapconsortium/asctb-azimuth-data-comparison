@@ -37,7 +37,7 @@ STAGING_DIR <- "data/staging_area/"
 AZIMUTH.ANNOTATION_FILES_BASE_URL <- 'https://raw.githubusercontent.com/satijalab/azimuth_website/master/static/csv/'
 CONFIGS <- rjson::fromJSON(file = 'data/azimuth_asctb_comparison_config.json')$references
 
-#config <- CONFIGS[[1]]
+#config <- CONFIGS[[3]]
 for (config in CONFIGS) {
   
   cat("\n\n\n\nInitiating the ingestion for ",config$name," Azimuth reference...")
@@ -69,7 +69,6 @@ for (config in CONFIGS) {
   suppressWarnings(
     write_asctb_structure(config$name, asct_table)
     , classes="warning")
-  break
 }
 
 azimuth_organ_stats <- azimuth_organ_stats[order(azimuth_organ_stats$Organ),]
