@@ -13,12 +13,14 @@
 # AUTHOR:         Darshal Shetty/ Vikrant Deshpande/ Amber Ramesh
 
 
+
+
 create_new_df <- function(colnames){
   tryCatch({
     data.frame(matrix(ncol=length(colnames), nrow=0, dimnames=list(NULL,colnames)))
   },
   error=function(e){
-    cat(paste('\nSomething went wrong while creating a new Dataframe for:',colnames))
+    cat('\nSomething went wrong while creating a new Dataframe for:',colnames)
     print(e)
   })
 }
@@ -28,7 +30,7 @@ create_new_df <- function(colnames){
 
 write_df_to_csv <- function(df, file_path, rownames=FALSE){
   tryCatch({
-      write.csv(df, file_path, row.names=rownames)
+      write.csv(df, file_path, row.names=rownames, fileEncoding="UTF-8")
   },
   error=function(e){
     cat(paste('\nSomething went wrong while writing the file:',file_path))
@@ -39,15 +41,25 @@ write_df_to_csv <- function(df, file_path, rownames=FALSE){
 
 
 
-get_cleaned_values_from_df <- function(df){
+get_cleaned_values_from_df <- function(df, for_counts=T){
   tryCatch({
     if (is.null(df) || (is.data.frame(df) && (nrow(df)*ncol(df)==0)) || sum(is.na(df)==nrow(df))){
       return (c())
-    }else{
-      # Apply some basic functions to the entire df and return the unique values without NA
-      cleaned_df_values <- na.omit(unique(gsub("[[:space:]]","",trimws(as.vector(as.matrix(df))))))
-      return (cleaned_df_values[!grepl("any", cleaned_df_values)])
     }
+    
+    if (for_counts){
+      # Removes spaces too
+      cleaned_df_values <- na.omit(unique(gsub("[[:space:]]","",trimws(as.vector(as.matrix(df))))))
+    }else{
+      # Doesn't remove spaces
+      cleaned_df_values <- na.omit(unique(trimws(as.vector(as.matrix(df)))))
+    }
+    
+    # Remove "" blank entries, and entries which contain "any"
+    cleaned_df_values <- cleaned_df_values[cleaned_df_values!=""]
+    cleaned_df_values <- cleaned_df_values[!grepl("any", cleaned_df_values)]
+    
+    return (cleaned_df_values)
   },
   error=function(e){
     cat('\nSomething went wrong while retrieving the cleaned values of dataframe')
@@ -58,59 +70,49 @@ get_cleaned_values_from_df <- function(df){
 
 
 
-get_num_asctb_celltypes <- function(asctb_master_table){
+get_hashtable_key_values <- function(df, cols, hmap.colnames, verbose=F){
   tryCatch({
-    
-    # Initializing the vector of celltypes to return
-    celltype_overall <- c()
-    
-    # Get the subset dataframe of `CT/[0-9]` and `CT/[0-9]/ID` columns
-    celltype_combinations <- as.data.frame(asctb_master_table[grepl("CT/[0-9]$",colnames(asctb_master_table)) | grepl("CT/[0-9]/ID$",colnames(asctb_master_table))])
-    ALL_COLS <- colnames(celltype_combinations)
-    n_levels <- length(ALL_COLS)/2
-    
-    for (i in seq(n_levels,1,-1)) {
-      
-      # Choose the last-level columns and check if they are completely empty
-      celltypes_at_last_level <- as.data.frame(celltype_combinations[grepl(i, ALL_COLS)])
-      
-      if (!all(is.na(celltypes_at_last_level))){
-        
-        # Extract the IDs of last-level columns
-        celltypes_at_last_level.ids <- as.data.frame(celltypes_at_last_level[grepl('ID',colnames(celltypes_at_last_level))])
-        last_id_col <- colnames(celltypes_at_last_level.ids)
-        unique_ids_at_last_level <- get_cleaned_values_from_df(celltypes_at_last_level.ids)
-        
-        # Append the IDs of last-level columns
-        celltype_overall <- c(celltype_overall, unique_ids_at_last_level)
-        
-        # Remove the entries which have IDs associated
-        celltypes_at_last_level <- celltypes_at_last_level[is.na(celltypes_at_last_level[last_id_col]),]
-        celltype_combinations <- celltype_combinations[is.na(celltype_combinations[last_id_col]),]
-        
-        # Extract the names of last-level columns, for the rows which didn't have any ID
-        celltypes_at_last_level.names <- as.data.frame(celltypes_at_last_level[grepl('CT/[0-9]$',colnames(celltypes_at_last_level))])
-        last_name_col <- colnames(celltypes_at_last_level.names)
-        unique_names_at_last_level <- get_cleaned_values_from_df(celltypes_at_last_level.names)
-        
-        print(paste(i,') Appending the last level of cell-types...'))
-        # Append the names of last-level columns
-        celltype_overall <- c(celltype_overall, unique_names_at_last_level)
-        
-        # Remove the entries which have names associated
-        celltype_combinations <- celltype_combinations[is.na(celltype_combinations[last_name_col]),]
-      }
+    res_map <- create_new_df(hmap.colnames)
+    # For each AS/1 and AS/1/ID get the unique list of ID vs Name combinations
+    for (i in seq(1,length(cols),2)){
+      if (verbose)  { print(paste(cols[i], cols[i+1])) }
+      hmap <- aggregate(formula=as.formula(paste0('`',cols[i],'`~`',cols[i+1],'`')), data=df, FUN=unique)
+      colnames(hmap) <- hmap.colnames
+      res_map <- rbind(res_map, hmap)
     }
-    
-    return (as.vector(unlist(celltype_overall)))
-    
+    res_map <- unique(res_map)
+    return (res_map)
   },
-  error = function(e){
-    traceback()
-    cat(paste('\nSomething went wrong while getting the Celltypes for:',config$name,'\n'))
+  error=function(e){
+    cat(paste('\nSomething went wrong while creating the Hashmap for ', hmap.colnames))
     print(e)
   })
 }
+
+
+
+
+
+get_cts_not_in_asctb <- function(az.hmap, cts_missing, verbose=F){
+  tryCatch({
+    if (verbose)  {print(paste('Unlisting the Cell-names since some Azimuth CTs have multiple names for same ID.'))}
+    az.hmap$Cell.Names <- lapply(az.hmap$Cell.Names, `[[`, 1)
+    az.cts_not_in_asctb <- left_join(cts_missing, az.hmap)
+    
+    if (verbose)  {print(paste('Replacing NA/NULL with "N/A" after left-joining with Azimuth'))}
+    az.cts_not_in_asctb$Cell.Names <- unlist(replace_na(az.cts_not_in_asctb$Cell.Names, 'N/A'))
+    
+    if (verbose)  {print(paste('Remove CTs with junk characters not like %CT:% and then perform final aggregation to choose one name for one CT-ID.'))}
+    az.cts_not_in_asctb <- az.cts_not_in_asctb[grepl('CL:',az.cts_not_in_asctb$Cell.IDs) ,]
+    az.cts_not_in_asctb <- aggregate(formula=as.formula('Cell.Names~Cell.IDs'), data=az.cts_not_in_asctb, FUN=max)
+    return (az.cts_not_in_asctb)
+  },
+  error=function(e){
+    cat(paste('\nSomething went wrong with left-join for missing ASCTB-CTs with Azimuth Hashmap of CTs'))
+    print(e)
+  })
+}
+
 
 
 
@@ -155,7 +157,7 @@ process_azimuth_annotation_celltype_data <- function(body_organ, cell_hierarchy_
                   simplify = FALSE))
   },
   error = function(e){
-    cat(paste('\nSomething went wrong while processing the cell-type annotation file for:',config$name))
+    cat('\nSomething went wrong while processing the cell-type annotation file for:',config$name)
     print(e)
   })
 }
@@ -197,7 +199,7 @@ process_azimuth_reference <- function(config) {
     return(cell_types)
   },
   error = function(e){
-    cat(paste('\nSomething went wrong while processing the Azimuth reference for:',config$name))
+    cat('\nSomething went wrong while processing the Azimuth reference for:',config$name)
     print(e)
   })
 }
@@ -215,7 +217,7 @@ process_config_for_azimuth <- function(config) {
     
     # map ontology ID and LABELS to reference cell types
     # For brain the CT at L3: 'Oligo L2-6 OPALIN MAP6D1' goes missing because corresponding L4: 'exclude' is not present in annotation file.
-    merged_data <- Reduce(merge, ct_ontology_tables, reference_table)
+    merged_data <- Reduce(left_join, ct_ontology_tables, reference_table)
     
     # reorder columns
     column_order <- c(
@@ -230,7 +232,7 @@ process_config_for_azimuth <- function(config) {
     return(merged_data[,column_order])
   },
   error = function(e){
-    cat(paste('\nSomething went wrong while processing the config for:',config$name))
+    cat('\nSomething went wrong while processing the config for:',config$name)
     print(e)
   })
 }
@@ -243,24 +245,25 @@ get_asctb_master_table_content <- function(config){
   tryCatch({
     
     url <- config$asctb_master_url
-    if (url=="NA"){
-      return (NA)
-    }
+    if (url=="NA")          { return (NA) }
+    
     asctb.master.data <- gsheet2tbl(url)
     
     # Remove out the top 10 meta info rows
     asctb.master.data <- asctb.master.data[10:nrow(asctb.master.data),]
     
-    # Set colnames to the first available row
-    colnames(asctb.master.data) <- asctb.master.data[1,]
-    
     # Remove out the top row which was just the colnames
-    asctb.master.data <- asctb.master.data[2:nrow(asctb.master.data),]
-    return (asctb.master.data)
+    colnames(asctb.master.data) <- asctb.master.data[1,]
+    asctb.master.data <- as.data.frame(asctb.master.data[2:nrow(asctb.master.data),])
+    
+    file_path <- paste0(STAGING_DIR,config$name,'_asctb_master.csv')
+    write_df_to_csv(asctb.master.data, file_path)
+    
+    return (file_path)
     
   },
   error=function(e){
-    cat(paste('\nSomething went wrong while generating the ASCTB master table for:',config$name))
+    cat('\nSomething went wrong while generating the ASCTB master table for:',config$name)
     print(e)
   })
 }
@@ -293,7 +296,59 @@ write_asctb_structure <- function(body_organ, asctb_table) {
                 sep = ',', na = "", append = TRUE, row.names = FALSE, col.names = TRUE)
   },
   error = function(e){
-    cat(paste('\nSomething went wrong while writing the ASCTB table for:',config$name))
+    cat('\nSomething went wrong while writing the ASCTB table for:',config$name)
     print(e)
   })
+}
+
+
+
+
+
+create_combined_summaries <- function(asctb_organ_stats, azimuth_organ_stats, verbose=F){
+  tryCatch({
+    
+    azimuth_organ_stats <- azimuth_organ_stats[order(azimuth_organ_stats$Organ),]
+    asctb_organ_stats <- asctb_organ_stats[order(asctb_organ_stats$Organ),]
+    
+    combined_report.cols_ordered <- c("Organ", "AZ.Annotation.Levels", "AZ.Unique.Cell.Types", "AZ.Unique.CT.IDs", "ASCTB.Unique.Cell.Types", "ASCTB.Unique.CT.IDs", "Matching.CT.IDs",
+                                      "AZ.Total.Cells", "AZ.Unique.Biomarkers", "ASCTB.Unique.Biomarker.Genes", "Matching.Biomarkers")
+    combined.azimuth_vs_asctb <- left_join(asctb_organ_stats, azimuth_organ_stats, by="Organ")
+    combined.azimuth_vs_asctb <- combined.azimuth_vs_asctb[,combined_report.cols_ordered]
+    # Add a final row for Totals
+    res_row <- c()
+    for (col in colnames(combined.azimuth_vs_asctb)){
+      if (col=='Organ') { res_row <- c(res_row, 'Totals:') }
+      else              { res_row <- c( res_row, sum(as.numeric(unlist(combined.azimuth_vs_asctb[col]))) ) }
+    }
+    combined.azimuth_vs_asctb <- rbind(combined.azimuth_vs_asctb, res_row)
+    
+    # Read all files in the staging directory that contain Azimuth minus ASCTB information
+    files <- list.files(STAGING_DIR)
+    files <- sort(files[grepl("cts_not_in_asctb.csv", files) | grepl("bgs_not_in_asctb.csv", files)])
+    lst <- list()
+    lst[['Azimuth_vs_ASCTB']] <- combined.azimuth_vs_asctb
+    
+    # Trim the length of each filename since sheet-name can have <=31 characters
+    for (i in 1:length(files)){
+      if (verbose)  {print(files[i])}
+      df <- read.csv(paste0(STAGING_DIR,files[i]))
+      sheet_name <- sub( '.csv', '', files[i])
+      sheet_name <- substr(sheet_name, 1, 27)
+      
+      sorted_cols <- sort(colnames(df))
+      df <- as.data.frame(df[, sorted_cols])
+      colnames(df) <- sorted_cols
+      lst[[sheet_name]] <- df
+    }
+    
+    write_df_to_csv(azimuth_organ_stats, paste0(SUMMARIES_DIR,"Azimuth.All_organs.stats.csv"))
+    write_df_to_csv(asctb_organ_stats, paste0(SUMMARIES_DIR,"ASCTB.All_organs.stats.csv"))
+    write.xlsx(lst, file=paste0(SUMMARIES_DIR, 'Azimuth_vs_ASCTB.summaries.xlsx'), overwrite=T)
+    
+},
+error = function(e){
+  cat('\nSomething went wrong while writing the ASCTB table for:',config$name)
+  print(e)
+})
 }

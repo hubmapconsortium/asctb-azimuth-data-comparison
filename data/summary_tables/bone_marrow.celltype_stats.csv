@@ -1,38 +1,38 @@
-"Organ","Cell.Types","Num.Cells"
-"bone_marrow","ASDC",282
-"bone_marrow","BaEoMa",344
-"bone_marrow","CD14 Mono",24688
-"bone_marrow","CD16 Mono",3866
-"bone_marrow","CD4 Effector",7486
-"bone_marrow","CD4 Memory",31817
-"bone_marrow","CD4 Naive",55096
-"bone_marrow","CD8 Memory",8270
-"bone_marrow","CD8 Naive",20692
-"bone_marrow","cDC1",340
-"bone_marrow","cDC2",2988
-"bone_marrow","CLP",1163
-"bone_marrow","Early Eryth",3246
-"bone_marrow","EMP",1154
-"bone_marrow","GMP",6072
-"bone_marrow","HSC",2389
-"bone_marrow","ILC",585
-"bone_marrow","Late Eryth",24050
-"bone_marrow","LMPP",4991
-"bone_marrow","Memory B",12748
-"bone_marrow","Naive B",9011
-"bone_marrow","NK",14060
-"bone_marrow","NK CD56+",1676
-"bone_marrow","NK Proliferating",232
-"bone_marrow","pDC",3019
-"bone_marrow","pre B",3903
-"bone_marrow","pre-mDC",1475
-"bone_marrow","pre-pDC",1108
-"bone_marrow","pro B",755
-"bone_marrow","Prog Mk",800
-"bone_marrow","transitional B",9445
-"bone_marrow","B",21759
-"bone_marrow","CD4 T",94399
-"bone_marrow","CD8 T",28962
-"bone_marrow","DC",6629
-"bone_marrow","HSPC",60895
-"bone_marrow","Mono",28554
+"Organ","Cell.Type","Cell.Type.ID","Annotation.Level","Num.Cells"
+"bone_marrow","ASDC","CL:0001056",2,282
+"bone_marrow","B","CL:0000945",1,21759
+"bone_marrow","BaEoMa","CL:0002028",2,344
+"bone_marrow","CD14 Mono","CL:0001054",2,24688
+"bone_marrow","CD16 Mono","CL:0002396",2,3866
+"bone_marrow","CD4 Effector","CL:0001044",2,7486
+"bone_marrow","CD4 Memory","CL:0000897",2,31817
+"bone_marrow","CD4 Naive","CL:0000895",2,55096
+"bone_marrow","CD4 T","CL:0000624",1,94399
+"bone_marrow","CD8 Memory","CL:0000909",2,8270
+"bone_marrow","CD8 Naive","CL:0000900",2,20692
+"bone_marrow","CD8 T","CL:0000625",1,58724
+"bone_marrow","cDC1","CL:0002394",2,340
+"bone_marrow","cDC2","CL_CL:0002399",2,2988
+"bone_marrow","CLP","CL:0000051",2,1163
+"bone_marrow","DC","CL:0001056",1,6629
+"bone_marrow","Early Eryth","CL:0000764",2,3246
+"bone_marrow","EMP","CL:0000050",2,1154
+"bone_marrow","GMP","CL:0000557",2,6072
+"bone_marrow","HSC","CL:0000037",2,2389
+"bone_marrow","HSPC","CL:0008001",1,60895
+"bone_marrow","ILC","CL:0000824",2,585
+"bone_marrow","Late Eryth","CL:0000764",2,24050
+"bone_marrow","LMPP","CL:0000837",2,4991
+"bone_marrow","Memory B","CL:0000787",2,12748
+"bone_marrow","Mono","CL:0000576",1,28554
+"bone_marrow","Naive B","CL:0000788",2,9011
+"bone_marrow","NK","CL:0000939",2,14060
+"bone_marrow","NK CD56+","CL:0000938",2,1676
+"bone_marrow","NK Proliferating","CL:0000824",2,232
+"bone_marrow","pDC","CL:0001058",2,3019
+"bone_marrow","pre-mDC","CL:0001029",2,1475
+"bone_marrow","pre-pDC","CL:0000992",2,1108
+"bone_marrow","pre B","[precursor B cell](http://www.ontobee.org/search?ontology=CL&keywords=CL%3A0000817&submit=Search+terms)",2,3903
+"bone_marrow","pro B","CL:0000826",2,755
+"bone_marrow","Prog Mk","CL:0000553",2,800
+"bone_marrow","transitional B","CL:0000818",2,9445
