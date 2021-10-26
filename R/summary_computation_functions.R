@@ -272,7 +272,7 @@ get_num_asctb_biomarkers <- function(asctb_master_table, verbose=FALSE){
 
 
 
-process_asctb_master_dataset_summary <- function(config, file_path, asct_table_derived_from_azimuth, compute_intersection_stats=TRUE){
+process_asctb_master_dataset_summary <- function(config, file_path, asct_table_derived_from_azimuth){
   tryCatch({
     
     # Wrangle the ASCT+B dataset to derive summary stats, or just add a dummy entry when no ASCTB-Master table
@@ -293,7 +293,7 @@ process_asctb_master_dataset_summary <- function(config, file_path, asct_table_d
     
     # C2: Get the union of all "CT" columns in the ASCTB organ.csv file
     cat('\nGenerating the set of cell-types now')
-    asctb.cell_types <- get_num_asctb_celltypes(asctb_master_table, verbose=TRUE)
+    asctb.cell_types <- get_num_asctb_celltypes(asctb_master_table)
     cat('\nNow, cell-types for ', organ.1,' are: ')
     print(asctb.cell_types)
     n_unique_cell_types.2 <- length(asctb.cell_types)
@@ -305,24 +305,53 @@ process_asctb_master_dataset_summary <- function(config, file_path, asct_table_d
     n_unique_ct_ontology_ids.3 <- length(asctb.cleaned_set_of_ct_ontology_ids)
     
     
-    if (compute_intersection_stats){
-      # C4: Get the intersection of CT_Ontology_IDs in the ASCTB organ.csv file vs Azimuth organ.csv file.
-      azimuth_colnames <-  colnames(asct_table_derived_from_azimuth)
-      
-      # Get All Cell-types for the ASCT+B master dataset
+    # C4: Get the intersection of CT_Ontology_IDs in the ASCTB organ.csv file vs Azimuth organ.csv file.
+    azimuth_colnames <-  colnames(asct_table_derived_from_azimuth)
+    
+    
+    # Edge Case: ASCTB Brain/Spleen doesn't have CT_Ontology_IDs. Use Cell-Type Names for finding # matching between ASCTB and Azimuth.
+    if (organ.1 %in% c('Spleen','Brain')){
       asctb.cleaned_set_of_cell_types <- get_cleaned_values_from_df(asctb_master_table[grepl("CT/[0-9]$",asctb.master_columns)])
       
-      # Edge Case: Brain/Spleen doesn't have CT_Ontology_IDs. Use Cell-Types itself for finding # matching between ASCTB and Azimuth.
-      if (organ.1 %in% c('Spleen','Brain')){
-        azimuth.entire_set_of_cell_types <- asct_table_derived_from_azimuth[grepl("AS/[0-9]$",azimuth_colnames)]
-        azimuth.cleaned_set_of_cell_types <- get_cleaned_values_from_df(azimuth.entire_set_of_cell_types)
+      azimuth.entire_set_of_cell_types <- asct_table_derived_from_azimuth[grepl("AS/[0-9]$",azimuth_colnames)]
+      azimuth.cleaned_set_of_cell_types <- get_cleaned_values_from_df(azimuth.entire_set_of_cell_types)
+      
+      if (organ.1=='Brain'){
+        
         n_matching_ct_ontology_ids.4 <- length(intersect(asctb.cleaned_set_of_cell_types, azimuth.cleaned_set_of_cell_types))
+        azimuth_cts_missing_in_asctb <- as.data.frame(setdiff( get_cleaned_values_from_df(azimuth.entire_set_of_cell_types,F) ,
+                                                               get_cleaned_values_from_df(asctb_master_table[grepl("CT/[0-9]$",asctb.master_columns)],F)))
+        colnames(azimuth_cts_missing_in_asctb) <- c("Cell.Names")
+        cols <- sort(azimuth_colnames[grepl("AS/[0-9]/ID$",azimuth_colnames) | grepl("AS/[0-9]$",azimuth_colnames)])
+        hmap.cols <- c("Cell.IDs", "Cell.Names")
+        hmap <- get_hashtable_key_values(asct_table_derived_from_azimuth, cols, hmap.cols)
+        hmap <- as.data.frame(hmap %>% unnest(Cell.Names, keep_empty=T))
+        azimuth_cts_not_in_asctb <- unique(left_join(azimuth_cts_missing_in_asctb, hmap))
       }else{
-        azimuth.entire_set_of_ct_ontology_ids <- asct_table_derived_from_azimuth[grepl("AS",azimuth_colnames) & grepl("ID",azimuth_colnames)]
-        azimuth.cleaned_set_of_ct_ontology_ids <- get_cleaned_values_from_df(azimuth.entire_set_of_ct_ontology_ids)
-        n_matching_ct_ontology_ids.4 <- length(intersect(asctb.cleaned_set_of_ct_ontology_ids, azimuth.cleaned_set_of_ct_ontology_ids))
+        n_matching_ct_ontology_ids.4 <- length(intersect( sapply(get_cleaned_values_from_df(azimuth.entire_set_of_cell_types,F), tolower) , 
+                                                                  sapply(get_cleaned_values_from_df(asctb_master_table[grepl("CT/[0-9]$",asctb.master_columns)],F), tolower)))
+        azimuth_cts_not_in_asctb <- as.data.frame(setdiff( sapply(get_cleaned_values_from_df(azimuth.entire_set_of_cell_types,F), tolower) , 
+                                                               sapply(get_cleaned_values_from_df(asctb_master_table[grepl("CT/[0-9]$",asctb.master_columns)],F), tolower)))
+        colnames(azimuth_cts_not_in_asctb) <- c("Cell.Names")
       }
+      
+    }else{
+      azimuth.entire_set_of_ct_ontology_ids <- asct_table_derived_from_azimuth[grepl("AS/[0-9]/ID$",azimuth_colnames)]
+      azimuth.cleaned_set_of_ct_ontology_ids <- get_cleaned_values_from_df(azimuth.entire_set_of_ct_ontology_ids)
+      n_matching_ct_ontology_ids.4 <- length(intersect(asctb.cleaned_set_of_ct_ontology_ids, azimuth.cleaned_set_of_ct_ontology_ids))
+      
+      azimuth.cleaned_set_of_ct_ontology_ids <- get_cleaned_values_from_df(azimuth.entire_set_of_ct_ontology_ids, for_counts=F)
+      azimuth_cts_missing_in_asctb <- as.data.frame(setdiff(azimuth.cleaned_set_of_ct_ontology_ids , asctb.cleaned_set_of_ct_ontology_ids))
+      colnames(azimuth_cts_missing_in_asctb) <- c("Cell.IDs")
+      
+      cols <- sort(azimuth_colnames[grepl("AS/[0-9]/ID$",azimuth_colnames) | grepl("AS/[0-9]$",azimuth_colnames)])
+      hmap.cols <- c("Cell.IDs", "Cell.Names")
+      hmap <- get_hashtable_key_values(asct_table_derived_from_azimuth, cols, hmap.cols)
+      azimuth_cts_not_in_asctb <- get_cts_not_in_asctb(az.hmap=hmap, cts_missing=azimuth_cts_missing_in_asctb)
     }
+    
+    write_df_to_csv(df=azimuth_cts_not_in_asctb, file_path=paste0(STAGING_DIR, config$name, '.cts_not_in_asctb.csv'))
+    
     
     
     # C5: Get the union of all "BG" columns in the ASCTB organ.csv file
@@ -335,22 +364,20 @@ process_asctb_master_dataset_summary <- function(config, file_path, asct_table_d
     n_unique_biomarkers.5.2 <- length(asctb.cleaned_set_of_biomarkers_prots)
     
     
-    if (compute_intersection_stats){
-      # C6: Get the intersection of Biomarkers in the ASCTB organ.csv file vs Azimuth organ.csv file
-      azimuth.cleaned_set_of_biomarkers <- get_cleaned_values_from_df(azimuth.entire_set_of_biomarkers)
-      n_matching_biomarkers.6 <- length(intersect(azimuth.cleaned_set_of_biomarkers, asctb.cleaned_set_of_biomarkers))
+    # C6: Get the intersection of Biomarkers in the ASCTB organ.csv file vs Azimuth organ.csv file
+    azimuth.cleaned_set_of_biomarkers <- get_cleaned_values_from_df(azimuth.entire_set_of_biomarkers)
+    n_matching_biomarkers.6 <- length(intersect(azimuth.cleaned_set_of_biomarkers, asctb.cleaned_set_of_biomarkers))
+    azimuth_bgs_not_in_asctb <- as.data.frame(setdiff(azimuth.cleaned_set_of_biomarkers, c(asctb.cleaned_set_of_biomarkers, asctb.cleaned_set_of_biomarkers_prots)))
+    if (!is.null(azimuth_bgs_not_in_asctb) && !all(is.na(azimuth_bgs_not_in_asctb))){
+      colnames(azimuth_bgs_not_in_asctb) <- c('Biomarkers')
+      write_df_to_csv(df=azimuth_bgs_not_in_asctb, file_path=paste0(STAGING_DIR, config$name, '.bgs_not_in_asctb.csv'))
     }
     
-    
-    # Append (C1, C2, ... C6) to the existing asctb_organ_stats global var if intersection-stats to be included. Otherwise append only unique counts for summary.
-    if (compute_intersection_stats){
-      asctb_organ_stats <<- rbind(asctb_organ_stats, c( organ.1, n_unique_cell_types.2, n_unique_ct_ontology_ids.3,
+    # Append (C1, C2, ... C6) to the existing asctb_organ_stats global var for intersection-stats.
+    asctb_organ_stats <<- rbind(asctb_organ_stats, c( organ.1, n_unique_cell_types.2, n_unique_ct_ontology_ids.3,
                                                       n_matching_ct_ontology_ids.4, n_unique_biomarkers.5, n_unique_biomarkers.5.2, n_matching_biomarkers.6 ))
-      colnames(asctb_organ_stats) <<- asctb_organ_stats_cols
-    }else{
-      asctb_all_organ_summaries <<- rbind(asctb_all_organ_summaries, c( organ.1, n_unique_cell_types.2, n_unique_ct_ontology_ids, n_unique_biomarkers.5 ))
-      colnames(asctb_organ_stats) <<- asctb_all_organ_summaries_cols
-    }
+    colnames(asctb_organ_stats) <<- asctb_organ_stats_cols
+    
     return(paste0("Computed statistics for ",config$asctb_name,"."))
   },
   error = function(e){

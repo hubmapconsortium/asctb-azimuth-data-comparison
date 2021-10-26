@@ -8,8 +8,12 @@
 This script takes [reference files from Azimuth](https://azimuth.hubmapconsortium.org/references/)
 and converts them into csv files that can be viewed in [the ASCT+B reporter](https://hubmapconsortium.github.io/ccf-asct-reporter/).
 We also generate summaries for each organ to denote Cell-Type vs Number-of-cells.
-A final summary of all organ-datasets processed from Azimuth reference data and ASCT+B master data, 
-will also be available [here](https://hubmapconsortium.github.io/asctb-azimuth-data-comparison/).
+This final summary excel sheet available [here](https://hubmapconsortium.github.io/asctb-azimuth-data-comparison/) will have:
+<ol>
+<li>Stats of all organ-datasets processed from Azimuth reference data and ASCT+B master data (Number of CTs, Number of Biomarkers, etc.).</li>
+<li>Comparison of Azimuth vs ASCT+B (CTs in Azimuth that are missing in ASCT+B, Biomarkers in Azimuth missing in ASCT+B).</li>
+<li>A listing of such CTs and Biomarkers identified in previous point.</li>
+</ol>
 
 
 #### Usage
@@ -80,7 +84,7 @@ These file names match with the annotations mentioned as per the above "hierarch
 File-Names that are higher in the cell type hierarchy should have a lower value of "n".
 
 ```<asctb_master_data_download_url>``` is the URL for downloading the v1 Google Sheet 
-for each ```<organ_name>```. These download URLs can be found on the [the CCF Master Tables page](https://hubmapconsortium.github.io/ccf-asct-reporter/).
+for each ```<organ_name>```. These download URLs can be found on [the CCF Master Tables page](https://hubmapconsortium.github.io/ccf-asct-reporter/).
 
 ```<deployment_display_name>``` is the string that is displayed on the final GitHub 
 Pages website for the download link of the corresponding config.
@@ -98,9 +102,10 @@ directory as ```<organ_name>.csv```.
 The corresponding summary file is stored in ```data/summary_tables``` 
 directory as ```<organ_name>.celltype_stats.csv```.
 
-The overall summary file for ASCTB master data, and Azimuth reference data ingested 
-is stored in ```data/summary_tables``` directory as ```<organ_name>.celltype_stats.csv```. The ASCTB summary file for all organs
-will contain the number-of-matches-found for CellTypes as well as Biomarkers, between ASCTB and Azimuth.
+The overall summary file for ASCT+B master data, and Azimuth reference data ingested 
+is stored in ```data/summary_tables``` directory as ```<organ_name>.celltype_stats.csv```. 
+The ASCT+B summary file for all organs will contain the number of matches found for CellTypes and Biomarkers, 
+between ASCT+B and Azimuth. It will also identify CellTypes and Biomarkers which are present in Azimuth but not in ASCT+B.
 
 
 

@@ -1,2 +1,2 @@
-## ASCT+B Cell-Types data from Azimuth reference data with summaries stats
+## ASCT+B Cell-Types data from Azimuth reference data with summaries
 

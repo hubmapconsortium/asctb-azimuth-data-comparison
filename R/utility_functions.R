@@ -41,21 +41,80 @@ write_df_to_csv <- function(df, file_path, rownames=FALSE){
 
 
 
-get_cleaned_values_from_df <- function(df){
+get_cleaned_values_from_df <- function(df, for_counts=T){
   tryCatch({
     if (is.null(df) || (is.data.frame(df) && (nrow(df)*ncol(df)==0)) || sum(is.na(df)==nrow(df))){
       return (c())
-    }else{
-      # Apply some basic functions to the entire df and return the unique values without NA
-      cleaned_df_values <- na.omit(unique(gsub("[[:space:]]","",trimws(as.vector(as.matrix(df))))))
-      return (cleaned_df_values[!grepl("any", cleaned_df_values)])
     }
+    
+    if (for_counts){
+      # Removes spaces too
+      cleaned_df_values <- na.omit(unique(gsub("[[:space:]]","",trimws(as.vector(as.matrix(df))))))
+    }else{
+      # Doesn't remove spaces
+      cleaned_df_values <- na.omit(unique(trimws(as.vector(as.matrix(df)))))
+    }
+    
+    # Remove "" blank entries, and entries which contain "any"
+    cleaned_df_values <- cleaned_df_values[cleaned_df_values!=""]
+    cleaned_df_values <- cleaned_df_values[!grepl("any", cleaned_df_values)]
+    
+    return (cleaned_df_values)
   },
   error=function(e){
     cat('\nSomething went wrong while retrieving the cleaned values of dataframe')
     print(e)
   })
 }
+
+
+
+
+get_hashtable_key_values <- function(df, cols, hmap.colnames, verbose=F){
+  tryCatch({
+    res_map <- create_new_df(hmap.colnames)
+    # For each AS/1 and AS/1/ID get the unique list of ID vs Name combinations
+    for (i in seq(1,length(cols),2)){
+      if (verbose)  { print(paste(cols[i], cols[i+1])) }
+      hmap <- aggregate(formula=as.formula(paste0('`',cols[i],'`~`',cols[i+1],'`')), data=df, FUN=unique)
+      colnames(hmap) <- hmap.colnames
+      res_map <- rbind(res_map, hmap)
+    }
+    res_map <- unique(res_map)
+    return (res_map)
+  },
+  error=function(e){
+    cat(paste('\nSomething went wrong while creating the Hashmap for ', hmap.colnames))
+    print(e)
+  })
+}
+
+
+
+
+
+get_cts_not_in_asctb <- function(az.hmap, cts_missing, verbose=F){
+  tryCatch({
+    if (verbose)  {print(paste('Unlisting the Cell-names since some Azimuth CTs have multiple names for same ID.'))}
+    az.hmap$Cell.Names <- lapply(az.hmap$Cell.Names, `[[`, 1)
+    az.cts_not_in_asctb <- left_join(cts_missing, az.hmap)
+    
+    if (verbose)  {print(paste('Replacing NA/NULL with "N/A" after left-joining with Azimuth'))}
+    az.cts_not_in_asctb$Cell.Names <- unlist(replace_na(az.cts_not_in_asctb$Cell.Names, 'N/A'))
+    
+    if (verbose)  {print(paste('Remove CTs with junk characters not like %CT:% and then perform final aggregation to choose one name for one CT-ID.'))}
+    az.cts_not_in_asctb <- az.cts_not_in_asctb[grepl('CL:',az.cts_not_in_asctb$Cell.IDs) ,]
+    az.cts_not_in_asctb <- aggregate(formula=as.formula('Cell.Names~Cell.IDs'), data=az.cts_not_in_asctb, FUN=max)
+    return (az.cts_not_in_asctb)
+  },
+  error=function(e){
+    cat(paste('\nSomething went wrong with left-join for missing ASCTB-CTs with Azimuth Hashmap of CTs'))
+    print(e)
+  })
+}
+
+
+
 
 
 
@@ -186,18 +245,15 @@ get_asctb_master_table_content <- function(config){
   tryCatch({
     
     url <- config$asctb_master_url
-    if (url=="NA"){
-      return (NA)
-    }
+    if (url=="NA")          { return (NA) }
+    
     asctb.master.data <- gsheet2tbl(url)
     
     # Remove out the top 10 meta info rows
     asctb.master.data <- asctb.master.data[10:nrow(asctb.master.data),]
     
-    # Set colnames to the first available row
-    colnames(asctb.master.data) <- asctb.master.data[1,]
-    
     # Remove out the top row which was just the colnames
+    colnames(asctb.master.data) <- asctb.master.data[1,]
     asctb.master.data <- as.data.frame(asctb.master.data[2:nrow(asctb.master.data),])
     
     file_path <- paste0(STAGING_DIR,config$name,'_asctb_master.csv')
@@ -243,4 +299,56 @@ write_asctb_structure <- function(body_organ, asctb_table) {
     cat('\nSomething went wrong while writing the ASCTB table for:',config$name)
     print(e)
   })
+}
+
+
+
+
+
+create_combined_summaries <- function(asctb_organ_stats, azimuth_organ_stats, verbose=F){
+  tryCatch({
+    
+    azimuth_organ_stats <- azimuth_organ_stats[order(azimuth_organ_stats$Organ),]
+    asctb_organ_stats <- asctb_organ_stats[order(asctb_organ_stats$Organ),]
+    
+    combined_report.cols_ordered <- c("Organ", "AZ.Annotation.Levels", "AZ.Unique.Cell.Types", "AZ.Unique.CT.IDs", "ASCTB.Unique.Cell.Types", "ASCTB.Unique.CT.IDs", "Matching.CT.IDs",
+                                      "AZ.Total.Cells", "AZ.Unique.Biomarkers", "ASCTB.Unique.Biomarker.Genes", "Matching.Biomarkers")
+    combined.azimuth_vs_asctb <- left_join(asctb_organ_stats, azimuth_organ_stats, by="Organ")
+    combined.azimuth_vs_asctb <- combined.azimuth_vs_asctb[,combined_report.cols_ordered]
+    # Add a final row for Totals
+    res_row <- c()
+    for (col in colnames(combined.azimuth_vs_asctb)){
+      if (col=='Organ') { res_row <- c(res_row, 'Totals:') }
+      else              { res_row <- c( res_row, sum(as.numeric(unlist(combined.azimuth_vs_asctb[col]))) ) }
+    }
+    combined.azimuth_vs_asctb <- rbind(combined.azimuth_vs_asctb, res_row)
+    
+    # Read all files in the staging directory that contain Azimuth minus ASCTB information
+    files <- list.files(STAGING_DIR)
+    files <- sort(files[grepl("cts_not_in_asctb.csv", files) | grepl("bgs_not_in_asctb.csv", files)])
+    lst <- list()
+    lst[['Azimuth_vs_ASCTB']] <- combined.azimuth_vs_asctb
+    
+    # Trim the length of each filename since sheet-name can have <=31 characters
+    for (i in 1:length(files)){
+      if (verbose)  {print(files[i])}
+      df <- read.csv(paste0(STAGING_DIR,files[i]))
+      sheet_name <- sub( '.csv', '', files[i])
+      sheet_name <- substr(sheet_name, 1, 27)
+      
+      sorted_cols <- sort(colnames(df))
+      df <- as.data.frame(df[, sorted_cols])
+      colnames(df) <- sorted_cols
+      lst[[sheet_name]] <- df
+    }
+    
+    write_df_to_csv(azimuth_organ_stats, paste0(SUMMARIES_DIR,"Azimuth.All_organs.stats.csv"))
+    write_df_to_csv(asctb_organ_stats, paste0(SUMMARIES_DIR,"ASCTB.All_organs.stats.csv"))
+    write.xlsx(lst, file=paste0(SUMMARIES_DIR, 'Azimuth_vs_ASCTB.summaries.xlsx'), overwrite=T)
+    
+},
+error = function(e){
+  cat('\nSomething went wrong while writing the ASCTB table for:',config$name)
+  print(e)
+})
 }
