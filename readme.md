@@ -107,6 +107,8 @@ is stored in ```data/summary_tables``` directory as ```<organ_name>.celltype_sta
 The ASCT+B summary file for all organs will contain the number of matches found for CellTypes and Biomarkers, 
 between ASCT+B and Azimuth. It will also identify CellTypes and Biomarkers which are present in Azimuth but not in ASCT+B.
 
+The list that indicates Biomarkers present in Azimuth but not in ASCT+B has HGNC-IDs retrieved from the API maintained by
+the Hugo Gene Nomenclature Committee, with documentation available at [HGNC REST web-service docs](https://www.genenames.org/about/guidelines/).
 
 
 ## Deployment

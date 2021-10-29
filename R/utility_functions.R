@@ -14,6 +14,38 @@
 
 
 
+get_hgnc_id_for_biomarker <- function(biomarker_symbol, verbose=F){
+  tryCatch({
+    BASE_API_URL <- 'https://rest.genenames.org/search/symbol/'
+    response <- httr::GET(httr::add_headers(`Accept` = 'application/json'),  url=paste0(BASE_API_URL, biomarker_symbol))
+    
+    # If API call failed return 'N/A'
+    if (response$status_code!=200){
+      if (verbose)  {cat('\nAPI call failed...', biomarker_symbol)}
+      return ('N/A')
+    }
+    
+    # If No match found, return 'N/A'
+    response_content <- content(response)$response
+    if (response_content$numFound==0){
+      if (verbose)  {cat('\nNo match found', biomarker_symbol)}
+      return ('N/A')
+    }
+    
+    id <- response_content$docs[[1]]$hgnc_id
+    if (verbose)  {cat('\nID found ',biomarker_symbol,' : ',id)}
+    return (id)
+  },
+  error=function(e){
+    cat('\nSomething went wrong while fetching the HGNC-ID for:',biomarker_symbol)
+    print(e)
+  })
+}
+
+
+
+
+
 
 create_new_df <- function(colnames){
   tryCatch({
@@ -165,6 +197,8 @@ process_azimuth_annotation_celltype_data <- function(body_organ, cell_hierarchy_
 
 
 
+
+
 process_azimuth_reference <- function(config) {
   tryCatch({
     body_organ <- config$name
@@ -207,6 +241,8 @@ process_azimuth_reference <- function(config) {
 
 
 
+
+
 process_config_for_azimuth <- function(config) {
   tryCatch({
     # extract azimuth reference data
@@ -240,6 +276,8 @@ process_config_for_azimuth <- function(config) {
 
 
 
+
+
 get_asctb_master_table_content <- function(config){
   # Read the google-sheet tab url and return a dataframe after replacing the metainformation in top 10 rows. If URL not available return NA.
   tryCatch({
@@ -267,6 +305,8 @@ get_asctb_master_table_content <- function(config){
     print(e)
   })
 }
+
+
 
 
 
@@ -305,6 +345,7 @@ write_asctb_structure <- function(body_organ, asctb_table) {
 
 
 
+
 create_combined_summaries <- function(asctb_organ_stats, azimuth_organ_stats, verbose=F){
   tryCatch({
     
@@ -312,14 +353,39 @@ create_combined_summaries <- function(asctb_organ_stats, azimuth_organ_stats, ve
     asctb_organ_stats <- asctb_organ_stats[order(asctb_organ_stats$Organ),]
     
     combined_report.cols_ordered <- c("Organ", "AZ.Annotation.Levels", "AZ.Unique.Cell.Types", "AZ.Unique.CT.IDs", "ASCTB.Unique.Cell.Types", "ASCTB.Unique.CT.IDs", "Matching.CT.IDs",
-                                      "AZ.Total.Cells", "AZ.Unique.Biomarkers", "ASCTB.Unique.Biomarker.Genes", "Matching.Biomarkers")
+                                      "AZ.Total.Cells", "AZ.Unique.Biomarkers", "ASCTB.Unique.Biomarker.Genes", "Matching.Biomarkers", "Raw.Organ.Name")
     combined.azimuth_vs_asctb <- left_join(asctb_organ_stats, azimuth_organ_stats, by="Organ")
     combined.azimuth_vs_asctb <- combined.azimuth_vs_asctb[,combined_report.cols_ordered]
+    
+    # combined.azimuth_vs_asctb['Links for CTs not in ASCT+B'] <- c(sapply( combined.azimuth_vs_asctb['Raw.Organ.Name'], 
+    #                                                                             function(organ) {
+    #                                                                               if (organ[1]=='fetal_development'){
+    #                                                                                 return ('Temp')
+    #                                                                               }else{
+    #                                                                                 sheet_name <- substr(paste0(organ,'.cts_not_in_asctb'), 1, 27)
+    #                                                                                 return (paste0('=HYPERLINK("[Azimuth_vs_ASCTB.summaries.xlsx]', 
+    #                                                                                               sheet_name, '!A1", "CTs not in ASCT+B")'))
+    #                                                                               }
+    #                                                                               }))
+    # 
+    # combined.azimuth_vs_asctb['Link for Biomarkers not in ASCT+B'] <- c(sapply( combined.azimuth_vs_asctb['Raw.Organ.Name'], 
+    #                                                                             function(organ) {
+    #                                                                               if (organ=='fetal_development'){
+    #                                                                                 return ('')
+    #                                                                               }else{
+    #                                                                                 sheet_name <- substr(paste0(organ,'.bgss_not_in_asctb'), 1, 27)
+    #                                                                                 return (paste0('=HYPERLINK("[Azimuth_vs_ASCTB.summaries.xlsx]', 
+    #                                                                                        sheet_name, '!A1", "CTs not in ASCT+B")'))
+    #                                                                               }
+    #                                                                             }))
+    # 
+    
     # Add a final row for Totals
     res_row <- c()
     for (col in colnames(combined.azimuth_vs_asctb)){
-      if (col=='Organ') { res_row <- c(res_row, 'Totals:') }
-      else              { res_row <- c( res_row, sum(as.numeric(unlist(combined.azimuth_vs_asctb[col]))) ) }
+      if (grepl('Organ',col))       { res_row <- c(res_row, 'Totals:') }
+      else if (grepl('Link', col))  { res_row <- c(res_row, '') }
+      else                          { res_row <- c( res_row, sum(as.numeric(unlist(combined.azimuth_vs_asctb[col]))) ) }
     }
     combined.azimuth_vs_asctb <- rbind(combined.azimuth_vs_asctb, res_row)
     
@@ -327,7 +393,7 @@ create_combined_summaries <- function(asctb_organ_stats, azimuth_organ_stats, ve
     files <- list.files(STAGING_DIR)
     files <- sort(files[grepl("cts_not_in_asctb.csv", files) | grepl("bgs_not_in_asctb.csv", files)])
     lst <- list()
-    lst[['Azimuth_vs_ASCTB']] <- combined.azimuth_vs_asctb
+    lst[['Azimuth_vs_ASCTB']] <- combined.azimuth_vs_asctb[, names(combined.azimuth_vs_asctb)!=c("Raw.Organ.Name")]
     
     # Trim the length of each filename since sheet-name can have <=31 characters
     for (i in 1:length(files)){
@@ -342,13 +408,15 @@ create_combined_summaries <- function(asctb_organ_stats, azimuth_organ_stats, ve
       lst[[sheet_name]] <- df
     }
     
-    write_df_to_csv(azimuth_organ_stats, paste0(SUMMARIES_DIR,"Azimuth.All_organs.stats.csv"))
-    write_df_to_csv(asctb_organ_stats, paste0(SUMMARIES_DIR,"ASCTB.All_organs.stats.csv"))
+    BIOMARKER_NAME_VS_ID_MAPPING <<- unique(BIOMARKER_NAME_VS_ID_MAPPING)
+    write_df_to_csv(BIOMARKER_NAME_VS_ID_MAPPING, paste0('data/biomarker_name_vs_id_cached.csv'))
+    write_df_to_csv(azimuth_organ_stats, paste0(SUMMARIES_DIR,'Azimuth.All_organs.stats.csv'))
+    write_df_to_csv(asctb_organ_stats, paste0(SUMMARIES_DIR,'ASCTB.All_organs.stats.csv'))
     write.xlsx(lst, file=paste0(SUMMARIES_DIR, 'Azimuth_vs_ASCTB.summaries.xlsx'), overwrite=T)
     
 },
 error = function(e){
-  cat('\nSomething went wrong while writing the ASCTB table for:',config$name)
+  cat('\nSomething went wrong while writing the combined summary file for Azimuth vs ASCT+B.')
   print(e)
 })
 }

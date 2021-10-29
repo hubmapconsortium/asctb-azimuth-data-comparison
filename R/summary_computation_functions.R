@@ -107,7 +107,7 @@ process_azimuth_ref_dataset_summary <- function(config, asct_table, azimuth_orga
     
     # Append (C1, C2, ... C6) to the existing azimuth_organ_stats global var
     azimuth_organ_stats <<- rbind(azimuth_organ_stats, c( organ.1, n_unique_cell_types.2, n_unique_ct_ontology_ids.3, 
-                                                          n_total_cell_types.4, n_annotation_levels.5, n_unique_biomarkers.6))
+                                                          n_total_cell_types.4, n_annotation_levels.5, n_unique_biomarkers.6, config$name))
     colnames(azimuth_organ_stats) <<- azimuth_organ_stats_cols
   },
   error = function(e){
@@ -125,11 +125,9 @@ get_num_asctb_celltypes <- function(asctb_master_table, verbose=FALSE){
     # Initializing the vector of celltypes to return
     celltype_overall <- c()
     
-    # Get the subset dataframe of `CT/[0-9]` and `CT/[0-9]/ID` columns. Github actions reads this dataframe alright.
+    # Get the subset dataframe of `CT/[0-9]` and `CT/[0-9]/ID` columns.
     celltype_combinations <- as.data.frame(asctb_master_table[grepl("CT/[0-9]$",colnames(asctb_master_table)) | grepl("CT/[0-9]/ID$",colnames(asctb_master_table))])
-    # Github actions prints these columns alright.
     ALL_COLS <- colnames(celltype_combinations)
-    print(ALL_COLS)
     
     for (i in (length(ALL_COLS)/2):1) {
       
@@ -154,10 +152,8 @@ get_num_asctb_celltypes <- function(asctb_master_table, verbose=FALSE){
         celltype_overall <- c(celltype_overall, unique_ids_at_last_level)
         
         # Keep only the entries now which don't have IDs associated
-        #celltypes_at_last_level <- celltypes_at_last_level[is.na(celltypes_at_last_level[last_id_col]),]
         celltypes_at_last_level <- subset(celltypes_at_last_level, (celltypes_at_last_level[last_id_col]=="" | is.na(celltypes_at_last_level[last_id_col])))
         
-        #celltype_combinations <- celltype_combinations[is.na(celltype_combinations[last_id_col]),]
         celltype_combinations <- subset(celltype_combinations, (celltype_combinations[last_id_col]=="" | is.na(celltype_combinations[last_id_col])))
         
         if (verbose)  {
@@ -186,7 +182,6 @@ get_num_asctb_celltypes <- function(asctb_master_table, verbose=FALSE){
     }
     
     return (celltype_overall)
-    
   },
   error = function(e){
     if (verbose)  {traceback()}
@@ -194,79 +189,6 @@ get_num_asctb_celltypes <- function(asctb_master_table, verbose=FALSE){
     print(e)
   })
 }
-
-
-
-
-
-
-
-get_num_asctb_biomarkers <- function(asctb_master_table, verbose=FALSE){
-  tryCatch({
-    
-    # Initializing the vector of biomarkers to return
-    biomarker_overall <- c()
-    asctb.master_columns <- colnames(asctb_master_table)
-    
-    # Get the subset dataframe of `CT/[0-9]` and `CT/[0-9]/ID` columns. Github actions reads this dataframe alright.
-    biomarker_combinations <- as.data.frame(asctb_master_table[(grepl("BG",asctb.master_columns)) & !(grepl("COUNT",asctb.master_columns) | grepl("LABEL",asctb.master_columns))])
-    # Github actions prints these columns alright.
-    ALL_COLS <- colnames(biomarker_combinations)
-    
-    for (i in (length(ALL_COLS)/2):1) {
-      if (verbose)  {cat("\nCreating the df for ",i,"th level..")}
-      # Choose the last-level columns and check if they are completely empty
-      biomarkers_at_last_level <- as.data.frame(biomarker_combinations[grepl(paste0("",i,""), ALL_COLS)])
-      if (verbose)  {cat("\nAll values NA =", all(is.na(biomarkers_at_last_level)),'\n')}
-      
-      if (!all(is.na(biomarkers_at_last_level))){
-        
-        if (verbose)  {print(biomarkers_at_last_level)}
-        # Extract the IDs of last-level columns
-        biomarkers_at_last_level_ids <- na.omit(biomarkers_at_last_level[grepl('ID',colnames(biomarkers_at_last_level))])
-        last_id_col <- colnames(biomarkers_at_last_level_ids)
-        unique_ids_at_last_level <- get_cleaned_values_from_df(biomarkers_at_last_level_ids)
-        if (verbose)  {
-          cat('\nUnique IDs are:')
-          print(unique_ids_at_last_level)
-        }
-        
-        # Append the IDs of last-level columns
-        biomarker_overall <- c(biomarker_overall, unique_ids_at_last_level)
-        
-        # Keep only the entries now which don't have IDs associated
-        biomarkers_at_last_level <- biomarkers_at_last_level[is.na(biomarkers_at_last_level[last_id_col]),]
-        biomarker_combinations <- biomarker_combinations[is.na(biomarker_combinations[last_id_col]),]
-        
-        # Extract the names of last-level columns, for the rows which didn't have any ID
-        biomarkers_at_last_level_names <- na.omit(biomarkers_at_last_level[grepl('BG/[0-9]*$',colnames(biomarkers_at_last_level))])
-        last_name_col <- colnames(biomarkers_at_last_level_names)
-        unique_names_at_last_level <- get_cleaned_values_from_df(biomarkers_at_last_level_names)
-        if (verbose)  {
-          cat('\nUnique NAMEs are:')
-          print(unique_names_at_last_level)
-        }
-        
-        if (verbose)  {cat('\n',i,') Appending the last level of cell-types...')}
-        # Append the names of last-level columns
-        biomarker_overall <- c(biomarker_overall, unique_names_at_last_level)
-        
-        # Keep only the entries now which don't have Names associated
-        biomarker_combinations <- biomarker_combinations[is.na(biomarker_combinations[last_name_col]),]
-        
-      }
-    }
-    return (biomarker_overall)
-    
-  },
-  error = function(e){
-    if (verbose)  {traceback()}
-    cat('\nSomething went wrong while getting the biomarkers for:',config$name,'\n')
-    print(e)
-  })
-}
-
-
 
 
 
@@ -367,9 +289,26 @@ process_asctb_master_dataset_summary <- function(config, file_path, asct_table_d
     # C6: Get the intersection of Biomarkers in the ASCTB organ.csv file vs Azimuth organ.csv file
     azimuth.cleaned_set_of_biomarkers <- get_cleaned_values_from_df(azimuth.entire_set_of_biomarkers)
     n_matching_biomarkers.6 <- length(intersect(azimuth.cleaned_set_of_biomarkers, asctb.cleaned_set_of_biomarkers))
-    azimuth_bgs_not_in_asctb <- as.data.frame(setdiff(azimuth.cleaned_set_of_biomarkers, c(asctb.cleaned_set_of_biomarkers, asctb.cleaned_set_of_biomarkers_prots)))
+    azimuth_bgs_not_in_asctb <- setdiff(azimuth.cleaned_set_of_biomarkers, c(asctb.cleaned_set_of_biomarkers, asctb.cleaned_set_of_biomarkers_prots))
     if (!is.null(azimuth_bgs_not_in_asctb) && !all(is.na(azimuth_bgs_not_in_asctb))){
-      colnames(azimuth_bgs_not_in_asctb) <- c('Biomarkers')
+      bg_ids <- c()
+      print(paste0('Retrieving the HGNC-IDs for ',length(azimuth_bgs_not_in_asctb),' Azimuth Biomarkers not present in ASCTB...'))
+      for (biomarker_symbol in azimuth_bgs_not_in_asctb){
+        
+        # If Biomarker name is not available in the cached dataframe, then retrieve the topmost result got from the HGNC-API and add it to cache.
+        if (biomarker_symbol %in% BIOMARKER_NAME_VS_ID_MAPPING$Biomarker.Name){
+          id <- BIOMARKER_NAME_VS_ID_MAPPING[BIOMARKER_NAME_VS_ID_MAPPING$Biomarker.Name==biomarker_symbol , 'Biomarker.ID']
+        }else{
+          id <- get_hgnc_id_for_biomarker(biomarker_symbol, verbose = T)
+          if (id!='N/A'){
+            BIOMARKER_NAME_VS_ID_MAPPING <<- rbind(BIOMARKER_NAME_VS_ID_MAPPING, c(id, biomarker_symbol))
+          }
+        }
+        bg_ids <- c(bg_ids, id)
+      }
+      azimuth_bgs_not_in_asctb <- data.frame(bg_ids, azimuth_bgs_not_in_asctb)
+      colnames(azimuth_bgs_not_in_asctb) <- c('Biomarker.ID','Biomarker.Name')
+      
       write_df_to_csv(df=azimuth_bgs_not_in_asctb, file_path=paste0(STAGING_DIR, config$name, '.bgs_not_in_asctb.csv'))
     }
     
