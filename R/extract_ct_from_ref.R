@@ -34,7 +34,9 @@ SUMMARIES_DIR <- "data/summary_tables/"
 STAGING_DIR <- "data/staging_area/"
 AZIMUTH.ANNOTATION_FILES_BASE_URL <- 'https://raw.githubusercontent.com/satijalab/azimuth_website/master/static/csv/'
 CONFIGS <- rjson::fromJSON(file = 'data/azimuth_asctb_comparison_config.json')$references
-BIOMARKER_NAME_VS_ID_MAPPING <- as.data.frame(read.csv('data/biomarker_name_vs_id_cached.csv', na.string=c("NA", "NULL"), encoding="UTF-8"))
+BIOMARKER_NAME_VS_ID_CACHE <- 'data/biomarker_name_vs_id_cached.csv'
+
+BIOMARKER_NAME_VS_ID_MAPPING <- as.data.frame(read.csv(BIOMARKER_NAME_VS_ID_CACHE, na.string=c("NA", "NULL"), encoding="UTF-8"))
 # config <- CONFIGS[[2]]
 
 for (config in CONFIGS) {

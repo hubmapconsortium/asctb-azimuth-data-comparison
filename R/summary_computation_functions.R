@@ -301,7 +301,7 @@ process_asctb_master_dataset_summary <- function(config, file_path, asct_table_d
         }else{
           id <- get_hgnc_id_for_biomarker(biomarker_symbol, verbose = T)
           if (id!='N/A'){
-            BIOMARKER_NAME_VS_ID_MAPPING <<- rbind(BIOMARKER_NAME_VS_ID_MAPPING, c(id, biomarker_symbol))
+            BIOMARKER_NAME_VS_ID_MAPPING <<- rbind(BIOMARKER_NAME_VS_ID_MAPPING, c(biomarker_symbol, id))
           }
         }
         bg_ids <- c(bg_ids, id)

@@ -408,11 +408,15 @@ create_combined_summaries <- function(asctb_organ_stats, azimuth_organ_stats, ve
       lst[[sheet_name]] <- df
     }
     
-    BIOMARKER_NAME_VS_ID_MAPPING <<- unique(BIOMARKER_NAME_VS_ID_MAPPING)
-    write_df_to_csv(BIOMARKER_NAME_VS_ID_MAPPING, paste0('data/biomarker_name_vs_id_cached.csv'))
+    
     write_df_to_csv(azimuth_organ_stats, paste0(SUMMARIES_DIR,'Azimuth.All_organs.stats.csv'))
     write_df_to_csv(asctb_organ_stats, paste0(SUMMARIES_DIR,'ASCTB.All_organs.stats.csv'))
     write.xlsx(lst, file=paste0(SUMMARIES_DIR, 'Azimuth_vs_ASCTB.summaries.xlsx'), overwrite=T)
+    
+    
+    # Also write the latest cache to the Biomarker-name-vs-id csv
+    BIOMARKER_NAME_VS_ID_MAPPING <<- unique(BIOMARKER_NAME_VS_ID_MAPPING)
+    write_df_to_csv(BIOMARKER_NAME_VS_ID_MAPPING, BIOMARKER_NAME_VS_ID_CACHE)
     
 },
 error = function(e){
