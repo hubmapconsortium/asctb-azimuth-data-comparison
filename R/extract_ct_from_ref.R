@@ -23,7 +23,7 @@ azimuth_organ_stats_cols <- c("Organ", "AZ.Unique.Cell.Types", "AZ.Unique.CT.IDs
 azimuth_organ_stats <- create_new_df(azimuth_organ_stats_cols)
 azimuth.entire_set_of_biomarkers <- NA
 
-asctb_organ_stats_cols <- c("Organ", "ASCTB.Unique.Cell.Types", "ASCTB.Unique.CT.IDs", "Matching.CT.IDs", "ASCTB.Unique.Biomarker.Genes", "ASCTB.Unique.Biomarker.Prots", "Matching.Biomarkers")
+asctb_organ_stats_cols <- c("Organ", "ASCTB.Unique.Cell.Types", "ASCTB.Unique.CT.IDs", "Matching.CT.IDs", "Missing.CT.IDs", "ASCTB.Unique.Biomarker.Genes", "ASCTB.Unique.Biomarker.Prots", "Matching.Biomarkers", "Missing.Biomarkers")
 asctb_organ_stats <- create_new_df(asctb_organ_stats_cols)
 asctb.entire_set_of_biomarkers <- NA
 
@@ -63,7 +63,7 @@ for (config in CONFIGS) {
   suppressWarnings(
       msg <- process_asctb_master_dataset_summary(config=config, file_path=asctb.file_path, asct_table_derived_from_azimuth=asct_table)
     ,   classes="warning")
-  cat(msg)
+  cat("\n",msg)
   
   # Finally, write the Azimuth dataset formatted as per the ASCTB structure for usability on CCF-reporter
   suppressWarnings( write_asctb_structure(config$name, asct_table) , classes="warning")
