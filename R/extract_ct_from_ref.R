@@ -19,11 +19,11 @@ source('R/summary_computation_functions.R')
 
 
 # Initialization for [Azimuth reference vs ASCTB master] stats generation
-azimuth_organ_stats_cols <- c("Organ", "AZ.Unique.Cell.Types", "AZ.Unique.CT.IDs", "AZ.Total.Cells", "AZ.Annotation.Levels", "AZ.Unique.Biomarkers")
+azimuth_organ_stats_cols <- c("Organ", "AZ.Unique.Cell.Types", "AZ.Unique.CT.IDs", "AZ.Total.Cells", "AZ.Annotation.Levels", "AZ.Unique.Biomarkers", "Raw.Organ.Name")
 azimuth_organ_stats <- create_new_df(azimuth_organ_stats_cols)
 azimuth.entire_set_of_biomarkers <- NA
 
-asctb_organ_stats_cols <- c("Organ", "ASCTB.Unique.Cell.Types", "ASCTB.Unique.CT.IDs", "Matching.CT.IDs", "ASCTB.Unique.Biomarker.Genes", "ASCTB.Unique.Biomarker.Prots", "Matching.Biomarkers")
+asctb_organ_stats_cols <- c("Organ", "ASCTB.Unique.Cell.Types", "ASCTB.Unique.CT.IDs", "Matching.CT.IDs", "Missing.CT.IDs", "ASCTB.Unique.Biomarker.Genes", "ASCTB.Unique.Biomarker.Prots", "Matching.Biomarkers", "Missing.Biomarkers")
 asctb_organ_stats <- create_new_df(asctb_organ_stats_cols)
 asctb.entire_set_of_biomarkers <- NA
 
@@ -34,9 +34,10 @@ SUMMARIES_DIR <- "data/summary_tables/"
 STAGING_DIR <- "data/staging_area/"
 AZIMUTH.ANNOTATION_FILES_BASE_URL <- 'https://raw.githubusercontent.com/satijalab/azimuth_website/master/static/csv/'
 CONFIGS <- rjson::fromJSON(file = 'data/azimuth_asctb_comparison_config.json')$references
+BIOMARKER_NAME_VS_ID_CACHE <- 'data/biomarker_name_vs_id_cached.csv'
 
-# config <- CONFIGS[[5]]
-# todo: UNCOMMENT THE utility_function.R write_df_to_csv() function for ASCTB master tables
+BIOMARKER_NAME_VS_ID_MAPPING <- as.data.frame(read.csv(BIOMARKER_NAME_VS_ID_CACHE, na.string=c("NA", "NULL"), encoding="UTF-8"))
+# config <- CONFIGS[[2]]
 
 for (config in CONFIGS) {
   
@@ -62,7 +63,7 @@ for (config in CONFIGS) {
   suppressWarnings(
       msg <- process_asctb_master_dataset_summary(config=config, file_path=asctb.file_path, asct_table_derived_from_azimuth=asct_table)
     ,   classes="warning")
-  cat(msg)
+  cat("\n",msg)
   
   # Finally, write the Azimuth dataset formatted as per the ASCTB structure for usability on CCF-reporter
   suppressWarnings( write_asctb_structure(config$name, asct_table) , classes="warning")
