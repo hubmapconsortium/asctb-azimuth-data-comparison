@@ -352,8 +352,8 @@ create_combined_summaries <- function(asctb_organ_stats, azimuth_organ_stats, ve
     azimuth_organ_stats <- azimuth_organ_stats[order(azimuth_organ_stats$Organ),]
     asctb_organ_stats <- asctb_organ_stats[order(asctb_organ_stats$Organ),]
     
-    combined_report.cols_ordered <- c("Organ", "AZ.Annotation.Levels", "AZ.Unique.Cell.Types", "AZ.Unique.CT.IDs", "ASCTB.Unique.Cell.Types", "ASCTB.Unique.CT.IDs", "Matching.CT.IDs", "Missing.CT.IDs", 
-                                      "AZ.Total.Cells", "AZ.Unique.Biomarkers", "ASCTB.Unique.Biomarker.Genes", "Matching.Biomarkers", "Missing.Biomarkers",  "Raw.Organ.Name")
+    combined_report.cols_ordered <- c("Organ", "AZ.Annotation.Levels", "AZ.Unique.CTs", "AZ.Unique.CT.IDs", "ASCTB.Unique.CTs", "ASCTB.Unique.CT.IDs", "Matching.CT.IDs", "CTwID.Missing.in.ASCTB", 
+                                      "AZ.Total.Cells", "AZ.Unique.BGs", "ASCTB.Unique.BGs", "Matching.Biomarkers", "BGwID.Missing.in.ASCTB",  "Raw.Organ.Name")
     combined.azimuth_vs_asctb <- left_join(asctb_organ_stats, azimuth_organ_stats, by="Organ")
     combined.azimuth_vs_asctb <- combined.azimuth_vs_asctb[,combined_report.cols_ordered]
     

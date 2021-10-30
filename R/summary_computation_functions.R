@@ -280,6 +280,7 @@ process_asctb_master_dataset_summary <- function(config, file_path, asct_table_d
     # C5: Get the union of all "BG" columns in the ASCTB organ.csv file
     asctb.entire_set_of_biomarkers <<- asctb_master_table[(grepl("BG",asctb.master_columns)) & !(grepl("ID|COUNT|LABEL",asctb.master_columns))]
     asctb.cleaned_set_of_biomarkers <- get_cleaned_values_from_df(asctb.entire_set_of_biomarkers)
+    asctb.cleaned_biomarker_ids <- get_cleaned_values_from_df(asctb_master_table[(grepl("BG",asctb.master_columns) & grepl("ID",asctb.master_columns)) & !(grepl("COUNT|LABEL",asctb.master_columns))])
     n_unique_biomarkers.5 <- length(asctb.cleaned_set_of_biomarkers)
     
     asctb.entire_set_of_biomarkers_prots <- asctb_master_table[(grepl("BP",asctb.master_columns)) & !(grepl("ID|COUNT|LABEL",asctb.master_columns))]
@@ -295,7 +296,7 @@ process_asctb_master_dataset_summary <- function(config, file_path, asct_table_d
     
     if (!is.null(azimuth_bgs_not_in_asctb) && !all(is.na(azimuth_bgs_not_in_asctb))){
       bg_ids <- c()
-      print(paste0('Retrieving the HGNC-IDs for ',length(azimuth_bgs_not_in_asctb),' Azimuth Biomarkers not present in ASCTB...'))
+      print(paste0('Retrieving the HGNC-IDs for ',length(azimuth_bgs_not_in_asctb),' Azimuth Biomarker-names not present in ASCTB...'))
       for (biomarker_symbol in azimuth_bgs_not_in_asctb){
         
         # If Biomarker name is not available in the cached dataframe, then retrieve the topmost result got from the HGNC-API and add it to cache.
@@ -311,8 +312,13 @@ process_asctb_master_dataset_summary <- function(config, file_path, asct_table_d
       }
       azimuth_bgs_not_in_asctb <- data.frame(bg_ids, azimuth_bgs_not_in_asctb)
       colnames(azimuth_bgs_not_in_asctb) <- c('Biomarker.IDs','Biomarker.Names')
+      
+      # After comparing Azimuth-BG names with the ASCTB-BG names, now remove the Azimuth-BG IDs present in ASCTB
+      azimuth_bg_ids_in_asctb <- azimuth_bgs_not_in_asctb$Biomarker.IDs %in% asctb.cleaned_biomarker_ids
+      n_matching_biomarkers.6 <- n_matching_biomarkers.6 + nrow(azimuth_bgs_not_in_asctb[azimuth_bg_ids_in_asctb ,])
+      azimuth_bgs_not_in_asctb <- azimuth_bgs_not_in_asctb[!azimuth_bg_ids_in_asctb ,]
       n_missing_biomarkers.6.2 <- nrow(azimuth_bgs_not_in_asctb)
-        
+      
       write_df_to_csv(df=azimuth_bgs_not_in_asctb, file_path=paste0(STAGING_DIR, config$name, '.bgs_not_in_asctb.csv'))
     }
     

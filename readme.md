@@ -103,12 +103,16 @@ The corresponding summary file is stored in ```data/summary_tables```
 directory as ```<organ_name>.celltype_stats.csv```.
 
 The overall summary file for ASCT+B master data, and Azimuth reference data ingested 
-is stored in ```data/summary_tables``` directory as ```<organ_name>.celltype_stats.csv```. 
-The ASCT+B summary file for all organs will contain the number of matches found for CellTypes and Biomarkers, 
+is stored in ```data/summary_tables``` directory as ```Azimuth_vs_ASCTB.summaries.xlsx```. 
+This summary file for all organs will contain the number of matches found for CellTypes and Biomarkers, 
 between ASCT+B and Azimuth. It will also identify CellTypes and Biomarkers which are present in Azimuth but not in ASCT+B.
 
 The list that indicates Biomarkers present in Azimuth but not in ASCT+B has HGNC-IDs retrieved from the API maintained by
 the Hugo Gene Nomenclature Committee, with documentation available at [HGNC REST web-service docs](https://www.genenames.org/about/guidelines/).
+For identifying this list, we first compare Azimuth_BG_names vs ASCT+B_BG_names. Then the HGNC-ID is retrieved for this list 
+of Azimuth_BG_names not present in ASCT+B, for comparison with ASCT+B_BG_IDs.
+A local cache-file ```biomarker_name_vs_id_cached.csv``` is maintained in the ```data/``` directory, and is 
+overwritten at the end of each run to store HGNC-IDs for the list of Azimuth_BG_names not present in ASCT+B.
 
 
 ## Deployment
