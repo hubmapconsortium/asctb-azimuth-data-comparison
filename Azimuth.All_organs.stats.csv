@@ -1,4 +1,4 @@
-"Organ","AZ.Unique.Cell.Types","AZ.Unique.CT.IDs","AZ.Total.Cells","AZ.Annotation.Levels","AZ.Unique.Biomarkers","Raw.Organ.Name"
+"Organ","AZ.Unique.CTs","AZ.Unique.CT.IDs","AZ.Total.Cells","AZ.Annotation.Levels","AZ.Unique.BGs","Raw.Organ.Name"
 "Blood PBMC","77","36","36433","3","352","pbmc"
 "Bone Marrow","48","40","297627","2","308","bone_marrow"
 "Brain","190","10","24526","4","864","motor_cortex"
