@@ -15,6 +15,7 @@ This final summary excel sheet available [here](https://hubmapconsortium.github.
 <li>A listing of such CTs and Biomarkers identified in previous point.</li>
 </ol>
 
+[Repository documentation diagram](/public/Documentation_Diagrams.jpg?raw=True)
 
 #### Usage
 ```
@@ -106,6 +107,14 @@ The overall summary file for ASCT+B master data, and Azimuth reference data inge
 is stored in ```data/summary_tables``` directory as ```Azimuth_vs_ASCTB.summaries.xlsx```. 
 This summary file for all organs will contain the number of matches found for CellTypes and Biomarkers, 
 between ASCT+B and Azimuth. It will also identify CellTypes and Biomarkers which are present in Azimuth but not in ASCT+B.
+The R-package openxlsx has an issue, while writing HYPERTEXT formula to file.
+
+For now implemented hardcoded formula, so:
+1. Double click on the HYPERTEXT formula.
+
+2. Click on another cell. This forces Excel to recognize the HYPERTEXT formula.
+
+3. Click on hyperlink to go to a sheet.
 
 The list that indicates Biomarkers present in Azimuth but not in ASCT+B has HGNC-IDs retrieved from the API maintained by
 the Hugo Gene Nomenclature Committee, with documentation available at [HGNC REST web-service docs](https://www.genenames.org/about/guidelines/).

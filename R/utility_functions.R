@@ -46,6 +46,36 @@ get_hgnc_id_for_biomarker <- function(biomarker_symbol, verbose=F){
 
 
 
+get_all_biomarker_ids <- function(biomarkers){
+  tryCatch({
+    bg_ids <- c()
+    for (biomarker_symbol in biomarkers){
+      
+      # If Biomarker name is not available in the cached dataframe, then retrieve the topmost result got from the HGNC-API and add it to cache.
+      if (biomarker_symbol %in% BIOMARKER_NAME_VS_ID_MAPPING$Biomarker.Name){
+        id <- BIOMARKER_NAME_VS_ID_MAPPING[BIOMARKER_NAME_VS_ID_MAPPING$Biomarker.Name==biomarker_symbol , 'Biomarker.ID']
+      }else{
+        id <- get_hgnc_id_for_biomarker(biomarker_symbol, verbose = T)
+        if (id!='N/A'){
+          BIOMARKER_NAME_VS_ID_MAPPING <<- rbind(BIOMARKER_NAME_VS_ID_MAPPING, c(biomarker_symbol, id))
+        }
+      }
+      bg_ids <- c(bg_ids, id)
+    }
+    return (bg_ids)
+  },
+  error=function(e){
+    cat('\nSomething went wrong while fetching the HGNC-ID for:',biomarker_symbol)
+    print(e)
+  })
+}
+
+
+
+
+
+
+
 
 create_new_df <- function(colnames){
   tryCatch({
@@ -295,7 +325,7 @@ get_asctb_master_table_content <- function(config){
     asctb.master.data <- as.data.frame(asctb.master.data[2:nrow(asctb.master.data),])
     
     file_path <- paste0(STAGING_DIR,config$name,'_asctb_master.csv')
-    # write_df_to_csv(asctb.master.data, file_path)
+    write_df_to_csv(asctb.master.data, file_path)
     
     return (file_path)
     
@@ -353,33 +383,10 @@ create_combined_summaries <- function(asctb_organ_stats, azimuth_organ_stats, ve
     asctb_organ_stats <- asctb_organ_stats[order(asctb_organ_stats$Organ),]
     
     combined_report.cols_ordered <- c("Organ", "AZ.Annotation.Levels", "AZ.Unique.CTs", "AZ.Unique.CT.IDs", "ASCTB.Unique.CTs", "ASCTB.Unique.CT.IDs", "Matching.CT.IDs", "CTwID.Missing.in.ASCTB", 
-                                      "AZ.Total.Cells", "AZ.Unique.BGs", "ASCTB.Unique.BGs", "Matching.Biomarkers", "BGwID.Missing.in.ASCTB",  "Raw.Organ.Name")
+                                      "AZ.Total.Cells", "AZ.Unique.BGs", "ASCTB.Unique.BGs", "Matching.BGs", "BGwID.Missing.in.ASCTB",  "Raw.Organ.Name")
     combined.azimuth_vs_asctb <- left_join(asctb_organ_stats, azimuth_organ_stats, by="Organ")
     combined.azimuth_vs_asctb <- combined.azimuth_vs_asctb[,combined_report.cols_ordered]
     
-    # Attempting to create hyperlinks in excel file
-    # combined.azimuth_vs_asctb['Links for CTs not in ASCT+B'] <- c(sapply( combined.azimuth_vs_asctb['Raw.Organ.Name'], 
-    #                                                                             function(organ) {
-    #                                                                               if (organ[1]=='fetal_development'){
-    #                                                                                 return ('Temp')
-    #                                                                               }else{
-    #                                                                                 sheet_name <- substr(paste0(organ,'.cts_not_in_asctb'), 1, 27)
-    #                                                                                 return (paste0('=HYPERLINK("[Azimuth_vs_ASCTB.summaries.xlsx]', 
-    #                                                                                               sheet_name, '!A1", "CTs not in ASCT+B")'))
-    #                                                                               }
-    #                                                                               }))
-    # 
-    # combined.azimuth_vs_asctb['Link for Biomarkers not in ASCT+B'] <- c(sapply( combined.azimuth_vs_asctb['Raw.Organ.Name'], 
-    #                                                                             function(organ) {
-    #                                                                               if (organ=='fetal_development'){
-    #                                                                                 return ('')
-    #                                                                               }else{
-    #                                                                                 sheet_name <- substr(paste0(organ,'.bgss_not_in_asctb'), 1, 27)
-    #                                                                                 return (paste0('=HYPERLINK("[Azimuth_vs_ASCTB.summaries.xlsx]', 
-    #                                                                                        sheet_name, '!A1", "CTs not in ASCT+B")'))
-    #                                                                               }
-    #                                                                             }))
-    # 
     
     # Add a final row for Totals
     res_row <- c()
@@ -389,6 +396,30 @@ create_combined_summaries <- function(asctb_organ_stats, azimuth_organ_stats, ve
       else                          { res_row <- c( res_row, sum(as.numeric(unlist(combined.azimuth_vs_asctb[col]))) ) }
     }
     combined.azimuth_vs_asctb <- rbind(combined.azimuth_vs_asctb, res_row)
+    
+    # Attempting to create hyperlinks in excel file. Trim the length of each filename since sheet-name can have <=31 characters
+    combined.azimuth_vs_asctb['Shortcut for CTs not in ASCT+B'] <- c(as.vector(sapply( as.vector(unlist(combined.azimuth_vs_asctb['Raw.Organ.Name'])),
+                                                                  function(organ) {
+                                                                    if (organ=='Totals:' || combined.azimuth_vs_asctb[combined.azimuth_vs_asctb$Raw.Organ.Name==organ,]$CTwID.Missing.in.ASCTB=="0"){
+                                                                      return ('')
+                                                                      }else{
+                                                                        sheet_name <- substr(paste0(organ,'.cts_not_in_asctb'), 1, 27)
+                                                                        return (paste0('=HYPERLINK("#', sheet_name, '!A1", "Missing CTs")'))
+                                                                        }
+                                                                    })))
+     
+    # combined.azimuth_vs_asctb['Shortcut for BGs not in ASCT+B'] <- c(as.vector(sapply( as.vector(unlist(combined.azimuth_vs_asctb['Raw.Organ.Name'])),
+    #                                                               function(organ) {
+    #                                                                 if (organ=='Totals:' || combined.azimuth_vs_asctb[combined.azimuth_vs_asctb$Raw.Organ.Name==organ,]$BGwID.Missing.in.ASCTB=="0"){
+    #                                                                   return ('')
+    #                                                                 }else{
+    #                                                                   sheet_name <- substr(paste0(organ,'.bgs_not_in_asctb'), 1, 27)
+    #                                                                   return (paste0('=HYPERLINK("#', sheet_name, '!A1", "Missing BGs")'))
+    #                                                                 }
+    #                                                               })))
+     
+    
+    
     
     # Read all files in the staging directory that contain Azimuth minus ASCTB information
     files <- list.files(STAGING_DIR)

@@ -222,7 +222,7 @@ process_asctb_master_dataset_summary <- function(config, file_path, asct_table_d
     
     
     # C3: Get the union of all "ID" columns in the ASCTB organ.csv file. Kidney has extra 'CT' column that messes up the counts
-    asctb.entire_set_of_ct_ontology_ids <- asctb_master_table[(grepl("CT",asctb.master_columns)) & grepl("ID",asctb.master_columns)]
+    asctb.entire_set_of_ct_ontology_ids <- asctb_master_table[(grepl("CT",asctb.master_columns)) & grepl("ID",asctb.master_columns) & !grepl("AS",asctb.master_columns)]
     asctb.cleaned_set_of_ct_ontology_ids <- get_cleaned_values_from_df(asctb.entire_set_of_ct_ontology_ids)
     n_unique_ct_ontology_ids.3 <- length(asctb.cleaned_set_of_ct_ontology_ids)
     
@@ -295,21 +295,8 @@ process_asctb_master_dataset_summary <- function(config, file_path, asct_table_d
     n_missing_biomarkers.6.2 <- 0
     
     if (!is.null(azimuth_bgs_not_in_asctb) && !all(is.na(azimuth_bgs_not_in_asctb))){
-      bg_ids <- c()
       print(paste0('Retrieving the HGNC-IDs for ',length(azimuth_bgs_not_in_asctb),' Azimuth Biomarker-names not present in ASCTB...'))
-      for (biomarker_symbol in azimuth_bgs_not_in_asctb){
-        
-        # If Biomarker name is not available in the cached dataframe, then retrieve the topmost result got from the HGNC-API and add it to cache.
-        if (biomarker_symbol %in% BIOMARKER_NAME_VS_ID_MAPPING$Biomarker.Name){
-          id <- BIOMARKER_NAME_VS_ID_MAPPING[BIOMARKER_NAME_VS_ID_MAPPING$Biomarker.Name==biomarker_symbol , 'Biomarker.ID']
-        }else{
-          id <- get_hgnc_id_for_biomarker(biomarker_symbol, verbose = T)
-          if (id!='N/A'){
-            BIOMARKER_NAME_VS_ID_MAPPING <<- rbind(BIOMARKER_NAME_VS_ID_MAPPING, c(biomarker_symbol, id))
-          }
-        }
-        bg_ids <- c(bg_ids, id)
-      }
+      bg_ids <- get_all_biomarker_ids(azimuth_bgs_not_in_asctb)
       azimuth_bgs_not_in_asctb <- data.frame(bg_ids, azimuth_bgs_not_in_asctb)
       colnames(azimuth_bgs_not_in_asctb) <- c('Biomarker.IDs','Biomarker.Names')
       
