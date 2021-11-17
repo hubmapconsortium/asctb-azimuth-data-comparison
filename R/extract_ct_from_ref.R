@@ -23,7 +23,7 @@ azimuth_organ_stats_cols <- c("Organ", "AZ.Unique.CTs", "AZ.Unique.CT.IDs", "AZ.
 azimuth_organ_stats <- create_new_df(azimuth_organ_stats_cols)
 azimuth.entire_set_of_biomarkers <- NA
 
-asctb_organ_stats_cols <- c("Organ", "ASCTB.Unique.CTs", "ASCTB.Unique.CT.IDs", "Matching.CT.IDs", "CTwID.Missing.in.ASCTB", "ASCTB.Unique.BGs", "ASCTB.Unique.BPs", "Matching.Biomarkers", "BGwID.Missing.in.ASCTB")
+asctb_organ_stats_cols <- c("Organ", "ASCTB.Unique.CTs", "ASCTB.Unique.CT.IDs", "Matching.CT.IDs", "CTwID.Missing.in.ASCTB", "ASCTB.Unique.BGs", "ASCTB.Unique.BPs", "Matching.BGs", "BGwID.Missing.in.ASCTB")
 asctb_organ_stats <- create_new_df(asctb_organ_stats_cols)
 asctb.entire_set_of_biomarkers <- NA
 
@@ -37,7 +37,10 @@ CONFIGS <- rjson::fromJSON(file = 'data/azimuth_asctb_comparison_config.json')$r
 BIOMARKER_NAME_VS_ID_CACHE <- 'data/biomarker_name_vs_id_cached.csv'
 
 BIOMARKER_NAME_VS_ID_MAPPING <- as.data.frame(read.csv(BIOMARKER_NAME_VS_ID_CACHE, na.string=c("NA", "NULL"), encoding="UTF-8"))
-# config <- CONFIGS[[1]]
+# config <- CONFIGS[[8]]
+
+
+# todo: Uncomment the write_df_to_csv() in get_asctb_master_table_content()
 
 for (config in CONFIGS) {
   
