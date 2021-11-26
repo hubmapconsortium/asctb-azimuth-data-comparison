@@ -1,2 +1,0 @@
-- [Azimuth All_organs](https://hubmapconsortium.github.io/asctb-azimuth-data-comparison/Azimuth.All_organs.stats.csv)
-- [ASCTB All_organs](https://hubmapconsortium.github.io/asctb-azimuth-data-comparison/ASCTB.All_organs.stats.csv)
