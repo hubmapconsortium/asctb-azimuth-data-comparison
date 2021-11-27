@@ -9,7 +9,13 @@
 #                  2. Ingest ASCTB Master-data from the Google-sheets available on CCF-portal as follows:
 #                      get_asctb_master_table_content()-
 #                        Reads the Google-sheets and removes the meta-information rows.
-#
+#                  3. Get HGNC-IDs for biomarkers:
+#                      get_hgnc_id_for_biomarker() and get_all_biomarker_ids()-
+#                         Gets the BG.IDs for Biomarkers whose names are not present in ASCT+B
+#                  4. Write the final report for Azimuth vs ASCT+B reconciliation:
+#                      create_combined_summaries()-
+#                         Combines the Azimuth and ASCT+B reports into an excel spreadsheet. Currently, writes a static formula to the excel spreadsheet.
+#							Could potentially be improved as a low priority item.
 # AUTHOR:         Darshal Shetty/ Vikrant Deshpande/ Amber Ramesh
 
 

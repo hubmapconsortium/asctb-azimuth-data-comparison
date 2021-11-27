@@ -1,6 +1,6 @@
 Package: ASCTBAzimuthDataComparison
-Title: Compare Data in Azimuth With Data in ASCT+B Reporter, and Generate summaries
-Version: 1.0.0
+Title: Compare Data in Azimuth With Data in ASCT+B Reporter, and Generate reconciliation reports for Azimuth vs ASCT+B
+Version: 2.0.0
 Authors@R: 
     person(given = "Darshal",
            family = "Shetty",
@@ -20,3 +20,4 @@ Imports:
     Seurat,
 	gsheet,
 	openxlsx
+	

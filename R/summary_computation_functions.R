@@ -1,6 +1,9 @@
-# DOCSTRING:      This script has summary computation functions for both: 
+# DOCSTRING:      This script has summary computation functions for:
 #                   1. The Azimuth Reference data that was converted into ASCTB compatible structure.
-#                   2. The ASCT+B Master datasets
+#                   2. The ASCT+B Master datasets.
+#                   3. All Cell-Types within a specific Azimuth reference.
+#                   4. Getting celltype counts using an iterative algorithm that traverses the dataset from right to left.
+#						This was necessary to match counts against the CCF-reporter counts which parses JSON, but here we have CSV formatted tabular data.
 # AUTHOR:         Vikrant Deshpande / Amber Ramesh
 
 

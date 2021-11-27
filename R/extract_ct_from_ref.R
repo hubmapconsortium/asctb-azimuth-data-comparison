@@ -4,6 +4,7 @@
 #                 10/12/2021 New pipeline integrated to ingest Google-Sheets of ASCT+B V1.1. master datasets and generate their summaries.
 #                             Refined the logic for count-generation in most places.
 #                             Also modularized the code into utility_functions.R so that this script only has functions relevant to summary-generation and high-level pipeline functionality.
+#				  11/26/2021 Updated the entire repository's documentation for readability.
 # AUTHOR:         Darshal Shetty/ Vikrant Deshpande/ Amber Ramesh
 
 library(Seurat)
@@ -37,10 +38,7 @@ CONFIGS <- rjson::fromJSON(file = 'data/azimuth_asctb_comparison_config.json')$r
 BIOMARKER_NAME_VS_ID_CACHE <- 'data/biomarker_name_vs_id_cached.csv'
 
 BIOMARKER_NAME_VS_ID_MAPPING <- as.data.frame(read.csv(BIOMARKER_NAME_VS_ID_CACHE, na.string=c("NA", "NULL"), encoding="UTF-8"))
-# config <- CONFIGS[[8]]
 
-
-# todo: Uncomment the write_df_to_csv() in get_asctb_master_table_content()
 
 for (config in CONFIGS) {
   

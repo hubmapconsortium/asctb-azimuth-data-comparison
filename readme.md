@@ -103,8 +103,12 @@ directory as ```<organ_name>.csv```.
 The corresponding summary file is stored in ```data/summary_tables``` 
 directory as ```<organ_name>.celltype_stats.csv```.
 
+
+
+#### Reconciliation report for Azimuth-vs-ASCTB
+
 The overall summary file for ASCT+B master data, and Azimuth reference data ingested 
-is stored in ```data/summary_tables``` directory as ```Azimuth_vs_ASCTB.summaries.xlsx```. 
+is stored in ```data/summary_tables/``` directory as ```Azimuth_vs_ASCTB.summaries.xlsx```. 
 This summary file for all organs will contain the number of matches found for CellTypes and Biomarkers, 
 between ASCT+B and Azimuth. It will also identify CellTypes and Biomarkers which are present in Azimuth but not in ASCT+B.
 The CellTypes in ASCT+B not present in Azimuth mostly are CellTypes with **similar** names but different CT-IDs, hence causing a mismatch.
@@ -123,8 +127,10 @@ But the CT with similar name in ASCT+B identified as [missing in Azimuth] is “
 
 On Ontobee, this [Azimuth CT-ID](http://www.ontobee.org/ontology/CL?iri=http://purl.obolibrary.org/obo/CL_0000451) is at a higher class-hierarchy than the [ASCTB CT-ID](http://www.ontobee.org/ontology/CL?iri=http://purl.obolibrary.org/obo/CL_0000990).
 
+<br>
 
-The R-package openxlsx has an issue, while writing HYPERTEXT formula to file.
+The ```Azimuth_vs_ASCTB.summaries.xlsx``` also contains hyperlink formulae for easier use.
+However, the R-package openxlsx has an issue, while writing HYPERTEXT formula to file.
 
 For now implemented hardcoded formula, so:
 1. Double click on the HYPERTEXT formula.
@@ -133,12 +139,15 @@ For now implemented hardcoded formula, so:
 
 3. Click on hyperlink to go to a sheet.
 
-The list o Biomarkers present in Azimuth but not in ASCT+B, has HGNC-IDs retrieved from the API maintained by
+The list of Biomarkers present in Azimuth but not in ASCT+B, has HGNC-IDs retrieved from the API maintained by
 the Hugo Gene Nomenclature Committee, with documentation available at [HGNC REST web-service docs](https://www.genenames.org/about/guidelines/).
 For identifying this list, we first compare Azimuth_BG_names vs ASCT+B_BG_names. Then the HGNC-ID is retrieved for this list 
 of Azimuth_BG_names not present in ASCT+B, for comparison with ASCT+B_BG_IDs.
 A local cache-file ```biomarker_name_vs_id_cached.csv``` is maintained in the ```data/``` directory, and is 
 overwritten at the end of each run to store HGNC-IDs for the list of Azimuth_BG_names not present in ASCT+B.
+
+
+A Data-dictionary for ease of reference is available [here.](/public/Data_Dictionary.xlsx)
 
 
 ## Deployment
