@@ -15,7 +15,7 @@
 #                  4. Write the final report for Azimuth vs ASCT+B reconciliation:
 #                      create_combined_summaries()-
 #                         Combines the Azimuth and ASCT+B reports into an excel spreadsheet. Currently, writes a static formula to the excel spreadsheet.
-#							Could potentially be improved as a low priority item.
+#							            Could potentially be improved as a low priority item.
 # AUTHOR:         Darshal Shetty/ Vikrant Deshpande/ Amber Ramesh
 
 
@@ -141,10 +141,10 @@ get_cleaned_values_from_df <- function(df, for_counts=T){
 get_hashtable_key_values <- function(df, cols, hmap.colnames, verbose=F){
   tryCatch({
     res_map <- create_new_df(hmap.colnames)
-    # For each AS/1 and AS/1/ID get the unique list of ID vs Name combinations
+    # For each AS/num and AS/num/ID get the unique list of ID vs Name combinations
     for (i in seq(1,length(cols),2)){
       if (verbose)  { print(paste(cols[i], cols[i+1])) }
-      hmap <- aggregate(formula=as.formula(paste0('`',cols[i],'`~`',cols[i+1],'`')), data=df, FUN=unique)
+      hmap <- aggregate(formula=as.formula(paste0('`',cols[i],'`~`',cols[i+1],'`')), data=df, FUN=unique, na.action=na.pass)
       colnames(hmap) <- hmap.colnames
       res_map <- rbind(res_map, hmap)
     }
@@ -413,17 +413,6 @@ create_combined_summaries <- function(asctb_organ_stats, azimuth_organ_stats, ve
                                                                         return (paste0('=HYPERLINK("#', sheet_name, '!A1", "Missing CTs")'))
                                                                         }
                                                                     })))
-     
-    # combined.azimuth_vs_asctb['Shortcut for BGs not in ASCT+B'] <- c(as.vector(sapply( as.vector(unlist(combined.azimuth_vs_asctb['Raw.Organ.Name'])),
-    #                                                               function(organ) {
-    #                                                                 if (organ=='Totals:' || combined.azimuth_vs_asctb[combined.azimuth_vs_asctb$Raw.Organ.Name==organ,]$BGwID.Missing.in.ASCTB=="0"){
-    #                                                                   return ('')
-    #                                                                 }else{
-    #                                                                   sheet_name <- substr(paste0(organ,'.bgs_not_in_asctb'), 1, 27)
-    #                                                                   return (paste0('=HYPERLINK("#', sheet_name, '!A1", "Missing BGs")'))
-    #                                                                 }
-    #                                                               })))
-     
     
     
     
