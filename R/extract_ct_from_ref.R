@@ -1,10 +1,10 @@
 # DOCSTRING:      Updated the script on 09/17/2021 for the purposes of issue #1: Aggregated counts mismatch
-#                 09/21/2021 Enhancement of issue #2: Pipeline needs to generate a summary of stats for Azimuth references
-#                 09/23/2021 Enhancement of issue #2: Generate stats for counts of each celltype, within an organ. Still awaiting confirmation for computation-logic.
+#                 09/21/2021 Enhancement #2: Pipeline needs to generate a summary of stats for Azimuth references
+#                 09/23/2021 Enhancement #2: Generate stats for counts of each celltype, within an organ.
 #                 10/12/2021 New pipeline integrated to ingest Google-Sheets of ASCT+B V1.1. master datasets and generate their summaries.
 #                             Refined the logic for count-generation in most places.
 #                             Also modularized the code into utility_functions.R so that this script only has functions relevant to summary-generation and high-level pipeline functionality.
-#				  11/26/2021 Updated the entire repository's documentation for readability.
+#				          12/16/2021 Updated the entire repository's documentation for readability.
 # AUTHOR:         Darshal Shetty/ Vikrant Deshpande/ Amber Ramesh
 
 library(Seurat)
@@ -70,5 +70,5 @@ for (config in CONFIGS) {
   suppressWarnings( write_asctb_structure(config$name, asct_table) , classes="warning")
 }
 
-# finally write the All-Organs ASCTB vs Azimuth stats into CSV files.
+# Finally write the All-Organs ASCTB vs Azimuth stats into CSV files.
 create_combined_summaries(asctb_organ_stats, azimuth_organ_stats)

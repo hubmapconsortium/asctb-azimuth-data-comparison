@@ -17,7 +17,7 @@ generate_azimuth_celltype_cnt_summary <- function(asct_table, organ){
     celltype_vs_counts_cols <- c('Cell.Type', 'Cell.Type.ID', 'Num.Cells', 'Annotation.Level')
     celltype_vs_counts <- create_new_df(celltype_vs_counts_cols)
     
-    # Convert the available CellType columns
+    # Extract the available CellType columns; Azimuth dataset has CT-columns named as 'AS/'...
     celltype_combinations <- asct_table[grepl("AS/[0-9]$|AS/[0-9]/ID$|COUNT$",colnames(asct_table))]
     ALL_COLS <- colnames(celltype_combinations)
     COUNT_COL <- ALL_COLS[grepl("COUNT",ALL_COLS)]
@@ -122,69 +122,39 @@ process_azimuth_ref_dataset_summary <- function(config, asct_table, azimuth_orga
 
 
 
-get_num_asctb_celltypes <- function(asctb_master_table, verbose=F){
+
+
+get_num_asctb_celltypes <- function(asctb_master_table, organ, verbose=F){
   tryCatch({
-    
-    # Initializing the vector of celltypes to return
-    celltype_overall <- c()
     
     # Get the subset dataframe of `CT/[0-9]` and `CT/[0-9]/ID` columns.
     celltype_combinations <- as.data.frame(asctb_master_table[grepl("CT/[0-9]$|CT/[0-9]/ID$",colnames(asctb_master_table))])
     ALL_COLS <- colnames(celltype_combinations)
     
-    for (i in (length(ALL_COLS)/2):1) {
+    if (organ %in% c("Brain")){
+      return (get_cleaned_values_from_df(asctb_master_table[ALL_COLS]))
+    }
+    
+    # Initializing the dataframe of celltypes to return
+    hmap.colnames <- c("Cell.IDs", "Cell.Names")
+    celltype_overall <- create_new_df(hmap.colnames)
+    
+    for (i in seq(1,length(ALL_COLS),2)) {
+      if (verbose)  { print(paste(ALL_COLS[i], ALL_COLS[i+1])) }
       
-      if (verbose)  {cat("\nCreating the df for ",i,"th level..")}
-      # Choose the last-level columns and check if they are completely empty
-      celltypes_at_last_level <- as.data.frame(celltype_combinations[grepl(paste0("",i,""), ALL_COLS)])
-      if (verbose)  {cat("\nAll values NA =", all(is.na(celltypes_at_last_level)),'\n')}
-      
-      if (!all(is.na(celltypes_at_last_level))){
-        
-        if (verbose)  {print(celltypes_at_last_level)}
-        # Extract the IDs of last-level columns
-        celltypes_at_last_level_ids <- na.omit(celltypes_at_last_level[grepl('ID',colnames(celltypes_at_last_level))])
-        last_id_col <- colnames(celltypes_at_last_level_ids)
-        unique_ids_at_last_level <- get_cleaned_values_from_df(celltypes_at_last_level_ids)
-        if (verbose)  {
-          cat('\nUnique IDs are:')
-          print(unique_ids_at_last_level)
-        }
-        
-        # Append the IDs of last-level columns
-        celltype_overall <- c(celltype_overall, unique_ids_at_last_level)
-        
-        # Keep only the entries now which don't have IDs associated
-        celltypes_at_last_level <- subset(celltypes_at_last_level, (celltypes_at_last_level[last_id_col]=="" | is.na(celltypes_at_last_level[last_id_col])))
-        
-        celltype_combinations <- subset(celltype_combinations, (celltype_combinations[last_id_col]=="" | is.na(celltype_combinations[last_id_col])))
-        
-        if (verbose)  {
-          cat('\nAfter removing entries which had IDs associated:')
-          print(celltypes_at_last_level)
-        }
-        
-        
-        # Extract the names of last-level columns, for the rows which didn't have any ID
-        celltypes_at_last_level_names <- na.omit(celltypes_at_last_level[grepl('CT/[0-9]$',colnames(celltypes_at_last_level))])
-        last_name_col <- colnames(celltypes_at_last_level_names)
-        unique_names_at_last_level <- get_cleaned_values_from_df(celltypes_at_last_level_names)
-        if (verbose)  {
-          cat('\nUnique NAMEs are:')
-          print(unique_names_at_last_level)
-        }
-        
-        if (verbose)  {cat('\n',i,') Appending the last level of cell-types...')}
-        # Append the names of last-level columns
-        celltype_overall <- c(celltype_overall, unique_names_at_last_level)
-        
-        # Remove the entries which have names associated
-        celltype_combinations <- celltype_combinations[is.na(celltype_combinations[last_name_col]),]
-        
+      hmap <- get_hashtable_key_values(asctb_master_table, c(ALL_COLS[i], ALL_COLS[i+1]), hmap.colnames)
+      celltype_overall <- rbind(celltype_overall, hmap)
+      cts.without.ids <- as.data.frame( get_cleaned_values_from_df(asctb_master_table[is.na(asctb_master_table[ALL_COLS[i+1]]), ALL_COLS[i]]) )
+      if (nrow(cts.without.ids)>0 && !all(is.na(cts.without.ids)) && !all(is.null(cts.without.ids))){
+        if (verbose)  { print('Appending the CTs which have no names...') }
+        cts.without.ids <- data.frame(rep("",nrow(cts.without.ids)), cts.without.ids)
+        colnames(cts.without.ids) <- hmap.colnames
+        celltype_overall <- rbind(celltype_overall, cts.without.ids)
       }
     }
     
-    return (celltype_overall)
+    celltype_overall <- unique(celltype_overall)
+    return (get_cleaned_values_from_df(unlist(celltype_overall$Cell.Names)))
   },
   error = function(e){
     if (verbose)  {traceback()}
@@ -218,7 +188,7 @@ process_asctb_master_dataset_summary <- function(config, file_path, asct_table_d
     
     # C2: Get the union of all "CT" columns in the ASCTB organ.csv file
     cat('\nGenerating the set of cell-types now')
-    asctb.cell_types <- get_num_asctb_celltypes(asctb_master_table)
+    asctb.cell_types <- get_num_asctb_celltypes(asctb_master_table, organ.1)
     cat('\nNow, cell-types for ', organ.1,' are: ')
     print(asctb.cell_types)
     n_unique_cell_types.2 <- length(asctb.cell_types)
@@ -231,7 +201,7 @@ process_asctb_master_dataset_summary <- function(config, file_path, asct_table_d
     
     
     # C4: Get the intersection of CT_Ontology_IDs in the ASCTB organ.csv file vs Azimuth organ.csv file.
-    azimuth_colnames <-  colnames(asct_table_derived_from_azimuth)
+    azimuth_colnames <- colnames(asct_table_derived_from_azimuth)
     
     
     # Edge Case: ASCTB Brain/Spleen doesn't have CT_Ontology_IDs. Use Cell-Type Names for finding # matching between ASCTB and Azimuth.
@@ -295,6 +265,7 @@ process_asctb_master_dataset_summary <- function(config, file_path, asct_table_d
     azimuth.cleaned_set_of_biomarkers <- get_cleaned_values_from_df(azimuth.entire_set_of_biomarkers)
     n_matching_biomarkers.6 <- length(intersect(azimuth.cleaned_set_of_biomarkers, asctb.cleaned_set_of_biomarkers))
     azimuth_bgs_not_in_asctb <- setdiff(azimuth.cleaned_set_of_biomarkers, c(asctb.cleaned_set_of_biomarkers, asctb.cleaned_set_of_biomarkers_prots))
+    
     n_missing_biomarkers.6.2 <- 0
     
     if (!is.null(azimuth_bgs_not_in_asctb) && !all(is.na(azimuth_bgs_not_in_asctb))){
