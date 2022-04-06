@@ -9,6 +9,9 @@
 name: push-build
 
 on:
+  schedule:
+    - cron: '30 12 * * 1'
+  workflow_dispatch:
   push:
     branches: [ main ]
 
