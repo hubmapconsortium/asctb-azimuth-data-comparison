@@ -1,0 +1,32 @@
+"Heart cell types as anatomical structures from Azimuth reference data",,,,,,
+,,,,,,
+"Author Name(s):","Azimuth & MC-IU",,,,,
+"Author ORCID(s):",,,,,,
+"Reviewer(s):",,,,,,
+"General Publication(s):",,,,,,
+"Data DOI:",,,,,,
+"Date:","10/12/2022",,,,,
+"Version Number:","v1.0",,,,,
+,,,,,,
+"AS/1","AS/1/LABEL","AS/1/ID","AS/2","AS/2/LABEL","AS/2/ID","AS/2/COUNT"
+"Adipocyte",,,"Adipocyte",,,5274
+"Endothelial",,,"Arterial Endothelial",,,16981
+"Cardiomyocyte",,,"Atrial Cardiomyocyte",,,27976
+"B",,,"B",,,802
+"Endothelial",,,"Capillary Endothelial",,,61309
+"Endothelial",,,"Endocardial",,,21174
+"Endothelial",,,"Endothelial",,,1336
+"Fibroblast",,,"Fibroblast",,,139421
+"NK/T",,,"ILC",,,21
+"Lymphatic Endothelial",,,"Lymphatic Endothelial",,,3008
+"Myeloid",,,"Macrophage",,,30289
+"Mast",,,"Mast",,,2690
+"Mesothelial",,,"Mesothelial",,,1953
+"Myeloid",,,"Monocyte/cDC",,,18267
+"Neuronal",,,"Neuronal",,,6212
+"NK/T",,,"NK",,,2729
+"Pericyte",,,"Pericyte",,,93776
+"Smooth Muscle",,,"Smooth Muscle",,,17119
+"NK/T",,,"T",,,8173
+"Endothelial",,,"Venous Endothelial",,,19167
+"Cardiomyocyte",,,"Ventricular Cardiomycoyte",,,178832
