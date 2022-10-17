@@ -1,0 +1,25 @@
+"Organ","Cell.Type","Cell.Type.ID","Annotation.Level","Num.Cells"
+"Heart","Adipocyte","NA",2,5274
+"Heart","Arterial Endothelial","NA",2,16981
+"Heart","Atrial Cardiomyocyte","NA",2,27976
+"Heart","B","NA",2,802
+"Heart","Capillary Endothelial","NA",2,61309
+"Heart","Cardiomyocyte","NA",1,206808
+"Heart","Endocardial","NA",2,21174
+"Heart","Endothelial","NA",2,1336
+"Heart","Fibroblast","NA",2,139421
+"Heart","ILC","NA",2,21
+"Heart","Lymphatic Endothelial","NA",2,3008
+"Heart","Macrophage","NA",2,30289
+"Heart","Mast","NA",2,2690
+"Heart","Mesothelial","NA",2,1953
+"Heart","Monocyte/cDC","NA",2,18267
+"Heart","Myeloid","NA",1,48556
+"Heart","Neuronal","NA",2,6212
+"Heart","NK","NA",2,2729
+"Heart","NK/T","NA",1,10923
+"Heart","Pericyte","NA",2,93776
+"Heart","Smooth Muscle","NA",2,17119
+"Heart","T","NA",2,8173
+"Heart","Venous Endothelial","NA",2,19167
+"Heart","Ventricular Cardiomycoyte","NA",2,178832
