@@ -1,0 +1,7 @@
+"intersect(sapply(get_cleaned_values_from_df(azimuth.entire_set_of_cell_types, F), tolower), sapply(get_cleaned_values_from_df(asctb_master_table[grepl(""CT/[0-9]$"", asctb.master_columns)], F), tolower))"
+"adipocyte"
+"cardiomyocyte"
+"fibroblast"
+"neuronal"
+"pericyte"
+"macrophage"
