@@ -1,0 +1,91 @@
+"Organ","Cell.Type","Cell.Type.ID","Annotation.Level","Num.Cells"
+"Human Lung v2","Adventitial fibroblasts","NA",6,10321
+"Human Lung v2","Airway epithelium","NA",2,207253
+"Human Lung v2","Alveolar epithelium","NA",2,70112
+"Human Lung v2","Alveolar fibroblasts","NA",6,5182
+"Human Lung v2","Alveolar macrophages","NA",6,68487
+"Human Lung v2","Alveolar Mφ CCL3+","NA",6,8065
+"Human Lung v2","Alveolar Mφ MT-positive","NA",6,1203
+"Human Lung v2","Alveolar Mφ proliferating","NA",6,1061
+"Human Lung v2","AT1","NA",6,7937
+"Human Lung v2","AT2","NA",6,61199
+"Human Lung v2","AT2 proliferating","NA",6,976
+"Human Lung v2","B cell lineage","NA",3,6284
+"Human Lung v2","B cells","NA",6,4511
+"Human Lung v2","Basal","NA",3,84713
+"Human Lung v2","Basal resting","NA",6,38955
+"Human Lung v2","Blood vessels","NA",2,43571
+"Human Lung v2","CD4 T cells","NA",6,21285
+"Human Lung v2","CD8 T cells","NA",6,29074
+"Human Lung v2","Classical monocytes","NA",6,17695
+"Human Lung v2","Club","NA",4,38111
+"Human Lung v2","Club (nasal)","NA",6,26068
+"Human Lung v2","Club (non-nasal)","NA",6,12043
+"Human Lung v2","DC1","NA",6,322
+"Human Lung v2","DC2","NA",6,9133
+"Human Lung v2","Dendritic cells","NA",3,10319
+"Human Lung v2","Deuterosomal","NA",6,1004
+"Human Lung v2","EC aerocyte capillary","NA",6,7157
+"Human Lung v2","EC arterial","NA",6,7391
+"Human Lung v2","EC capillary","NA",3,23205
+"Human Lung v2","EC general capillary","NA",6,16048
+"Human Lung v2","EC venous","NA",3,12975
+"Human Lung v2","EC venous pulmonary","NA",6,6418
+"Human Lung v2","EC venous systemic","NA",6,6557
+"Human Lung v2","Endothelial","NA",1,48166
+"Human Lung v2","Epithelial","NA",1,282065
+"Human Lung v2","Fibroblast lineage","NA",2,21100
+"Human Lung v2","Fibroblasts","NA",3,20384
+"Human Lung v2","Fibromyocytes","NA",6,335
+"Human Lung v2","Goblet","NA",4,38471
+"Human Lung v2","Goblet (bronchial)","NA",6,1670
+"Human Lung v2","Goblet (nasal)","NA",6,35833
+"Human Lung v2","Goblet (subsegmental)","NA",6,968
+"Human Lung v2","Immune","NA",1,229436
+"Human Lung v2","Innate lymphoid cell NK","NA",3,16978
+"Human Lung v2","Interstitial macrophages","NA",4,33028
+"Human Lung v2","Interstitial Mφ perivascular","NA",6,4805
+"Human Lung v2","Ionocyte","NA",6,561
+"Human Lung v2","Lymphatic EC","NA",2,4595
+"Human Lung v2","Lymphatic EC differentiating","NA",6,566
+"Human Lung v2","Lymphatic EC mature","NA",6,4001
+"Human Lung v2","Lymphatic EC proliferating","NA",6,28
+"Human Lung v2","Lymphoid","NA",2,74121
+"Human Lung v2","Macrophages","NA",3,111844
+"Human Lung v2","Mast cells","NA",6,6623
+"Human Lung v2","Mesothelium","NA",6,230
+"Human Lung v2","Migratory DCs","NA",6,312
+"Human Lung v2","Monocyte-derived Mφ","NA",6,28223
+"Human Lung v2","Monocytes","NA",3,26529
+"Human Lung v2","Multiciliated","NA",4,40094
+"Human Lung v2","Multiciliated (nasal)","NA",6,4869
+"Human Lung v2","Multiciliated (non-nasal)","NA",6,35225
+"Human Lung v2","Multiciliated lineage","NA",3,41098
+"Human Lung v2","Myeloid","NA",2,155315
+"Human Lung v2","Myofibroblasts","NA",6,716
+"Human Lung v2","Neuroendocrine","NA",6,159
+"Human Lung v2","NK cells","NA",6,16978
+"Human Lung v2","Non-classical monocytes","NA",6,8834
+"Human Lung v2","None","NA",5,421962
+"Human Lung v2","Peribronchial fibroblasts","NA",6,1573
+"Human Lung v2","Pericytes","NA",6,3032
+"Human Lung v2","Plasma cells","NA",6,1773
+"Human Lung v2","Plasmacytoid DCs","NA",6,552
+"Human Lung v2","Rare","NA",3,885
+"Human Lung v2","Secretory","NA",3,80557
+"Human Lung v2","SM activated stress response","NA",6,556
+"Human Lung v2","SMG duct","NA",6,1274
+"Human Lung v2","SMG mucous","NA",6,537
+"Human Lung v2","SMG serous","NA",4,2889
+"Human Lung v2","SMG serous (bronchial)","NA",6,1417
+"Human Lung v2","SMG serous (nasal)","NA",6,1472
+"Human Lung v2","Smooth muscle","NA",6,2996
+"Human Lung v2","Stroma","NA",1,25217
+"Human Lung v2","Submucosal Gland","NA",2,4700
+"Human Lung v2","Submucosal Secretory","NA",3,4700
+"Human Lung v2","Subpleural fibroblasts","NA",6,276
+"Human Lung v2","Suprabasal","NA",6,45758
+"Human Lung v2","T cell lineage","NA",3,50859
+"Human Lung v2","T cells proliferating","NA",6,500
+"Human Lung v2","Transitional Club-AT2","NA",6,3975
+"Human Lung v2","Tuft","NA",6,165
