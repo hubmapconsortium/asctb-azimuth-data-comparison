@@ -1,0 +1,69 @@
+"Human Lung v2 cell types as anatomical structures from Azimuth reference data",,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+"Author Name(s):","Azimuth & MC-IU",,,,,,,,,,,,,,,,,
+"Author ORCID(s):",,,,,,,,,,,,,,,,,,
+"Reviewer(s):",,,,,,,,,,,,,,,,,,
+"General Publication(s):",,,,,,,,,,,,,,,,,,
+"Data DOI:",,,,,,,,,,,,,,,,,,
+"Date:","10/27/2022",,,,,,,,,,,,,,,,,
+"Version Number:","v1.0",,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+"AS/1","AS/1/LABEL","AS/1/ID","AS/2","AS/2/LABEL","AS/2/ID","AS/3","AS/3/LABEL","AS/3/ID","AS/4","AS/4/LABEL","AS/4/ID","AS/5","AS/5/LABEL","AS/5/ID","AS/6","AS/6/LABEL","AS/6/ID","AS/6/COUNT"
+"Stroma",,,"Fibroblast lineage",,,"Fibroblasts",,,"Adventitial fibroblasts",,,"None",,,"Adventitial fibroblasts",,,10321
+"Stroma",,,"Fibroblast lineage",,,"Fibroblasts",,,"Alveolar fibroblasts",,,"None",,,"Alveolar fibroblasts",,,5182
+"Immune",,,"Myeloid",,,"Macrophages",,,"Alveolar macrophages",,,"None",,,"Alveolar macrophages",,,68487
+"Immune",,,"Myeloid",,,"Macrophages",,,"Alveolar macrophages",,,"Alveolar Mφ CCL3+",,,"Alveolar Mφ CCL3+",,,8065
+"Immune",,,"Myeloid",,,"Macrophages",,,"Alveolar macrophages",,,"Alveolar Mφ MT-positive",,,"Alveolar Mφ MT-positive",,,1203
+"Immune",,,"Myeloid",,,"Macrophages",,,"Alveolar macrophages",,,"Alveolar Mφ proliferating",,,"Alveolar Mφ proliferating",,,1061
+"Epithelial",,,"Alveolar epithelium",,,"AT1",,,"None",,,"None",,,"AT1",,,7937
+"Epithelial",,,"Alveolar epithelium",,,"AT2",,,"None",,,"None",,,"AT2",,,61199
+"Epithelial",,,"Alveolar epithelium",,,"AT2",,,"AT2 proliferating",,,"None",,,"AT2 proliferating",,,976
+"Immune",,,"Lymphoid",,,"B cell lineage",,,"B cells",,,"None",,,"B cells",,,4511
+"Epithelial",,,"Airway epithelium",,,"Basal",,,"Basal resting",,,"None",,,"Basal resting",,,38955
+"Immune",,,"Lymphoid",,,"T cell lineage",,,"CD4 T cells",,,"None",,,"CD4 T cells",,,21285
+"Immune",,,"Lymphoid",,,"T cell lineage",,,"CD8 T cells",,,"None",,,"CD8 T cells",,,29074
+"Immune",,,"Myeloid",,,"Monocytes",,,"Classical monocytes",,,"None",,,"Classical monocytes",,,17695
+"Epithelial",,,"Airway epithelium",,,"Secretory",,,"Club",,,"Club (nasal)",,,"Club (nasal)",,,26068
+"Epithelial",,,"Airway epithelium",,,"Secretory",,,"Club",,,"Club (non-nasal)",,,"Club (non-nasal)",,,12043
+"Immune",,,"Myeloid",,,"Dendritic cells",,,"DC1",,,"None",,,"DC1",,,322
+"Immune",,,"Myeloid",,,"Dendritic cells",,,"DC2",,,"None",,,"DC2",,,9133
+"Epithelial",,,"Airway epithelium",,,"Multiciliated lineage",,,"Deuterosomal",,,"None",,,"Deuterosomal",,,1004
+"Endothelial",,,"Blood vessels",,,"EC capillary",,,"EC aerocyte capillary",,,"None",,,"EC aerocyte capillary",,,7157
+"Endothelial",,,"Blood vessels",,,"EC arterial",,,"None",,,"None",,,"EC arterial",,,7391
+"Endothelial",,,"Blood vessels",,,"EC capillary",,,"EC general capillary",,,"None",,,"EC general capillary",,,16048
+"Endothelial",,,"Blood vessels",,,"EC venous",,,"EC venous pulmonary",,,"None",,,"EC venous pulmonary",,,6418
+"Endothelial",,,"Blood vessels",,,"EC venous",,,"EC venous systemic",,,"None",,,"EC venous systemic",,,6557
+"Stroma",,,"Smooth muscle",,,"Fibromyocytes",,,"None",,,"None",,,"Fibromyocytes",,,335
+"Epithelial",,,"Airway epithelium",,,"Secretory",,,"Goblet",,,"Goblet (bronchial)",,,"Goblet (bronchial)",,,1670
+"Epithelial",,,"Airway epithelium",,,"Secretory",,,"Goblet",,,"Goblet (nasal)",,,"Goblet (nasal)",,,35833
+"Epithelial",,,"Airway epithelium",,,"Secretory",,,"Goblet",,,"Goblet (subsegmental)",,,"Goblet (subsegmental)",,,968
+"Immune",,,"Myeloid",,,"Macrophages",,,"Interstitial macrophages",,,"Interstitial Mφ perivascular",,,"Interstitial Mφ perivascular",,,4805
+"Epithelial",,,"Airway epithelium",,,"Rare",,,"Ionocyte",,,"None",,,"Ionocyte",,,561
+"Endothelial",,,"Lymphatic EC",,,"Lymphatic EC differentiating",,,"None",,,"None",,,"Lymphatic EC differentiating",,,566
+"Endothelial",,,"Lymphatic EC",,,"Lymphatic EC mature",,,"None",,,"None",,,"Lymphatic EC mature",,,4001
+"Endothelial",,,"Lymphatic EC",,,"Lymphatic EC proliferating",,,"None",,,"None",,,"Lymphatic EC proliferating",,,28
+"Immune",,,"Myeloid",,,"Mast cells",,,"None",,,"None",,,"Mast cells",,,6623
+"Stroma",,,"Mesothelium",,,"None",,,"None",,,"None",,,"Mesothelium",,,230
+"Immune",,,"Myeloid",,,"Dendritic cells",,,"Migratory DCs",,,"None",,,"Migratory DCs",,,312
+"Immune",,,"Myeloid",,,"Macrophages",,,"Interstitial macrophages",,,"Monocyte-derived Mφ",,,"Monocyte-derived Mφ",,,28223
+"Epithelial",,,"Airway epithelium",,,"Multiciliated lineage",,,"Multiciliated",,,"Multiciliated (nasal)",,,"Multiciliated (nasal)",,,4869
+"Epithelial",,,"Airway epithelium",,,"Multiciliated lineage",,,"Multiciliated",,,"Multiciliated (non-nasal)",,,"Multiciliated (non-nasal)",,,35225
+"Stroma",,,"Fibroblast lineage",,,"Myofibroblasts",,,"None",,,"None",,,"Myofibroblasts",,,716
+"Epithelial",,,"Airway epithelium",,,"Rare",,,"Neuroendocrine",,,"None",,,"Neuroendocrine",,,159
+"Immune",,,"Lymphoid",,,"Innate lymphoid cell NK",,,"NK cells",,,"None",,,"NK cells",,,16978
+"Immune",,,"Myeloid",,,"Monocytes",,,"Non-classical monocytes",,,"None",,,"Non-classical monocytes",,,8834
+"Stroma",,,"Fibroblast lineage",,,"Fibroblasts",,,"Peribronchial fibroblasts",,,"None",,,"Peribronchial fibroblasts",,,1573
+"Stroma",,,"Fibroblast lineage",,,"Fibroblasts",,,"Pericytes",,,"None",,,"Pericytes",,,3032
+"Immune",,,"Lymphoid",,,"B cell lineage",,,"Plasma cells",,,"None",,,"Plasma cells",,,1773
+"Immune",,,"Myeloid",,,"Dendritic cells",,,"Plasmacytoid DCs",,,"None",,,"Plasmacytoid DCs",,,552
+"Stroma",,,"Smooth muscle",,,"SM activated stress response",,,"None",,,"None",,,"SM activated stress response",,,556
+"Epithelial",,,"Submucosal Gland",,,"Submucosal Secretory",,,"SMG duct",,,"None",,,"SMG duct",,,1274
+"Epithelial",,,"Submucosal Gland",,,"Submucosal Secretory",,,"SMG mucous",,,"None",,,"SMG mucous",,,537
+"Epithelial",,,"Submucosal Gland",,,"Submucosal Secretory",,,"SMG serous",,,"SMG serous (bronchial)",,,"SMG serous (bronchial)",,,1417
+"Epithelial",,,"Submucosal Gland",,,"Submucosal Secretory",,,"SMG serous",,,"SMG serous (nasal)",,,"SMG serous (nasal)",,,1472
+"Stroma",,,"Smooth muscle",,,"None",,,"None",,,"None",,,"Smooth muscle",,,2996
+"Stroma",,,"Fibroblast lineage",,,"Fibroblasts",,,"Subpleural fibroblasts",,,"None",,,"Subpleural fibroblasts",,,276
+"Epithelial",,,"Airway epithelium",,,"Basal",,,"Suprabasal",,,"None",,,"Suprabasal",,,45758
+"Immune",,,"Lymphoid",,,"T cell lineage",,,"T cells proliferating",,,"None",,,"T cells proliferating",,,500
+"Epithelial",,,"Airway epithelium",,,"Secretory",,,"Transitional Club-AT2",,,"None",,,"Transitional Club-AT2",,,3975
+"Epithelial",,,"Airway epithelium",,,"Rare",,,"Tuft",,,"None",,,"Tuft",,,165
